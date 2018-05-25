@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.SectionBActivity">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="callback"
+            type="edu.aku.hassannaqvi.wfp_recruit_form.ui.SectionBActivity" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:layoutDirection="rtl"
+                android:orientation="vertical">
+
+                <!--01-->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:theme="@style/TextLabel"
+                    app:hintTextAppearance="@style/TextLabel2">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/wrb01"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                        android:hint="@string/other"
+                        android:textColor="@android:color/black" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <!--02-->
+
+
+                <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="80dp"
+                    android:orientation="horizontal">
+
+
+                    <Button
+                        android:id="@+id/btn_Continue"
+                        style="@style/buttons"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#1ed61e"
+                        android:onClick="@{() -> callback.BtnContinue()}"
+                        android:text="@string/nextSection"
+                        android:textColor="@color/white" />
+
+                    <Button
+                        android:id="@+id/btn_AddMember"
+                        style="@style/buttons"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="@{() -> callback.BtnAddMember()}"
+                        android:text="@string/addMember"
+                        android:textColor="@color/white" />
+
+                    <Button
+                        android:id="@+id/btn_End"
+                        style="@style/buttons"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{() -> callback.BtnEnd()}"
+                        android:text="@string/end_interview"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</layout>
