@@ -118,13 +118,13 @@
                 android:text="OPEN B1" />
 
             <Button
-                android:id="@+id/openB2"
+                android:id="@+id/openC"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:onClick="openB2"
-                android:text="OPEN B2" />
+                android:onClick="openC"
+                android:text="OPEN C" />
 
             <Button
                 android:id="@+id/openC1"
@@ -145,13 +145,13 @@
                 android:text="OPEN C2" />
 
             <Button
-                android:id="@+id/openC3"
+                android:id="@+id/openF"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:onClick="openC3"
-                android:text="OPEN C3" />
+                android:onClick="openF"
+                android:text="OPEN F" />
 
             <Button
                 android:id="@+id/openC4"
@@ -215,15 +215,6 @@
                 android:layout_marginTop="16dp"
                 android:onClick="openE"
                 android:text="OPEN E" />
-
-            <Button
-                android:id="@+id/openF"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="16dp"
-                android:onClick="openF"
-                android:text="OPEN F" />
 
             <Button
                 android:id="@+id/syncServer"
