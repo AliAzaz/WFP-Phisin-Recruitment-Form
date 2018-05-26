@@ -493,6 +493,7 @@ public class SectionIActivity extends AppCompatActivity {
         setContentView(R.layout.activity_section_g);
         ButterKnife.bind(this);
 
+        this.setTitle("Section I");
 
         wri0509.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -774,10 +775,7 @@ public class SectionIActivity extends AppCompatActivity {
     @OnClick(R.id.btnEnd)
     void onBtnEndClick() {
         finish();
-        Toast.makeText(this, "complete Section", Toast.LENGTH_SHORT).show();
-        Intent endSec = new Intent(this, EndingActivity.class);
-        endSec.putExtra("complete", false);
-        startActivity(endSec);
+        MainApp.endActivity(this, this);
     }
 
     private boolean updateDb() {

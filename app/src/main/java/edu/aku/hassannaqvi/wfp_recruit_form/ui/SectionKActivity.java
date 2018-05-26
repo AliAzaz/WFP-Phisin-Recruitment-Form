@@ -464,6 +464,8 @@ public class SectionKActivity extends AppCompatActivity {
         setContentView(R.layout.activity_section_m);
         ButterKnife.bind(this);
 
+        this.setTitle("Section K");
+
         //=============== Q 1B Skip Pattern==============
         wrk01a.addTextChangedListener(new TextWatcher() {
             @Override
@@ -927,10 +929,7 @@ public class SectionKActivity extends AppCompatActivity {
     void onBtnEndClick() {
 
         finish();
-        Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
-        Intent endSec = new Intent(this, EndingActivity.class);
-        endSec.putExtra("complete", false);
-        startActivity(endSec);
+        MainApp.endActivity(this, this);
 
     }
 

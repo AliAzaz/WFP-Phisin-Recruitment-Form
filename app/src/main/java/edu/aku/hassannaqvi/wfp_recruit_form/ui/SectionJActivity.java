@@ -108,6 +108,7 @@ public class SectionJActivity extends AppCompatActivity {
         setContentView(R.layout.activity_section_h);
         ButterKnife.bind(this);
 
+        this.setTitle("Section J");
 
 //*********************************Section H***********************
 
@@ -187,13 +188,8 @@ public class SectionJActivity extends AppCompatActivity {
 
     @OnClick(R.id.btnEnd)
     void onBtnEndClick() {
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
-
         finish();
-        Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
-        Intent endSec = new Intent(this, EndingActivity.class);
-        endSec.putExtra("complete", false);
-        startActivity(endSec);
+        MainApp.endActivity(this, this);
     }
 
     private void SaveDraft() throws JSONException {

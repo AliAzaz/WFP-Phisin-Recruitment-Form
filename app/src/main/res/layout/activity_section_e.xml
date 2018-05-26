@@ -63,7 +63,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="2dp"
-                        android:layout_weight="5"
+                        android:maxLength="5"
                         android:hint="@string/wre01"
                         android:inputType="numberDecimal"
                         android:textColor="@android:color/black" />
@@ -82,7 +82,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="2dp"
-                        android:layout_weight="5"
+                        android:maxLength="5"
                         android:hint="@string/wre01"
                         android:inputType="numberDecimal"
                         android:textColor="@android:color/black" />
@@ -111,7 +111,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="2dp"
-                        android:layout_weight="5"
+                        android:maxLength="5"
                         android:hint="@string/wre02"
                         android:inputType="numberDecimal"
                         android:textColor="@android:color/black" />
@@ -130,7 +130,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="2dp"
-                        android:layout_weight="5"
+                        android:maxLength="5"
                         android:hint="@string/wre02"
                         android:inputType="numberDecimal"
                         android:textColor="@android:color/black" />
@@ -159,7 +159,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="2dp"
-                        android:layout_weight="5"
+                        android:maxLength="5"
                         android:hint="@string/wre03"
                         android:inputType="numberDecimal"
                         android:textColor="@android:color/black" />

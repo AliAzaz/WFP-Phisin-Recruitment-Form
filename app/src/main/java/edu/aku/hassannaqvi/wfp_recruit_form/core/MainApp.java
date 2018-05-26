@@ -1,7 +1,11 @@
 package edu.aku.hassannaqvi.wfp_recruit_form.core;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Application;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.Location;
 import android.location.LocationListener;
@@ -15,7 +19,9 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import edu.aku.hassannaqvi.wfp_recruit_form.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.wfp_recruit_form.contracts.FormsContract;
+import edu.aku.hassannaqvi.wfp_recruit_form.ui.EndingActivity;
 
 /**
  * Created by hassan.naqvi on 11/30/2016.
@@ -56,6 +62,7 @@ public class MainApp extends Application {
 
     public static Boolean admin = false;
     public static FormsContract fc;
+    public static FamilyMembersContract fmc;
     public static String userName = "0000";
     public static int versionCode;
     public static String versionName;
@@ -108,6 +115,32 @@ public class MainApp extends Application {
             );
         }
 
+    }
+
+    public static void endActivity(final Context context, final Activity activity) {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                context);
+        alertDialogBuilder
+                .setMessage("Do you want to Exit??")
+                .setCancelable(false)
+                .setPositiveButton("Yes",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,
+                                                int id) {
+                                activity.finish();
+                                Intent end_intent = new Intent(context, EndingActivity.class);
+                                end_intent.putExtra("complete", false);
+                                context.startActivity(end_intent);
+                            }
+                        });
+        alertDialogBuilder.setNegativeButton("No",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert = alertDialogBuilder.create();
+        alert.show();
     }
 
     protected boolean isBetterLocation(Location location, Location currentBestLocation) {
