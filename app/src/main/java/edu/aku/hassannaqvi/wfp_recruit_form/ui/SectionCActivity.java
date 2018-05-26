@@ -4,20 +4,28 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import edu.aku.hassannaqvi.wfp_recruit_form.R;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
 import edu.aku.hassannaqvi.wfp_recruit_form.databinding.ActivitySectionCBinding;
+import edu.aku.hassannaqvi.wfp_recruit_form.other.DateUtils;
 import edu.aku.hassannaqvi.wfp_recruit_form.validation.validatorClass;
 
 public class SectionCActivity extends AppCompatActivity {
     ActivitySectionCBinding bi;
-
+String currentDate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +33,7 @@ public class SectionCActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_c);
         bi.setCallback(this);
         setDateManager();
+        currentDate = new SimpleDateFormat("dd/MM/yyyy").format(new Date().getTime());
 
     }
 
@@ -32,6 +41,24 @@ public class SectionCActivity extends AppCompatActivity {
         bi.wrc06.setManager(getSupportFragmentManager());
         bi.wrc07.setManager(getSupportFragmentManager());
         bi.wrc08.setManager(getSupportFragmentManager());
+        bi.wrc06.setMinDate(DateUtils.getMonthsBack("dd/MM/yyyy",-4));
+        bi.wrc06.setMaxDate(currentDate);
+        if (!TextUtils.isEmpty(bi.wrc06.getText().toString())){
+            bi.wrc07.setEnabled(true);
+            String exactDate = DateUtils.addDays("dd/MM/yyyy",bi.wrc06.getText().toString(),280);
+            bi.wrc07.setMinDate(DateUtils.addSubtractMonths("dd/MM/yyyy",exactDate,-1));
+            bi.wrc07.setMaxDate(DateUtils.addSubtractMonths("dd/MM/yyyy",exactDate,1));
+
+        }else {
+            bi.wrc07.setEnabled(false);
+            bi.wrc07.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    Toast.makeText(v.getContext(),"Please Fill question 6 first ",Toast.LENGTH_SHORT).show();
+                    return false;
+                }
+            });
+        }
     }
 
     private boolean ValidateForm() {
