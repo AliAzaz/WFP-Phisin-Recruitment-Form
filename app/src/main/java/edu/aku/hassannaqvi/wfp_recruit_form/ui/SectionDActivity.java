@@ -25,7 +25,7 @@ public class SectionDActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_section_d);
 
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_b2);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_d);
         db = new DatabaseHelper(this);
         bi.setCallback(this);
     }
@@ -35,7 +35,6 @@ public class SectionDActivity extends AppCompatActivity {
         if (!validatorClass.EmptyTextBox(this, bi.wrd001, getString(R.string.wrd001))) {
             return false;
         }
-
 
 
         if (!validatorClass.RangeTextBox(this, bi.wrd001, 1, 15, getString(R.string.kb101), "Number")) {
