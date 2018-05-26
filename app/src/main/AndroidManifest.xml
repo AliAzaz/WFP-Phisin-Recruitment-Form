@@ -69,7 +69,7 @@
         <activity android:name=".ui.SectionFActivity" />
         <activity android:name=".ui.SectionGActivity" />
         <activity android:name=".ui.SectionlmoActivity" />
-        <activity android:name=".ui.SectionEActivity"></activity>
+        <activity android:name=".ui.SectionHActivity"></activity>
     </application>
 
 </manifest>

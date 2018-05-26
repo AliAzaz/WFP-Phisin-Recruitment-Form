@@ -10,7 +10,6 @@ tools:context="edu.aku.hassannaqvi.wfp_recruit_form.ui.SectionlmoActivity">
         type="edu.aku.hassannaqvi.wfp_recruit_form.ui.SectionlmoActivity" />
 </data>
 <ScrollView
-    android:id="@+id/lab_scrollview"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
