@@ -446,6 +446,16 @@ public class MainActivity extends Activity {
         startActivity1(SectionA1Activity.class);
 
     }
+    public void openC(View v) {
+
+        startActivity1(SectionCActivity.class);
+
+    }
+    public void openF(View v) {
+
+        startActivity1(SectionFActivity.class);
+
+    }
 
     private void startActivity1(final Class<? extends Activity> ActivityToOpen) {
         startActivity(new Intent(getBaseContext(), ActivityToOpen));
