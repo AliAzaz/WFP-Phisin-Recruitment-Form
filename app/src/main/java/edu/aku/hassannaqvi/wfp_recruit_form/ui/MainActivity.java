@@ -244,7 +244,7 @@ public class MainActivity extends Activity {
     }
 
     public void openForm() {
-        final Intent oF = new Intent(MainActivity.this, SectionA1Activity.class);
+        final Intent oF = new Intent(MainActivity.this, SectionBActivity.class);
 
         if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
             startActivity(oF);

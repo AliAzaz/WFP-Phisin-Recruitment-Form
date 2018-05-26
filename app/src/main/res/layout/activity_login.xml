@@ -32,6 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layoutDirection="rtl"
+            android:layout_marginTop="@dimen/_15sdp"
             android:orientation="vertical">
 
             <TextView
@@ -225,7 +226,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/_82sdp"
+                android:layout_marginTop="@dimen/_52sdp"
                 android:orientation="vertical">
 
                 <TextView
