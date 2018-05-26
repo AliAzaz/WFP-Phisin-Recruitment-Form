@@ -124,15 +124,14 @@ public class SectionCActivity extends AppCompatActivity {
         sC.put("wrc07", bi.wrc07.getText().toString());
         sC.put("wrc08", bi.wrc08.getText().toString());
 
-//        MainApp.fc.setsC(String.valueOf(sC));
+        MainApp.fc.setsC(String.valueOf(sC));
 
     }
 
     private boolean UpdateDb() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-//        int updcount = db.updateSC();
-        int updcount = 1;
+        int updcount = db.updateSC();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();

@@ -150,7 +150,7 @@ public class SectionBActivity extends AppCompatActivity {
     private boolean UpdateDb() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        /*long updcount = db.addFamilyMembers(MainApp.fmc);
+        long updcount = db.addFamilyMembers(MainApp.fmc);
         MainApp.fmc.set_ID(String.valueOf(updcount));
 
         if (updcount != 0) {
@@ -161,9 +161,8 @@ public class SectionBActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
+        }
 
-        return true;
     }
 
 }

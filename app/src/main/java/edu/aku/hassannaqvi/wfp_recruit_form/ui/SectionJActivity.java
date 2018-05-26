@@ -218,7 +218,7 @@ public class SectionJActivity extends AppCompatActivity {
         sj.put("wrj0696", wrj0696.isChecked() ? "1" : "0");
         sj.put("wrj0696x", wrj0696x.getText().toString());
 
-//        MainApp.fc.setsJ(String.valueOf(sj));
+        MainApp.fc.setsJ(String.valueOf(sj));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
@@ -321,8 +321,7 @@ public class SectionJActivity extends AppCompatActivity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-//        int updcount = db.updateSJ();
-        int updcount = 1;
+        int updcount = db.updateSJ();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
