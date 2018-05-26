@@ -3,6 +3,10 @@ package edu.aku.hassannaqvi.wfp_recruit_form.ui;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
 import edu.aku.hassannaqvi.wfp_recruit_form.validation.validatorClass;
 
 public class SectionlmoActivity extends AppCompatActivity {
@@ -12,21 +16,22 @@ public class SectionlmoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sectionlmo);
     }
+
     private boolean formValidation() {
 
-        if (!validatorClass.EmptyRadioButton(this, bi.wrl01, bi.wrl01a, getString(R.string.wrl01))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.wro01, bi.wro01a, getString(R.string.wro01))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.wrl02, bi.wrl02a, getString(R.string.wrl02))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.wro02, bi.wro02a, getString(R.string.wro02))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.wrl03, bi.wrl03a, getString(R.string.wrl03))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.wro03, bi.wro03a, getString(R.string.wro03))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.wrl04, bi.wrl04a, getString(R.string.wrl04))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.wro04, bi.wro04a, getString(R.string.wro04))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.wrl05, bi.wrl05a, getString(R.string.wrl05))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.wro05, bi.wro05a, getString(R.string.wro05))) {
             return false;
         }
         if (!validatorClass.EmptyRadioButton(this, bi.wrm01, bi.wrm01a, getString(R.string.wrm01))) {
@@ -41,11 +46,11 @@ public class SectionlmoActivity extends AppCompatActivity {
         if (!validatorClass.EmptyRadioButton(this, bi.wro01, bi.wro01a, getString(R.string.wro01))) {
             return false;
         }
-        if (bi.wro01a.isChecked()){
+        if (bi.wro01a.isChecked()) {
             if (!validatorClass.EmptyTextBox(this, bi.wro01num, getString(R.string.wro01))) {
                 return false;
             }
-            if (!validatorClass.RangeTextBox(this, bi.wro01num,1,10, getString(R.string.wro01), " number")) {
+            if (!validatorClass.RangeTextBox(this, bi.wro01num, 1, 10, getString(R.string.wro01), " number")) {
                 return false;
             }
             if (!validatorClass.EmptyTextBox(this, bi.wro01s, getString(R.string.wro01))) {
@@ -55,11 +60,11 @@ public class SectionlmoActivity extends AppCompatActivity {
         if (!validatorClass.EmptyRadioButton(this, bi.wro02, bi.wro02a, getString(R.string.wro02))) {
             return false;
         }
-        if (bi.wro02a.isChecked()){
+        if (bi.wro02a.isChecked()) {
             if (!validatorClass.EmptyTextBox(this, bi.wro02num, getString(R.string.wro02))) {
                 return false;
             }
-            if (!validatorClass.RangeTextBox(this, bi.wro02num,1,10, getString(R.string.wro02), " number")) {
+            if (!validatorClass.RangeTextBox(this, bi.wro02num, 1, 10, getString(R.string.wro02), " number")) {
                 return false;
             }
             if (!validatorClass.EmptyTextBox(this, bi.wro02s, getString(R.string.wro02))) {
@@ -69,11 +74,11 @@ public class SectionlmoActivity extends AppCompatActivity {
         if (!validatorClass.EmptyRadioButton(this, bi.wro03, bi.wro03a, getString(R.string.wro03))) {
             return false;
         }
-        if (bi.wro03a.isChecked()){
+        if (bi.wro03a.isChecked()) {
             if (!validatorClass.EmptyTextBox(this, bi.wro03num, getString(R.string.wro03))) {
                 return false;
             }
-            if (!validatorClass.RangeTextBox(this, bi.wro03num,1,10, getString(R.string.wro03), " number")) {
+            if (!validatorClass.RangeTextBox(this, bi.wro03num, 1, 10, getString(R.string.wro03), " number")) {
                 return false;
             }
             if (!validatorClass.EmptyTextBox(this, bi.wro03s, getString(R.string.wro03))) {
@@ -83,11 +88,11 @@ public class SectionlmoActivity extends AppCompatActivity {
         if (!validatorClass.EmptyRadioButton(this, bi.wro04, bi.wro04a, getString(R.string.wro04))) {
             return false;
         }
-        if (bi.wro04a.isChecked()){
+        if (bi.wro04a.isChecked()) {
             if (!validatorClass.EmptyTextBox(this, bi.wro04num, getString(R.string.wro04))) {
                 return false;
             }
-            if (!validatorClass.RangeTextBox(this, bi.wro04num,1,10, getString(R.string.wro04), " number")) {
+            if (!validatorClass.RangeTextBox(this, bi.wro04num, 1, 10, getString(R.string.wro04), " number")) {
                 return false;
             }
             if (!validatorClass.EmptyTextBox(this, bi.wro04s, getString(R.string.wro04))) {
@@ -97,11 +102,11 @@ public class SectionlmoActivity extends AppCompatActivity {
         if (!validatorClass.EmptyRadioButton(this, bi.wro05, bi.wro05a, getString(R.string.wro05))) {
             return false;
         }
-        if (bi.wro05a.isChecked()){
+        if (bi.wro05a.isChecked()) {
             if (!validatorClass.EmptyTextBox(this, bi.wro05num, getString(R.string.wro05))) {
                 return false;
             }
-            if (!validatorClass.RangeTextBox(this, bi.wro05num,1,10, getString(R.string.wro05), " number")) {
+            if (!validatorClass.RangeTextBox(this, bi.wro05num, 1, 10, getString(R.string.wro05), " number")) {
                 return false;
             }
             if (!validatorClass.EmptyTextBox(this, bi.wro05s, getString(R.string.wro05))) {
@@ -111,11 +116,11 @@ public class SectionlmoActivity extends AppCompatActivity {
         if (!validatorClass.EmptyRadioButton(this, bi.wro06, bi.wro06a, getString(R.string.wro06))) {
             return false;
         }
-        if (bi.wro06a.isChecked()){
+        if (bi.wro06a.isChecked()) {
             if (!validatorClass.EmptyTextBox(this, bi.wro06num, getString(R.string.wro06))) {
                 return false;
             }
-            if (!validatorClass.RangeTextBox(this, bi.wro06num,1,10, getString(R.string.wro06), " number")) {
+            if (!validatorClass.RangeTextBox(this, bi.wro06num, 1, 10, getString(R.string.wro06), " number")) {
                 return false;
             }
             if (!validatorClass.EmptyTextBox(this, bi.wro06s, getString(R.string.wro06))) {
@@ -125,11 +130,11 @@ public class SectionlmoActivity extends AppCompatActivity {
         if (!validatorClass.EmptyRadioButton(this, bi.wro07, bi.wro07a, getString(R.string.wro07))) {
             return false;
         }
-        if (bi.wro07a.isChecked()){
+        if (bi.wro07a.isChecked()) {
             if (!validatorClass.EmptyTextBox(this, bi.wro07num, getString(R.string.wro07))) {
                 return false;
             }
-            if (!validatorClass.RangeTextBox(this, bi.wro07num,1,10, getString(R.string.wro07), " number")) {
+            if (!validatorClass.RangeTextBox(this, bi.wro07num, 1, 10, getString(R.string.wro07), " number")) {
                 return false;
             }
             if (!validatorClass.EmptyTextBox(this, bi.wro07s, getString(R.string.wro07))) {
@@ -139,11 +144,11 @@ public class SectionlmoActivity extends AppCompatActivity {
         if (!validatorClass.EmptyRadioButton(this, bi.wro08, bi.wro08a, getString(R.string.wro08))) {
             return false;
         }
-        if (bi.wro08a.isChecked()){
+        if (bi.wro08a.isChecked()) {
             if (!validatorClass.EmptyTextBox(this, bi.wro08num, getString(R.string.wro08))) {
                 return false;
             }
-            if (!validatorClass.RangeTextBox(this, bi.wro08num,1,10, getString(R.string.wro08), " number")) {
+            if (!validatorClass.RangeTextBox(this, bi.wro08num, 1, 10, getString(R.string.wro08), " number")) {
                 return false;
             }
             if (!validatorClass.EmptyTextBox(this, bi.wro08s, getString(R.string.wro08))) {
@@ -153,11 +158,11 @@ public class SectionlmoActivity extends AppCompatActivity {
         if (!validatorClass.EmptyRadioButton(this, bi.wro09, bi.wro09a, getString(R.string.wro09))) {
             return false;
         }
-        if (bi.wro09a.isChecked()){
+        if (bi.wro09a.isChecked()) {
             if (!validatorClass.EmptyTextBox(this, bi.wro09num, getString(R.string.wro09))) {
                 return false;
             }
-            if (!validatorClass.RangeTextBox(this, bi.wro09num,1,10, getString(R.string.wro09), " number")) {
+            if (!validatorClass.RangeTextBox(this, bi.wro09num, 1, 10, getString(R.string.wro09), " number")) {
                 return false;
             }
             if (!validatorClass.EmptyTextBox(this, bi.wro09s, getString(R.string.wro09))) {
@@ -167,11 +172,11 @@ public class SectionlmoActivity extends AppCompatActivity {
         if (!validatorClass.EmptyRadioButton(this, bi.wro10, bi.wro10a, getString(R.string.wro10))) {
             return false;
         }
-        if (bi.wro10a.isChecked()){
+        if (bi.wro10a.isChecked()) {
             if (!validatorClass.EmptyTextBox(this, bi.wro10num, getString(R.string.wro10))) {
                 return false;
             }
-            if (!validatorClass.RangeTextBox(this, bi.wro10num,1,10, getString(R.string.wro10), " number")) {
+            if (!validatorClass.RangeTextBox(this, bi.wro10num, 1, 10, getString(R.string.wro10), " number")) {
                 return false;
             }
             if (!validatorClass.EmptyTextBox(this, bi.wro10s, getString(R.string.wro10))) {
@@ -181,11 +186,11 @@ public class SectionlmoActivity extends AppCompatActivity {
         if (!validatorClass.EmptyRadioButton(this, bi.wro11, bi.wro11a, getString(R.string.wro11))) {
             return false;
         }
-        if (bi.wro11a.isChecked()){
+        if (bi.wro11a.isChecked()) {
             if (!validatorClass.EmptyTextBox(this, bi.wro11num, getString(R.string.wro11))) {
                 return false;
             }
-            if (!validatorClass.RangeTextBox(this, bi.wro11num,1,10, getString(R.string.wro11), " number")) {
+            if (!validatorClass.RangeTextBox(this, bi.wro11num, 1, 10, getString(R.string.wro11), " number")) {
                 return false;
             }
             if (!validatorClass.EmptyTextBox(this, bi.wro11s, getString(R.string.wro11))) {
@@ -195,14 +200,14 @@ public class SectionlmoActivity extends AppCompatActivity {
         if (!validatorClass.EmptyRadioButton(this, bi.wro12, bi.wro12a, getString(R.string.wro12))) {
             return false;
         }
-        if (bi.wro12a.isChecked()){
+        if (bi.wro12a.isChecked()) {
             if (!validatorClass.EmptyTextBox(this, bi.wro1288, getString(R.string.wro12))) {
                 return false;
             }
             if (!validatorClass.EmptyTextBox(this, bi.wro12num, getString(R.string.wro12))) {
                 return false;
             }
-            if (!validatorClass.RangeTextBox(this, bi.wro12num,1,10, getString(R.string.wro12), " number")) {
+            if (!validatorClass.RangeTextBox(this, bi.wro12num, 1, 10, getString(R.string.wro12), " number")) {
                 return false;
             }
             if (!validatorClass.EmptyTextBox(this, bi.wro12s, getString(R.string.wro12))) {
@@ -211,6 +216,174 @@ public class SectionlmoActivity extends AppCompatActivity {
         }
         return true;
     }
+
+    private void SaveDraft() throws JSONException {
+        JSONObject wrl = new JSONObject();
+        wrl.put("wrl01", bi.wrl01b.isChecked() ? "1"
+                : bi.wrl01c.isChecked() ? "2"
+                : bi.wrl01d.isChecked() ? "3"
+                : bi.wrl01e.isChecked() ? "4"
+                : bi.wrl01f.isChecked() ? "5"
+                : bi.wrl01g.isChecked() ? "6"
+                : bi.wrl01h.isChecked() ? "7"
+                : "0");
+        wrl.put("wrl02", bi.wrl02b.isChecked() ? "1"
+                : bi.wrl02c.isChecked() ? "2"
+                : bi.wrl02d.isChecked() ? "3"
+                : bi.wrl02e.isChecked() ? "4"
+                : bi.wrl02f.isChecked() ? "5"
+                : bi.wrl02g.isChecked() ? "6"
+                : bi.wrl02h.isChecked() ? "7"
+                : "0");
+        wrl.put("wrl03", bi.wrl03b.isChecked() ? "1"
+                : bi.wrl03c.isChecked() ? "2"
+                : bi.wrl03d.isChecked() ? "3"
+                : bi.wrl03e.isChecked() ? "4"
+                : bi.wrl03f.isChecked() ? "5"
+                : bi.wrl03g.isChecked() ? "6"
+                : bi.wrl03h.isChecked() ? "7"
+                : "0");
+        wrl.put("wrl04", bi.wrl04b.isChecked() ? "1"
+                : bi.wrl04c.isChecked() ? "2"
+                : bi.wrl04d.isChecked() ? "3"
+                : bi.wrl04e.isChecked() ? "4"
+                : bi.wrl04f.isChecked() ? "5"
+                : bi.wrl04g.isChecked() ? "6"
+                : bi.wrl04h.isChecked() ? "7"
+                : "0");
+        wrl.put("wrl05", bi.wrl05b.isChecked() ? "1"
+                : bi.wrl05c.isChecked() ? "2"
+                : bi.wrl05d.isChecked() ? "3"
+                : bi.wrl05e.isChecked() ? "4"
+                : bi.wrl05f.isChecked() ? "5"
+                : bi.wrl05g.isChecked() ? "6"
+                : bi.wrl05h.isChecked() ? "7"
+                : "0");
+
+
+        JSONObject wrm = new JSONObject();
+        wrm.put("wrm01", bi.wrm01b.isChecked() ? "1"
+                : bi.wrm01c.isChecked() ? "2"
+                : bi.wrm01d.isChecked() ? "3"
+                : "0");
+        wrm.put("wrm02", bi.wrm02b.isChecked() ? "1"
+                : bi.wrm02c.isChecked() ? "2"
+                : bi.wrm02d.isChecked() ? "3"
+                : "0");
+        wrm.put("wrm03", bi.wrm03b.isChecked() ? "1"
+                : bi.wrm03c.isChecked() ? "2"
+                : bi.wrm03d.isChecked() ? "3"
+                : "0");
+
+
+
+        JSONObject wro = new JSONObject();
+
+        
+//        1
+        wro.put("wro01", bi.wro01a.isChecked() ? "1"
+                : bi.wro01b.isChecked() ? "2"
+                : "0");
+
+        wro.put("wro01num", bi.wro01num.getText().toString());
+        wro.put("wro01s", bi.wro01s.getText().toString());        
+        
+//        2
+        wro.put("wro02", bi.wro02a.isChecked() ? "1"
+                : bi.wro01b.isChecked() ? "2"
+                : "0");
+
+        wro.put("wro02num", bi.wro02num.getText().toString());
+        wro.put("wro02s", bi.wro02s.getText().toString());        
+        
+//        3
+        wro.put("wro03", bi.wro03a.isChecked() ? "1"
+                : bi.wro03b.isChecked() ? "2"
+                : "0");
+
+        wro.put("wro03num", bi.wro03num.getText().toString());
+        wro.put("wro03s", bi.wro03s.getText().toString());        
+        
+//        4
+        wro.put("wro04", bi.wro04a.isChecked() ? "1"
+                : bi.wro04b.isChecked() ? "2"
+                : "0");
+
+        wro.put("wro04num", bi.wro04num.getText().toString());
+        wro.put("wro04s", bi.wro04s.getText().toString());        
+        
+//        5
+        wro.put("wro05", bi.wro05a.isChecked() ? "1"
+                : bi.wro05b.isChecked() ? "2"
+                : "0");
+
+        wro.put("wro05num", bi.wro05num.getText().toString());
+        wro.put("wro05s", bi.wro05s.getText().toString());        
+        
+//        6
+        wro.put("wro06", bi.wro06a.isChecked() ? "1"
+                : bi.wro06b.isChecked() ? "2"
+                : "0");
+
+        wro.put("wro06num", bi.wro06num.getText().toString());
+        wro.put("wro06s", bi.wro06s.getText().toString());        
+        
+//        7
+        wro.put("wro07", bi.wro07a.isChecked() ? "1"
+                : bi.wro07b.isChecked() ? "2"
+                : "0");
+
+        wro.put("wro07num", bi.wro07num.getText().toString());
+        wro.put("wro07s", bi.wro07s.getText().toString());        
+        
+//        8
+        wro.put("wro08", bi.wro08a.isChecked() ? "1"
+                : bi.wro08b.isChecked() ? "2"
+                : "0");
+
+        wro.put("wro08num", bi.wro08num.getText().toString());
+        wro.put("wro08s", bi.wro08s.getText().toString());        
+        
+//        9
+        wro.put("wro09", bi.wro09a.isChecked() ? "1"
+                : bi.wro09b.isChecked() ? "2"
+                : "0");
+
+        wro.put("wro01num", bi.wro09num.getText().toString());
+        wro.put("wro09s", bi.wro09s.getText().toString());        
+        
+//        10
+        wro.put("wro10", bi.wro10a.isChecked() ? "1"
+                : bi.wro10b.isChecked() ? "2"
+                : "0");
+
+        wro.put("wro01num", bi.wro10num.getText().toString());
+        wro.put("wro10s", bi.wro10s.getText().toString());        
+        
+//        11
+        wro.put("wro11", bi.wro11a.isChecked() ? "1"
+                : bi.wro11b.isChecked() ? "2"
+                : "0");
+
+        wro.put("wro11num", bi.wro11num.getText().toString());
+        wro.put("wro11s", bi.wro11s.getText().toString());        
+        
+//        12
+        wro.put("wro12", bi.wro12a.isChecked() ? "1"
+                : bi.wro12b.isChecked() ? "2"
+                : "0");
+
+        wro.put("wro1288", bi.wro1288x.getText().toString());
+        wro.put("wro12num", bi.wro12num.getText().toString());
+        wro.put("wro12s", bi.wro12s.getText().toString());
+
+
+        MainApp.fc.setwL(String.valueOf(wrl));
+        MainApp.fc.setwM(String.valueOf(wrm));
+        MainApp.fc.setwO(String.valueOf(wro));
+
+    }
+
     public void BtnEnd() {
 
      /*

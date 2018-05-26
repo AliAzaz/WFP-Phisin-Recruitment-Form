@@ -8,6 +8,8 @@ import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import android.view.View;
+import android.widget.RadioGroup;
 
 import edu.aku.hassannaqvi.wfp_recruit_form.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
@@ -26,6 +28,23 @@ public class SectionHActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_h);
         db = new DatabaseHelper(this);
         bi.setCallback(this);
+        setupView();
+    }
+
+    private void setupView() {
+        bi.wrh01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == R.id.wrh01a) {
+                    bi.fldGrpwrh01.setVisibility(View.GONE);
+                    bi.wrh02.clearCheck();
+                    bi.wrh0288x.setText(null);
+                } else {
+                    bi.fldGrpwrh01.setVisibility(View.VISIBLE);
+
+                }
+            }
+        });
     }
 
 
