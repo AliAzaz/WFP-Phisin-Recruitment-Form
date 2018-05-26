@@ -199,33 +199,31 @@ public class SectionJActivity extends AppCompatActivity {
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
-        JSONObject sh = new JSONObject();
-        JSONObject si = new JSONObject();
         JSONObject sj = new JSONObject();
 
-        sh.put("wrj01", wrj0101.isChecked() ? "1" : wrj0102.isChecked() ? "2" : wrj0103.isChecked() ? "3"
+        sj.put("wrj01", wrj0101.isChecked() ? "1" : wrj0102.isChecked() ? "2" : wrj0103.isChecked() ? "3"
                 : wrj0196.isChecked() ? "96" : "0");
-        sh.put("wrj0196x", wrj0196x.getText().toString());
-        sh.put("wrj02", wrj0201.isChecked() ? "1" : wrj0202.isChecked() ? "2" : "0");
-        sh.put("wrj03", wrj0301.isChecked() ? "1" : wrj0302.isChecked() ? "2" : wrj0303.isChecked() ? "3"
+        sj.put("wrj0196x", wrj0196x.getText().toString());
+        sj.put("wrj02", wrj0201.isChecked() ? "1" : wrj0202.isChecked() ? "2" : "0");
+        sj.put("wrj03", wrj0301.isChecked() ? "1" : wrj0302.isChecked() ? "2" : wrj0303.isChecked() ? "3"
                 : wrj0304.isChecked() ? "4" : wrj0305.isChecked() ? "5" : "0");
-        sh.put("wrj04", wrj0401.isChecked() ? "1" : wrj0402.isChecked() ? "2" : "0");
-        sh.put("wrj05", wrj0501.isChecked() ? "1" : wrj0502.isChecked() ? "2" : wrj0503.isChecked() ? "3"
+        sj.put("wrj04", wrj0401.isChecked() ? "1" : wrj0402.isChecked() ? "2" : "0");
+        sj.put("wrj05", wrj0501.isChecked() ? "1" : wrj0502.isChecked() ? "2" : wrj0503.isChecked() ? "3"
                 : wrj0504.isChecked() ? "4" : wrj0505.isChecked() ? "5" : "0");
-        sh.put("wrj0601", wrj0601.isChecked() ? "1" : "0");
-        sh.put("wrj0602", wrj0602.isChecked() ? "1" : "0");
-        sh.put("wrj0603", wrj0603.isChecked() ? "1" : "0");
-        sh.put("wrj0604", wrj0604.isChecked() ? "1" : "0");
-        sh.put("wrj0605", wrj0605.isChecked() ? "1" : "0");
-        sh.put("wrj0606", wrj0606.isChecked() ? "1" : "0");
-        sh.put("wrj0607", wrj0607.isChecked() ? "1" : "0");
-        sh.put("wrj0607", wrj0607.isChecked() ? "1" : "0");
-        sh.put("wrj0608", wrj0608.isChecked() ? "1" : "0");
-        sh.put("wrj0609", wrj0609.isChecked() ? "1" : "0");
-        sh.put("wrj0696", wrj0696.isChecked() ? "1" : "0");
-        sh.put("wrj0696x", wrj0696x.getText().toString());
+        sj.put("wrj0601", wrj0601.isChecked() ? "1" : "0");
+        sj.put("wrj0602", wrj0602.isChecked() ? "1" : "0");
+        sj.put("wrj0603", wrj0603.isChecked() ? "1" : "0");
+        sj.put("wrj0604", wrj0604.isChecked() ? "1" : "0");
+        sj.put("wrj0605", wrj0605.isChecked() ? "1" : "0");
+        sj.put("wrj0606", wrj0606.isChecked() ? "1" : "0");
+        sj.put("wrj0607", wrj0607.isChecked() ? "1" : "0");
+        sj.put("wrj0607", wrj0607.isChecked() ? "1" : "0");
+        sj.put("wrj0608", wrj0608.isChecked() ? "1" : "0");
+        sj.put("wrj0609", wrj0609.isChecked() ? "1" : "0");
+        sj.put("wrj0696", wrj0696.isChecked() ? "1" : "0");
+        sj.put("wrj0696x", wrj0696x.getText().toString());
 
-        MainApp.fc.setsJ(String.valueOf(sj));
+//        MainApp.fc.setsJ(String.valueOf(sj));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
@@ -328,7 +326,8 @@ public class SectionJActivity extends AppCompatActivity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSJ();
+//        int updcount = db.updateSJ();
+        int updcount = 1;
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();

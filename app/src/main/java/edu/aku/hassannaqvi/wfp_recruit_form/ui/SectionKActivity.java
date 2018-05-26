@@ -11,28 +11,18 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.ScrollView;
 import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
 
 import butterknife.BindView;
-import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import edu.aku.hassannaqvi.cbt_child_recruitment.AppMain;
-import edu.aku.hassannaqvi.cbt_child_recruitment.DatabaseHelper;
-import edu.aku.hassannaqvi.cbt_child_recruitment.R;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
-import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
 
 public class SectionKActivity extends AppCompatActivity {
 
@@ -921,11 +911,9 @@ public class SectionKActivity extends AppCompatActivity {
 
                 finish();
 
-                Intent secNext = new Intent(this, EndingActivity.class);
-                secNext.putExtra("complete", true);
+                Intent secNext = new Intent(this, SectionlmoActivity.class);
                 startActivity(secNext);
 
-                //startActivity(new Intent(this, EndingActivity.class));
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -938,25 +926,11 @@ public class SectionKActivity extends AppCompatActivity {
     @OnClick(R.id.btnEnd)
     void onBtnEndClick() {
 
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
-
-//        if (ValidateForm()) {
-//            try {
-//                SaveDraft();
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
-//            if (UpdateDB()) {
-
-                finish();
-                Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
-                Intent endSec = new Intent(this, EndingActivity.class);
-                //endSec.putExtra("complete", false);
-                startActivity(endSec);
-//            } else {
-//                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-//            }
-//        }
+        finish();
+        Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
+        Intent endSec = new Intent(this, EndingActivity.class);
+        endSec.putExtra("complete", false);
+        startActivity(endSec);
 
     }
 
@@ -964,90 +938,89 @@ public class SectionKActivity extends AppCompatActivity {
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
-        JSONObject sm = new JSONObject();
-        JSONObject sn = new JSONObject();
+        JSONObject sk = new JSONObject();
 
-        sm.put("wrk01a", wrk01a.getText().toString());
-        sm.put("wrk01b", wrk01b01.isChecked() ? "1" : wrk01b02.isChecked() ? "2" : wrk01b03.isChecked() ? "3"
+        sk.put("wrk01a", wrk01a.getText().toString());
+        sk.put("wrk01b", wrk01b01.isChecked() ? "1" : wrk01b02.isChecked() ? "2" : wrk01b03.isChecked() ? "3"
                 : wrk01b04.isChecked() ? "4" : wrk01b05.isChecked() ? "5" : wrk01b06.isChecked() ? "6" : wrk01b07.isChecked() ? "7"
                 : wrk01b08.isChecked() ? "8" : wrk01b09.isChecked() ? "9" : wrk01b10.isChecked() ? "10" : "0");
 
-        sm.put("wrk02a", wrk02a.getText().toString());
-        sm.put("wrk02b", wrk02b01.isChecked() ? "1" : wrk02b02.isChecked() ? "2" : wrk02b03.isChecked() ? "3"
+        sk.put("wrk02a", wrk02a.getText().toString());
+        sk.put("wrk02b", wrk02b01.isChecked() ? "1" : wrk02b02.isChecked() ? "2" : wrk02b03.isChecked() ? "3"
                 : wrk02b04.isChecked() ? "4" : wrk02b05.isChecked() ? "5" : wrk02b06.isChecked() ? "6" : wrk02b07.isChecked() ? "7"
                 : wrk02b08.isChecked() ? "8" : wrk02b09.isChecked() ? "9" : wrk02b10.isChecked() ? "10" : "0");
 
-        sm.put("wrk03a", wrk03a.getText().toString());
-        sm.put("wrk03b", wrk03b01.isChecked() ? "1" : wrk03b02.isChecked() ? "2" : wrk03b03.isChecked() ? "3"
+        sk.put("wrk03a", wrk03a.getText().toString());
+        sk.put("wrk03b", wrk03b01.isChecked() ? "1" : wrk03b02.isChecked() ? "2" : wrk03b03.isChecked() ? "3"
                 : wrk03b04.isChecked() ? "4" : wrk03b05.isChecked() ? "5" : wrk03b06.isChecked() ? "6" : wrk03b07.isChecked() ? "7"
                 : wrk03b08.isChecked() ? "8" : wrk03b09.isChecked() ? "9" : wrk03b10.isChecked() ? "10" : "0");
 
-        sm.put("wrk04a", wrk04a.getText().toString());
-        sm.put("wrk04b", wrk04b01.isChecked() ? "1" : wrk04b02.isChecked() ? "2" : wrk04b03.isChecked() ? "3"
+        sk.put("wrk04a", wrk04a.getText().toString());
+        sk.put("wrk04b", wrk04b01.isChecked() ? "1" : wrk04b02.isChecked() ? "2" : wrk04b03.isChecked() ? "3"
                 : wrk04b04.isChecked() ? "4" : wrk04b05.isChecked() ? "5" : wrk04b06.isChecked() ? "6" : wrk04b07.isChecked() ? "7"
                 : wrk04b08.isChecked() ? "8" : wrk04b09.isChecked() ? "9" : wrk04b10.isChecked() ? "10" : "0");
 
-        sm.put("wrk041a", wrk041a.getText().toString());
-        sm.put("wrk041b", wrk041b01.isChecked() ? "1" : wrk041b02.isChecked() ? "2" : wrk041b03.isChecked() ? "3"
+        sk.put("wrk041a", wrk041a.getText().toString());
+        sk.put("wrk041b", wrk041b01.isChecked() ? "1" : wrk041b02.isChecked() ? "2" : wrk041b03.isChecked() ? "3"
                 : wrk041b04.isChecked() ? "4" : wrk041b05.isChecked() ? "5" : wrk041b06.isChecked() ? "6" : wrk041b07.isChecked() ? "7"
                 : wrk041b08.isChecked() ? "8" : wrk041b09.isChecked() ? "9" : wrk041b10.isChecked() ? "10" : "0");
 
-        sm.put("wrk042a", wrk042a.getText().toString());
-        sm.put("wrk042b", wrk042b01.isChecked() ? "1" : wrk042b02.isChecked() ? "2" : wrk042b03.isChecked() ? "3"
+        sk.put("wrk042a", wrk042a.getText().toString());
+        sk.put("wrk042b", wrk042b01.isChecked() ? "1" : wrk042b02.isChecked() ? "2" : wrk042b03.isChecked() ? "3"
                 : wrk042b04.isChecked() ? "4" : wrk042b05.isChecked() ? "5" : wrk042b06.isChecked() ? "6" : wrk042b07.isChecked() ? "7"
                 : wrk042b08.isChecked() ? "8" : wrk042b09.isChecked() ? "9" : wrk042b10.isChecked() ? "10" : "0");
 
-        sm.put("wrk043a", wrk043a.getText().toString());
-        sm.put("wrk043b", wrk043b01.isChecked() ? "1" : wrk043b02.isChecked() ? "2" : wrk043b03.isChecked() ? "3"
+        sk.put("wrk043a", wrk043a.getText().toString());
+        sk.put("wrk043b", wrk043b01.isChecked() ? "1" : wrk043b02.isChecked() ? "2" : wrk043b03.isChecked() ? "3"
                 : wrk043b04.isChecked() ? "4" : wrk043b05.isChecked() ? "5" : wrk043b06.isChecked() ? "6" : wrk043b07.isChecked() ? "7"
                 : wrk043b08.isChecked() ? "8" : wrk043b09.isChecked() ? "9" : wrk043b10.isChecked() ? "10" : "0");
 
-        sm.put("wrk044a", wrk044a.getText().toString());
-        sm.put("wrk044b", wrk044b01.isChecked() ? "1" : wrk044b02.isChecked() ? "2" : wrk044b03.isChecked() ? "3"
+        sk.put("wrk044a", wrk044a.getText().toString());
+        sk.put("wrk044b", wrk044b01.isChecked() ? "1" : wrk044b02.isChecked() ? "2" : wrk044b03.isChecked() ? "3"
                 : wrk044b04.isChecked() ? "4" : wrk044b05.isChecked() ? "5" : wrk044b06.isChecked() ? "6" : wrk044b07.isChecked() ? "7"
                 : wrk044b08.isChecked() ? "8" : wrk044b09.isChecked() ? "9" : wrk044b10.isChecked() ? "10" : "0");
 
-        sm.put("wrk05a", wrk05a.getText().toString());
-        sm.put("wrk05b", wrk05b01.isChecked() ? "1" : wrk05b02.isChecked() ? "2" : wrk05b03.isChecked() ? "3"
+        sk.put("wrk05a", wrk05a.getText().toString());
+        sk.put("wrk05b", wrk05b01.isChecked() ? "1" : wrk05b02.isChecked() ? "2" : wrk05b03.isChecked() ? "3"
                 : wrk05b04.isChecked() ? "4" : wrk05b05.isChecked() ? "5" : wrk05b06.isChecked() ? "6" : wrk05b07.isChecked() ? "7"
                 : wrk05b08.isChecked() ? "8" : wrk05b09.isChecked() ? "9" : wrk05b10.isChecked() ? "10" : "0");
 
-        sm.put("wrk051a", wrk051a.getText().toString());
-        sm.put("wrk051b", wrk051b01.isChecked() ? "1" : wrk051b02.isChecked() ? "2" : wrk043b03.isChecked() ? "3"
+        sk.put("wrk051a", wrk051a.getText().toString());
+        sk.put("wrk051b", wrk051b01.isChecked() ? "1" : wrk051b02.isChecked() ? "2" : wrk043b03.isChecked() ? "3"
                 : wrk051b04.isChecked() ? "4" : wrk051b05.isChecked() ? "5" : wrk051b06.isChecked() ? "6" : wrk051b07.isChecked() ? "7"
                 : wrk051b08.isChecked() ? "8" : wrk051b09.isChecked() ? "9" : wrk051b10.isChecked() ? "10" : "0");
 
-        sm.put("wrk052a", wrk052a.getText().toString());
-        sm.put("wrk052b", wrk052b01.isChecked() ? "1" : wrk052b02.isChecked() ? "2" : wrk052b03.isChecked() ? "3"
+        sk.put("wrk052a", wrk052a.getText().toString());
+        sk.put("wrk052b", wrk052b01.isChecked() ? "1" : wrk052b02.isChecked() ? "2" : wrk052b03.isChecked() ? "3"
                 : wrk052b04.isChecked() ? "4" : wrk052b05.isChecked() ? "5" : wrk052b06.isChecked() ? "6" : wrk052b07.isChecked() ? "7"
                 : wrk052b08.isChecked() ? "8" : wrk052b09.isChecked() ? "9" : wrk052b10.isChecked() ? "10" : "0");
 
-        sm.put("wrk06a", wrk06a.getText().toString());
-        sm.put("wrk06b", wrk06b01.isChecked() ? "1" : wrk06b02.isChecked() ? "2" : wrk06b03.isChecked() ? "3"
+        sk.put("wrk06a", wrk06a.getText().toString());
+        sk.put("wrk06b", wrk06b01.isChecked() ? "1" : wrk06b02.isChecked() ? "2" : wrk06b03.isChecked() ? "3"
                 : wrk06b04.isChecked() ? "4" : wrk06b05.isChecked() ? "5" : wrk06b06.isChecked() ? "6" : wrk06b07.isChecked() ? "7"
                 : wrk06b08.isChecked() ? "8" : wrk06b09.isChecked() ? "9" : wrk06b10.isChecked() ? "10" : "0");
 
-        sm.put("wrk061a", wrk061a.getText().toString());
-        sm.put("wrk061b", wrk061b01.isChecked() ? "1" : wrk061b02.isChecked() ? "2" : wrk061b03.isChecked() ? "3"
+        sk.put("wrk061a", wrk061a.getText().toString());
+        sk.put("wrk061b", wrk061b01.isChecked() ? "1" : wrk061b02.isChecked() ? "2" : wrk061b03.isChecked() ? "3"
                 : wrk061b04.isChecked() ? "4" : wrk061b05.isChecked() ? "5" : wrk061b06.isChecked() ? "6" : wrk061b07.isChecked() ? "7"
                 : wrk061b08.isChecked() ? "8" : wrk061b09.isChecked() ? "9" : wrk061b10.isChecked() ? "10" : "0");
 
-        sm.put("wrk07a", wrk07a.getText().toString());
-        sm.put("wrk07b", wrk07b01.isChecked() ? "1" : wrk07b02.isChecked() ? "2" : wrk07b03.isChecked() ? "3"
+        sk.put("wrk07a", wrk07a.getText().toString());
+        sk.put("wrk07b", wrk07b01.isChecked() ? "1" : wrk07b02.isChecked() ? "2" : wrk07b03.isChecked() ? "3"
                 : wrk07b04.isChecked() ? "4" : wrk07b05.isChecked() ? "5" : wrk07b06.isChecked() ? "6" : wrk07b07.isChecked() ? "7"
                 : wrk07b08.isChecked() ? "8" : wrk07b09.isChecked() ? "9" : wrk07b10.isChecked() ? "10" : "0");
 
-        sm.put("wrk08a", wrk08a.getText().toString());
-        sm.put("wrk08b", wrk08b01.isChecked() ? "1" : wrk08b02.isChecked() ? "2" : wrk08b03.isChecked() ? "3"
+        sk.put("wrk08a", wrk08a.getText().toString());
+        sk.put("wrk08b", wrk08b01.isChecked() ? "1" : wrk08b02.isChecked() ? "2" : wrk08b03.isChecked() ? "3"
                 : wrk08b04.isChecked() ? "4" : wrk08b05.isChecked() ? "5" : wrk08b06.isChecked() ? "6" : wrk08b07.isChecked() ? "7"
                 : wrk08b08.isChecked() ? "8" : wrk08b09.isChecked() ? "9" : wrk08b10.isChecked() ? "10" : "0");
 
-        sm.put("wrk09a", wrk09a.getText().toString());
-        sm.put("wrk09b", wrk09b01.isChecked() ? "1" : wrk09b02.isChecked() ? "2" : wrk09b03.isChecked() ? "3"
+        sk.put("wrk09a", wrk09a.getText().toString());
+        sk.put("wrk09b", wrk09b01.isChecked() ? "1" : wrk09b02.isChecked() ? "2" : wrk09b03.isChecked() ? "3"
                 : wrk09b04.isChecked() ? "4" : wrk09b05.isChecked() ? "5" : wrk09b06.isChecked() ? "6" : wrk09b07.isChecked() ? "7"
                 : wrk09b08.isChecked() ? "8" : wrk09b09.isChecked() ? "9" : wrk09b10.isChecked() ? "10" : "0");
 
-        MainApp.fc.setsM(String.valueOf(sm));
+//        MainApp.fc.setsM(String.valueOf(sm));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
@@ -1563,7 +1536,8 @@ public class SectionKActivity extends AppCompatActivity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSM();
+//        int updcount = db.updateSK();
+        int updcount = 1;
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();

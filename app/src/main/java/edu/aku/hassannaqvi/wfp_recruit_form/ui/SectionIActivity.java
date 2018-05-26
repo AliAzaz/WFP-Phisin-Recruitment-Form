@@ -783,7 +783,8 @@ public class SectionIActivity extends AppCompatActivity {
     private boolean updateDb() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSG();
+//        int updcount = db.updateSI();
+        int updcount = 1;
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -797,99 +798,99 @@ public class SectionIActivity extends AppCompatActivity {
     private void saveDrafts() throws JSONException {
         Toast.makeText(this, "saving Drafts", Toast.LENGTH_SHORT).show();
 
-        JSONObject sg = new JSONObject();
+        JSONObject si = new JSONObject();
 
-        sg.put("wri01", wri0101.isChecked() ? "1" : wri0102.isChecked() ? "2" : wri0103.isChecked() ? "3"
+        si.put("wri01", wri0101.isChecked() ? "1" : wri0102.isChecked() ? "2" : wri0103.isChecked() ? "3"
                 : wri0104.isChecked() ? "4" : wri0105.isChecked() ? "5" : wri0106.isChecked() ? "6"
                 : wri0196.isChecked() ? "96" : "0");
-        sg.put("wri96x", wri0196x.getText().toString());
-        sg.put("wri02", wri0201.isChecked() ? "1" : wri0202.isChecked() ? "2" : wri0203.isChecked() ? "3"
+        si.put("wri96x", wri0196x.getText().toString());
+        si.put("wri02", wri0201.isChecked() ? "1" : wri0202.isChecked() ? "2" : wri0203.isChecked() ? "3"
                 : wri0204.isChecked() ? "4" : wri0205.isChecked() ? "5" : wri0206.isChecked() ? "6"
                 : wri0207.isChecked() ? "7" : wri0208.isChecked() ? "8" : wri0209.isChecked() ? "9"
                 : wri0210.isChecked() ? "10" : wri0211.isChecked() ? "11" : wri0212.isChecked() ? "12"
                 : wri0213.isChecked() ? "13" : wri0214.isChecked() ? "14" : wri0215.isChecked() ? "15"
                 : wri0296.isChecked() ? "96" : "0");
-        sg.put("wri0296x", wri0296x.getText().toString());
-        sg.put("wri03", wri0301.isChecked() ? "1" : wri0302.isChecked() ? "2" : "0");
-        sg.put("wri04", wri0401.isChecked() ? "1" : wri0402.isChecked() ? "2" : wri0403.isChecked() ? "3"
+        si.put("wri0296x", wri0296x.getText().toString());
+        si.put("wri03", wri0301.isChecked() ? "1" : wri0302.isChecked() ? "2" : "0");
+        si.put("wri04", wri0401.isChecked() ? "1" : wri0402.isChecked() ? "2" : wri0403.isChecked() ? "3"
                 : wri0404.isChecked() ? "4" : wri0405.isChecked() ? "5" : wri0406.isChecked() ? "6"
                 : wri0496.isChecked() ? "96" : "0");
-        sg.put("wri04x", wri0496x.getText().toString());
-        sg.put("wri05", wri0501.isChecked() ? "1" : wri0502.isChecked() ? "2" : wri0503.isChecked() ? "3"
+        si.put("wri04x", wri0496x.getText().toString());
+        si.put("wri05", wri0501.isChecked() ? "1" : wri0502.isChecked() ? "2" : wri0503.isChecked() ? "3"
                 : wri0504.isChecked() ? "4" : wri0505.isChecked() ? "5" : wri0506.isChecked() ? "6"
                 : wri0507.isChecked() ? "7" : wri0508.isChecked() ? "8" : wri0509.isChecked() ? "9"
                 : wri0596.isChecked() ? "96" : "0");
-        sg.put("wri0596x", wri0596x.getText().toString());
-        sg.put("wri06", wri0601.isChecked() ? "1" : wri0602.isChecked() ? "2" : "0");
-        sg.put("wri07", wri07.getText().toString());
-        sg.put("wri0801", wri080101.isChecked() ? "1" : wri080102.isChecked() ? "2" : "0");
-        sg.put("wri0802", wri080201.isChecked() ? "1" : wri080202.isChecked() ? "2" : "0");
-        sg.put("wri0803", wri080301.isChecked() ? "1" : wri080302.isChecked() ? "2" : "0");
-        sg.put("wri0804", wri080401.isChecked() ? "1" : wri080402.isChecked() ? "2" : "0");
-        sg.put("wri0805", wri080501.isChecked() ? "1" : wri080502.isChecked() ? "2" : "0");
-        sg.put("wri0806", wri080601.isChecked() ? "1" : wri080602.isChecked() ? "2" : "0");
-        sg.put("wri0807", wri080701.isChecked() ? "1" : wri080702.isChecked() ? "2" : "0");
-        sg.put("wri0808", wri080801.isChecked() ? "1" : wri080802.isChecked() ? "2" : "0");
-        sg.put("wri0809", wri080901.isChecked() ? "1" : wri080902.isChecked() ? "2" : "0");
-        sg.put("wri0810", wri081001.isChecked() ? "1" : wri081002.isChecked() ? "2" : "0");
-        sg.put("wri0811", wri081101.isChecked() ? "1" : wri081102.isChecked() ? "2" : "0");
-        sg.put("wri0812", wri081201.isChecked() ? "1" : wri081202.isChecked() ? "2" : "0");
-        sg.put("wri0813", wri081301.isChecked() ? "1" : wri081302.isChecked() ? "2" : "0");
-        sg.put("wri0814", wri081401.isChecked() ? "1" : wri081402.isChecked() ? "2" : "0");
-        sg.put("wri0815", wri081501.isChecked() ? "1" : wri081502.isChecked() ? "2" : "0");
-        sg.put("wri0816", wri081601.isChecked() ? "1" : wri081602.isChecked() ? "2" : "0");
-        sg.put("wri0817", wri081701.isChecked() ? "1" : wri081702.isChecked() ? "2" : "0");
-        sg.put("wri0818", wri081801.isChecked() ? "1" : wri081802.isChecked() ? "2" : "0");
-        sg.put("wri0819", wri081901.isChecked() ? "1" : wri081902.isChecked() ? "2" : "0");
-        sg.put("wri09", wri0901.isChecked() ? "1" : wri0902.isChecked() ? "2" : wri0903.isChecked() ? "3"
+        si.put("wri0596x", wri0596x.getText().toString());
+        si.put("wri06", wri0601.isChecked() ? "1" : wri0602.isChecked() ? "2" : "0");
+        si.put("wri07", wri07.getText().toString());
+        si.put("wri0801", wri080101.isChecked() ? "1" : wri080102.isChecked() ? "2" : "0");
+        si.put("wri0802", wri080201.isChecked() ? "1" : wri080202.isChecked() ? "2" : "0");
+        si.put("wri0803", wri080301.isChecked() ? "1" : wri080302.isChecked() ? "2" : "0");
+        si.put("wri0804", wri080401.isChecked() ? "1" : wri080402.isChecked() ? "2" : "0");
+        si.put("wri0805", wri080501.isChecked() ? "1" : wri080502.isChecked() ? "2" : "0");
+        si.put("wri0806", wri080601.isChecked() ? "1" : wri080602.isChecked() ? "2" : "0");
+        si.put("wri0807", wri080701.isChecked() ? "1" : wri080702.isChecked() ? "2" : "0");
+        si.put("wri0808", wri080801.isChecked() ? "1" : wri080802.isChecked() ? "2" : "0");
+        si.put("wri0809", wri080901.isChecked() ? "1" : wri080902.isChecked() ? "2" : "0");
+        si.put("wri0810", wri081001.isChecked() ? "1" : wri081002.isChecked() ? "2" : "0");
+        si.put("wri0811", wri081101.isChecked() ? "1" : wri081102.isChecked() ? "2" : "0");
+        si.put("wri0812", wri081201.isChecked() ? "1" : wri081202.isChecked() ? "2" : "0");
+        si.put("wri0813", wri081301.isChecked() ? "1" : wri081302.isChecked() ? "2" : "0");
+        si.put("wri0814", wri081401.isChecked() ? "1" : wri081402.isChecked() ? "2" : "0");
+        si.put("wri0815", wri081501.isChecked() ? "1" : wri081502.isChecked() ? "2" : "0");
+        si.put("wri0816", wri081601.isChecked() ? "1" : wri081602.isChecked() ? "2" : "0");
+        si.put("wri0817", wri081701.isChecked() ? "1" : wri081702.isChecked() ? "2" : "0");
+        si.put("wri0818", wri081801.isChecked() ? "1" : wri081802.isChecked() ? "2" : "0");
+        si.put("wri0819", wri081901.isChecked() ? "1" : wri081902.isChecked() ? "2" : "0");
+        si.put("wri09", wri0901.isChecked() ? "1" : wri0902.isChecked() ? "2" : wri0903.isChecked() ? "3"
                 : wri0904.isChecked() ? "4" : wri0905.isChecked() ? "5" : wri0906.isChecked() ? "6"
                 : wri0907.isChecked() ? "7" : wri0908.isChecked() ? "8" : wri0909.isChecked() ? "9"
                 : wri0910.isChecked() ? "10" : wri0996.isChecked() ? "96" : "0");
-        sg.put("wri0996x", wri0996x.getText().toString());
-        sg.put("wri10", wri1001.isChecked() ? "1" : wri1002.isChecked() ? "2" : wri1003.isChecked() ? "3" : "0");
-        sg.put("wri1096x", wri1096x.getText().toString());
-        sg.put("wri11", wri1101.isChecked() ? "1" : wri1102.isChecked() ? "2" : "0");
-        sg.put("wri12", wri1201.isChecked() ? "1" : wri1202.isChecked() ? "2" : wri1203.isChecked() ? "3"
+        si.put("wri0996x", wri0996x.getText().toString());
+        si.put("wri10", wri1001.isChecked() ? "1" : wri1002.isChecked() ? "2" : wri1003.isChecked() ? "3" : "0");
+        si.put("wri1096x", wri1096x.getText().toString());
+        si.put("wri11", wri1101.isChecked() ? "1" : wri1102.isChecked() ? "2" : "0");
+        si.put("wri12", wri1201.isChecked() ? "1" : wri1202.isChecked() ? "2" : wri1203.isChecked() ? "3"
                 : wri1204.isChecked() ? "4" : wri1205.isChecked() ? "5" : wri1206.isChecked() ? "6"
                 : wri1207.isChecked() ? "7" : wri1208.isChecked() ? "8" : wri1209.isChecked() ? "9"
                 : wri1210.isChecked() ? "10" : wri1211.isChecked() ? "11" : wri1296.isChecked() ? "96" : "0");
-        sg.put("wri1296x", wri1296x.getText().toString());
-        sg.put("wri13", wri1301.isChecked() ? "1" : wri1302.isChecked() ? "2" : wri1303.isChecked() ? "3"
+        si.put("wri1296x", wri1296x.getText().toString());
+        si.put("wri13", wri1301.isChecked() ? "1" : wri1302.isChecked() ? "2" : wri1303.isChecked() ? "3"
                 : wri1304.isChecked() ? "4" : wri1305.isChecked() ? "5" : wri1306.isChecked() ? "6"
                 : wri1307.isChecked() ? "7" : wri1308.isChecked() ? "8" : wri1309.isChecked() ? "9"
                 : wri1310.isChecked() ? "10" : wri1311.isChecked() ? "11" : wri1312.isChecked() ? "12"
                 : wri1396.isChecked() ? "96" : "0");
-        sg.put("wri1396x", wri1396x.getText().toString());
-        sg.put("wri14", wri1401.isChecked() ? "1" : wri1402.isChecked() ? "2" : wri1403.isChecked() ? "3"
+        si.put("wri1396x", wri1396x.getText().toString());
+        si.put("wri14", wri1401.isChecked() ? "1" : wri1402.isChecked() ? "2" : wri1403.isChecked() ? "3"
                 : wri1404.isChecked() ? "4" : wri1405.isChecked() ? "5" : wri1406.isChecked() ? "6"
                 : wri1407.isChecked() ? "7" : wri1408.isChecked() ? "8" : wri1409.isChecked() ? "9"
                 : wri1410.isChecked() ? "10" : wri1411.isChecked() ? "11" : wri1496.isChecked() ? "96" : "0");
-        sg.put("wri1496x", wri1496x.getText().toString());
-        sg.put("wri15", wri15.getText().toString());
-        sg.put("wri16a", wri16a01.isChecked() ? "1" : wri16a02.isChecked() ? "2" : "0");
-        sg.put("wri16b", wri16b01.isChecked() ? "1" : wri16b02.isChecked() ? "2" : "0");
-        sg.put("wri16c", wri16c01.isChecked() ? "1" : wri16c02.isChecked() ? "2" : "0");
-        sg.put("wri16d", wri16d01.isChecked() ? "1" : wri16d02.isChecked() ? "2" : "0");
-        sg.put("wri16e", wri16e01.isChecked() ? "1" : wri16e02.isChecked() ? "2" : "0");
-        sg.put("wri16f", wri16f01.isChecked() ? "1" : wri16f02.isChecked() ? "2" : "0");
-        sg.put("wri16g", wri16g01.isChecked() ? "1" : wri16g02.isChecked() ? "2" : "0");
-        sg.put("wri16h", wri16h01.isChecked() ? "1" : wri16h02.isChecked() ? "2" : "0");
-        sg.put("wri16i", wri16i01.isChecked() ? "1" : wri16i02.isChecked() ? "2" : "0");
-        sg.put("wri17", wri1701.isChecked() ? "1" : wri1702.isChecked() ? "2" : "0");
-        sg.put("wri1801", wri1801.getText().toString());
-        sg.put("wri1802", wri1802.getText().toString());
-        sg.put("wri1803", wri1803.getText().toString());
-        sg.put("wri1899", wri1899.isChecked() ? "1" : "0");
-        sg.put("wri19", wri1901.isChecked() ? "1" : wri1902.isChecked() ? "2" : "0");
-        sg.put("wri2001", wri2001.getText().toString());
-        sg.put("wri2002", wri2002.getText().toString());
-        sg.put("wri2003", wri2003.getText().toString());
-        sg.put("wri2004", wri2004.getText().toString());
-        sg.put("wri2005", wri2005.getText().toString());
-        sg.put("wri2006", wri2006.getText().toString());
-        sg.put("wri2007", wri2007.getText().toString());
+        si.put("wri1496x", wri1496x.getText().toString());
+        si.put("wri15", wri15.getText().toString());
+        si.put("wri16a", wri16a01.isChecked() ? "1" : wri16a02.isChecked() ? "2" : "0");
+        si.put("wri16b", wri16b01.isChecked() ? "1" : wri16b02.isChecked() ? "2" : "0");
+        si.put("wri16c", wri16c01.isChecked() ? "1" : wri16c02.isChecked() ? "2" : "0");
+        si.put("wri16d", wri16d01.isChecked() ? "1" : wri16d02.isChecked() ? "2" : "0");
+        si.put("wri16e", wri16e01.isChecked() ? "1" : wri16e02.isChecked() ? "2" : "0");
+        si.put("wri16f", wri16f01.isChecked() ? "1" : wri16f02.isChecked() ? "2" : "0");
+        si.put("wri16g", wri16g01.isChecked() ? "1" : wri16g02.isChecked() ? "2" : "0");
+        si.put("wri16h", wri16h01.isChecked() ? "1" : wri16h02.isChecked() ? "2" : "0");
+        si.put("wri16i", wri16i01.isChecked() ? "1" : wri16i02.isChecked() ? "2" : "0");
+        si.put("wri17", wri1701.isChecked() ? "1" : wri1702.isChecked() ? "2" : "0");
+        si.put("wri1801", wri1801.getText().toString());
+        si.put("wri1802", wri1802.getText().toString());
+        si.put("wri1803", wri1803.getText().toString());
+        si.put("wri1899", wri1899.isChecked() ? "1" : "0");
+        si.put("wri19", wri1901.isChecked() ? "1" : wri1902.isChecked() ? "2" : "0");
+        si.put("wri2001", wri2001.getText().toString());
+        si.put("wri2002", wri2002.getText().toString());
+        si.put("wri2003", wri2003.getText().toString());
+        si.put("wri2004", wri2004.getText().toString());
+        si.put("wri2005", wri2005.getText().toString());
+        si.put("wri2006", wri2006.getText().toString());
+        si.put("wri2007", wri2007.getText().toString());
 
-        MainApp.fc.setsG(String.valueOf(sg));
+//        MainApp.fc.setsG(String.valueOf(si));
 
         Toast.makeText(this, "Validation Succecful", Toast.LENGTH_SHORT).show();
     }
