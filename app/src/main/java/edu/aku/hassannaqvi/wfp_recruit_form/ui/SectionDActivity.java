@@ -66,7 +66,7 @@ public class SectionDActivity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, bi.wrd05, bi.wrd05a, getString(R.string.wrd05))) {
+        if (!validatorClass.EmptyCheckBox(this, bi.wrd05, bi.wrd05a, getString(R.string.wrd05))) {
             return false;
         }
 
@@ -89,7 +89,7 @@ public class SectionDActivity extends AppCompatActivity {
             }
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.wrd08, bi.wrd08, getString(R.string.wrd08))) {
+        if (!validatorClass.EmptyCheckBox(this, bi.wrd08, bi.wrd08a, getString(R.string.wrd08))) {
             return false;
         }
 
@@ -274,15 +274,15 @@ public class SectionDActivity extends AppCompatActivity {
         sD.put("wrd0488x", bi.wrd0488x.getText().toString());
 
 
-        sD.put("wrd05", bi.wrd05a.isChecked() ? "1"
-                : bi.wrd05b.isChecked() ? "2"
-                : bi.wrd05c.isChecked() ? "3"
-                : bi.wrd05d.isChecked() ? "4"
-                : bi.wrd0588.isChecked() ? "88"
-                : "0");
-
+        sD.put("wrd05a", bi.wrd05a.isChecked() ? "1" : "0");
+        sD.put("wrd05b", bi.wrd05b.isChecked() ? "2" : "0");
+        sD.put("wrd05c", bi.wrd05c.isChecked() ? "3" : "0");
+        sD.put("wrd05d", bi.wrd05d.isChecked() ? "4" : "0");
+        sD.put("wrd0588", bi.wrd0588.isChecked() ? "88" : "0");
 
         sD.put("wrd0588x", bi.wrd0588x.getText().toString());
+
+
         sD.put("wrd06", bi.wrd06.getText().toString());
         sD.put("wrd0699", bi.wrd0699.isChecked() ? "99" : "0");
 
@@ -290,15 +290,16 @@ public class SectionDActivity extends AppCompatActivity {
         sD.put("wrd0799", bi.wrd0799.isChecked() ? "99" : "0");
 
 
-        sD.put("wrd08", bi.wrd08a.isChecked() ? "1"
-                : bi.wrd08b.isChecked() ? "2"
-                : bi.wrd08c.isChecked() ? "3"
-                : bi.wrd08d.isChecked() ? "4"
-                : bi.wrd08e.isChecked() ? "5"
-                : bi.wrd0888.isChecked() ? "88"
-                : "0");
+        sD.put("wrd08a", bi.wrd08a.isChecked() ? "1" : "0");
+        sD.put("wrd08b", bi.wrd08b.isChecked() ? "2" : "0");
+        sD.put("wrd08c", bi.wrd08c.isChecked() ? "3" : "0");
+        sD.put("wrd08d", bi.wrd08d.isChecked() ? "4" : "0");
+        sD.put("wrd08e", bi.wrd08e.isChecked() ? "5" : "0");
+        sD.put("wrd0888", bi.wrd0888.isChecked() ? "88" : "0");
+
 
         sD.put("wrd0888x", bi.wrd0888x.getText().toString());
+
 
         sD.put("wrd09", bi.wrd09a.isChecked() ? "1"
                 : bi.wrd09b.isChecked() ? "2"
