@@ -37,6 +37,7 @@ public class SectionDActivity extends AppCompatActivity {
         }
 
 
+
         if (!validatorClass.RangeTextBox(this, bi.wrd001, 1, 15, getString(R.string.kb101), "Number")) {
             return false;
         }
