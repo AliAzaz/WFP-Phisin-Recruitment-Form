@@ -1319,14 +1319,14 @@ tools:context="edu.aku.hassannaqvi.wfp_recruit_form.ui.SectionlmoActivity">
                 android:text="@string/no" />
         </RadioGroup>
         <EditText
-            android:id="@+id/wro1296x"
+            android:id="@+id/wro1288x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
             android:hint="@string/other"
             android:inputType="textCapWords"
-            android:text='@{wro12a.checked ? wrf0296x.getText.toString : ""}'
+            android:text='@{wro12a.checked ? wrf0288x.getText.toString : ""}'
             android:visibility='@{wro12a.checked ? View.VISIBLE : View.GONE}' />
         <TextView
             android:layout_width="match_parent"

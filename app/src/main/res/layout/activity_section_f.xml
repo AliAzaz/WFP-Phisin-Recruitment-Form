@@ -101,7 +101,7 @@
                     android:text="@string/wrf02a" />
 
                 <RadioButton
-                    android:id="@+id/wrf0296"
+                    android:id="@+id/wrf0288"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
@@ -117,15 +117,15 @@
             </RadioGroup>
 
             <EditText
-                android:id="@+id/wrf0296x"
+                android:id="@+id/wrf0288x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                 android:hint="@string/other"
                 android:inputType="textCapWords"
-                android:text='@{wrf0296.checked ? wrf0296x.getText.toString : ""}'
-                android:visibility='@{wrf0296.checked ? View.VISIBLE : View.GONE}' />
+                android:text='@{wrf0288.checked ? wrf0288x.getText.toString : ""}'
+                android:visibility='@{wrf0288.checked ? View.VISIBLE : View.GONE}' />
             <!--3-->
             <TextView
                 android:layout_width="match_parent"
@@ -310,21 +310,21 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/colorPrimaryDark" />
 
-            <LinearLayout
+            <RadioGroup
                 android:id="@+id/wrf08"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:orientation="vertical">
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/wrf08a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:text="@string/wrf08a" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/wrf08b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -332,7 +332,7 @@
                     android:layout_weight="1"
                     android:text="@string/wrf08b" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/wrf08c"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -340,7 +340,7 @@
                     android:layout_weight="1"
                     android:text="@string/wrf08c" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/wrf08d"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -348,27 +348,27 @@
                     android:layout_weight="1"
                     android:text="@string/wrf08d" />
 
-                <CheckBox
-                    android:id="@+id/wrf0896"
+                <RadioButton
+                    android:id="@+id/wrf0888"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:text="@string/wrf0896" />
+                    android:text="@string/other" />
 
 
-            </LinearLayout>
+            </RadioGroup>
 
             <EditText
-                android:id="@+id/wrf0896x"
+                android:id="@+id/wrf0888x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                 android:hint="@string/other"
                 android:inputType="textCapWords"
-                android:text='@{wrf0896.checked ? wrf0896x.getText.toString : ""}'
-                android:visibility='@{wrf0896.checked ? View.VISIBLE : View.GONE}' />
+                android:text='@{wrf0888.checked ? wrf0888x.getText.toString : ""}'
+                android:visibility='@{wrf0888.checked ? View.VISIBLE : View.GONE}' />
             <!--09-->
             <TextView
                 android:layout_width="match_parent"
@@ -417,21 +417,21 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/colorPrimaryDark" />
 
-            <LinearLayout
+            <RadioGroup
                 android:id="@+id/wrf0901"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:orientation="vertical">
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/wrf0901a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:text="@string/yes" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/wrf0901b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -439,7 +439,7 @@
                     android:layout_weight="1"
                     android:text="@string/no" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/wrf0901c"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -447,8 +447,8 @@
                     android:layout_weight="1"
                     android:text="@string/no" />
 
-                <CheckBox
-                    android:id="@+id/wrf090196"
+                <RadioButton
+                    android:id="@+id/wrf090188"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
@@ -456,18 +456,18 @@
                     android:text="@string/other" />
 
 
-            </LinearLayout>
+            </RadioGroup>
 
             <EditText
-                android:id="@+id/wrf090196x"
+                android:id="@+id/wrf090188x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                 android:hint="@string/other"
                 android:inputType="textCapWords"
-                android:text='@{wrf090196.checked ? wrf090196x.getText.toString : ""}'
-                android:visibility='@{wrf090196.checked ? View.VISIBLE : View.GONE}' />
+                android:text='@{wrf090188.checked ? wrf090188x.getText.toString : ""}'
+                android:visibility='@{wrf090188.checked ? View.VISIBLE : View.GONE}' />
             <!--9.2-->
             <TextView
                 android:layout_width="match_parent"
@@ -499,21 +499,21 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/colorPrimaryDark" />
 
-            <LinearLayout
+            <RadioGroup
                 android:id="@+id/wrf0903"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:orientation="vertical">
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/wrf0903a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:text="@string/yes" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/wrf0903b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -521,7 +521,7 @@
                     android:layout_weight="1"
                     android:text="@string/no" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/wrf0903c"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -529,7 +529,7 @@
                     android:layout_weight="1"
                     android:text="@string/no" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/wrf090399"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -537,8 +537,8 @@
                     android:layout_weight="1"
                     android:text="@string/dkn" />
 
-                <CheckBox
-                    android:id="@+id/wrf090396"
+                <RadioButton
+                    android:id="@+id/wrf090388"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
@@ -546,18 +546,18 @@
                     android:text="@string/other" />
 
 
-            </LinearLayout>
+            </RadioGroup>
 
             <EditText
-                android:id="@+id/ka10196x"
+                android:id="@+id/wrf090388x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                 android:hint="@string/other"
                 android:inputType="textCapWords"
-                android:text='@{ka10196.checked ? ka10196x.getText.toString : ""}'
-                android:visibility='@{ka10196.checked ? View.VISIBLE : View.GONE}' />
+                android:text='@{wrf090388.checked ? wrf090388x.getText.toString : ""}'
+                android:visibility='@{wrf090388.checked ? View.VISIBLE : View.GONE}' />
 
             <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
             <LinearLayout
