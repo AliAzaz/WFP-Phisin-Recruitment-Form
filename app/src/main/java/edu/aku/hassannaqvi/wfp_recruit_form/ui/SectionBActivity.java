@@ -17,7 +17,7 @@ public class SectionBActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_section_b);
         binding.setCallback(this);
 
-        this.setTitle("Family Information");
+        this.setTitle("Section B");
     }
 
     public void BtnContinue() {
