@@ -144,7 +144,7 @@ public class SectionBActivity extends AppCompatActivity {
                 : binding.wrb07e.isChecked() ? "5" : binding.wrb07f.isChecked() ? "6" : binding.wrb07g.isChecked() ? "7" : binding.wrb07h.isChecked() ? "8"
                 : binding.wrb07i.isChecked() ? "9" : binding.wrb07j.isChecked() ? "10" : binding.wrb07k.isChecked() ? "11" : "0");
 
-//        MainApp.fmc.setsB(String.valueOf(sB));
+        MainApp.fmc.setsB(String.valueOf(sB));
     }
 
     private boolean UpdateDb() {

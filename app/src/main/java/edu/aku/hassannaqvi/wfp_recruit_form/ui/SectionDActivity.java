@@ -426,7 +426,7 @@ public class SectionDActivity extends AppCompatActivity {
 
         sD.put("wrd1988x", bi.wrd1988x.getText().toString());
 
-        MainApp.fc.setsD1(String.valueOf(sD));
+        MainApp.fc.setsK(String.valueOf(sD));
 
     }
 
