@@ -157,7 +157,7 @@ String dtToday;
     private boolean UpdateDb() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSLMO();
+        int updcount = db.updateSC();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();

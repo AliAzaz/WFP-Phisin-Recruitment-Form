@@ -408,13 +408,10 @@ public class SectionlmoActivity extends AppCompatActivity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        long updcount = db.addForm(MainApp.fmc);
-        MainApp.fmc.set_ID(String.valueOf(updcount));
+        int updcount = db.updateSLMO();
 
-        if (updcount != 0) {
-            MainApp.fmc.set_UID(
-                    (MainApp.fmc.getDeviceId() + MainApp.fmc.get_ID()));
-            db.updateFamilyMemberID();
+        if (updcount == 1) {
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
