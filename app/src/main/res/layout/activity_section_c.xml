@@ -27,7 +27,6 @@
             android:layoutDirection="ltr"
             android:orientation="vertical">
 
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -48,16 +47,14 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
-
-            <EditText
+            <Spinner
                 android:id="@+id/wrc01"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz1234567890"
-                android:hint="@string/wrc01"
-                android:inputType="textCapWords"
-                android:maxLength="5" />
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:gravity="center" />
             <!--02-->
             <TextView
                 android:layout_width="match_parent"
@@ -67,7 +64,6 @@
                 android:text="@string/wrc02"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
-
 
             <EditText
                 android:id="@+id/wrc02"
