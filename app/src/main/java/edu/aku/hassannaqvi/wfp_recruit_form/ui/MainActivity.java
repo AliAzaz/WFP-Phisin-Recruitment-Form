@@ -240,7 +240,12 @@ public class MainActivity extends Activity {
 
         /*Add data in Serial date wrt date*/
 
-
+//        Testing visibility
+        if (Integer.valueOf(MainApp.versionName.split("\\.")[0]) > 0) {
+            mainBinding.testing.setVisibility(View.GONE);
+        } else {
+            mainBinding.testing.setVisibility(View.VISIBLE);
+        }
     }
 
     public void openForm() {
