@@ -110,12 +110,48 @@ public class SectionFActivity extends AppCompatActivity {
 
         sF.put("wrf02", bi.wrf02a.isChecked() ? "1"
                 : bi.wrf0299.isChecked() ? "99"
-                : bi.wrf0299.isChecked() ? "99"
+                : bi.wrf0288.isChecked() ? "88"
+                : "0");
+
+        sF.put("wfpf03", bi.wfpf03.getText().toString());
+        sF.put("wrf04", bi.wrf04.getText().toString());
+        sF.put("wrf05d", bi.wrf05d.getText().toString());
+        sF.put("wrf05s", bi.wrf05s.getText().toString());
+        sF.put("wrf06a", bi.wrf06a.getText().toString());
+        sF.put("wrf06b", bi.wrf06b.getText().toString());
+
+        sF.put("wrf07", bi.wrf07a.isChecked() ? "1"
+                : bi.wrf07b.isChecked() ? "2"
+                : "0");
+
+        sF.put("wrf08a", bi.wrf08a.isChecked() ? "1" : "0");
+        sF.put("wrf08b", bi.wrf08b.isChecked() ? "2" : "0");
+        sF.put("wrf08c", bi.wrf08c.isChecked() ? "3" : "0");
+        sF.put("wrf08d", bi.wrf08d.isChecked() ? "4" : "0");
+        sF.put("wrf0888", bi.wrf0888.isChecked() ? "88" : "0");
+
+        sF.put("wrf0888x", bi.wrf0888x.getText().toString());
+
+
+        sF.put("wrf09", bi.wrf09a.isChecked() ? "1"
+                : bi.wrf09b.isChecked() ? "2"
                 : "0");
 
 
+        sF.put("wrf0901a", bi.wrf0901a.isChecked() ? "1" : "0");
+        sF.put("wrf0901b", bi.wrf0901b.isChecked() ? "2" : "0");
+        sF.put("wrf0901c", bi.wrf0901c.isChecked() ? "3" : "0");
+        sF.put("wrf090188", bi.wrf090188.isChecked() ? "88" : "0");
 
-        sF.put("kb202w", bi.kb202w.getText().toString());
+        sF.put("wrf090188x", bi.wrf090188x.getText().toString());
+
+        sF.put("wrf0902", bi.wrf0902.getText().toString());
+
+        sF.put("wrf0903a", bi.wrf0903a.isChecked() ? "1" : "0");
+        sF.put("wrf0903b", bi.wrf0903b.isChecked() ? "2" : "0");
+        sF.put("wrf0903c", bi.wrf0903c.isChecked() ? "3" : "0");
+        sF.put("wrf090399", bi.wrf090399.isChecked() ? "99" : "0");
+        sF.put("wrf090388", bi.wrf090388.isChecked() ? "88" : "0");
 
 
         MainApp.fc.setsF(String.valueOf(sF));
@@ -123,8 +159,10 @@ public class SectionFActivity extends AppCompatActivity {
 
 
     public void BtnEnd() {
+        MainApp.endActivity(this, this);
+    }
 
-     /*
+    public void BtnContinue() {
         if (formValidation()) {
             try {
                 SaveDraft();
@@ -133,28 +171,28 @@ public class SectionFActivity extends AppCompatActivity {
             }
             if (UpdateDB()) {
                 finish();
-                startActivity(new Intent(this, EndingActivity.class));
+                startActivity(new Intent(this, SectionGActivity.class));
+
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }*/
+        }
     }
 
-    public void BtnContinue() {
-       /* if (formValidation()) {
-            try {
-                SaveDraft();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            if (UpdateDB()) {
-                finish();
-                startActivity(new Intent(this, EndingActivity.class));
+    private boolean UpdateDB() {
 
-            } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-            }
-        }*/
+        //Long rowId;
+        DatabaseHelper db = new DatabaseHelper(this);
+
+        int updcount = db.updateSF();
+
+        if (updcount == 1) {
+            //Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 
 }

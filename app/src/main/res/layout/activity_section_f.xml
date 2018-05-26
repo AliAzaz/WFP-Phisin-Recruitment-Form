@@ -300,7 +300,6 @@
                     android:layout_weight="1"
                     android:text="@string/no" />
 
-
             </RadioGroup>
             <!--08-->
             <TextView
@@ -359,7 +358,6 @@
                     android:layout_weight="1"
                     android:text="@string/wrf0888" />
 
-
             </LinearLayout>
 
             <EditText
@@ -406,7 +404,6 @@
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
                     android:text="@string/no" />
-
 
             </RadioGroup>
             <!--09.1-->
@@ -457,7 +454,6 @@
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
                     android:text="@string/other" />
-
 
             </LinearLayout>
 
@@ -557,15 +553,15 @@
             </LinearLayout>
 
             <EditText
-                android:id="@+id/ka10188x"
+                android:id="@+id/wrf090388x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                 android:hint="@string/other"
                 android:inputType="textCapWords"
-                android:text='@{ka10188.checked ? ka10188x.getText.toString : ""}'
-                android:visibility='@{ka10188.checked ? View.VISIBLE : View.GONE}' />
+                android:text='@{wrf090388.checked ? wrf090388x.getText.toString : ""}'
+                android:visibility='@{wrf090388.checked ? View.VISIBLE : View.GONE}' />
 
             <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
             <LinearLayout
