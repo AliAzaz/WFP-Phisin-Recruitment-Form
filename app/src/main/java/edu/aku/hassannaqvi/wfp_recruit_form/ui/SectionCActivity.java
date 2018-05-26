@@ -25,8 +25,8 @@ import edu.aku.hassannaqvi.wfp_recruit_form.validation.validatorClass;
 
 public class SectionCActivity extends AppCompatActivity {
     ActivitySectionCBinding bi;
-String currentDate;
-String dtToday;
+    String currentDate;
+    String dtToday;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,20 +44,20 @@ String dtToday;
     private void setDateManager() {
         bi.wrc06.setManager(getSupportFragmentManager());
         bi.wrc07.setManager(getSupportFragmentManager());
-        bi.wrc06.setMinDate(DateUtils.getMonthsBack("dd/MM/yyyy",-4));
+        bi.wrc06.setMinDate(DateUtils.getMonthsBack("dd/MM/yyyy", -4));
         bi.wrc06.setMaxDate(currentDate);
-        if (!TextUtils.isEmpty(bi.wrc06.getText().toString())){
+        if (!TextUtils.isEmpty(bi.wrc06.getText().toString())) {
             bi.wrc07.setEnabled(true);
-            String exactDate = DateUtils.addDays("dd/MM/yyyy",bi.wrc06.getText().toString(),280);
-            bi.wrc07.setMinDate(DateUtils.addSubtractMonths("dd/MM/yyyy",exactDate,-1));
-            bi.wrc07.setMaxDate(DateUtils.addSubtractMonths("dd/MM/yyyy",exactDate,1));
+            String exactDate = DateUtils.addDays("dd/MM/yyyy", bi.wrc06.getText().toString(), 280);
+            bi.wrc07.setMinDate(DateUtils.addSubtractMonths("dd/MM/yyyy", exactDate, -1));
+            bi.wrc07.setMaxDate(DateUtils.addSubtractMonths("dd/MM/yyyy", exactDate, 1));
 
-        }else {
+        } else {
             bi.wrc07.setEnabled(false);
             bi.wrc07.setOnTouchListener(new View.OnTouchListener() {
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
-                    Toast.makeText(v.getContext(),"Please Fill question 6 first ",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(v.getContext(), "Please Fill question 6 first ", Toast.LENGTH_SHORT).show();
                     return false;
                 }
             });

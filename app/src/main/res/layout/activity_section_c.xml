@@ -179,7 +179,7 @@
                 android:layout_marginTop="1dp"
                 android:layout_weight="1"
                 android:focusable="true"
-                android:hint="@string/bdc"
+                android:hint="@string/wrc06"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
 

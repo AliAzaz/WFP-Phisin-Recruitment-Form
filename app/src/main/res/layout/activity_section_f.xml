@@ -231,7 +231,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_weight="1"
                 android:background="@color/pink_100"
-                android:text="@string/wrf06sub1"
+                android:text="@string/wrf06a"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/colorPrimaryDark" />
 
@@ -251,7 +251,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_weight="1"
                 android:background="@color/pink_100"
-                android:text="@string/wrf06sub2"
+                android:text="@string/wrf06b"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/colorPrimaryDark" />
 
@@ -356,7 +356,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:text="@string/wrf0888" />
+                    android:text="@string/other" />
 
             </LinearLayout>
 
