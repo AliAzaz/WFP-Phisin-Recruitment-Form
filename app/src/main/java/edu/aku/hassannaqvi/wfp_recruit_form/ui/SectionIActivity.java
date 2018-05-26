@@ -780,8 +780,7 @@ public class SectionIActivity extends AppCompatActivity {
     private boolean updateDb() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-//        int updcount = db.updateSI();
-        int updcount = 1;
+        int updcount = db.updateSI();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -887,7 +886,7 @@ public class SectionIActivity extends AppCompatActivity {
         si.put("wri2006", wri2006.getText().toString());
         si.put("wri2007", wri2007.getText().toString());
 
-//        MainApp.fc.setsG(String.valueOf(si));
+        MainApp.fc.setsI(String.valueOf(si));
 
         Toast.makeText(this, "Validation Succecful", Toast.LENGTH_SHORT).show();
     }

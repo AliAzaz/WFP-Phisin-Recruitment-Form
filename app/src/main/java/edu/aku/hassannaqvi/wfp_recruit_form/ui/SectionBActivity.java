@@ -144,13 +144,13 @@ public class SectionBActivity extends AppCompatActivity {
                 : binding.wrb07e.isChecked() ? "5" : binding.wrb07f.isChecked() ? "6" : binding.wrb07g.isChecked() ? "7" : binding.wrb07h.isChecked() ? "8"
                 : binding.wrb07i.isChecked() ? "9" : binding.wrb07j.isChecked() ? "10" : binding.wrb07k.isChecked() ? "11" : "0");
 
-//        MainApp.fmc.setsB(String.valueOf(sB));
+        MainApp.fmc.setsB(String.valueOf(sB));
     }
 
     private boolean UpdateDb() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        /*long updcount = db.addFamilyMembers(MainApp.fmc);
+        long updcount = db.addFamilyMembers(MainApp.fmc);
         MainApp.fmc.set_ID(String.valueOf(updcount));
 
         if (updcount != 0) {
@@ -161,9 +161,8 @@ public class SectionBActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
+        }
 
-        return true;
     }
 
 }

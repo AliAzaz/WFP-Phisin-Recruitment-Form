@@ -1,7 +1,7 @@
 package edu.aku.hassannaqvi.wfp_recruit_form.ui;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -276,98 +276,97 @@ public class SectionlmoActivity extends AppCompatActivity {
                 : "0");
 
 
-
         JSONObject wro = new JSONObject();
 
-        
+
 //        1
         wro.put("wro01", bi.wro01a.isChecked() ? "1"
                 : bi.wro01b.isChecked() ? "2"
                 : "0");
 
         wro.put("wro01num", bi.wro01num.getText().toString());
-        wro.put("wro01s", bi.wro01s.getText().toString());        
-        
+        wro.put("wro01s", bi.wro01s.getText().toString());
+
 //        2
         wro.put("wro02", bi.wro02a.isChecked() ? "1"
                 : bi.wro01b.isChecked() ? "2"
                 : "0");
 
         wro.put("wro02num", bi.wro02num.getText().toString());
-        wro.put("wro02s", bi.wro02s.getText().toString());        
-        
+        wro.put("wro02s", bi.wro02s.getText().toString());
+
 //        3
         wro.put("wro03", bi.wro03a.isChecked() ? "1"
                 : bi.wro03b.isChecked() ? "2"
                 : "0");
 
         wro.put("wro03num", bi.wro03num.getText().toString());
-        wro.put("wro03s", bi.wro03s.getText().toString());        
-        
+        wro.put("wro03s", bi.wro03s.getText().toString());
+
 //        4
         wro.put("wro04", bi.wro04a.isChecked() ? "1"
                 : bi.wro04b.isChecked() ? "2"
                 : "0");
 
         wro.put("wro04num", bi.wro04num.getText().toString());
-        wro.put("wro04s", bi.wro04s.getText().toString());        
-        
+        wro.put("wro04s", bi.wro04s.getText().toString());
+
 //        5
         wro.put("wro05", bi.wro05a.isChecked() ? "1"
                 : bi.wro05b.isChecked() ? "2"
                 : "0");
 
         wro.put("wro05num", bi.wro05num.getText().toString());
-        wro.put("wro05s", bi.wro05s.getText().toString());        
-        
+        wro.put("wro05s", bi.wro05s.getText().toString());
+
 //        6
         wro.put("wro06", bi.wro06a.isChecked() ? "1"
                 : bi.wro06b.isChecked() ? "2"
                 : "0");
 
         wro.put("wro06num", bi.wro06num.getText().toString());
-        wro.put("wro06s", bi.wro06s.getText().toString());        
-        
+        wro.put("wro06s", bi.wro06s.getText().toString());
+
 //        7
         wro.put("wro07", bi.wro07a.isChecked() ? "1"
                 : bi.wro07b.isChecked() ? "2"
                 : "0");
 
         wro.put("wro07num", bi.wro07num.getText().toString());
-        wro.put("wro07s", bi.wro07s.getText().toString());        
-        
+        wro.put("wro07s", bi.wro07s.getText().toString());
+
 //        8
         wro.put("wro08", bi.wro08a.isChecked() ? "1"
                 : bi.wro08b.isChecked() ? "2"
                 : "0");
 
         wro.put("wro08num", bi.wro08num.getText().toString());
-        wro.put("wro08s", bi.wro08s.getText().toString());        
-        
+        wro.put("wro08s", bi.wro08s.getText().toString());
+
 //        9
         wro.put("wro09", bi.wro09a.isChecked() ? "1"
                 : bi.wro09b.isChecked() ? "2"
                 : "0");
 
         wro.put("wro01num", bi.wro09num.getText().toString());
-        wro.put("wro09s", bi.wro09s.getText().toString());        
-        
+        wro.put("wro09s", bi.wro09s.getText().toString());
+
 //        10
         wro.put("wro10", bi.wro10a.isChecked() ? "1"
                 : bi.wro10b.isChecked() ? "2"
                 : "0");
 
         wro.put("wro01num", bi.wro10num.getText().toString());
-        wro.put("wro10s", bi.wro10s.getText().toString());        
-        
+        wro.put("wro10s", bi.wro10s.getText().toString());
+
 //        11
         wro.put("wro11", bi.wro11a.isChecked() ? "1"
                 : bi.wro11b.isChecked() ? "2"
                 : "0");
 
         wro.put("wro11num", bi.wro11num.getText().toString());
-        wro.put("wro11s", bi.wro11s.getText().toString());        
-        
+        wro.put("wro11s", bi.wro11s.getText().toString());
+
 //        12
         wro.put("wro12", bi.wro12a.isChecked() ? "1"
                 : bi.wro12b.isChecked() ? "2"
@@ -385,21 +384,7 @@ public class SectionlmoActivity extends AppCompatActivity {
     }
 
     public void BtnEnd() {
-
-     /*
-        if (formValidation()) {
-            try {
-                SaveDraft();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            if (UpdateDB()) {
-                finish();
-                startActivity(new Intent(this, EndingActivity.class));
-            } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-            }
-        }*/
+        MainApp.endActivity(this, this);
     }
 
     public void BtnContinue() {

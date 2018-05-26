@@ -2,8 +2,8 @@ package edu.aku.hassannaqvi.wfp_recruit_form.ui;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -426,31 +426,13 @@ public class SectionDActivity extends AppCompatActivity {
 
         sD.put("wrd1988x", bi.wrd1988x.getText().toString());
 
-        MainApp.fc.setsD1(String.valueOf(sD));
+        MainApp.fc.setsD(String.valueOf(sD));
 
     }
 
 
     public void BtnEnd() {
-
-        Toast.makeText(this, "Processing End Section", Toast.LENGTH_SHORT).show();
-        //if (formValidation()) {
-        try {
-            SaveDraft();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        if (UpdateDB()) {
-            Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
-
-            finish();
-
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
-
-        } else {
-            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-        }
-        //}
+        MainApp.endActivity(this, this);
     }
 
     public void BtnContinue() {
@@ -482,7 +464,7 @@ public class SectionDActivity extends AppCompatActivity {
         //Long rowId;
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSD1();
+        int updcount = db.updateSD();
 
         if (updcount == 1) {
             //Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();

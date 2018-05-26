@@ -2,14 +2,14 @@ package edu.aku.hassannaqvi.wfp_recruit_form.ui;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import android.view.View;
-import android.widget.RadioGroup;
 
 import edu.aku.hassannaqvi.wfp_recruit_form.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
@@ -522,30 +522,11 @@ public class SectionHActivity extends AppCompatActivity {
 
         sH.put("wrh2488x", bi.wrh2488x.getText().toString());
 
-
         MainApp.fc.setsH(String.valueOf(sH));
     }
 
     public void BtnEnd() {
-
-        Toast.makeText(this, "Processing End Section", Toast.LENGTH_SHORT).show();
-        //if (formValidation()) {
-        try {
-            SaveDraft();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        if (UpdateDB()) {
-            Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
-
-            finish();
-
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
-
-        } else {
-            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-        }
-        //}
+        MainApp.endActivity(this, this);
     }
 
     public void BtnContinue() {
@@ -563,7 +544,6 @@ public class SectionHActivity extends AppCompatActivity {
                 finish();
 
                 startActivity(new Intent(this, SectionIActivity.class));
-                //startActivity(new Intent(this, MainActivity.class));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -577,10 +557,9 @@ public class SectionHActivity extends AppCompatActivity {
         //Long rowId;
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSB2();
+        int updcount = db.updateSH();
 
         if (updcount == 1) {
-            //Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();

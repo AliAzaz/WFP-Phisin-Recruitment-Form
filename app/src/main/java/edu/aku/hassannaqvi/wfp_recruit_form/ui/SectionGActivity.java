@@ -1,9 +1,9 @@
 package edu.aku.hassannaqvi.wfp_recruit_form.ui;
 
-import android.app.Activity;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -11,7 +11,6 @@ import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.wfp_recruit_form.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
-import edu.aku.hassannaqvi.wfp_recruit_form.databinding.ActivitySectionBBinding;
 import edu.aku.hassannaqvi.wfp_recruit_form.validation.validatorClass;
 
 public class SectionGActivity extends AppCompatActivity {
@@ -182,10 +181,25 @@ public class SectionGActivity extends AppCompatActivity {
         MainApp.fc.setsG(String.valueOf(sG));
     }
 
+    private boolean UpdateDB() {
+        DatabaseHelper db = new DatabaseHelper(this);
+
+        int updcount = db.updateSG();
+
+        if (updcount == 1) {
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
 
     public void BtnEnd() {
+        MainApp.endActivity(this, this);
+    }
 
-     /*
+    public void BtnContinue() {
         if (formValidation()) {
             try {
                 SaveDraft();
@@ -195,26 +209,12 @@ public class SectionGActivity extends AppCompatActivity {
             if (UpdateDB()) {
                 finish();
                 startActivity(new Intent(this, EndingActivity.class));
-            } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-            }
-        }*/
-    }
-
-    public void BtnContinue() {
-       /* if (formValidation()) {
-            try {
-                SaveDraft();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            if (UpdateDB()) {
-                finish();
-                startActivity(new Intent(this, EndingActivity.class));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }*/
+        }
     }
+
+
 }

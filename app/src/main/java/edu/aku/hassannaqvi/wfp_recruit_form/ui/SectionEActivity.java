@@ -108,14 +108,13 @@ public class SectionEActivity extends AppCompatActivity {
         sE.put("wre0202", wre0202.getText().toString());
         sE.put("wre03", wre03.getText().toString());
 
-//        MainApp.fc.setsE(String.valueOf(sE));
+        MainApp.fc.setsE(String.valueOf(sE));
     }
 
     private boolean UpdateDb() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-//        int updcount = db.updateSE();
-        int updcount = 1;
+        int updcount = db.updateSE();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();

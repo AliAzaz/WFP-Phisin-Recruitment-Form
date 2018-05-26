@@ -1017,7 +1017,7 @@ public class SectionKActivity extends AppCompatActivity {
                 : wrk09b04.isChecked() ? "4" : wrk09b05.isChecked() ? "5" : wrk09b06.isChecked() ? "6" : wrk09b07.isChecked() ? "7"
                 : wrk09b08.isChecked() ? "8" : wrk09b09.isChecked() ? "9" : wrk09b10.isChecked() ? "10" : "0");
 
-//        MainApp.fc.setsM(String.valueOf(sm));
+        MainApp.fc.setsK(String.valueOf(sk));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
@@ -1533,8 +1533,7 @@ public class SectionKActivity extends AppCompatActivity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-//        int updcount = db.updateSK();
-        int updcount = 1;
+        int updcount = db.updateSK();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
