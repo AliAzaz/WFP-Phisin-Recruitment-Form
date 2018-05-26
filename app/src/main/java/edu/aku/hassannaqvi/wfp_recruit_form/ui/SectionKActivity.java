@@ -927,8 +927,6 @@ public class SectionKActivity extends AppCompatActivity {
 
     @OnClick(R.id.btnEnd)
     void onBtnEndClick() {
-
-        finish();
         MainApp.endActivity(this, this);
 
     }

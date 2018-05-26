@@ -188,7 +188,6 @@ public class SectionJActivity extends AppCompatActivity {
 
     @OnClick(R.id.btnEnd)
     void onBtnEndClick() {
-        finish();
         MainApp.endActivity(this, this);
     }
 

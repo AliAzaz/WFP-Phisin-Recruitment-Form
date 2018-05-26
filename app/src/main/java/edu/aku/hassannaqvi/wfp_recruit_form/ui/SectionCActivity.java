@@ -1,21 +1,28 @@
 package edu.aku.hassannaqvi.wfp_recruit_form.ui;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import edu.aku.hassannaqvi.wfp_recruit_form.R;
+import edu.aku.hassannaqvi.wfp_recruit_form.core.DatabaseHelper;
+import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
 import edu.aku.hassannaqvi.wfp_recruit_form.databinding.ActivitySectionCBinding;
 import edu.aku.hassannaqvi.wfp_recruit_form.validation.validatorClass;
 
 public class SectionCActivity extends AppCompatActivity {
-ActivitySectionCBinding bi;
+    ActivitySectionCBinding bi;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_section_c);
-        bi = DataBindingUtil.setContentView(this,R.layout.activity_section_c);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_c);
         bi.setCallback(this);
         setDateManager();
 
@@ -27,9 +34,9 @@ ActivitySectionCBinding bi;
         bi.wrc08.setManager(getSupportFragmentManager());
     }
 
-    private boolean formValidation(){
+    private boolean ValidateForm() {
 
-        if (!validatorClass.EmptyTextBox(this, bi.wrc01, getString(R.string.wrc01))) {
+        if (!validatorClass.EmptySpinner(this, bi.wrc01, getString(R.string.wrc01))) {
             return false;
         }
         if (!validatorClass.EmptyTextBox(this, bi.wrc02, getString(R.string.wrc02))) {
@@ -41,31 +48,30 @@ ActivitySectionCBinding bi;
         if (!validatorClass.EmptyTextBox(this, bi.wrc04, getString(R.string.wrc04))) {
             return false;
         }
-        if (!validatorClass.RangeTextBox(this, bi.wrc04,14,49, getString(R.string.wrc04)," years")) {
+        if (!validatorClass.RangeTextBox(this, bi.wrc04, 14, 49, getString(R.string.wrc04), " years")) {
             return false;
         }
 
-        if (!validatorClass.EmptyTextBox(this, bi.wrc05m, getString(R.string.wrc05)+" "+getString(android.R.string.months))) {
+        if (!validatorClass.EmptyTextBox(this, bi.wrc05m, getString(R.string.wrc05) + " " + getString(android.R.string.months))) {
             return false;
         }
-        if (!validatorClass.RangeTextBox(this, bi.wrc05m,0,3, getString(R.string.wrc05)," months")) {
+        if (!validatorClass.RangeTextBox(this, bi.wrc05m, 0, 3, getString(R.string.wrc05), " months")) {
             return false;
         }
-        if (!validatorClass.EmptyTextBox(this, bi.wrc05d, getString(R.string.wrc05)+" "+getString(android.R.string.days))) {
+        if (!validatorClass.EmptyTextBox(this, bi.wrc05d, getString(R.string.wrc05) + " " + getString(android.R.string.days))) {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bi.wrc05d,0,29, getString(R.string.wrc05)," days")) {
+        if (!validatorClass.RangeTextBox(this, bi.wrc05d, 0, 29, getString(R.string.wrc05), " days")) {
             return false;
         }
-        if ((bi.wrc05m.getText().toString().equals("0")||bi.wrc05m.getText().toString().equals("00"))&&(bi.wrc05d.getText().toString().equals("0")||bi.wrc05d.getText().toString().equals("00"))){
+        if ((bi.wrc05m.getText().toString().equals("0") || bi.wrc05m.getText().toString().equals("00")) && (bi.wrc05d.getText().toString().equals("0") || bi.wrc05d.getText().toString().equals("00"))) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.wrc05), Toast.LENGTH_SHORT).show();
             bi.wrc05m.setError(" Month and Days cannot be zero at the same time ");    // Set Error on last radio button
             bi.wrc05d.setError(" Month and Days cannot be zero at the same time ");    // Set Error on last radio button
             bi.wrc05m.requestFocus();
             return false;
-        }
-        else{
+        } else {
             bi.wrc05m.setError(null);
             bi.wrc05d.setError(null);
             bi.wrc05m.clearFocus();
@@ -81,42 +87,60 @@ ActivitySectionCBinding bi;
             return false;
         }
 
-return true;
+        return true;
     }
-    public void BtnEnd() {
 
-     /*
-        if (formValidation()) {
-            try {
-                SaveDraft();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            if (UpdateDB()) {
-                finish();
-                startActivity(new Intent(this, EndingActivity.class));
-            } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-            }
-        }*/
+    public void BtnEnd() {
+        MainApp.endActivity(this, this);
     }
 
     public void BtnContinue() {
-       /* if (formValidation()) {
+        if (ValidateForm()) {
             try {
-                SaveDraft();
+                SaveDrafts();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            if (UpdateDB()) {
+            if (UpdateDb()) {
                 finish();
-                startActivity(new Intent(this, EndingActivity.class));
+                startActivity(new Intent(this, SectionCActivity.class));
 
             } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
             }
-        }*/
+        }
     }
 
+    private void SaveDrafts() throws JSONException {
+
+        JSONObject sC = new JSONObject();
+        sC.put("wrc01", bi.wrc01.getSelectedItem().toString().toUpperCase());
+        sC.put("wrc02", bi.wrc02.getText().toString());
+        sC.put("wrc03", bi.wrc02.getText().toString());
+        sC.put("wrc04", bi.wrc02.getText().toString());
+        sC.put("wrc05m", bi.wrc05m.getText().toString());
+        sC.put("wrc05d", bi.wrc05d.getText().toString());
+        sC.put("wrc06", bi.wrc06.getText().toString());
+        sC.put("wrc07", bi.wrc07.getText().toString());
+        sC.put("wrc08", bi.wrc08.getText().toString());
+
+//        MainApp.fc.setsC(String.valueOf(sC));
+
+    }
+
+    private boolean UpdateDb() {
+        DatabaseHelper db = new DatabaseHelper(this);
+
+//        int updcount = db.updateSC();
+        int updcount = 1;
+
+        if (updcount == 1) {
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
 
 }

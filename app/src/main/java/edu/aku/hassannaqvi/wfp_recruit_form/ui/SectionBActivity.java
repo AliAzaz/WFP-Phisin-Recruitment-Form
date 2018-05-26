@@ -28,10 +28,16 @@ public class SectionBActivity extends AppCompatActivity {
         binding.setCallback(this);
 
         this.setTitle("Section B");
+        setupViews();
+        skipPatterns();
     }
 
-    public void skipPatterns(){
+    public void skipPatterns() {
 
+    }
+
+    public void setupViews() {
+        binding.wrb03.setManager(getSupportFragmentManager());
     }
 
     public void BtnAddMember() {
@@ -69,7 +75,6 @@ public class SectionBActivity extends AppCompatActivity {
     }
 
     public void BtnEnd() {
-        finish();
         MainApp.endActivity(this, this);
     }
 
