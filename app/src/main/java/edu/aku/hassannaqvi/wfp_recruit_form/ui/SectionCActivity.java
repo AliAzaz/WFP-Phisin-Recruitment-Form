@@ -26,6 +26,8 @@ import edu.aku.hassannaqvi.wfp_recruit_form.validation.validatorClass;
 public class SectionCActivity extends AppCompatActivity {
     ActivitySectionCBinding bi;
 String currentDate;
+String dtToday;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +35,8 @@ String currentDate;
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_c);
         bi.setCallback(this);
         setDateManager();
+        dtToday = new SimpleDateFormat("dd-MM-yyyy HH:mm").format(new Date().getTime());
+
         currentDate = new SimpleDateFormat("dd/MM/yyyy").format(new Date().getTime());
 
     }
@@ -40,7 +44,6 @@ String currentDate;
     private void setDateManager() {
         bi.wrc06.setManager(getSupportFragmentManager());
         bi.wrc07.setManager(getSupportFragmentManager());
-        bi.wrc08.setManager(getSupportFragmentManager());
         bi.wrc06.setMinDate(DateUtils.getMonthsBack("dd/MM/yyyy",-4));
         bi.wrc06.setMaxDate(currentDate);
         if (!TextUtils.isEmpty(bi.wrc06.getText().toString())){
@@ -110,10 +113,6 @@ String currentDate;
         if (!validatorClass.EmptyTextBox(this, bi.wrc07, getString(R.string.wrc07))) {
             return false;
         }
-        if (!validatorClass.EmptyTextBox(this, bi.wrc08, getString(R.string.wrc08))) {
-            return false;
-        }
-
         return true;
     }
 
@@ -149,7 +148,7 @@ String currentDate;
         sC.put("wrc05d", bi.wrc05d.getText().toString());
         sC.put("wrc06", bi.wrc06.getText().toString());
         sC.put("wrc07", bi.wrc07.getText().toString());
-        sC.put("wrc08", bi.wrc08.getText().toString());
+        sC.put("wrc08", dtToday);
 
         MainApp.fc.setsC(String.valueOf(sC));
 
@@ -158,7 +157,7 @@ String currentDate;
     private boolean UpdateDb() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSC();
+        int updcount = db.updateSLMO();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();

@@ -3,11 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="edu.aku.hassannaqvi.wfp_recruit_form.ui.SectionlmoActivity">
-
     <data>
-
         <import type="android.view.View" />
-
         <variable
             name="callback"
             type="edu.aku.hassannaqvi.wfp_recruit_form.ui.SectionlmoActivity" />

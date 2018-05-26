@@ -1,11 +1,14 @@
 package edu.aku.hassannaqvi.wfp_recruit_form.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import edu.aku.hassannaqvi.wfp_recruit_form.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
 import edu.aku.hassannaqvi.wfp_recruit_form.validation.validatorClass;
 
@@ -218,8 +221,8 @@ public class SectionlmoActivity extends AppCompatActivity {
     }
 
     private void SaveDraft() throws JSONException {
-        JSONObject wrl = new JSONObject();
-        wrl.put("wrl01", bi.wrl01b.isChecked() ? "1"
+        JSONObject wrlmo = new JSONObject();
+        wrlmo.put("wrl01", bi.wrl01b.isChecked() ? "1"
                 : bi.wrl01c.isChecked() ? "2"
                 : bi.wrl01d.isChecked() ? "3"
                 : bi.wrl01e.isChecked() ? "4"
@@ -227,7 +230,7 @@ public class SectionlmoActivity extends AppCompatActivity {
                 : bi.wrl01g.isChecked() ? "6"
                 : bi.wrl01h.isChecked() ? "7"
                 : "0");
-        wrl.put("wrl02", bi.wrl02b.isChecked() ? "1"
+        wrlmo.put("wrl02", bi.wrl02b.isChecked() ? "1"
                 : bi.wrl02c.isChecked() ? "2"
                 : bi.wrl02d.isChecked() ? "3"
                 : bi.wrl02e.isChecked() ? "4"
@@ -235,7 +238,7 @@ public class SectionlmoActivity extends AppCompatActivity {
                 : bi.wrl02g.isChecked() ? "6"
                 : bi.wrl02h.isChecked() ? "7"
                 : "0");
-        wrl.put("wrl03", bi.wrl03b.isChecked() ? "1"
+        wrlmo.put("wrl03", bi.wrl03b.isChecked() ? "1"
                 : bi.wrl03c.isChecked() ? "2"
                 : bi.wrl03d.isChecked() ? "3"
                 : bi.wrl03e.isChecked() ? "4"
@@ -243,7 +246,7 @@ public class SectionlmoActivity extends AppCompatActivity {
                 : bi.wrl03g.isChecked() ? "6"
                 : bi.wrl03h.isChecked() ? "7"
                 : "0");
-        wrl.put("wrl04", bi.wrl04b.isChecked() ? "1"
+        wrlmo.put("wrl04", bi.wrl04b.isChecked() ? "1"
                 : bi.wrl04c.isChecked() ? "2"
                 : bi.wrl04d.isChecked() ? "3"
                 : bi.wrl04e.isChecked() ? "4"
@@ -251,7 +254,7 @@ public class SectionlmoActivity extends AppCompatActivity {
                 : bi.wrl04g.isChecked() ? "6"
                 : bi.wrl04h.isChecked() ? "7"
                 : "0");
-        wrl.put("wrl05", bi.wrl05b.isChecked() ? "1"
+        wrlmo.put("wrl05", bi.wrl05b.isChecked() ? "1"
                 : bi.wrl05c.isChecked() ? "2"
                 : bi.wrl05d.isChecked() ? "3"
                 : bi.wrl05e.isChecked() ? "4"
@@ -261,125 +264,123 @@ public class SectionlmoActivity extends AppCompatActivity {
                 : "0");
 
 
-        JSONObject wrm = new JSONObject();
-        wrm.put("wrm01", bi.wrm01b.isChecked() ? "1"
+
+        wrlmo.put("wrm01", bi.wrm01b.isChecked() ? "1"
                 : bi.wrm01c.isChecked() ? "2"
                 : bi.wrm01d.isChecked() ? "3"
                 : "0");
-        wrm.put("wrm02", bi.wrm02b.isChecked() ? "1"
+        wrlmo.put("wrm02", bi.wrm02b.isChecked() ? "1"
                 : bi.wrm02c.isChecked() ? "2"
                 : bi.wrm02d.isChecked() ? "3"
                 : "0");
-        wrm.put("wrm03", bi.wrm03b.isChecked() ? "1"
+        wrlmo.put("wrm03", bi.wrm03b.isChecked() ? "1"
                 : bi.wrm03c.isChecked() ? "2"
                 : bi.wrm03d.isChecked() ? "3"
                 : "0");
 
 
-        JSONObject wro = new JSONObject();
+
 
 
 //        1
-        wro.put("wro01", bi.wro01a.isChecked() ? "1"
+        wrlmo.put("wro01", bi.wro01a.isChecked() ? "1"
                 : bi.wro01b.isChecked() ? "2"
                 : "0");
 
-        wro.put("wro01num", bi.wro01num.getText().toString());
-        wro.put("wro01s", bi.wro01s.getText().toString());
+        wrlmo.put("wro01num", bi.wro01num.getText().toString());
+        wrlmo.put("wro01s", bi.wro01s.getText().toString());
 
 //        2
-        wro.put("wro02", bi.wro02a.isChecked() ? "1"
+        wrlmo.put("wro02", bi.wro02a.isChecked() ? "1"
                 : bi.wro01b.isChecked() ? "2"
                 : "0");
 
-        wro.put("wro02num", bi.wro02num.getText().toString());
-        wro.put("wro02s", bi.wro02s.getText().toString());
+        wrlmo.put("wro02num", bi.wro02num.getText().toString());
+        wrlmo.put("wro02s", bi.wro02s.getText().toString());
 
 //        3
-        wro.put("wro03", bi.wro03a.isChecked() ? "1"
+        wrlmo.put("wro03", bi.wro03a.isChecked() ? "1"
                 : bi.wro03b.isChecked() ? "2"
                 : "0");
 
-        wro.put("wro03num", bi.wro03num.getText().toString());
-        wro.put("wro03s", bi.wro03s.getText().toString());
+        wrlmo.put("wro03num", bi.wro03num.getText().toString());
+        wrlmo.put("wro03s", bi.wro03s.getText().toString());
 
 //        4
-        wro.put("wro04", bi.wro04a.isChecked() ? "1"
+        wrlmo.put("wro04", bi.wro04a.isChecked() ? "1"
                 : bi.wro04b.isChecked() ? "2"
                 : "0");
 
-        wro.put("wro04num", bi.wro04num.getText().toString());
-        wro.put("wro04s", bi.wro04s.getText().toString());
+        wrlmo.put("wro04num", bi.wro04num.getText().toString());
+        wrlmo.put("wro04s", bi.wro04s.getText().toString());
 
 //        5
-        wro.put("wro05", bi.wro05a.isChecked() ? "1"
+        wrlmo.put("wro05", bi.wro05a.isChecked() ? "1"
                 : bi.wro05b.isChecked() ? "2"
                 : "0");
 
-        wro.put("wro05num", bi.wro05num.getText().toString());
-        wro.put("wro05s", bi.wro05s.getText().toString());
+        wrlmo.put("wro05num", bi.wro05num.getText().toString());
+        wrlmo.put("wro05s", bi.wro05s.getText().toString());
 
 //        6
-        wro.put("wro06", bi.wro06a.isChecked() ? "1"
+        wrlmo.put("wro06", bi.wro06a.isChecked() ? "1"
                 : bi.wro06b.isChecked() ? "2"
                 : "0");
 
-        wro.put("wro06num", bi.wro06num.getText().toString());
-        wro.put("wro06s", bi.wro06s.getText().toString());
+        wrlmo.put("wro06num", bi.wro06num.getText().toString());
+        wrlmo.put("wro06s", bi.wro06s.getText().toString());
 
 //        7
-        wro.put("wro07", bi.wro07a.isChecked() ? "1"
+        wrlmo.put("wro07", bi.wro07a.isChecked() ? "1"
                 : bi.wro07b.isChecked() ? "2"
                 : "0");
 
-        wro.put("wro07num", bi.wro07num.getText().toString());
-        wro.put("wro07s", bi.wro07s.getText().toString());
+        wrlmo.put("wro07num", bi.wro07num.getText().toString());
+        wrlmo.put("wro07s", bi.wro07s.getText().toString());
 
 //        8
-        wro.put("wro08", bi.wro08a.isChecked() ? "1"
+        wrlmo.put("wro08", bi.wro08a.isChecked() ? "1"
                 : bi.wro08b.isChecked() ? "2"
                 : "0");
 
-        wro.put("wro08num", bi.wro08num.getText().toString());
-        wro.put("wro08s", bi.wro08s.getText().toString());
+        wrlmo.put("wro08num", bi.wro08num.getText().toString());
+        wrlmo.put("wro08s", bi.wro08s.getText().toString());
 
 //        9
-        wro.put("wro09", bi.wro09a.isChecked() ? "1"
+        wrlmo.put("wro09", bi.wro09a.isChecked() ? "1"
                 : bi.wro09b.isChecked() ? "2"
                 : "0");
 
-        wro.put("wro01num", bi.wro09num.getText().toString());
-        wro.put("wro09s", bi.wro09s.getText().toString());
+        wrlmo.put("wro01num", bi.wro09num.getText().toString());
+        wrlmo.put("wro09s", bi.wro09s.getText().toString());
 
 //        10
-        wro.put("wro10", bi.wro10a.isChecked() ? "1"
+        wrlmo.put("wro10", bi.wro10a.isChecked() ? "1"
                 : bi.wro10b.isChecked() ? "2"
                 : "0");
 
-        wro.put("wro01num", bi.wro10num.getText().toString());
-        wro.put("wro10s", bi.wro10s.getText().toString());
+        wrlmo.put("wro01num", bi.wro10num.getText().toString());
+        wrlmo.put("wro10s", bi.wro10s.getText().toString());
 
 //        11
-        wro.put("wro11", bi.wro11a.isChecked() ? "1"
+        wrlmo.put("wro11", bi.wro11a.isChecked() ? "1"
                 : bi.wro11b.isChecked() ? "2"
                 : "0");
 
-        wro.put("wro11num", bi.wro11num.getText().toString());
-        wro.put("wro11s", bi.wro11s.getText().toString());
+        wrlmo.put("wro11num", bi.wro11num.getText().toString());
+        wrlmo.put("wro11s", bi.wro11s.getText().toString());
 
 //        12
-        wro.put("wro12", bi.wro12a.isChecked() ? "1"
+        wrlmo.put("wro12", bi.wro12a.isChecked() ? "1"
                 : bi.wro12b.isChecked() ? "2"
                 : "0");
 
-        wro.put("wro1288", bi.wro1288x.getText().toString());
-        wro.put("wro12num", bi.wro12num.getText().toString());
-        wro.put("wro12s", bi.wro12s.getText().toString());
+        wrlmo.put("wro1288", bi.wro1288x.getText().toString());
+        wrlmo.put("wro12num", bi.wro12num.getText().toString());
+        wrlmo.put("wro12s", bi.wro12s.getText().toString());
 
 
-        MainApp.fc.setwL(String.valueOf(wrl));
-        MainApp.fc.setwM(String.valueOf(wrm));
-        MainApp.fc.setwO(String.valueOf(wro));
+        MainApp.fc.setsLMO(String.valueOf(wrlmo));
 
     }
 
@@ -388,7 +389,7 @@ public class SectionlmoActivity extends AppCompatActivity {
     }
 
     public void BtnContinue() {
-       /* if (formValidation()) {
+        if (formValidation()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -401,7 +402,25 @@ public class SectionlmoActivity extends AppCompatActivity {
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }*/
+        }
+    }
+
+    private boolean UpdateDB() {
+        DatabaseHelper db = new DatabaseHelper(this);
+
+        long updcount = db.addForm(MainApp.fmc);
+        MainApp.fmc.set_ID(String.valueOf(updcount));
+
+        if (updcount != 0) {
+            MainApp.fmc.set_UID(
+                    (MainApp.fmc.getDeviceId() + MainApp.fmc.get_ID()));
+            db.updateFamilyMemberID();
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
     }
 
 }

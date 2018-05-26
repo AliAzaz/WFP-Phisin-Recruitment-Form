@@ -203,7 +203,7 @@
                 android:hint="@string/wrc07"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
-            <!--08-->
+          <!--  &lt;!&ndash;08&ndash;&gt;
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -223,7 +223,7 @@
                 android:hint="@string/wrc08"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
-
+-->
 
             <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
             <LinearLayout
