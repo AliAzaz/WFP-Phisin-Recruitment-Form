@@ -27,7 +27,6 @@
             android:layoutDirection="ltr"
             android:orientation="vertical">
 
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -73,7 +72,6 @@
                     android:layout_weight="1"
                     android:text="@string/no" />
 
-
             </RadioGroup>
             <!--02-->
             <TextView
@@ -99,19 +97,20 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:text="@string/wrf02a" />
+
                 <RadioButton
                     android:id="@+id/wrf0299"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:text="@string/dkn" />
+
                 <RadioButton
                     android:id="@+id/wrf0288"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:text="@string/other" />
-
 
             </RadioGroup>
 
@@ -159,15 +158,16 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-            <EditText
-                android:id="@+id/wrf04"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:digits="1234567890"
-                android:hint="@string/wrf04"
-                android:inputType="number"
-                android:maxLength="1" />
+
+                <EditText
+                    android:id="@+id/wrf04"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:digits="1234567890"
+                    android:hint="@string/wrf04"
+                    android:inputType="number"
+                    android:maxLength="1" />
             </android.support.design.widget.TextInputLayout>
             <!--5-->
             <TextView
@@ -485,15 +485,16 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-            <EditText
-                android:id="@+id/wrf0902"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:digits="1234567890"
-                android:hint="@string/wrf0902"
-                android:inputType="number"
-                android:maxLength="2" />
+
+                <EditText
+                    android:id="@+id/wrf0902"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:digits="1234567890"
+                    android:hint="@string/wrf0902"
+                    android:inputType="number"
+                    android:maxLength="2" />
             </android.support.design.widget.TextInputLayout>
             <!--09.3-->
             <TextView
