@@ -15,9 +15,10 @@ import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
 import edu.aku.hassannaqvi.wfp_recruit_form.validation.validatorClass;
 import edu.aku.hassannaqvi.wfp_recruit_form.databinding.ActivitySectionlmoBinding;
 
-
 public class SectionlmoActivity extends AppCompatActivity {
-ActivitySectionlmoBinding bi;
+
+    ActivitySectionlmoBinding bi;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

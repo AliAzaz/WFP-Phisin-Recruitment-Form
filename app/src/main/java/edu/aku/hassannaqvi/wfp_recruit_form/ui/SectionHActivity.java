@@ -17,7 +17,6 @@ import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
 import edu.aku.hassannaqvi.wfp_recruit_form.validation.validatorClass;
 import edu.aku.hassannaqvi.wfp_recruit_form.databinding.ActivitySectionHBinding;
 
-
 public class SectionHActivity extends AppCompatActivity {
 
     ActivitySectionHBinding bi;

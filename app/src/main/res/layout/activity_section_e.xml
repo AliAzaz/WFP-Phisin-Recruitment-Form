@@ -155,7 +155,7 @@
                     app:hintTextAppearance="@style/TextLabel2">
 
                     <android.support.design.widget.TextInputEditText
-                        android:id="@+id/wre0301"
+                        android:id="@+id/wre03"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="2dp"
