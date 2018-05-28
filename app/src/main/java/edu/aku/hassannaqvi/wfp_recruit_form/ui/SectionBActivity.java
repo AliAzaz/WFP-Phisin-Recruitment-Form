@@ -4,10 +4,17 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.View;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import edu.aku.hassannaqvi.wfp_recruit_form.R;
 import edu.aku.hassannaqvi.wfp_recruit_form.contracts.FamilyMembersContract;
@@ -34,10 +41,102 @@ public class SectionBActivity extends AppCompatActivity {
 
     public void skipPatterns() {
 
+        binding.wrb04.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (binding.wrb04.getText().toString().isEmpty()) {
+
+                    binding.wrb03.setEnabled(false);
+                    binding.wrb03.setText(null);
+
+                    binding.wrb06.clearCheck();
+                    for (int i = 0; i < binding.fldGrpwrb02.getChildCount(); i++) {
+                        View v = binding.fldGrpwrb02.getChildAt(i);
+                        if (v instanceof RadioButton) {
+                            v.setEnabled(true);
+                        }
+                    }
+
+                    binding.wrb07.clearCheck();
+                    for (int i = 0; i < binding.fldGrpwrb02.getChildCount(); i++) {
+                        View v = binding.fldGrpwrb02.getChildAt(i);
+                        if (v instanceof RadioButton) {
+                            v.setEnabled(true);
+                        }
+                    }
+
+                } else {
+                    if (Integer.valueOf(binding.wrb04.getText().toString()) >= 5) {
+                        binding.wrb03.setEnabled(false);
+                        binding.wrb03.setText(null);
+
+                        binding.wrb06.clearCheck();
+                        for (int i = 0; i < binding.fldGrpwrb02.getChildCount(); i++) {
+                            View v = binding.fldGrpwrb02.getChildAt(i);
+                            if (v instanceof RadioButton) {
+                                v.setEnabled(true);
+                            }
+                        }
+
+                        binding.wrb07.clearCheck();
+                        for (int i = 0; i < binding.fldGrpwrb02.getChildCount(); i++) {
+                            View v = binding.fldGrpwrb02.getChildAt(i);
+                            if (v instanceof RadioButton) {
+                                v.setEnabled(true);
+                            }
+                        }
+
+                        if (Integer.valueOf(binding.wrb04.getText().toString()) > 10){
+                            binding.fldGrpwrb01.setVisibility(View.GONE);
+                            binding.wrb05.clearCheck();
+                        }
+
+                    } else {
+                        binding.wrb03.setEnabled(true);
+
+                        binding.fldGrpwrb01.setVisibility(View.GONE);
+                        binding.wrb05.clearCheck();
+
+                        binding.wrb06.clearCheck();
+                        for (int i = 0; i < binding.fldGrpwrb02.getChildCount(); i++) {
+                            View v = binding.fldGrpwrb02.getChildAt(i);
+                            if (v instanceof RadioButton) {
+                                v.setEnabled(false);
+                            }
+                        }
+                        binding.wrb06a.setChecked(true);
+
+                        binding.wrb07.clearCheck();
+                        for (int i = 0; i < binding.fldGrpwrb03.getChildCount(); i++) {
+                            View v = binding.fldGrpwrb03.getChildAt(i);
+                            if (v instanceof RadioButton) {
+                                v.setEnabled(false);
+                            }
+                        }
+                        binding.wrb07a.setChecked(true);
+                    }
+
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
     }
 
     public void setupViews() {
         binding.wrb03.setManager(getSupportFragmentManager());
+        binding.wrb03.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis()));
+        binding.wrb03.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() + ((MainApp.MILLISECONDS_IN_5Years))));
     }
 
     public void BtnAddMember() {
