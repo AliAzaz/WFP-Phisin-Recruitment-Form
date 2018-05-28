@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="edu.aku.hassannaqvi.wfp_recruit_form.ui.SectionFActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -12,7 +11,27 @@
             name="callback"
             type="edu.aku.hassannaqvi.wfp_recruit_form.ui.SectionFActivity" />
     </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".ui.SectionFActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="2dp"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:text="@string/wrfheading"
+        android:textColor="@color/colorHeading"
+        android:textSize="40sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorPrimaryDark" />
     <ScrollView
         android:id="@+id/lab_scrollview"
         android:layout_width="match_parent"
@@ -24,19 +43,10 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:animateLayoutChanges="true"
-            android:layoutDirection="ltr"
+            android:layoutDirection="rtl"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="2dp"
-                android:background="@color/colorPrimaryDark"
-                android:gravity="center"
-                android:text="@string/wrfheading"
-                android:textColor="@color/colorHeading"
-                android:textSize="40sp" />
+
             <!--01-->
             <TextView
                 android:layout_width="match_parent"
@@ -73,7 +83,15 @@
                     android:text="@string/no" />
 
             </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/fldGrpwrf01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
             <!--02-->
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -301,6 +319,12 @@
                     android:text="@string/no" />
 
             </RadioGroup>
+                <LinearLayout
+                    android:id="@+id/fldGrpwrf07"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
             <!--08-->
             <TextView
                 android:layout_width="match_parent"
@@ -370,7 +394,9 @@
                 android:inputType="textCapWords"
                 android:text='@{wrf0888.checked ? wrf0888x.getText.toString : ""}'
                 android:visibility='@{wrf0888.checked ? View.VISIBLE : View.GONE}' />
-            <!--09-->
+                </LinearLayout>
+
+                <!--09-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -406,6 +432,12 @@
                     android:text="@string/no" />
 
             </RadioGroup>
+                <LinearLayout
+                    android:id="@+id/fldGrpwrf09"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
             <!--09.1-->
             <TextView
                 android:layout_width="match_parent"
@@ -562,6 +594,8 @@
                 android:inputType="textCapWords"
                 android:text='@{wrf090388.checked ? wrf090388x.getText.toString : ""}'
                 android:visibility='@{wrf090388.checked ? View.VISIBLE : View.GONE}' />
+            </LinearLayout>
+            </LinearLayout>
 
             <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
             <LinearLayout
@@ -597,4 +631,5 @@
 
         </LinearLayout>
     </ScrollView>
+    </LinearLayout>
 </layout>

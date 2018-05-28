@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
@@ -54,14 +56,40 @@ public class SectionCActivity extends AppCompatActivity {
 
         } else {
             bi.wrc07.setEnabled(false);
-            bi.wrc07.setOnTouchListener(new View.OnTouchListener() {
+           /* bi.wrc07.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public boolean onTouch(View v, MotionEvent event) {
+                public void onClick(View v) {
                     Toast.makeText(v.getContext(), "Please Fill question 6 first ", Toast.LENGTH_SHORT).show();
-                    return false;
                 }
-            });
+            });*/
         }
+        bi.wrc06.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (!TextUtils.isEmpty(bi.wrc06.getText().toString())) {
+                    bi.wrc07.setEnabled(true);
+                    String exactDate = DateUtils.addDays("dd/MM/yyyy", bi.wrc06.getText().toString(), 280);
+                    bi.wrc07.setMinDate(DateUtils.addSubtractMonths("dd/MM/yyyy", exactDate, -1));
+                    String exactDate1 = DateUtils.addDays("dd/MM/yyyy", bi.wrc06.getText().toString(), 280);
+                    bi.wrc07.setMaxDate(DateUtils.addSubtractMonths("dd/MM/yyyy", exactDate1, 1));
+
+                } else {
+                    bi.wrc07.setEnabled(false);
+                    Toast.makeText(getApplicationContext(), "Please Fill question 6 first ", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
     }
 
     private boolean ValidateForm() {

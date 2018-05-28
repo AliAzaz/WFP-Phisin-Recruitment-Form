@@ -4,16 +4,22 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.zip.GZIPOutputStream;
 
 import edu.aku.hassannaqvi.wfp_recruit_form.R;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
 import edu.aku.hassannaqvi.wfp_recruit_form.validation.validatorClass;
 import edu.aku.hassannaqvi.wfp_recruit_form.databinding.ActivitySectionFBinding;
+
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
 
 public class SectionFActivity extends AppCompatActivity {
 
@@ -28,6 +34,86 @@ public class SectionFActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_f);
         db = new DatabaseHelper(this);
         bi.setCallback(this);
+        setUpActivity();
+    }
+
+    private void setUpActivity() {
+        bi.wrf01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(checkedId == R.id.wrf01b){
+                    bi.fldGrpwrf01.setVisibility(GONE);
+                    bi.wrf02.clearCheck();
+                    bi.wrf0288x.setText(null);
+                    bi.wrf03.setText(null);
+                    bi.wrf04.setText(null);
+                    bi.wrf05d.setText(null);
+                    bi.wrf05s.setText(null);
+                    bi.wrf06a.setText(null);
+                    bi.wrf06b.setText(null);
+                    bi.wrf07.clearCheck();
+                    bi.wrf08a.setChecked(false);
+                    bi.wrf08b.setChecked(false);
+                    bi.wrf08c.setChecked(false);
+                    bi.wrf08a.setChecked(false);
+                    bi.wrf0888.setChecked(false);
+                    bi.wrf0888x.setText(null);
+                    bi.wrf09.clearCheck();
+                    bi.wrf0901a.setChecked(false);
+                    bi.wrf0901b.setChecked(false);
+                    bi.wrf0901c.setChecked(false);
+                    bi.wrf090188.setChecked(false);
+                    bi.wrf090188x.setText(null);
+                    bi.wrf0902.setText(null);
+                    bi.wrf0903a.setChecked(false);
+                    bi.wrf0903b.setChecked(false);
+                    bi.wrf0903c.setChecked(false);
+                    bi.wrf090388.setChecked(false);
+                    bi.wrf090399.setChecked(false);
+                    bi.wrf090388x.setText(null);
+                }else {
+                    bi.fldGrpwrf01.setVisibility(VISIBLE);
+                }
+            }
+        });
+        bi.wrf07.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.wrf07b) {
+                    bi.fldGrpwrf07.setVisibility(GONE);
+                    bi.wrf08a.setChecked(false);
+                    bi.wrf08b.setChecked(false);
+                    bi.wrf08c.setChecked(false);
+                    bi.wrf08a.setChecked(false);
+                    bi.wrf0888.setChecked(false);
+                    bi.wrf0888x.setText(null);
+                }else {
+                    bi.fldGrpwrf07.setVisibility(VISIBLE);
+                }
+            }
+        });
+        bi.wrf09.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.wrf09b) {
+                    bi.fldGrpwrf09.setVisibility(GONE);
+                    bi.wrf0901a.setChecked(false);
+                    bi.wrf0901b.setChecked(false);
+                    bi.wrf0901c.setChecked(false);
+                    bi.wrf090188.setChecked(false);
+                    bi.wrf090188x.setText(null);
+                    bi.wrf0902.setText(null);
+                    bi.wrf0903a.setChecked(false);
+                    bi.wrf0903b.setChecked(false);
+                    bi.wrf0903c.setChecked(false);
+                    bi.wrf090388.setChecked(false);
+                    bi.wrf090399.setChecked(false);
+                    bi.wrf090388x.setText(null);
+                }else {
+                    bi.fldGrpwrf09.setVisibility(VISIBLE);
+                }
+            }
+        });
     }
 
     private boolean formValidation() {
