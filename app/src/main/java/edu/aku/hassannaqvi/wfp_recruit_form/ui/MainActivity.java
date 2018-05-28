@@ -447,15 +447,65 @@ public class MainActivity extends Activity {
 
 //        startActivity1(SectionA1Activity.class);
 
+    }public void openB(View v) {
+
+        startActivity1(SectionBActivity.class);
+
     }
     public void openC(View v) {
 
         startActivity1(SectionCActivity.class);
 
     }
+    public void openD(View v) {
+
+        startActivity1(SectionDActivity.class);
+
+    }
+    public void openE(View v) {
+
+        startActivity1(SectionEActivity.class);
+
+    }
     public void openF(View v) {
 
         startActivity1(SectionFActivity.class);
+
+    }
+
+    public void openG(View v) {
+
+        startActivity1(SectionGActivity.class);
+
+    }
+
+    public void openH(View v) {
+
+        startActivity1(SectionHActivity.class);
+
+    }
+
+    public void openI(View v) {
+
+        startActivity1(SectionIActivity.class);
+
+    }
+
+    public void openj(View v) {
+
+        startActivity1(SectionJActivity.class);
+
+    }
+
+    public void openK(View v) {
+
+        startActivity1(SectionKActivity.class);
+
+    }
+
+    public void openLMO(View v) {
+
+        startActivity1(SectionlmoActivity.class);
 
     }
 

@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="edu.aku.hassannaqvi.wfp_recruit_form.ui.SectionCActivity">
+    >
 
     <data>
 
@@ -12,7 +12,27 @@
             name="callback"
             type="edu.aku.hassannaqvi.wfp_recruit_form.ui.SectionCActivity" />
     </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".ui.SectionCActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="2dp"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:text="@string/wrcheading"
+        android:textColor="@color/colorHeading"
+        android:textSize="40sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorPrimaryDark" />
     <ScrollView
         android:id="@+id/lab_scrollview"
         android:layout_width="match_parent"
@@ -24,19 +44,10 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:animateLayoutChanges="true"
-            android:layoutDirection="ltr"
+            android:layoutDirection="rtl"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="2dp"
-                android:background="@color/colorPrimaryDark"
-                android:gravity="center"
-                android:text="@string/wrcheading"
-                android:textColor="@color/colorHeading"
-                android:textSize="40sp" />
+
             <!--01-->
             <TextView
                 android:layout_width="match_parent"
@@ -181,7 +192,7 @@
                 android:focusable="true"
                 android:hint="@string/wrc06"
                 android:textColor="@android:color/black"
-                app:dateFormat="dd-MM-yyyy" />
+                app:dateFormat="dd/MM/yyyy" />
 
             <!--07-->
             <TextView
@@ -202,7 +213,7 @@
                 android:focusable="true"
                 android:hint="@string/wrc07"
                 android:textColor="@android:color/black"
-                app:dateFormat="dd-MM-yyyy" />
+                app:dateFormat="dd/MM/yyyy" />
           <!--  &lt;!&ndash;08&ndash;&gt;
             <TextView
                 android:layout_width="match_parent"
@@ -259,4 +270,5 @@
 
         </LinearLayout>
     </ScrollView>
+    </LinearLayout>
 </layout>

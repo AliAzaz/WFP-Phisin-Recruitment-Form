@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.SectionHActivity">
+    >
 
     <data>
 
@@ -12,7 +12,27 @@
             name="callback"
             type="edu.aku.hassannaqvi.wfp_recruit_form.ui.SectionHActivity" />
     </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".ui.SectionHActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="2dp"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:text="@string/wrhheading"
+        android:textColor="@color/colorHeading"
+        android:textSize="40sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorPrimaryDark" />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -20,23 +40,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
             android:animateLayoutChanges="true"
-            android:layoutDirection="ltr"
+            android:layoutDirection="rtl"
             android:orientation="vertical">
 
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="2dp"
-                android:background="@color/colorPrimaryDark"
-                android:gravity="center"
-                android:text="@string/wrhheading"
-                android:textColor="@color/colorHeading"
-                android:textSize="40sp" />
             <!--Vitamin A-->
 
             <!--01-->
@@ -1833,4 +1840,5 @@
 
         </LinearLayout>
     </ScrollView>
+    </LinearLayout>
 </layout>

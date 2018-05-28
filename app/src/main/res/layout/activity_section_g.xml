@@ -1,79 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="edu.aku.hassannaqvi.wfp_recruit_form.ui.SectionGActivity">
-
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
-
         <import type="android.view.View" />
-
         <variable
             name="callback"
             type="edu.aku.hassannaqvi.wfp_recruit_form.ui.SectionGActivity" />
     </data>
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".ui.SectionGActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="2dp"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:text="@string/wrgheading"
+        android:textColor="@color/colorHeading"
+        android:textSize="40sp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorPrimaryDark" />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:animateLayoutChanges="true"
-            android:layoutDirection="ltr"
+            android:layoutDirection="rtl"
             android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="2dp"
-                android:background="@color/colorPrimaryDark"
-                android:gravity="center"
-                android:text="@string/wrgheading"
-                android:textColor="@color/colorHeading"
-                android:textSize="40sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="2dp"
-                android:background="@color/colorPrimaryDark"
-                android:gravity="center"
-                android:text="@string/wrgsub"
-                android:textColor="@color/colorHeading"
-                android:textSize="40sp" />
-            <!--01-->
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/wrgsub"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+            <!--01-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/wrg01"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
                 android:layout_weight="1"
                 android:background="@color/pink_100"
-                android:text="@string/wrg01"
+                android:text="@string/wrg01e"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/colorPrimaryDark" />
-
             <RadioGroup
                 android:id="@+id/wrg01"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:orientation="horizontal"
-                android:text="@string/wrg01e">
-
+                android:orientation="horizontal">
                 <RadioButton
                     android:id="@+id/wrg01a"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/yes" />
-
                 <RadioButton
                     android:id="@+id/wrg01b"
                     android:layout_width="0dp"
@@ -82,14 +84,21 @@
                     android:text="@string/no" />
             </RadioGroup>
             <!--02-->
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/wrg02"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
                 android:layout_weight="1"
                 android:background="@color/pink_100"
-                android:text="@string/wrg02"
+                android:text="@string/wrg02e"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/colorPrimaryDark" />
 
@@ -98,8 +107,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:orientation="horizontal"
-                android:text="@string/wrg02e">
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/wrg02a"
@@ -116,14 +124,20 @@
                     android:text="@string/no" />
             </RadioGroup>
             <!--03-->
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1"
-                android:background="@color/pink_100"
+                android:background="@color/colorPrimary"
                 android:text="@string/wrg03"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/pink_100"
+                android:text="@string/wrg03e"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/colorPrimaryDark" />
 
@@ -132,8 +146,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:orientation="horizontal"
-                android:text="@string/wrg03e">
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/wrg03a"
@@ -150,14 +163,20 @@
                     android:text="@string/no" />
             </RadioGroup>
             <!--04-->
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1"
-                android:background="@color/pink_100"
+                android:background="@color/colorPrimary"
                 android:text="@string/wrg04"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/pink_100"
+                android:text="@string/wrg04e"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/colorPrimaryDark" />
 
@@ -184,12 +203,18 @@
                     android:text="@string/no" />
             </RadioGroup>
             <!--05-->
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:text="@string/wrg05"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
                 android:background="@color/pink_100"
                 android:text="@string/wrg05"
                 android:textAppearance="?android:attr/textAppearanceMedium"
@@ -218,12 +243,18 @@
                     android:text="@string/no" />
             </RadioGroup>
             <!--06-->
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:text="@string/wrg06"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
                 android:background="@color/pink_100"
                 android:text="@string/wrg06"
                 android:textAppearance="?android:attr/textAppearanceMedium"
@@ -234,8 +265,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:orientation="horizontal"
-                android:text="@string/wrg06e">
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/wrg06a"
@@ -252,14 +282,20 @@
                     android:text="@string/no" />
             </RadioGroup>
             <!--07-->
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1"
-                android:background="@color/pink_100"
+                android:background="@color/colorPrimary"
                 android:text="@string/wrg07"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/pink_100"
+                android:text="@string/wrg07e"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/colorPrimaryDark" />
 
@@ -268,8 +304,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:orientation="horizontal"
-                android:text="@string/wrg07e">
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/wrg07a"
@@ -286,14 +321,20 @@
                     android:text="@string/no" />
             </RadioGroup>
             <!--08-->
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1"
-                android:background="@color/pink_100"
+                android:background="@color/colorPrimary"
                 android:text="@string/wrg08"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/pink_100"
+                android:text="@string/wrg08e"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/colorPrimaryDark" />
 
@@ -320,14 +361,20 @@
                     android:text="@string/no" />
             </RadioGroup>
             <!--09-->
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1"
-                android:background="@color/pink_100"
+                android:background="@color/colorPrimary"
                 android:text="@string/wrg09"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/pink_100"
+                android:text="@string/wrg09e"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/colorPrimaryDark" />
 
@@ -354,14 +401,20 @@
                     android:text="@string/no" />
             </RadioGroup>
             <!--10-->
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1"
-                android:background="@color/pink_100"
+                android:background="@color/colorPrimary"
                 android:text="@string/wrg10"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/pink_100"
+                android:text="@string/wrg10e"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/colorPrimaryDark" />
 
@@ -388,14 +441,20 @@
                     android:text="@string/no" />
             </RadioGroup>
             <!--11-->
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1"
-                android:background="@color/pink_100"
+                android:background="@color/colorPrimary"
                 android:text="@string/wrg11"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/pink_100"
+                android:text="@string/wrg11e"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/colorPrimaryDark" />
 
@@ -422,14 +481,20 @@
                     android:text="@string/no" />
             </RadioGroup>
             <!--12-->
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:text="@string/wrg02"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
                 android:background="@color/pink_100"
-                android:text="@string/wrg12"
+                android:text="@string/wrg12e"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/colorPrimaryDark" />
 
@@ -438,8 +503,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:orientation="horizontal"
-                android:text="@string/wrg12e">
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/wrg12a"
@@ -456,14 +520,20 @@
                     android:text="@string/no" />
             </RadioGroup>
             <!--13-->
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1"
-                android:background="@color/pink_100"
+                android:background="@color/colorPrimary"
                 android:text="@string/wrg13"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/pink_100"
+                android:text="@string/wrg13e"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/colorPrimaryDark" />
 
@@ -472,8 +542,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:orientation="horizontal"
-                android:text="@string/wrg13e">
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/wrg13a"
@@ -490,14 +559,20 @@
                     android:text="@string/no" />
             </RadioGroup>
             <!--14-->
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1"
-                android:background="@color/pink_100"
+                android:background="@color/colorPrimary"
                 android:text="@string/wrg14"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/pink_100"
+                android:text="@string/wrg14e"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/colorPrimaryDark" />
 
@@ -506,8 +581,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:orientation="horizontal"
-                android:text="@string/wrg14e">
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/wrg14a"
@@ -524,14 +598,20 @@
                     android:text="@string/no" />
             </RadioGroup>
             <!--15-->
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1"
-                android:background="@color/pink_100"
+                android:background="@color/colorPrimary"
                 android:text="@string/wrg15"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/pink_100"
+                android:text="@string/wrg15e"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/colorPrimaryDark" />
 
@@ -540,8 +620,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:orientation="horizontal"
-                android:text="@string/wrg15e">
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/wrg15a"
@@ -558,14 +637,20 @@
                     android:text="@string/no" />
             </RadioGroup>
             <!--16-->
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1"
-                android:background="@color/pink_100"
+                android:background="@color/colorPrimary"
                 android:text="@string/wrg16"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/pink_100"
+                android:text="@string/wrg16e"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/colorPrimaryDark" />
 
@@ -592,14 +677,20 @@
                     android:text="@string/no" />
             </RadioGroup>
             <!--17-->
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1"
-                android:background="@color/pink_100"
+                android:background="@color/colorPrimary"
                 android:text="@string/wrg17"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/pink_100"
+                android:text="@string/wrg17e"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/colorPrimaryDark" />
 
@@ -608,8 +699,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:orientation="horizontal"
-                android:text="@string/wrg17e">
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/wrg17a"
@@ -626,14 +716,20 @@
                     android:text="@string/no" />
             </RadioGroup>
             <!--18-->
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1"
-                android:background="@color/pink_100"
+                android:background="@color/colorPrimary"
                 android:text="@string/wrg18"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/pink_100"
+                android:text="@string/wrg18e"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/colorPrimaryDark" />
 
@@ -796,4 +892,5 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+    </LinearLayout>
 </layout>

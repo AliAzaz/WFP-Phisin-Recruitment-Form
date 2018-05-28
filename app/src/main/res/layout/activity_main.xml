@@ -110,23 +110,15 @@
                 android:onClick="@{() -> callback.openForm()}"
                 android:text="OPEN FORM" />
 
-            <Button
-                android:id="@+id/openA"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="16dp"
-                android:onClick="openA1"
-                android:text="OPEN A1" />
 
             <Button
-                android:id="@+id/openB1"
+                android:id="@+id/openB"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:onClick="openB1"
-                android:text="OPEN B1" />
+                android:onClick="openB"
+                android:text="OPEN B" />
 
             <Button
                 android:id="@+id/openC"
@@ -138,22 +130,22 @@
                 android:text="OPEN C" />
 
             <Button
-                android:id="@+id/openC1"
+                android:id="@+id/openD"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:onClick="openC1"
-                android:text="OPEN C1" />
+                android:onClick="openD"
+                android:text="OPEN D" />
 
             <Button
-                android:id="@+id/openC2"
+                android:id="@+id/openE"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:onClick="openC2"
-                android:text="OPEN C2" />
+                android:onClick="openE"
+                android:text="OPEN E" />
 
             <Button
                 android:id="@+id/openF"
@@ -165,67 +157,59 @@
                 android:text="OPEN F" />
 
             <Button
-                android:id="@+id/openC4"
+                android:id="@+id/openG"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:onClick="openC4"
-                android:text="OPEN C4" />
+                android:onClick="openG"
+                android:text="OPEN G" />
 
             <Button
-                android:id="@+id/openC5"
+                android:id="@+id/openH"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:onClick="openC5"
-                android:text="OPEN C5" />
+                android:onClick="openH"
+                android:text="OPEN H" />
 
             <Button
-                android:id="@+id/openC6"
+                android:id="@+id/openI"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:onClick="openC6"
-                android:text="OPEN C6" />
+                android:onClick="openI"
+                android:text="OPEN I" />
 
             <Button
-                android:id="@+id/openD1"
+                android:id="@+id/openJ"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:onClick="openD1"
-                android:text="OPEN D1" />
+                android:onClick="openJ"
+                android:text="OPEN J" />
 
             <Button
-                android:id="@+id/openD2"
+                android:id="@+id/openK"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:onClick="openD2"
-                android:text="OPEN D2" />
+                android:onClick="openK"
+                android:text="OPEN K" />
 
             <Button
-                android:id="@+id/openD3"
+                android:id="@+id/openLMO"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:onClick="openD3"
-                android:text="OPEN D3" />
+                android:onClick="openLMO"
+                android:text="OPEN LMO" />
 
-            <Button
-                android:id="@+id/openE"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="16dp"
-                android:onClick="openE"
-                android:text="OPEN E" />
 
             <Button
                 android:id="@+id/syncServer"
