@@ -1124,7 +1124,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:background="@color/colorPrimary"
-                    android:text="@string/wrd017m"
+                    android:text="@string/wrd17m"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/white" />
 
@@ -1376,7 +1376,8 @@
                         android:onClick="@{() -> callback.BtnContinue()}"
                         android:text="@string/nextSection"
                         android:textColor="@color/white" />
-
+<!--
+TODO BtnAddMember not found
                     <Button
                         android:id="@+id/btn_AddMember"
                         style="@style/buttons"
@@ -1387,6 +1388,7 @@
                         android:onClick="@{() -> callback.BtnAddMember()}"
                         android:text="@string/addMember"
                         android:textColor="@color/white" />
+-->
 
                     <Button
                         android:id="@+id/btn_End"
