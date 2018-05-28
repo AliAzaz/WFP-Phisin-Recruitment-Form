@@ -41,7 +41,7 @@ public class SectionFActivity extends AppCompatActivity {
         bi.wrf01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if(checkedId == R.id.wrf01b){
+                if (checkedId == R.id.wrf01b) {
                     bi.fldGrpwrf01.setVisibility(GONE);
                     bi.wrf02.clearCheck();
                     bi.wrf0288x.setText(null);
@@ -71,7 +71,7 @@ public class SectionFActivity extends AppCompatActivity {
                     bi.wrf090388.setChecked(false);
                     bi.wrf090399.setChecked(false);
                     bi.wrf090388x.setText(null);
-                }else {
+                } else {
                     bi.fldGrpwrf01.setVisibility(VISIBLE);
                 }
             }
@@ -87,7 +87,7 @@ public class SectionFActivity extends AppCompatActivity {
                     bi.wrf08a.setChecked(false);
                     bi.wrf0888.setChecked(false);
                     bi.wrf0888x.setText(null);
-                }else {
+                } else {
                     bi.fldGrpwrf07.setVisibility(VISIBLE);
                 }
             }
@@ -109,7 +109,7 @@ public class SectionFActivity extends AppCompatActivity {
                     bi.wrf090388.setChecked(false);
                     bi.wrf090399.setChecked(false);
                     bi.wrf090388x.setText(null);
-                }else {
+                } else {
                     bi.fldGrpwrf09.setVisibility(VISIBLE);
                 }
             }
@@ -121,67 +121,80 @@ public class SectionFActivity extends AppCompatActivity {
         if (!validatorClass.EmptyRadioButton(this, bi.wrf01, bi.wrf01a, getString(R.string.wrf01))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.wrf02, bi.wrf0288, bi.wrf0288x, getString(R.string.wrf02))) {
-            return false;
-        }
+        if (bi.wrf01a.isChecked()) {
 
-        if (!validatorClass.EmptyTextBox(this, bi.wrf03, getString(R.string.wrf03))) {
-            return false;
-        }
-        if (!validatorClass.RangeTextBox(this, bi.wrf03, 1, 120, getString(R.string.wrf03), " sachets")) {
-            return false;
-        }
-        if (!validatorClass.EmptyTextBox(this, bi.wrf04, getString(R.string.wrf04))) {
-            return false;
-        }
-        if (!validatorClass.RangeTextBox(this, bi.wrf04, 1, 3, getString(R.string.wrf04), " sachets")) {
-            return false;
-        }
-        if (!validatorClass.EmptyTextBox(this, bi.wrf05d, getString(R.string.wrf05) + "-" + getString(R.string.days))) {
-            return false;
-        }
-        if (!validatorClass.RangeTextBox(this, bi.wrf05d, 1, 120, getString(R.string.wrf05) + "-" + getString(R.string.days), " days")) {
-            return false;
-        }
-        if (!validatorClass.EmptyTextBox(this, bi.wrf05s, getString(R.string.wrf05) + "-" + getString(R.string.sachet))) {
-            return false;
-        }
-        if (!validatorClass.RangeTextBox(this, bi.wrf05s, 1, 120, getString(R.string.wrf05) + "-" + getString(R.string.sachet), " sachet")) {
-            return false;
-        }
-        if (!validatorClass.EmptyTextBox(this, bi.wrf06a, getString(R.string.wrf06a))) {
-            return false;
-        }
-        if (!validatorClass.RangeTextBox(this, bi.wrf06a, 1, 120, getString(R.string.wrf06a), " packets")) {
-            return false;
-        }
-        if (!validatorClass.EmptyTextBox(this, bi.wrf06b, getString(R.string.wrf06b))) {
-            return false;
-        }
-        if (!validatorClass.RangeTextBox(this, bi.wrf06b, 1, 160, getString(R.string.wrf06b), " packets")) {
-            return false;
-        }
-        if (!validatorClass.EmptyRadioButton(this, bi.wrf07, bi.wrf07a, getString(R.string.wrf07))) {
-            return false;
-        }
-        if (!validatorClass.EmptyCheckBox(this, bi.wrf08, bi.wrf0888, bi.wrf0888x, getString(R.string.wrf08))) {
-            return false;
-        }
-        if (!validatorClass.EmptyRadioButton(this, bi.wrf09, bi.wrf09a, getString(R.string.wrf09))) {
-            return false;
-        }
-        if (!validatorClass.EmptyCheckBox(this, bi.wrf0901, bi.wrf090188, bi.wrf090188x, getString(R.string.wrf0901))) {
-            return false;
-        }
-        if (!validatorClass.EmptyTextBox(this, bi.wrf0902, getString(R.string.wrf0902))) {
-            return false;
-        }
-        if (!validatorClass.RangeTextBox(this, bi.wrf0902, 1, 90, getString(R.string.wrf0902), " sachets")) {
-            return false;
-        }
-        if (!validatorClass.EmptyCheckBox(this, bi.wrf0903, bi.wrf090388, bi.wrf090388x, getString(R.string.wrf0903))) {
-            return false;
-        }
+            if (!validatorClass.EmptyRadioButton(this, bi.wrf02, bi.wrf0288, bi.wrf0288x, getString(R.string.wrf02))) {
+                return false;
+            }
+
+
+            if (!validatorClass.EmptyTextBox(this, bi.wrf03, getString(R.string.wrf03))) {
+                return false;
+            }
+            if (!validatorClass.RangeTextBox(this, bi.wrf03, 1, 120, getString(R.string.wrf03), " sachets")) {
+                return false;
+            }
+            if (!validatorClass.EmptyTextBox(this, bi.wrf04, getString(R.string.wrf04))) {
+                return false;
+            }
+            if (!validatorClass.RangeTextBox(this, bi.wrf04, 1, 3, getString(R.string.wrf04), " sachets")) {
+                return false;
+            }
+            if (!validatorClass.EmptyTextBox(this, bi.wrf05d, getString(R.string.wrf05) + "-" + getString(R.string.days))) {
+                return false;
+            }
+            if (!validatorClass.RangeTextBox(this, bi.wrf05d, 1, 120, getString(R.string.wrf05) + "-" + getString(R.string.days), " days")) {
+                return false;
+            }
+            if (!validatorClass.EmptyTextBox(this, bi.wrf05s, getString(R.string.wrf05) + "-" + getString(R.string.sachet))) {
+                return false;
+            }
+            if (!validatorClass.RangeTextBox(this, bi.wrf05s, 1, 120, getString(R.string.wrf05) + "-" + getString(R.string.sachet), " sachet")) {
+                return false;
+            }
+            if (!validatorClass.EmptyTextBox(this, bi.wrf06a, getString(R.string.wrf06a))) {
+                return false;
+            }
+            if (!validatorClass.RangeTextBox(this, bi.wrf06a, 1, 120, getString(R.string.wrf06a), " packets")) {
+                return false;
+            }
+            if (!validatorClass.EmptyTextBox(this, bi.wrf06b, getString(R.string.wrf06b))) {
+                return false;
+            }
+            if (!validatorClass.RangeTextBox(this, bi.wrf06b, 1, 160, getString(R.string.wrf06b), " packets")) {
+                return false;
+            }
+            if (!validatorClass.EmptyRadioButton(this, bi.wrf07, bi.wrf07a, getString(R.string.wrf07))) {
+                return false;
+            }
+            if (bi.wrf07a.isChecked()) {
+
+                if (!validatorClass.EmptyCheckBox(this, bi.wrf08, bi.wrf0888, bi.wrf0888x, getString(R.string.wrf08))) {
+                    return false;
+                }
+            }
+
+            if (!validatorClass.EmptyRadioButton(this, bi.wrf09, bi.wrf09a, getString(R.string.wrf09))) {
+                return false;
+            }
+            if (bi.wrf09a.isChecked()) {
+
+                if (!validatorClass.EmptyCheckBox(this, bi.wrf0901, bi.wrf090188, bi.wrf090188x, getString(R.string.wrf0901))) {
+                    return false;
+                }
+                if (!validatorClass.EmptyTextBox(this, bi.wrf0902, getString(R.string.wrf0902))) {
+                    return false;
+                }
+                if (!validatorClass.RangeTextBox(this, bi.wrf0902, 1, 90, getString(R.string.wrf0902), " sachets")) {
+                    return false;
+                }
+                if (!validatorClass.EmptyCheckBox(this, bi.wrf0903, bi.wrf090388, bi.wrf090388x, getString(R.string.wrf0903))) {
+                    return false;
+                }
+            }//end of question 9 skip
+
+        }//end of question1 skip
+
 
         return true;
     }
