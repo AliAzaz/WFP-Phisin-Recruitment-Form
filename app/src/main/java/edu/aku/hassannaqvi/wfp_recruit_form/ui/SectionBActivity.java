@@ -115,6 +115,12 @@ public class SectionBActivity extends AppCompatActivity {
 
                             binding.wrb06a.setEnabled(false);
                             binding.wrb07a.setEnabled(false);
+
+                            if (binding.wrb02b.isChecked()) {
+                                binding.wrb07b.setEnabled(false);
+                            } else {
+                                binding.wrb07b.setEnabled(true);
+                            }
                         }
                     }
 
