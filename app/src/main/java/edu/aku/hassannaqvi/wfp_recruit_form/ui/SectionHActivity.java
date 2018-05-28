@@ -11,6 +11,7 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import edu.aku.hassannaqvi.wfp_recruit_form.R;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
 import edu.aku.hassannaqvi.wfp_recruit_form.validation.validatorClass;
@@ -514,7 +515,6 @@ public class SectionHActivity extends AppCompatActivity {
                 : bi.wrh24d.isChecked() ? "4"
                 : bi.wrh24e.isChecked() ? "5"
                 : bi.wrh24f.isChecked() ? "6"
-                : bi.wrh24g.isChecked() ? "7"
                 : bi.wrh2488.isChecked() ? "88"
                 : bi.wrh2499.isChecked() ? "99"
                 : "0");

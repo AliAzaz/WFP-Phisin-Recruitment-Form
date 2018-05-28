@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import edu.aku.hassannaqvi.wfp_recruit_form.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -490,7 +491,7 @@ public class SectionIActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_section_g);
+        setContentView(R.layout.activity_section_i);
         ButterKnife.bind(this);
 
         this.setTitle("Section I");

@@ -111,13 +111,13 @@
                 android:layout_marginTop="16dp"
                 android:text="@string/wri02" />
 
-            <TextView
+         <!--   <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
                 android:background="#efefef"
                 android:text="@string/wri02sub"
-                android:textColor="@color/colorPrimaryDark" />
+                android:textColor="@color/colorPrimaryDark" />-->
 
             <RadioGroup
                 android:id="@+id/wri02"
