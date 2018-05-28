@@ -13,6 +13,8 @@ import edu.aku.hassannaqvi.wfp_recruit_form.R;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
 import edu.aku.hassannaqvi.wfp_recruit_form.validation.validatorClass;
+import edu.aku.hassannaqvi.wfp_recruit_form.databinding.ActivitySectionFBinding;
+
 
 public class SectionFActivity extends AppCompatActivity {
 
@@ -89,7 +91,7 @@ public class SectionFActivity extends AppCompatActivity {
         if (!validatorClass.EmptyTextBox(this, bi.wrf0902, getString(R.string.wrf0902))) {
             return false;
         }
-        if (!validatorClass.EmptyTextBox(this, bi.wrf0902, 1, 90, getString(R.string.wrf0902), " sachets")) {
+        if (!validatorClass.RangeTextBox(this, bi.wrf0902, 1, 90, getString(R.string.wrf0902), " sachets")) {
             return false;
         }
         if (!validatorClass.EmptyCheckBox(this, bi.wrf0903, bi.wrf090388, bi.wrf090388x, getString(R.string.wrf0903))) {
@@ -113,7 +115,7 @@ public class SectionFActivity extends AppCompatActivity {
                 : bi.wrf0288.isChecked() ? "88"
                 : "0");
 
-        sF.put("wfpf03", bi.wfpf03.getText().toString());
+        sF.put("wrf03", bi.wrf03.getText().toString());
         sF.put("wrf04", bi.wrf04.getText().toString());
         sF.put("wrf05d", bi.wrf05d.getText().toString());
         sF.put("wrf05s", bi.wrf05s.getText().toString());

@@ -13,9 +13,11 @@ import edu.aku.hassannaqvi.wfp_recruit_form.R;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
 import edu.aku.hassannaqvi.wfp_recruit_form.validation.validatorClass;
+import edu.aku.hassannaqvi.wfp_recruit_form.databinding.ActivitySectionlmoBinding;
+
 
 public class SectionlmoActivity extends AppCompatActivity {
-
+ActivitySectionlmoBinding bi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -204,20 +206,20 @@ public class SectionlmoActivity extends AppCompatActivity {
                 return false;
             }
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.wro12, bi.wro12a, getString(R.string.wro12))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.wro12, bi.wro12a, getString(R.string.other))) {
             return false;
         }
         if (bi.wro12a.isChecked()) {
-            if (!validatorClass.EmptyTextBox(this, bi.wro1288, getString(R.string.wro12))) {
+            if (!validatorClass.EmptyTextBox(this, bi.wro1288x, getString(R.string.other))) {
                 return false;
             }
-            if (!validatorClass.EmptyTextBox(this, bi.wro12num, getString(R.string.wro12))) {
+            if (!validatorClass.EmptyTextBox(this, bi.wro12num, getString(R.string.other))) {
                 return false;
             }
-            if (!validatorClass.RangeTextBox(this, bi.wro12num, 1, 10, getString(R.string.wro12), " number")) {
+            if (!validatorClass.RangeTextBox(this, bi.wro12num, 1, 10, getString(R.string.other), " number")) {
                 return false;
             }
-            if (!validatorClass.EmptyTextBox(this, bi.wro12s, getString(R.string.wro12))) {
+            if (!validatorClass.EmptyTextBox(this, bi.wro12s, getString(R.string.other))) {
                 return false;
             }
         }

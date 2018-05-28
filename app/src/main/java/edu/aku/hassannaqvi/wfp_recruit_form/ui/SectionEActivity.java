@@ -13,6 +13,8 @@ import edu.aku.hassannaqvi.wfp_recruit_form.R;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
 import edu.aku.hassannaqvi.wfp_recruit_form.validation.validatorClass;
+import edu.aku.hassannaqvi.wfp_recruit_form.databinding.ActivitySectionEBinding;
+
 
 public class SectionEActivity extends AppCompatActivity {
     ActivitySectionEBinding binding;
@@ -87,11 +89,11 @@ public class SectionEActivity extends AppCompatActivity {
         }
 
 //        03
-        if (!validatorClass.EmptyTextBox(this, binding.wre03, getString(R.string.wre03))) {
+        if (!validatorClass.EmptyTextBox(this, binding.wre0301, getString(R.string.wre03))) {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, binding.wre03, 0, 999, getString(R.string.wre03), "")) {
+        if (!validatorClass.RangeTextBox(this, binding.wre0301, 0, 999, getString(R.string.wre03), "")) {
             return false;
         }
 
@@ -106,7 +108,7 @@ public class SectionEActivity extends AppCompatActivity {
         sE.put("wre0102", binding.wre0102.getText().toString());
         sE.put("wre0201", binding.wre0201.getText().toString());
         sE.put("wre0202", binding.wre0202.getText().toString());
-        sE.put("wre03", binding.wre03.getText().toString());
+        sE.put("wre03", binding.wre0301.getText().toString());
 
         MainApp.fc.setsE(String.valueOf(sE));
     }

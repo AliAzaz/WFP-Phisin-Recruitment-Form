@@ -293,8 +293,8 @@ public class MainActivity extends Activity {
 
 
     public void openA(View v) {
-        Intent iA = new Intent(this, SectionA1Activity.class);
-        startActivity(iA);
+       // Intent iA = new Intent(this, SectionA1Activity.class);
+      //  startActivity(iA);
     }
 
     public void testGPS(View v) {
@@ -443,7 +443,7 @@ public class MainActivity extends Activity {
 
     public void openA1(View v) {
 
-        startActivity1(SectionA1Activity.class);
+       // startActivity1(SectionA1Activity.class);
 
     }
     public void openC(View v) {

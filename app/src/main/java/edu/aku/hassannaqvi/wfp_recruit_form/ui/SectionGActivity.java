@@ -13,6 +13,8 @@ import edu.aku.hassannaqvi.wfp_recruit_form.R;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
 import edu.aku.hassannaqvi.wfp_recruit_form.validation.validatorClass;
+import edu.aku.hassannaqvi.wfp_recruit_form.databinding.ActivitySectionGBinding;
+
 
 public class SectionGActivity extends AppCompatActivity {
 
