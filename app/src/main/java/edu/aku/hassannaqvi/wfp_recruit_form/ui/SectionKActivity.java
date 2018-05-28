@@ -378,8 +378,10 @@ public class SectionKActivity extends AppCompatActivity {
     EditText wrk07a;
     @BindView(R.id.fldGrpwrk07b)
     LinearLayout fldGrpwrk07b;
-    @BindView(R.id.fldGrpwrk07)
-    LinearLayout fldGrpwrk07;
+    /*TODO check the usage of this binding*/
+
+    //    @BindView(R.id.fldGrpwrk07)
+//    LinearLayout fldGrpwrk07;
     @BindView(R.id.wrk07b)
     RadioGroup wrk07b;
     @BindView(R.id.wrk07b01)
@@ -406,8 +408,10 @@ public class SectionKActivity extends AppCompatActivity {
     EditText wrk08a;
     @BindView(R.id.fldGrpwrk08b)
     LinearLayout fldGrpwrk08b;
-    @BindView(R.id.fldGrpwrk08)
-    LinearLayout fldGrpwrk08;
+    /*TODO check the usage of this binding*/
+
+    /* @BindView(R.id.fldGrpwrk08)
+    LinearLayout fldGrpwrk08;*/
     @BindView(R.id.wrk08b)
     RadioGroup wrk08b;
     @BindView(R.id.wrk08b01)
@@ -434,8 +438,9 @@ public class SectionKActivity extends AppCompatActivity {
     EditText wrk09a;
     @BindView(R.id.fldGrpwrk09b)
     LinearLayout fldGrpwrk09b;
-    @BindView(R.id.fldGrpwrk09)
-    LinearLayout fldGrpwrk09;
+    /*TODO check the usage of this binding*/
+/*    @BindView(R.id.fldGrpwrk09)
+    LinearLayout fldGrpwrk09;*/
     @BindView(R.id.wrk09b)
     RadioGroup wrk09b;
     @BindView(R.id.wrk09b01)
@@ -462,7 +467,7 @@ public class SectionKActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_section_m);
+        setContentView(R.layout.activity_section_k);
         ButterKnife.bind(this);
 
         this.setTitle("Section K");

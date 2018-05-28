@@ -107,7 +107,7 @@ public class SectionJActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_section_h);
+        setContentView(R.layout.activity_section_j);
         ButterKnife.bind(this);
 
         this.setTitle("Section J");

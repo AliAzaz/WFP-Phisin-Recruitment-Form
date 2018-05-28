@@ -491,7 +491,7 @@ public class SectionIActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_section_g);
+        setContentView(R.layout.activity_section_i);
         ButterKnife.bind(this);
 
         this.setTitle("Section I");
