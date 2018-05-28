@@ -794,7 +794,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:background="@color/colorPrimary"
-                    android:text="@string/wrosource"
                     android:text='@{wro03a.checked ? wro03s.getText.toString : ""}'
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/white" />
