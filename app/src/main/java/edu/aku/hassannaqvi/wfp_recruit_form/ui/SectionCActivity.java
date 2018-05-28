@@ -82,13 +82,13 @@ public class SectionCActivity extends AppCompatActivity {
             return false;
         }
 
-        if (!validatorClass.EmptyTextBox(this, bi.wrc05m, getString(R.string.wrc05) + " " + getString(android.R.string.months))) {
+        if (!validatorClass.EmptyTextBox(this, bi.wrc05m, getString(R.string.wrc05) + " " + getString(R.string.months))) {
             return false;
         }
         if (!validatorClass.RangeTextBox(this, bi.wrc05m, 0, 3, getString(R.string.wrc05), " months")) {
             return false;
         }
-        if (!validatorClass.EmptyTextBox(this, bi.wrc05d, getString(R.string.wrc05) + " " + getString(android.R.string.days))) {
+        if (!validatorClass.EmptyTextBox(this, bi.wrc05d, getString(R.string.wrc05) + " " + getString(R.string.days))) {
             return false;
         }
 

@@ -238,7 +238,7 @@ public class SectionDActivity extends AppCompatActivity {
         }
 
 
-        if (!bi.wrd1988.isChecked) {
+        if (!bi.wrd1988.isChecked()) {
             if (!validatorClass.EmptyTextBox(this, bi.wrd1988x, getString(R.string.other))) {
                 return false;
             }
