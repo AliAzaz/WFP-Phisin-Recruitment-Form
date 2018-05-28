@@ -103,11 +103,11 @@ public class SectionEActivity extends AppCompatActivity {
 
         JSONObject sE = new JSONObject();
 
-        sE.put("wre0101", wre0101.getText().toString());
-        sE.put("wre0102", wre0102.getText().toString());
-        sE.put("wre0201", wre0201.getText().toString());
-        sE.put("wre0202", wre0202.getText().toString());
-        sE.put("wre03", wre03.getText().toString());
+        sE.put("wre0101", binding.wre0101.getText().toString());
+        sE.put("wre0102", binding.wre0102.getText().toString());
+        sE.put("wre0201", binding.wre0201.getText().toString());
+        sE.put("wre0202", binding.wre0202.getText().toString());
+        sE.put("wre03", binding.wre03.getText().toString());
 
         MainApp.fc.setsE(String.valueOf(sE));
     }

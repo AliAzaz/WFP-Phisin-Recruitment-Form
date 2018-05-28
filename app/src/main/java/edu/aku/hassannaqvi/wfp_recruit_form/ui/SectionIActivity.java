@@ -691,7 +691,7 @@ public class SectionIActivity extends AppCompatActivity {
 
         // =================== Q21a Others ====================
 
-        wri21a96.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+     /*   wri21a96.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
@@ -702,7 +702,7 @@ public class SectionIActivity extends AppCompatActivity {
                 }
             }
         });
-
+*/
         //================= Q4 Skip pattern ===============
         wri03.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
