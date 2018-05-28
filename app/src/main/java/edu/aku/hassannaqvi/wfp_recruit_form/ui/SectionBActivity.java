@@ -8,6 +8,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -72,54 +73,49 @@ public class SectionBActivity extends AppCompatActivity {
                     }
 
                 } else {
-                    if (Integer.valueOf(binding.wrb04.getText().toString()) >= 5) {
-                        binding.wrb03.setEnabled(false);
-                        binding.wrb03.setText(null);
-
-                        binding.wrb06.clearCheck();
-                        for (int i = 0; i < binding.fldGrpwrb02.getChildCount(); i++) {
-                            View v = binding.fldGrpwrb02.getChildAt(i);
-                            if (v instanceof RadioButton) {
-                                v.setEnabled(true);
-                            }
-                        }
-
-                        binding.wrb07.clearCheck();
-                        for (int i = 0; i < binding.fldGrpwrb02.getChildCount(); i++) {
-                            View v = binding.fldGrpwrb02.getChildAt(i);
-                            if (v instanceof RadioButton) {
-                                v.setEnabled(true);
-                            }
-                        }
-
-                        if (Integer.valueOf(binding.wrb04.getText().toString()) > 10){
-                            binding.fldGrpwrb01.setVisibility(View.GONE);
-                            binding.wrb05.clearCheck();
-                        }
-
-                    } else {
+                    if (Integer.valueOf(binding.wrb04.getText().toString()) < 5) {
                         binding.wrb03.setEnabled(true);
 
                         binding.fldGrpwrb01.setVisibility(View.GONE);
                         binding.wrb05.clearCheck();
 
                         binding.wrb06.clearCheck();
-                        for (int i = 0; i < binding.fldGrpwrb02.getChildCount(); i++) {
-                            View v = binding.fldGrpwrb02.getChildAt(i);
-                            if (v instanceof RadioButton) {
-                                v.setEnabled(false);
-                            }
+                        View v = binding.fldGrpwrb02.getChildAt(0);
+                        for (int j = 0; j < ((RadioGroup) v).getChildCount(); j++) {
+                            ((RadioGroup) v).getChildAt(j).setEnabled(false);
                         }
+
                         binding.wrb06a.setChecked(true);
 
                         binding.wrb07.clearCheck();
-                        for (int i = 0; i < binding.fldGrpwrb03.getChildCount(); i++) {
-                            View v = binding.fldGrpwrb03.getChildAt(i);
-                            if (v instanceof RadioButton) {
-                                v.setEnabled(false);
-                            }
+                        v = binding.fldGrpwrb03.getChildAt(0);
+                        for (int j = 0; j < ((RadioGroup) v).getChildCount(); j++) {
+                            ((RadioGroup) v).getChildAt(j).setEnabled(false);
                         }
                         binding.wrb07a.setChecked(true);
+
+                    } else {
+                        binding.wrb03.setEnabled(false);
+                        binding.wrb03.setText(null);
+
+                        binding.wrb06.clearCheck();
+                        View v = binding.fldGrpwrb02.getChildAt(0);
+                        for (int j = 0; j < ((RadioGroup) v).getChildCount(); j++) {
+                            ((RadioGroup) v).getChildAt(j).setEnabled(true);
+                        }
+
+                        binding.wrb07.clearCheck();
+                        v = binding.fldGrpwrb03.getChildAt(0);
+                        for (int j = 0; j < ((RadioGroup) v).getChildCount(); j++) {
+                            ((RadioGroup) v).getChildAt(j).setEnabled(true);
+                        }
+
+                        if (Integer.valueOf(binding.wrb04.getText().toString()) > 10) {
+                            binding.fldGrpwrb01.setVisibility(View.VISIBLE);
+
+                            binding.wrb06a.setEnabled(false);
+                            binding.wrb07a.setEnabled(false);
+                        }
                     }
 
                 }
@@ -136,7 +132,7 @@ public class SectionBActivity extends AppCompatActivity {
     public void setupViews() {
         binding.wrb03.setManager(getSupportFragmentManager());
         binding.wrb03.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis()));
-        binding.wrb03.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() + ((MainApp.MILLISECONDS_IN_5Years))));
+        binding.wrb03.setMinDate(new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() + ((MainApp.MILLISECONDS_IN_5Years))));
     }
 
     public void BtnAddMember() {
@@ -187,16 +183,18 @@ public class SectionBActivity extends AppCompatActivity {
         if (!validatorClass.EmptyRadioButton(this, binding.wrb02, binding.wrb02b, getString(R.string.wrb02))) {
             return false;
         }
-//        03
-        if (!validatorClass.EmptyTextBox(this, binding.wrb03, getString(R.string.wrb03))) {
-            return false;
-        }
 //        04
         if (!validatorClass.EmptyTextBox(this, binding.wrb04, getString(R.string.wrb04))) {
             return false;
         }
         if (!validatorClass.RangeTextBox(this, binding.wrb04, 5, 99, getString(R.string.wrb04), " AGE")) {
             return false;
+        }
+//        03
+        if (Integer.valueOf(binding.wrb04.getText().toString()) < 5) {
+            if (!validatorClass.EmptyTextBox(this, binding.wrb03, getString(R.string.wrb03))) {
+                return false;
+            }
         }
 //        05
         if (!validatorClass.EmptyRadioButton(this, binding.wrb05, binding.wrb06e, getString(R.string.wrb05))) {
