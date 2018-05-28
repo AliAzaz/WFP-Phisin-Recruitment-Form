@@ -15,7 +15,6 @@ import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
 import edu.aku.hassannaqvi.wfp_recruit_form.validation.validatorClass;
 
 public class SectionEActivity extends AppCompatActivity {
-
     ActivitySectionEBinding binding;
 
     @Override

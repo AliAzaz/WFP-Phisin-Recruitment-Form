@@ -32,22 +32,22 @@ public class SectionDActivity extends AppCompatActivity {
 
     private boolean formValidation() {
 
-        if (!validatorClass.EmptyTextBox(this, bi.wrd001, getString(R.string.wrd001))) {
+        if (!validatorClass.EmptyTextBox(this, bi.wrd001, getString(R.string.wrd01))) {
             return false;
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.wrd001, 1, 15, getString(R.string.kb101), "Number")) {
+        if (!validatorClass.RangeTextBox(this, bi.wrd001, 1, 15, getString(R.string.wrd01), "Number")) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, bi.wrd002, getString(R.string.wrd002))) {
+        if (!validatorClass.EmptyTextBox(this, bi.wrd002, getString(R.string.wrd02))) {
             return false;
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.wrd002, 1, 15, getString(R.string.wrd002), "Number")) {
+        if (!validatorClass.RangeTextBox(this, bi.wrd002, 1, 15, getString(R.string.wrd02), "Number")) {
             return false;
         }
 
@@ -76,14 +76,14 @@ public class SectionDActivity extends AppCompatActivity {
         }
 
 
-        if (!bi.wrd0699.isChecked) {
+        if (!bi.wrd0699.isChecked()) {
             if (!validatorClass.EmptyTextBox(this, bi.wrd06, getString(R.string.wrd06))) {
                 return false;
             }
         }
 
 
-        if (!bi.wrd0799.isChecked) {
+        if (!bi.wrd0799.isChecked()) {
             if (!validatorClass.EmptyTextBox(this, bi.wrd07, getString(R.string.wrd07))) {
                 return false;
             }
@@ -93,7 +93,7 @@ public class SectionDActivity extends AppCompatActivity {
             return false;
         }
 
-        if (bi.wrd0888.isChecked) {
+        if (bi.wrd0888.isChecked()) {
             if (!validatorClass.EmptyTextBox(this, bi.wrd0888x, getString(R.string.other))) {
                 return false;
             }
@@ -105,7 +105,7 @@ public class SectionDActivity extends AppCompatActivity {
         }
 
 
-        if (!bi.wrd1099.isChecked) {
+        if (!bi.wrd1099.isChecked()) {
             if (!validatorClass.EmptyTextBox(this, bi.wrd10, getString(R.string.wrd10))) {
                 return false;
             }
@@ -117,7 +117,7 @@ public class SectionDActivity extends AppCompatActivity {
         }
 
 
-        if (!bi.wrd1299.isChecked) {
+        if (!bi.wrd1299.isChecked()) {
             if (!validatorClass.EmptyTextBox(this, bi.wrd12, getString(R.string.wrd12))) {
                 return false;
             }
@@ -134,14 +134,14 @@ public class SectionDActivity extends AppCompatActivity {
         }
 
 
-        if (!bi.wrd15997.isChecked) {
+        if (!bi.wrd15997.isChecked()) {
             if (!validatorClass.EmptyTextBox(this, bi.wrd15, getString(R.string.wrd15))) {
                 return false;
             }
         }
 
 
-        if (!bi.wrd15998.isChecked) {
+        if (!bi.wrd15998.isChecked()) {
             if (!validatorClass.EmptyTextBox(this, bi.wrd15, getString(R.string.wrd15))) {
                 return false;
             }
