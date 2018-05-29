@@ -49,7 +49,7 @@
                     app:hintTextAppearance="@style/TextLabel2">
 
                     <android.support.design.widget.TextInputEditText
-                        android:id="@+id/wrd001"
+                        android:id="@+id/wrd01"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/wrd01"
@@ -68,7 +68,7 @@
                     app:hintTextAppearance="@style/TextLabel2">
 
                     <android.support.design.widget.TextInputEditText
-                        android:id="@+id/wrd002"
+                        android:id="@+id/wrd02"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/wrd02"

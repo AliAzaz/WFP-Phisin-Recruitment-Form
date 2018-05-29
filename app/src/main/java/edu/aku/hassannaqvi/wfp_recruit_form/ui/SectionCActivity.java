@@ -35,6 +35,9 @@ public class SectionCActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_section_c);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_c);
+
+        this.setTitle("Section C");
+
         bi.setCallback(this);
         setDateManager();
         dtToday = new SimpleDateFormat("dd-MM-yyyy HH:mm").format(new Date().getTime());

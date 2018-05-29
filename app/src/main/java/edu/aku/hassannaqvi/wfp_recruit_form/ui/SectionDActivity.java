@@ -31,6 +31,9 @@ public class SectionDActivity extends AppCompatActivity {
         //setContentView(R.layout.activity_section_d);
 
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_d);
+
+        this.setTitle("Section D");
+
         db = new DatabaseHelper(this);
         bi.setCallback(this);
         setUpForm();
@@ -270,22 +273,22 @@ public class SectionDActivity extends AppCompatActivity {
 
     private boolean formValidation() {
 
-        if (!validatorClass.EmptyTextBox(this, bi.wrd001, getString(R.string.wrd01))) {
+        if (!validatorClass.EmptyTextBox(this, bi.wrd01, getString(R.string.wrd01))) {
             return false;
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.wrd001, 1, 15, getString(R.string.wrd01), "Number")) {
+        if (!validatorClass.RangeTextBox(this, bi.wrd01, 1, 15, getString(R.string.wrd01), "Number")) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, bi.wrd002, getString(R.string.wrd02))) {
+        if (!validatorClass.EmptyTextBox(this, bi.wrd02, getString(R.string.wrd02))) {
             return false;
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.wrd002, 1, 15, getString(R.string.wrd02), "Number")) {
+        if (!validatorClass.RangeTextBox(this, bi.wrd02, 1, 15, getString(R.string.wrd02), "Number")) {
             return false;
         }
 
@@ -499,8 +502,8 @@ public class SectionDActivity extends AppCompatActivity {
 
         JSONObject sD = new JSONObject();
 
-        sD.put("wrd001", bi.wrd001.getText().toString());
-        sD.put("wrd002", bi.wrd002.getText().toString());
+        sD.put("wrd01", bi.wrd01.getText().toString());
+        sD.put("wrd02", bi.wrd02.getText().toString());
 
 
         sD.put("wrd03", bi.wrd03a.isChecked() ? "1"

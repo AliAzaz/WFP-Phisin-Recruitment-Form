@@ -28,6 +28,9 @@ public class SectionHActivity extends AppCompatActivity {
         //setContentView(R.layout.activity_section_h);
 
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_h);
+
+        this.setTitle("Section H");
+
         db = new DatabaseHelper(this);
         bi.setCallback(this);
         setupView();
