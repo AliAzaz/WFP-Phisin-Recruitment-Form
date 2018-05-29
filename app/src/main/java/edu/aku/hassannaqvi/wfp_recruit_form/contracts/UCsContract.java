@@ -12,23 +12,23 @@ public class UCsContract {
     private static final String TAG = "UCs_CONTRACT";
     String uccode;
     String ucs;
-    String taluka_code;
+    String tehsil_code;
 
     public UCsContract() {
         // Default Constructor
     }
 
     public UCsContract Sync(JSONObject jsonObject) throws JSONException {
-        this.uccode = jsonObject.getString(UCsTable.COLUMN_UCCODE);
-        this.ucs = jsonObject.getString(UCsTable.COLUMN_UCS_NAME);
-        this.taluka_code = jsonObject.getString(UCsTable.COLUMN_TALUKA_CODE);
+        this.uccode = jsonObject.getString(singleUCs.COLUMN_UCCODE);
+        this.ucs = jsonObject.getString(singleUCs.COLUMN_UCS);
+        this.tehsil_code = jsonObject.getString(singleUCs.COLUMN_TEHSIL_CODE);
         return this;
     }
 
-    public UCsContract hydrate(Cursor cursor) {
-        this.uccode = cursor.getString(cursor.getColumnIndex(UCsTable.COLUMN_UCCODE));
-        this.ucs = cursor.getString(cursor.getColumnIndex(UCsTable.COLUMN_UCS_NAME));
-        this.taluka_code = cursor.getString(cursor.getColumnIndex(UCsTable.COLUMN_TALUKA_CODE));
+    public UCsContract HydrateUCs(Cursor cursor) {
+        this.uccode = cursor.getString(cursor.getColumnIndex(singleUCs.COLUMN_UCCODE));
+        this.ucs = cursor.getString(cursor.getColumnIndex(singleUCs.COLUMN_UCS));
+        this.tehsil_code = cursor.getString(cursor.getColumnIndex(singleUCs.COLUMN_TEHSIL_CODE));
         return this;
     }
 
@@ -40,7 +40,7 @@ public class UCsContract {
         this.uccode = uccode;
     }
 
-    public String getUcsName() {
+    public String getUcs() {
         return ucs;
     }
 
@@ -48,30 +48,30 @@ public class UCsContract {
         this.ucs = ucs;
     }
 
-    public String getTaluka_code() {
-        return taluka_code;
+    public String getTehsil_code() {
+        return tehsil_code;
     }
 
-    public void setTaluka_code(String taluka_code) {
-        this.taluka_code = taluka_code;
+    public void setTehsil_code(String tehsil_code) {
+        this.tehsil_code = tehsil_code;
     }
 
     public JSONObject toJSONObject() throws JSONException {
 
         JSONObject json = new JSONObject();
-        json.put(UCsTable.COLUMN_UCCODE, this.uccode == null ? JSONObject.NULL : this.uccode);
-        json.put(UCsTable.COLUMN_UCS_NAME, this.ucs == null ? JSONObject.NULL : this.ucs);
-        json.put(UCsTable.COLUMN_TALUKA_CODE, this.taluka_code == null ? JSONObject.NULL : this.taluka_code);
+        json.put(singleUCs.COLUMN_UCCODE, this.uccode == null ? JSONObject.NULL : this.uccode);
+        json.put(singleUCs.COLUMN_UCS, this.ucs == null ? JSONObject.NULL : this.ucs);
+        json.put(singleUCs.COLUMN_TEHSIL_CODE, this.tehsil_code == null ? JSONObject.NULL : this.tehsil_code);
         return json;
     }
 
 
-    public static abstract class UCsTable implements BaseColumns {
+    public static abstract class singleUCs implements BaseColumns {
 
         public static final String TABLE_NAME = "ucs";
         public static final String COLUMN_UCCODE = "uc_code";
-        public static final String COLUMN_UCS_NAME = "uc_name";
-        public static final String COLUMN_TALUKA_CODE = "town_code";
+        public static final String COLUMN_UCS = "uc_name";
+        public static final String COLUMN_TEHSIL_CODE = "tehsil_code";
 
         public static final String _URI = "ucs.php";
     }

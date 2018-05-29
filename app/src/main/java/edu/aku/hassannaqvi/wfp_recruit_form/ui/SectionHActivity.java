@@ -138,7 +138,7 @@ public class SectionHActivity extends AppCompatActivity {
         bi.wrh23.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId != R.id.wrh22b) {
+                if (checkedId != R.id.wrh23b) {
                     bi.fldGrpwrh23.setVisibility(View.GONE);
                     bi.wrh24.clearCheck();
                     bi.wrh2488x.setText(null);
