@@ -15,7 +15,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 
 import edu.aku.hassannaqvi.wfp_recruit_form.R;
@@ -29,8 +28,6 @@ public class SectionBActivity extends AppCompatActivity {
 
     ActivitySectionBBinding binding;
     static int serial_no = 0;
-
-    ArrayList<FamilyMembersContract> pwList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -153,7 +150,12 @@ public class SectionBActivity extends AppCompatActivity {
             }
             if (UpdateDb()) {
                 finish();
-                startActivity(new Intent(this, SectionBActivity.class));
+
+                if (SectionAActivity.pwList.size() > 0) {
+                    startActivity(new Intent(this, SectionBActivity.class));
+                } else {
+                    startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+                }
 
             } else {
                 Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
@@ -235,10 +237,12 @@ public class SectionBActivity extends AppCompatActivity {
         MainApp.fmc.set_UUID(MainApp.fc.getUID());
 
         MainApp.fmc.setSerialNo(String.valueOf(serial_no));
+        MainApp.fmc.setName(binding.wrb01.getText().toString());
 
         JSONObject sB = new JSONObject();
 
         sB.put("wrb01", binding.wrb01.getText().toString());
+        sB.put("serial_no", String.valueOf(serial_no));
         sB.put("wrb02", binding.wrb02a.isChecked() ? "1" : binding.wrb02b.isChecked() ? "2" : "0");
         sB.put("wrb03", binding.wrb03.getText().toString());
         sB.put("wrb04", binding.wrb04.getText().toString());
@@ -252,6 +256,13 @@ public class SectionBActivity extends AppCompatActivity {
                 : binding.wrb07i.isChecked() ? "9" : binding.wrb07j.isChecked() ? "10" : binding.wrb07k.isChecked() ? "11" : "0");
 
         MainApp.fmc.setsB(String.valueOf(sB));
+
+
+//        Functionality
+        if (binding.wrb02b.isChecked() && binding.wrb05a.isChecked()) {
+            SectionAActivity.pwList.add(MainApp.fmc);
+        }
+
     }
 
     private boolean UpdateDb() {

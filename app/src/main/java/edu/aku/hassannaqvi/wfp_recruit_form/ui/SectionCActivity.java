@@ -7,18 +7,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import edu.aku.hassannaqvi.wfp_recruit_form.R;
+import edu.aku.hassannaqvi.wfp_recruit_form.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
 import edu.aku.hassannaqvi.wfp_recruit_form.databinding.ActivitySectionCBinding;
@@ -30,13 +34,14 @@ public class SectionCActivity extends AppCompatActivity {
     String currentDate;
     String dtToday;
 
+    ArrayList<String> pwList;
+    Map<String, FamilyMembersContract> pwMap;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_section_c);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_c);
-
-
 
         bi.setCallback(this);
         setDateManager();
@@ -44,6 +49,36 @@ public class SectionCActivity extends AppCompatActivity {
 
         currentDate = new SimpleDateFormat("dd/MM/yyyy").format(new Date().getTime());
 
+//        Filling Spinner
+        pwList = new ArrayList<>();
+        pwList.add("....");
+        pwMap = new HashMap<>();
+
+        for (FamilyMembersContract fmc : SectionAActivity.pwList) {
+            pwList.add(fmc.getName());
+            pwMap.put(fmc.getName(), fmc);
+        }
+
+        bi.wrc01.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, pwList));
+
+        Listeners();
+
+    }
+
+    private void Listeners() {
+        bi.wrc01.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position != 0) {
+                    bi.wrc02.setText(pwMap.get(bi.wrc01.getSelectedItem()).getSerialNo());
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 
     private void setDateManager() {

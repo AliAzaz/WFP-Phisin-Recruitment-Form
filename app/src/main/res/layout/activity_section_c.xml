@@ -72,7 +72,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                        android:hint="@string/wrc02"
+                        android:enabled="false"
+                        android:hint="@string/wrc01"
                         android:inputType="textCapWords"
                         android:textColor="@android:color/black" />
 

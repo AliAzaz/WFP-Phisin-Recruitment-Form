@@ -26,6 +26,7 @@ public class FamilyMembersContract implements Serializable {
     private String app_ver = "";
 
     private String serialNo = "";
+    private String name = "";
 
     private String sB = "";
 
@@ -141,6 +142,14 @@ public class FamilyMembersContract implements Serializable {
 
     public void setDevicetagID(String devicetagID) {
         this.devicetagID = devicetagID;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public FamilyMembersContract Sync(JSONObject jsonObject) throws JSONException {

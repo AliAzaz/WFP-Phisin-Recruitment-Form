@@ -33,6 +33,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.wfp_recruit_form.R;
+import edu.aku.hassannaqvi.wfp_recruit_form.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.wfp_recruit_form.contracts.FormsContract;
 import edu.aku.hassannaqvi.wfp_recruit_form.contracts.LHWsContract;
 import edu.aku.hassannaqvi.wfp_recruit_form.contracts.TehsilContract;
@@ -91,6 +92,8 @@ public class SectionAActivity extends Activity {
 
     DatabaseHelper db;
 
+    public static ArrayList<FamilyMembersContract> pwList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -114,6 +117,9 @@ public class SectionAActivity extends Activity {
                 }
             }
         });
+
+//        Initialize PW spinner
+        pwList = new ArrayList<>();
 
     }
 
