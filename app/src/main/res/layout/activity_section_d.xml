@@ -1325,6 +1325,16 @@
                         android:text="@string/no" />
 
                 </RadioGroup>
+                <EditText
+                    android:id="@+id/wrd1788x"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:hint="@string/other"
+                    android:inputType="textCapWords"
+                    android:text='@{wrd17o1.checked ? wrd1788x.getText.toString : ""}'
+                    android:visibility='@{wrd17o1.checked ? View.VISIBLE : View.GONE}' />
 
                 <CheckBox
                     android:id="@+id/wrd1777"

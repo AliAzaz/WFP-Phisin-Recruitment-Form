@@ -55,14 +55,14 @@
                 android:background="@color/colorPrimary"
                 android:text="@string/wrk01a" />
 
-            <TextView
+         <!--   <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
                 android:background="#e1f5fe"
                 android:text="@string/hint"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="12sp" />
+                android:textSize="12sp" />-->
 
             <EditText
                 android:id="@+id/wrk01a"
@@ -186,7 +186,7 @@
                 android:background="@color/colorPrimary"
                 android:text="@string/wrk01a" />
 
-            <TextView
+           <!-- <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
@@ -194,7 +194,7 @@
                 android:text="@string/hint"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="12sp" />
-
+-->
 
             <EditText
                 android:id="@+id/wrk02a"
@@ -317,7 +317,7 @@
                 android:background="@color/colorPrimary"
                 android:text="@string/wrk01a" />
 
-            <TextView
+           <!-- <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
@@ -325,7 +325,7 @@
                 android:text="@string/hint"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="12sp" />
-
+-->
 
             <EditText
                 android:id="@+id/wrk03a"
@@ -449,14 +449,14 @@
                 android:background="@color/colorPrimary"
                 android:text="@string/wrk01a" />
 
-            <TextView
+       <!--     <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
                 android:background="@color/pink_100"
                 android:text="@string/hint"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="12sp" />
+                android:textSize="12sp" />-->
 
 
             <EditText
@@ -585,6 +585,7 @@
                     android:layout_marginTop="2dp"
                     android:background="@color/colorPrimary"
                     android:text="@string/wrk01a" />
+<!--
 
                 <TextView
                     android:layout_width="match_parent"
@@ -594,6 +595,7 @@
                     android:text="@string/hint"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="12sp" />
+-->
 
 
                 <EditText
@@ -716,7 +718,7 @@
                     android:layout_marginTop="2dp"
                     android:background="@color/colorPrimary"
                     android:text="@string/wrk01a" />
-
+<!--
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -724,7 +726,7 @@
                     android:background="@color/pink_100"
                     android:text="@string/hint"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="12sp" />
+                    android:textSize="12sp" />-->
 
 
                 <EditText
@@ -845,7 +847,7 @@
                     android:layout_marginTop="2dp"
                     android:background="@color/colorPrimary"
                     android:text="@string/wrk01a" />
-
+<!--
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -853,7 +855,7 @@
                     android:background="@color/pink_100"
                     android:text="@string/hint"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="12sp" />
+                    android:textSize="12sp" />-->
 
                 <EditText
                     android:id="@+id/wrk043a"
@@ -975,14 +977,14 @@
                     android:background="@color/colorPrimary"
                     android:text="@string/wrk01a" />
 
-                <TextView
+          <!--      <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:background="@color/pink_100"
                     android:text="@string/hint"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="12sp" />
+                    android:textSize="12sp" />-->
 
 
                 <EditText
@@ -1109,14 +1111,14 @@
                 android:background="@color/colorPrimary"
                 android:text="@string/wrk01a" />
 
-            <TextView
+       <!--     <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
                 android:background="@color/pink_100"
                 android:text="@string/hint"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="12sp" />
+                android:textSize="12sp" />-->
 
 
             <EditText
@@ -1246,14 +1248,14 @@
                     android:background="@color/colorPrimary"
                     android:text="@string/wrk01a" />
 
-                <TextView
+              <!--  <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:background="@color/pink_100"
                     android:text="@string/hint"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="12sp" />
+                    android:textSize="12sp" />-->
 
 
                 <EditText
@@ -1377,7 +1379,7 @@
                     android:background="@color/colorPrimary"
                     android:text="@string/wrk01a" />
 
-                <TextView
+              <!--  <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
@@ -1385,7 +1387,7 @@
                     android:text="@string/hint"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="12sp" />
-
+-->
 
                 <EditText
                     android:id="@+id/wrk052a"
@@ -1511,14 +1513,14 @@
                 android:background="@color/colorPrimary"
                 android:text="@string/wrk01a" />
 
-            <TextView
+    <!--        <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
                 android:background="@color/pink_100"
                 android:text="@string/hint"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="12sp" />
+                android:textSize="12sp" />-->
 
 
             <EditText
@@ -1648,14 +1650,14 @@
                     android:background="@color/colorPrimary"
                     android:text="@string/wrk01a" />
 
-                <TextView
+          <!--      <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:background="@color/pink_100"
                     android:text="@string/hint"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="12sp" />
+                    android:textSize="12sp" />-->
 
 
                 <EditText
@@ -1782,14 +1784,14 @@
                 android:background="@color/colorPrimary"
                 android:text="@string/wrk01a" />
 
-            <TextView
+         <!--   <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
                 android:background="@color/pink_100"
                 android:text="@string/hint"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="12sp" />
+                android:textSize="12sp" />-->
 
 
             <EditText
@@ -1911,14 +1913,14 @@
                 android:background="@color/colorPrimary"
                 android:text="@string/wrk01a" />
 
-            <TextView
+        <!--    <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
                 android:background="@color/pink_100"
                 android:text="@string/hint"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="12sp" />
+                android:textSize="12sp" />-->
 
             <EditText
                 android:id="@+id/wrk08a"
@@ -2039,14 +2041,14 @@
                 android:background="@color/colorPrimary"
                 android:text="@string/wrk01a" />
 
-            <TextView
+        <!--    <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
                 android:background="@color/pink_100"
                 android:text="@string/hint"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="12sp" />
+                android:textSize="12sp" />-->
 
             <EditText
                 android:id="@+id/wrk09a"

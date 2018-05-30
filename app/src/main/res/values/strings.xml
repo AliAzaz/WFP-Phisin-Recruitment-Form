@@ -585,10 +585,10 @@
     <string name="wrjheading"> J. Hand Washing </string>
     <string name="wrj01"> براہ مہربانی وہ جگہ دیکھا ئیں جہاں آپ اور آپ کے گھروالے اکثر ہاتھ دھوتے ہیں؟ </string>
     <string name="wrj0101"> مشاہدہ کیا </string>
-    <string name="wrj0102"> مشاہدہ نہیں کیا </string>
-    <string name="wrj0103"> رہا یشی جگہ اور پلاٹ میں موجود نہیں </string>
-    <string name="wrj0104"> دیکھنے کی اجازت نہیں </string>
-    <string name="wrj0105"> کو ئی اور وجہ </string>
+    <!--<string name="wrj0102"> مشاہدہ نہیں کیا </string>-->
+    <string name="wrj0102"> رہا یشی جگہ اور پلاٹ میں موجود نہیں </string>
+    <string name="wrj0103"> دیکھنے کی اجازت نہیں </string>
+    <string name="wrj0104"> کو ئی اور وجہ </string>
     <string name="wrj02"> ہاتھ دھونے کے لئے مخصوص جگہ پر پانی کی موجودگی کا مشاہدہ </string>
     <string name="wrjht">  مشاہدہ نہیں کیا </string>
     <string name="wrj0201"> پانی موجود ہے۔ </string>

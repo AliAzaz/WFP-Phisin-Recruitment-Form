@@ -17,6 +17,9 @@ import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import javax.xml.validation.Validator;
+
 import edu.aku.hassannaqvi.wfp_recruit_form.R;
 
 import butterknife.BindView;
@@ -24,6 +27,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
+import edu.aku.hassannaqvi.wfp_recruit_form.validation.validatorClass;
 
 public class SectionIActivity extends AppCompatActivity {
 
@@ -1319,6 +1323,9 @@ public class SectionIActivity extends AppCompatActivity {
             return false;
         } else {
             wri15.setError(null);
+        }
+        if(!validatorClass.RangeTextBox(this,wri15,1,15,getString(R.string.wri15) , " Rooms")){
+            return false;
         }
 
         // =================== Q16a ====================
