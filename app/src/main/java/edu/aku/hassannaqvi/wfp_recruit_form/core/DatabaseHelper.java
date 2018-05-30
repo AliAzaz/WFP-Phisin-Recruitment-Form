@@ -599,6 +599,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(familyMembers.COLUMN_INTERVIEWER2, fmc.getInterviewer2());
         values.put(familyMembers.COLUMN_DEVICETAGID, fmc.getDevicetagID());
         values.put(familyMembers.COLUMN_DEVICEID, fmc.getDeviceId());
+        values.put(familyMembers.COLUMN_SB, fmc.getsB());
         values.put(familyMembers.COLUMN_SYNCED, fmc.getSynced());
         values.put(familyMembers.COLUMN_SYNCED_DATE, fmc.getSyncedDate());
         values.put(familyMembers.COLUMN_APP_VERSION, fmc.getApp_ver());
