@@ -250,12 +250,12 @@ public class MainActivity extends Activity {
         }
 
 //        Logins manage
-        usersArray = new String[]{"....",MainApp.userName, MainApp.userName2};
+        usersArray = new String[]{"....", MainApp.userName, MainApp.userName2};
 
     }
 
     public void openForm() {
-        final Intent oF = new Intent(MainActivity.this, SectionBActivity.class);
+        final Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
 
         if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
             startActivity(oF);

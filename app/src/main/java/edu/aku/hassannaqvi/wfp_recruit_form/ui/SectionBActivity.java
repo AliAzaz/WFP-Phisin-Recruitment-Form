@@ -15,6 +15,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 import edu.aku.hassannaqvi.wfp_recruit_form.R;
@@ -28,6 +29,8 @@ public class SectionBActivity extends AppCompatActivity {
 
     ActivitySectionBBinding binding;
     static int serial_no = 0;
+
+    ArrayList<FamilyMembersContract> pwList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
