@@ -34,9 +34,9 @@
 
 
             <TextView
+                android:background="@color/colorPrimary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 android:text="@string/wrj01" />
 
             <RadioGroup
@@ -51,24 +51,12 @@
                     android:layout_marginBottom="1dp"
                     android:text="@string/wrj0101" />
 
-                <!--<RadioButton
-                    android:id="@+id/wrj0102"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/wrj0102" />-->
-                <!--TODO: Do check style tag is missing-->
-                <!--
                 <TextView
-                    style="@style/helperText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/wrjht" />-->
-                <TextView
+                    android:background="@color/pink_100"
+                    android:textColor="@color/colorPrimaryDark"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/wrjht" />
-
 
                 <RadioButton
                     android:id="@+id/wrj0102"
@@ -98,9 +86,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/other"
-                android:visibility="gone"
-
-                />
+                android:visibility="gone"/>
 
             <LinearLayout
                 android:id="@+id/fldGrpwrj02"
@@ -109,6 +95,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:background="@color/colorPrimary"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -137,6 +124,7 @@
                 </RadioGroup>
 
                 <TextView
+                    android:background="@color/colorPrimary"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -189,6 +177,7 @@
 
 
             <TextView
+                android:background="@color/colorPrimary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -222,6 +211,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:background="@color/colorPrimary"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -273,6 +263,7 @@
 
 
             <TextView
+                android:background="@color/colorPrimary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
