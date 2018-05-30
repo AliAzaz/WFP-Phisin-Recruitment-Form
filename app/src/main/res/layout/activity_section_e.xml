@@ -75,7 +75,7 @@
                             android:id="@+id/wre0101"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/wre01"
+                            android:hint="XXX.X"
                             android:inputType="numberDecimal"
                             android:maxLength="5"
                             android:textColor="@android:color/black" />
@@ -109,7 +109,7 @@
                             android:id="@+id/wre0102"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/wre01"
+                            android:hint="XXX.X"
                             android:inputType="numberDecimal"
                             android:maxLength="5"
                             android:textColor="@android:color/black" />
@@ -153,7 +153,7 @@
                             android:id="@+id/wre0201"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/wre02"
+                            android:hint="XX.XX"
                             android:inputType="numberDecimal"
                             android:maxLength="5"
                             android:textColor="@android:color/black" />
@@ -187,7 +187,7 @@
                             android:id="@+id/wre0202"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/wre02"
+                            android:hint="XX.XX"
                             android:inputType="numberDecimal"
                             android:maxLength="5"
                             android:textColor="@android:color/black" />
@@ -217,7 +217,7 @@
                         android:id="@+id/wre03"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/wre03"
+                        android:hint="XX.X"
                         android:inputType="numberDecimal"
                         android:maxLength="5"
                         android:textColor="@android:color/black" />

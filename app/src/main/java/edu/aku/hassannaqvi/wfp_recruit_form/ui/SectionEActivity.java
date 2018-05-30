@@ -73,6 +73,12 @@ public class SectionEActivity extends AppCompatActivity {
             return false;
         }
 
+        if (!binding.wre0101.getText().toString().matches("^(\\d{1,3}\\.\\d{1,1})$")) {
+            binding.wre0101.setError("Wrong presentation");
+            return false;
+        } else {
+            binding.wre0101.setError(null);
+        }
         if (!validatorClass.RangeTextBox(this, binding.wre0101, 0.0, 999.0, getString(R.string.wre01), "")) {
             return false;
         }
@@ -84,6 +90,13 @@ public class SectionEActivity extends AppCompatActivity {
             return false;
         }
 
+
+        if (!binding.wre0102.getText().toString().matches("^(\\d{1,3}\\.\\d{1,1})$")) {
+            binding.wre0102.setError("Wrong presentation");
+            return false;
+        } else {
+            binding.wre0102.setError(null);
+        }
         if (!validatorClass.RangeTextBox(this, binding.wre0102, 0.0, 999.0, getString(R.string.wre01), "")) {
             return false;
         }
@@ -105,6 +118,12 @@ public class SectionEActivity extends AppCompatActivity {
             return false;
         }
 
+        if (!binding.wre0201.getText().toString().matches("^(\\d{1,2}\\.\\d{1,2})$")) {
+            binding.wre0201.setError("Wrong presentation");
+            return false;
+        } else {
+            binding.wre0201.setError(null);
+        }
         if (!validatorClass.RangeTextBox(this, binding.wre0201, 0.0, 999.0, getString(R.string.wre02), "")) {
             return false;
         }
@@ -116,6 +135,12 @@ public class SectionEActivity extends AppCompatActivity {
             return false;
         }
 
+        if (!binding.wre0202.getText().toString().matches("^(\\d{1,2}\\.\\d{1,2})$")) {
+            binding.wre0202.setError("Wrong presentation");
+            return false;
+        } else {
+            binding.wre0202.setError(null);
+        }
         if (!validatorClass.RangeTextBox(this, binding.wre0202, 0.0, 999.0, getString(R.string.wre02), "")) {
             return false;
         }
@@ -134,6 +159,13 @@ public class SectionEActivity extends AppCompatActivity {
             return false;
         }
 
+
+        if (!binding.wre03.getText().toString().matches("^(\\d{1,2}\\.\\d{1,1})$")) {
+            binding.wre03.setError("Wrong presentation");
+            return false;
+        } else {
+            binding.wre03.setError(null);
+        }
         if (!validatorClass.RangeTextBox(this, binding.wre03, 0.0, 999.0, getString(R.string.wre03), "")) {
             return false;
         }
