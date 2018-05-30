@@ -74,16 +74,20 @@ public class GetAllData extends AsyncTask<String, String, String> {
                     url = new URL(MainApp._HOST_URL + UsersTable._URI);
                     break;
                 case "LHW":
-                    url = new URL(MainApp._HOST_URL + singleLHWs._URI);
+                    //url = new URL(MainApp._HOST_URL + singleLHWs._URI);
+                    url = new URL(MainApp.TEST_URL + singleLHWs._URI);
                     break;
                 case "Tehsil":
-                    url = new URL(MainApp._HOST_URL + singleTehsil._URI);
+                   // url = new URL(MainApp._HOST_URL + singleTehsil._URI);
+                    url = new URL(MainApp.TEST_URL + singleTehsil._URI);
                     break;
                 case "UCs":
-                    url = new URL(MainApp._HOST_URL + singleUCs._URI);
+                  //  url = new URL(MainApp._HOST_URL + singleUCs._URI);
+                    url = new URL(MainApp.TEST_URL + singleUCs._URI);
                     break;
                 case "Villages":
-                    url = new URL(MainApp._HOST_URL + singleVillages._URI);
+                   // url = new URL(MainApp._HOST_URL + singleVillages._URI);
+                    url = new URL(MainApp.TEST_URL + singleVillages._URI);
                     break;
 
             }

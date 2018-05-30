@@ -158,13 +158,13 @@ public class SectionFActivity extends AppCompatActivity {
             if (!validatorClass.EmptyTextBox(this, bi.wrf06a, getString(R.string.wrf06a))) {
                 return false;
             }
-            if (!validatorClass.RangeTextBox(this, bi.wrf06a, 1, 120, getString(R.string.wrf06a), " packets")) {
+            if (!validatorClass.RangeTextBox(this, bi.wrf06a, 0, 120, getString(R.string.wrf06a), " packets")) {
                 return false;
             }
             if (!validatorClass.EmptyTextBox(this, bi.wrf06b, getString(R.string.wrf06b))) {
                 return false;
             }
-            if (!validatorClass.RangeTextBox(this, bi.wrf06b, 1, 160, getString(R.string.wrf06b), " packets")) {
+            if (!validatorClass.RangeTextBox(this, bi.wrf06b, 0, 160, getString(R.string.wrf06b), " packets")) {
                 return false;
             }
             if (!validatorClass.EmptyRadioButton(this, bi.wrf07, bi.wrf07a, getString(R.string.wrf07))) {

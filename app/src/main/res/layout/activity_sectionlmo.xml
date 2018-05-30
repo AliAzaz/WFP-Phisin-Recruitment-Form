@@ -626,44 +626,43 @@
                 android:orientation="vertical"
                 android:visibility='@{wro01a.checked ? View.VISIBLE : View.GONE}'>
 
-                <TextView
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/wronum"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
+                    android:theme="@style/TextLabel"
+                    app:hintTextAppearance="@style/TextLabel2">
 
-                <EditText
-                    android:id="@+id/wro01num"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:digits="0123456789"
-                    android:hint="@string/wronum"
-                    android:inputType="number"
-                    android:maxLength="2"
-                    android:text='@{wro01a.checked ? wro01num.getText.toString : ""}' />
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/wro01num"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:digits="0123456789"
+                        android:hint="@string/wronum"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:text='@{wro01a.checked ? wro01num.getText.toString : ""}' />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/wrosource"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
+                </android.support.design.widget.TextInputLayout>
 
-                <EditText
-                    android:id="@+id/wro01s"
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                    android:hint="@string/wrosource"
-                    android:inputType="textCapWords"
-                    android:text='@{wro01a.checked ? wro01s.getText.toString : ""}' />
+                    android:theme="@style/TextLabel"
+                    app:hintTextAppearance="@style/TextLabel2">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/wro01s"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                        android:hint="@string/wrosource"
+                        android:inputType="textCapWords"
+                        android:text='@{wro01a.checked ? wro01s.getText.toString : ""}' />
+
+                </android.support.design.widget.TextInputLayout>
+
             </LinearLayout>
 
             <!--02-->
@@ -707,44 +706,46 @@
                 android:orientation="vertical"
                 android:visibility='@{wro02a.checked ? View.VISIBLE : View.GONE}'>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/wronum"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
 
-                <EditText
-                    android:id="@+id/wro02num"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:digits="0123456789"
-                    android:hint="@string/wronum"
-                    android:inputType="number"
-                    android:maxLength="2"
-                    android:text='@{wro02a.checked ? wro02num.getText.toString : ""}' />
 
-                <TextView
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/wrosource"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
+                    android:theme="@style/TextLabel"
+                    app:hintTextAppearance="@style/TextLabel2">
 
-                <EditText
-                    android:id="@+id/wro02s"
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/wro02num"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:digits="0123456789"
+                        android:hint="@string/wronum"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:text='@{wro02a.checked ? wro02num.getText.toString : ""}' />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                    android:hint="@string/wrosource"
-                    android:inputType="textCapWords"
-                    android:text='@{wro02a.checked ? wro02s.getText.toString : ""}' />
+                    android:theme="@style/TextLabel"
+                    app:hintTextAppearance="@style/TextLabel2">
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/wro02s"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                        android:hint="@string/wrosource"
+                        android:inputType="textCapWords"
+                        android:text='@{wro02a.checked ? wro02s.getText.toString : ""}' />
+
+                </android.support.design.widget.TextInputLayout>
+
             </LinearLayout>
 
 
@@ -789,44 +790,46 @@
                 android:orientation="vertical"
                 android:visibility='@{wro03a.checked ? View.VISIBLE : View.GONE}'>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/wronum"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
 
-                <EditText
-                    android:id="@+id/wro03num"
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:digits="0123456789"
-                    android:hint="@string/wronum"
-                    android:inputType="number"
-                    android:maxLength="2"
-                    android:text='@{wro03a.checked ? wro03num.getText.toString : ""}' />
+                    android:theme="@style/TextLabel"
+                    app:hintTextAppearance="@style/TextLabel2">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/wrosource"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/wro03num"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:digits="0123456789"
+                        android:hint="@string/wronum"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:text='@{wro03a.checked ? wro03num.getText.toString : ""}' />
 
-                <EditText
-                    android:id="@+id/wro03s"
+                </android.support.design.widget.TextInputLayout>
+
+
+
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                    android:hint="@string/wrosource"
-                    android:text='@{wro03a.checked ? wro03s.getText.toString : ""}'
-                    android:inputType="textCapWords" />
+                    android:theme="@style/TextLabel"
+                    app:hintTextAppearance="@style/TextLabel2">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/wro03s"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                        android:hint="@string/wrosource"
+                        android:text='@{wro03a.checked ? wro03s.getText.toString : ""}'
+                        android:inputType="textCapWords" />
+
+                </android.support.design.widget.TextInputLayout>
+
             </LinearLayout>
             <!--04-->
             <TextView
@@ -869,44 +872,46 @@
                 android:orientation="vertical"
                 android:visibility='@{wro04a.checked ? View.VISIBLE : View.GONE}'>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/wronum"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
 
-                <EditText
-                    android:id="@+id/wro04num"
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:digits="0123456789"
-                    android:hint="@string/wronum"
-                    android:inputType="number"
-                    android:maxLength="2"
-                    android:text='@{wro04a.checked ? wro04num.getText.toString : ""}' />
+                    android:theme="@style/TextLabel"
+                    app:hintTextAppearance="@style/TextLabel2">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/wrosource"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/wro04num"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:digits="0123456789"
+                        android:hint="@string/wronum"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:text='@{wro04a.checked ? wro04num.getText.toString : ""}' />
 
-                <EditText
-                    android:id="@+id/wro04s"
+                </android.support.design.widget.TextInputLayout>
+
+
+
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                    android:hint="@string/wrosource"
-                    android:inputType="textCapWords"
-                    android:text='@{wro04a.checked ? wro04s.getText.toString : ""}' />
+                    android:theme="@style/TextLabel"
+                    app:hintTextAppearance="@style/TextLabel2">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/wro04s"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                        android:hint="@string/wrosource"
+                        android:inputType="textCapWords"
+                        android:text='@{wro04a.checked ? wro04s.getText.toString : ""}' />
+
+                </android.support.design.widget.TextInputLayout>
+
             </LinearLayout>
             <!--05-->
             <TextView
@@ -949,44 +954,46 @@
                 android:orientation="vertical"
                 android:visibility='@{wro05a.checked ? View.VISIBLE : View.GONE}'>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/wronum"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
 
-                <EditText
-                    android:id="@+id/wro05num"
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:digits="0123456789"
-                    android:hint="@string/wronum"
-                    android:inputType="number"
-                    android:maxLength="2"
-                    android:text='@{wro05a.checked ? wro05num.getText.toString : ""}' />
+                    android:theme="@style/TextLabel"
+                    app:hintTextAppearance="@style/TextLabel2">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/wrosource"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/wro05num"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:digits="0123456789"
+                        android:hint="@string/wronum"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:text='@{wro05a.checked ? wro05num.getText.toString : ""}' />
 
-                <EditText
-                    android:id="@+id/wro05s"
+                </android.support.design.widget.TextInputLayout>
+
+
+
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                    android:hint="@string/wrosource"
-                    android:inputType="textCapWords"
-                    android:text='@{wro05a.checked ? wro05s.getText.toString : ""}' />
+                    android:theme="@style/TextLabel"
+                    app:hintTextAppearance="@style/TextLabel2">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/wro05s"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                        android:hint="@string/wrosource"
+                        android:inputType="textCapWords"
+                        android:text='@{wro05a.checked ? wro05s.getText.toString : ""}' />
+
+                </android.support.design.widget.TextInputLayout>
+
             </LinearLayout>
             <!--06-->
             <TextView
@@ -1029,44 +1036,45 @@
                 android:orientation="vertical"
                 android:visibility='@{wro06a.checked ? View.VISIBLE : View.GONE}'>
 
-                <TextView
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/wronum"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
+                    android:theme="@style/TextLabel"
+                    app:hintTextAppearance="@style/TextLabel2">
 
-                <EditText
-                    android:id="@+id/wro06num"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:digits="0123456789"
-                    android:hint="@string/wronum"
-                    android:inputType="number"
-                    android:maxLength="2"
-                    android:text='@{wro06a.checked ? wro06num.getText.toString : ""}' />
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/wro06num"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:digits="0123456789"
+                        android:hint="@string/wronum"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:text='@{wro06a.checked ? wro06num.getText.toString : ""}' />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/wrosource"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
+                </android.support.design.widget.TextInputLayout>
 
-                <EditText
-                    android:id="@+id/wro06s"
+
+
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                    android:hint="@string/wrosource"
-                    android:inputType="textCapWords"
-                    android:text='@{wro06a.checked ? wro06s.getText.toString : ""}' />
+                    android:theme="@style/TextLabel"
+                    app:hintTextAppearance="@style/TextLabel2">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/wro06s"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                        android:hint="@string/wrosource"
+                        android:inputType="textCapWords"
+                        android:text='@{wro06a.checked ? wro06s.getText.toString : ""}' />
+
+                </android.support.design.widget.TextInputLayout>
+
             </LinearLayout>
             <!--07-->
             <TextView
@@ -1108,45 +1116,43 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:visibility='@{wro07a.checked ? View.VISIBLE : View.GONE}'>
-
-                <TextView
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/wronum"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
+                    android:theme="@style/TextLabel"
+                    app:hintTextAppearance="@style/TextLabel2">
 
-                <EditText
-                    android:id="@+id/wro07num"
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/wro07num"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:digits="0123456789"
+                        android:hint="@string/wronum"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:text='@{wro07a.checked ? wro07num.getText.toString : ""}' />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:digits="0123456789"
-                    android:hint="@string/wronum"
-                    android:inputType="number"
-                    android:maxLength="2"
-                    android:text='@{wro07a.checked ? wro07num.getText.toString : ""}' />
+                    android:theme="@style/TextLabel"
+                    app:hintTextAppearance="@style/TextLabel2">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/wrosource"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/wro07s"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                        android:hint="@string/wrosource"
+                        android:inputType="textCapWords"
+                        android:text='@{wro07a.checked ? wro07s.getText.toString : ""}' />
 
-                <EditText
-                    android:id="@+id/wro07s"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                    android:hint="@string/wrosource"
-                    android:inputType="textCapWords"
-                    android:text='@{wro07a.checked ? wro07s.getText.toString : ""}' />
+                </android.support.design.widget.TextInputLayout>
+
             </LinearLayout>
             <!--08-->
             <TextView
@@ -1189,44 +1195,46 @@
                 android:orientation="vertical"
                 android:visibility='@{wro08a.checked ? View.VISIBLE : View.GONE}'>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/wronum"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
 
-                <EditText
-                    android:id="@+id/wro08num"
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:digits="0123456789"
-                    android:hint="@string/wronum"
-                    android:inputType="number"
-                    android:maxLength="2"
-                    android:text='@{wro08a.checked ? wro08num.getText.toString : ""}' />
+                    android:theme="@style/TextLabel"
+                    app:hintTextAppearance="@style/TextLabel2">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/wrosource"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/wro08num"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:digits="0123456789"
+                        android:hint="@string/wronum"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:text='@{wro08a.checked ? wro08num.getText.toString : ""}' />
 
-                <EditText
-                    android:id="@+id/wro08s"
+                </android.support.design.widget.TextInputLayout>
+
+
+
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                    android:hint="@string/wrosource"
-                    android:inputType="textCapWords"
-                    android:text='@{wro08a.checked ? wro08s.getText.toString : ""}' />
+                    android:theme="@style/TextLabel"
+                    app:hintTextAppearance="@style/TextLabel2">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/wro08s"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                        android:hint="@string/wrosource"
+                        android:inputType="textCapWords"
+                        android:text='@{wro08a.checked ? wro08s.getText.toString : ""}' />
+
+                </android.support.design.widget.TextInputLayout>
+
             </LinearLayout>
             <!--09-->
             <TextView
@@ -1269,44 +1277,46 @@
                 android:orientation="vertical"
                 android:visibility='@{wro09a.checked ? View.VISIBLE : View.GONE}'>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/wronum"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
 
-                <EditText
-                    android:id="@+id/wro09num"
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:digits="0123456789"
-                    android:hint="@string/wronum"
-                    android:inputType="number"
-                    android:maxLength="2"
-                    android:text='@{wro09a.checked ? wro09num.getText.toString : ""}' />
+                    android:theme="@style/TextLabel"
+                    app:hintTextAppearance="@style/TextLabel2">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/wrosource"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/wro09num"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:digits="0123456789"
+                        android:hint="@string/wronum"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:text='@{wro09a.checked ? wro09num.getText.toString : ""}' />
 
-                <EditText
-                    android:id="@+id/wro09s"
+                </android.support.design.widget.TextInputLayout>
+
+
+
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                    android:hint="@string/wrosource"
-                    android:inputType="textCapWords"
-                    android:text='@{wro09a.checked ? wro09s.getText.toString : ""}' />
+                    android:theme="@style/TextLabel"
+                    app:hintTextAppearance="@style/TextLabel2">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/wro09s"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                        android:hint="@string/wrosource"
+                        android:inputType="textCapWords"
+                        android:text='@{wro09a.checked ? wro09s.getText.toString : ""}' />
+
+                </android.support.design.widget.TextInputLayout>
+
             </LinearLayout>
             <!--10-->
             <TextView
@@ -1349,44 +1359,45 @@
                 android:orientation="vertical"
                 android:visibility='@{wro10a.checked ? View.VISIBLE : View.GONE}'>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/wronum"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
 
-                <EditText
-                    android:id="@+id/wro10num"
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:digits="0123456789"
-                    android:hint="@string/wronum"
-                    android:inputType="number"
-                    android:maxLength="2"
-                    android:text='@{wro10a.checked ? wro10num.getText.toString : ""}' />
+                    android:theme="@style/TextLabel"
+                    app:hintTextAppearance="@style/TextLabel2">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/wrosource"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/wro10num"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:digits="0123456789"
+                        android:hint="@string/wronum"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:text='@{wro10a.checked ? wro10num.getText.toString : ""}' />
 
-                <EditText
-                    android:id="@+id/wro10s"
+                </android.support.design.widget.TextInputLayout>
+
+
+
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                    android:hint="@string/wrosource"
-                    android:inputType="textCapWords"
-                    android:text='@{wro10a.checked ? wro10s.getText.toString : ""}' />
+                    android:theme="@style/TextLabel"
+                    app:hintTextAppearance="@style/TextLabel2">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/wro10s"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                        android:hint="@string/wrosource"
+                        android:inputType="textCapWords"
+                        android:text='@{wro10a.checked ? wro10s.getText.toString : ""}' />
+                </android.support.design.widget.TextInputLayout>
+
             </LinearLayout>
             <!--11-->
             <TextView
@@ -1429,44 +1440,46 @@
                 android:orientation="vertical"
                 android:visibility='@{wro11a.checked ? View.VISIBLE : View.GONE}'>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/wronum"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
 
-                <EditText
-                    android:id="@+id/wro11num"
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:digits="0123456789"
-                    android:hint="@string/wronum"
-                    android:inputType="number"
-                    android:maxLength="2"
-                    android:text='@{wro11a.checked ? wro11num.getText.toString : ""}' />
+                    android:theme="@style/TextLabel"
+                    app:hintTextAppearance="@style/TextLabel2">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/wrosource"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/wro11num"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:digits="0123456789"
+                        android:hint="@string/wronum"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:text='@{wro11a.checked ? wro11num.getText.toString : ""}' />
 
-                <EditText
-                    android:id="@+id/wro11s"
+                </android.support.design.widget.TextInputLayout>
+
+
+
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                    android:hint="@string/wrosource"
-                    android:inputType="textCapWords"
-                    android:text='@{wro11a.checked ? wro11s.getText.toString : ""}' />
+                    android:theme="@style/TextLabel"
+                    app:hintTextAppearance="@style/TextLabel2">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/wro11s"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                        android:hint="@string/wrosource"
+                        android:inputType="textCapWords"
+                        android:text='@{wro11a.checked ? wro11s.getText.toString : ""}' />
+
+                </android.support.design.widget.TextInputLayout>
+
             </LinearLayout>
             <!--12-->
             <TextView
@@ -1508,55 +1521,64 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:visibility='@{wro12a.checked ? View.VISIBLE : View.GONE}'>
-
-                <EditText
-                    android:id="@+id/wro1288x"
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                    android:hint="@string/other"
-                    android:inputType="textCapWords"
-                    android:text='@{wro12a.checked ? wro1288x.getText.toString : ""}' />
+                    android:theme="@style/TextLabel"
+                    app:hintTextAppearance="@style/TextLabel2">
 
-                <TextView
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/wro1288x"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                        android:hint="@string/other"
+                        android:inputType="textCapWords"
+                        android:text='@{wro12a.checked ? wro1288x.getText.toString : ""}' />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/wronum"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
+                    android:theme="@style/TextLabel"
+                    app:hintTextAppearance="@style/TextLabel2">
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/wro12num"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:digits="0123456789"
+                        android:hint="@string/wronum"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:text='@{wro12a.checked ? wro12num.getText.toString : ""}' />
 
-                <EditText
-                    android:id="@+id/wro12num"
+                </android.support.design.widget.TextInputLayout>
+
+
+
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:digits="0123456789"
-                    android:hint="@string/wronum"
-                    android:inputType="number"
-                    android:maxLength="2"
-                    android:text='@{wro12a.checked ? wro12num.getText.toString : ""}' />
+                    android:theme="@style/TextLabel"
+                    app:hintTextAppearance="@style/TextLabel2">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/wrosource"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/wro12s"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                        android:hint="@string/wrosource"
+                        android:inputType="textCapWords"
+                        android:text='@{wro12a.checked ? wro12s.getText.toString : ""}' />
 
-                <EditText
-                    android:id="@+id/wro12s"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                    android:hint="@string/wrosource"
-                    android:inputType="textCapWords"
-                    android:text='@{wro12a.checked ? wro12s.getText.toString : ""}' />
+                </android.support.design.widget.TextInputLayout>
+
             </LinearLayout>
             <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
             <LinearLayout

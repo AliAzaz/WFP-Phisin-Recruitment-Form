@@ -206,7 +206,7 @@ public class SectionHActivity extends AppCompatActivity {
             }
 
 
-            if (!validatorClass.EmptyRadioButton(this, bi.wrh06, bi.wrh06a, getString(R.string.wrh05))) {
+            if (!validatorClass.EmptyRadioButton(this, bi.wrh06, bi.wrh06a, getString(R.string.wrh06))) {
                 return false;
             }
 
