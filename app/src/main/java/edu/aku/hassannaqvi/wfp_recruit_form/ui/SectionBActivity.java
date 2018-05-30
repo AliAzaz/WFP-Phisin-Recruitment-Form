@@ -225,7 +225,8 @@ public class SectionBActivity extends AppCompatActivity {
         MainApp.fmc = new FamilyMembersContract();
         MainApp.fmc.setDevicetagID(MainApp.fc.getDevicetagID());
         MainApp.fmc.setFormDate(MainApp.fc.getFormDate());
-        MainApp.fmc.setUser(MainApp.fc.getUser());
+        MainApp.fmc.setInterviewer1(MainApp.fc.getInterviewer01());
+        MainApp.fmc.setInterviewer2(MainApp.fc.getInterviewer02());
         MainApp.fmc.setDeviceId(MainApp.fc.getDeviceID());
         MainApp.fmc.setApp_ver(MainApp.fc.getAppversion());
         MainApp.fmc.set_UUID(MainApp.fc.getUID());

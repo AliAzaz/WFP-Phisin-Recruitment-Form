@@ -291,14 +291,6 @@ public class MainActivity extends Activity {
         }
     }
 
-
-    public void openA(View v) {
-       // Intent iA = new Intent(this, SectionA1Activity.class);
-      //  startActivity(iA);
-        /*Intent iA = new Intent(this, SectionA1Activity.class);
-        startActivity(iA);*/
-    }
-
     public void testGPS(View v) {
 
         SharedPreferences sharedPref = getSharedPreferences("GPSCoordinates", Context.MODE_PRIVATE);
@@ -443,11 +435,12 @@ public class MainActivity extends Activity {
     }
 
 
-    public void openA1(View v) {
+    public void openA(View v) {
 
-//        startActivity1(SectionA1Activity.class);
+        startActivity1(SectionAActivity.class);
 
-    }public void openB(View v) {
+    }
+    public void openB(View v) {
 
         startActivity1(SectionBActivity.class);
 
@@ -491,7 +484,7 @@ public class MainActivity extends Activity {
 
     }
 
-    public void openj(View v) {
+    public void openJ(View v) {
 
         startActivity1(SectionJActivity.class);
 

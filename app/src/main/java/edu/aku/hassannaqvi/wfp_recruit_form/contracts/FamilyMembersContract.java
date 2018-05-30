@@ -21,7 +21,8 @@ public class FamilyMembersContract implements Serializable {
     private String formDate = "";
     private String deviceId = "";
     private String devicetagID = "";
-    private String user = "";
+    private String interviewer1 = "";
+    private String interviewer2 = "";
     private String app_ver = "";
 
     private String serialNo = "";
@@ -78,12 +79,20 @@ public class FamilyMembersContract implements Serializable {
         this.deviceId = deviceId;
     }
 
-    public String getUser() {
-        return user;
+    public String getInterviewer1() {
+        return interviewer1;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setInterviewer1(String interviewer1) {
+        this.interviewer1 = interviewer1;
+    }
+
+    public String getInterviewer2() {
+        return interviewer2;
+    }
+
+    public void setInterviewer2(String interviewer2) {
+        this.interviewer2 = interviewer2;
     }
 
     public String getApp_ver() {
@@ -141,7 +150,8 @@ public class FamilyMembersContract implements Serializable {
         this._UUID = jsonObject.getString(familyMembers.COLUMN_UUID);
         this.formDate = jsonObject.getString(familyMembers.COLUMN_FORMDATE);
         this.deviceId = jsonObject.getString(familyMembers.COLUMN_DEVICEID);
-        this.user = jsonObject.getString(familyMembers.COLUMN_USER);
+        this.interviewer1= jsonObject.getString(familyMembers.COLUMN_INTERVIEWER1);
+        this.interviewer2 = jsonObject.getString(familyMembers.COLUMN_INTERVIEWER2);
         this.app_ver = jsonObject.getString(familyMembers.COLUMN_APP_VERSION);
         this.sB = jsonObject.getString(familyMembers.COLUMN_SB);
         this.devicetagID = jsonObject.getString(familyMembers.COLUMN_DEVICETAGID);
@@ -157,7 +167,8 @@ public class FamilyMembersContract implements Serializable {
         this._UUID = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_UUID));
         this.formDate = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_FORMDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_DEVICEID));
-        this.user = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_USER));
+        this.interviewer1 = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_INTERVIEWER1));
+        this.interviewer2 = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_INTERVIEWER2));
         this.app_ver = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_APP_VERSION));
         this.sB = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_SB));
         this.devicetagID = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_DEVICETAGID));
@@ -176,7 +187,8 @@ public class FamilyMembersContract implements Serializable {
         json.put(familyMembers.COLUMN_UUID, this._UUID == null ? JSONObject.NULL : this._UUID);
         json.put(familyMembers.COLUMN_FORMDATE, this.formDate == null ? JSONObject.NULL : this.formDate);
         json.put(familyMembers.COLUMN_DEVICEID, this.deviceId == null ? JSONObject.NULL : this.deviceId);
-        json.put(familyMembers.COLUMN_USER, this.user == null ? JSONObject.NULL : this.user);
+        json.put(familyMembers.COLUMN_INTERVIEWER1, this.interviewer1 == null ? JSONObject.NULL : this.interviewer1);
+        json.put(familyMembers.COLUMN_INTERVIEWER2, this.interviewer2 == null ? JSONObject.NULL : this.interviewer2);
         json.put(familyMembers.COLUMN_APP_VERSION, this.app_ver == null ? JSONObject.NULL : this.app_ver);
         if (this.sB != null && !this.sB.equals("")) {
             json.put(familyMembers.COLUMN_SB, this.sB.equals("") ? JSONObject.NULL : new JSONObject(this.sB));
@@ -200,7 +212,8 @@ public class FamilyMembersContract implements Serializable {
         public static final String COLUMN_FORMDATE = "formdate";
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";
-        public static final String COLUMN_USER = "user";
+        public static final String COLUMN_INTERVIEWER1 = "interviewer1";
+        public static final String COLUMN_INTERVIEWER2 = "interviewer2";
         public static final String COLUMN_APP_VERSION = "app_ver";
 
         public static final String COLUMN_SB = "sB";

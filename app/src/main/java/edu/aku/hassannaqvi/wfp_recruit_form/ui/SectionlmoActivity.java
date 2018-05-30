@@ -29,19 +29,19 @@ public class SectionlmoActivity extends AppCompatActivity {
 
     private boolean formValidation() {
 
-        if (!validatorClass.EmptyRadioButton(this, bi.wro01, bi.wro01a, getString(R.string.wro01))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.wrl01, bi.wrl01a, getString(R.string.wrl01))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.wro02, bi.wro02a, getString(R.string.wro02))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.wrl02, bi.wrl02a, getString(R.string.wrl02))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.wro03, bi.wro03a, getString(R.string.wro03))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.wrl03, bi.wrl03a, getString(R.string.wrl03))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.wro04, bi.wro04a, getString(R.string.wro04))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.wrl04, bi.wrl04a, getString(R.string.wrl04))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.wro05, bi.wro05a, getString(R.string.wro05))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.wrl05, bi.wrl05a, getString(R.string.wrl05))) {
             return false;
         }
         if (!validatorClass.EmptyRadioButton(this, bi.wrm01, bi.wrm01a, getString(R.string.wrm01))) {

@@ -15,9 +15,18 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import edu.aku.hassannaqvi.wfp_recruit_form.contracts.TehsilContract;
+import edu.aku.hassannaqvi.wfp_recruit_form.contracts.TehsilContract.singleTehsil;
+import edu.aku.hassannaqvi.wfp_recruit_form.contracts.UCsContract;
+import edu.aku.hassannaqvi.wfp_recruit_form.contracts.UCsContract.singleUCs;
 import edu.aku.hassannaqvi.wfp_recruit_form.contracts.UsersContract;
+import edu.aku.hassannaqvi.wfp_recruit_form.contracts.UsersContract.UsersTable;
+import edu.aku.hassannaqvi.wfp_recruit_form.contracts.VillagesContract;
+import edu.aku.hassannaqvi.wfp_recruit_form.contracts.VillagesContract.singleVillages;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
+import edu.aku.hassannaqvi.wfp_recruit_form.contracts.LHWsContract;
+import edu.aku.hassannaqvi.wfp_recruit_form.contracts.LHWsContract.singleLHWs;
 
 /**
  * Created by ali.azaz on 7/14/2017.
@@ -62,8 +71,21 @@ public class GetAllData extends AsyncTask<String, String, String> {
                     // url = new URL(MainApp._HOST_URL + EnumBlockTable._URI);
                     break;
                 case "User":
-                    url = new URL(MainApp._HOST_URL + UsersContract.UsersTable._URI);
+                    url = new URL(MainApp._HOST_URL + UsersTable._URI);
                     break;
+                case "LHW":
+                    url = new URL(MainApp._HOST_URL + singleLHWs._URI);
+                    break;
+                case "Tehsil":
+                    url = new URL(MainApp._HOST_URL + singleTehsil._URI);
+                    break;
+                case "UCs":
+                    url = new URL(MainApp._HOST_URL + singleUCs._URI);
+                    break;
+                case "Villages":
+                    url = new URL(MainApp._HOST_URL + singleVillages._URI);
+                    break;
+
             }
 
             urlConnection = (HttpURLConnection) url.openConnection();
@@ -109,7 +131,19 @@ public class GetAllData extends AsyncTask<String, String, String> {
                             //     db.syncEnumBlocks(jsonArray);
                             break;
                         case "User":
-                            db.syncUser(jsonArray);
+                            db.syncUsers(jsonArray);
+                            break;
+                        case "LHW":
+                            db.syncLHWs(jsonArray);
+                            break;
+                        case "Tehsil":
+                            db.syncTehsil(jsonArray);
+                            break;
+                        case "UCs":
+                            db.syncUCs(jsonArray);
+                            break;
+                        case "Villages":
+                            db.syncVillages(jsonArray);
                             break;
                     }
 

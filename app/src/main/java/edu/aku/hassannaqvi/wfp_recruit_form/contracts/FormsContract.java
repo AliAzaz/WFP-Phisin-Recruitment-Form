@@ -18,11 +18,12 @@ public class FormsContract {
     private String _ID = "";
     private String _UID = "";
     private String formDate = ""; // Date
-    private String user = ""; // Interviewer
+    private String interviewer01 = ""; // Interviewer 01
+    private String interviewer02 = ""; // Interviewer 02
     private String istatus = ""; // Interview Status
     private String istatus88x = ""; // Interview Status
     private String sInfo = "";    // Info Section
-    private String sA1 = "";
+    private String sA = "";
     private String sC = "";
     private String sD = "";
     private String sE = "";
@@ -66,19 +67,15 @@ public class FormsContract {
         this._ID = jsonObject.getString(FormsTable.COLUMN_ID);
         this._UID = jsonObject.getString(FormsTable.COLUMN_UID);
         this.formDate = jsonObject.getString(FormsTable.COLUMN_FORMDATE);
-        this.user = jsonObject.getString(FormsTable.COLUMN_USER);
+        this.interviewer01= jsonObject.getString(FormsTable.COLUMN_INTERVIEWER01);
+        this.interviewer02= jsonObject.getString(FormsTable.COLUMN_INTERVIEWER02);
         this.istatus = jsonObject.getString(FormsTable.COLUMN_ISTATUS);
         this.istatus88x = jsonObject.getString(FormsTable.COLUMN_ISTATUS88X);
         this.sInfo = jsonObject.getString(FormsTable.COLUMN_SINFO);
-        this.sA1 = jsonObject.getString(FormsTable.COLUMN_SA1);
-
-        this.sC = jsonObject.getString(FormsTable.COLUMN_SD);
-        this.sD = jsonObject.getString(FormsTable.COLUMN_SG);
-
-
-        this.sG = jsonObject.getString(FormsTable.COLUMN_SC);
-        this.sC = jsonObject.getString(FormsTable.COLUMN_SD);
-        this.sD = jsonObject.getString(FormsTable.COLUMN_SG);
+        this.sA = jsonObject.getString(FormsTable.COLUMN_sA);
+        this.sC = jsonObject.getString(FormsTable.COLUMN_SC);
+        this.sD = jsonObject.getString(FormsTable.COLUMN_SD);
+        this.sG = jsonObject.getString(FormsTable.COLUMN_SG);
         this.sH = jsonObject.getString(FormsTable.COLUMN_SH);
         this.sI = jsonObject.getString(FormsTable.COLUMN_SI);
         this.sJ = jsonObject.getString(FormsTable.COLUMN_SJ);
@@ -110,19 +107,18 @@ public class FormsContract {
         this._ID = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ID));
         this._UID = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_UID));
         this.formDate = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_FORMDATE));
-        this.user = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_USER));
+        this.interviewer01 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_INTERVIEWER01));
+        this.interviewer02 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_INTERVIEWER02));
+
         this.istatus = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ISTATUS));
         this.istatus88x = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ISTATUS88X));
         this.sInfo = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SINFO));
-        this.sA1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SA1));
+        this.sA = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_sA));
 
-        this.sC = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SD));
-        this.sD = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SG));
+        this.sD = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SD));
+        this.sG = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SG));
+        this.sC = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC));
 
-
-        this.sG = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC));
-        this.sC = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SD));
-        this.sD = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SG));
         this.sH = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH));
         this.sI = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SI));
         this.sJ = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SJ));
@@ -158,7 +154,8 @@ public class FormsContract {
         json.put(FormsTable.COLUMN_ID, this._ID == null ? JSONObject.NULL : this._ID);
         json.put(FormsTable.COLUMN_UID, this._UID == null ? JSONObject.NULL : this._UID);
         json.put(FormsTable.COLUMN_FORMDATE, this.formDate == null ? JSONObject.NULL : this.formDate);
-        json.put(FormsTable.COLUMN_USER, this.user == null ? JSONObject.NULL : this.user);
+        json.put(FormsTable.COLUMN_INTERVIEWER01, this.interviewer01 == null ? JSONObject.NULL : this.interviewer01);
+        json.put(FormsTable.COLUMN_INTERVIEWER02, this.interviewer02 == null ? JSONObject.NULL : this.interviewer02);
         json.put(FormsTable.COLUMN_ISTATUS, this.istatus == null ? JSONObject.NULL : this.istatus);
         json.put(FormsTable.COLUMN_ISTATUS88X, this.istatus88x == null ? JSONObject.NULL : this.istatus88x);
         json.put(FormsTable.COLUMN_COUNT, this.count == null ? JSONObject.NULL : this.count);
@@ -167,8 +164,8 @@ public class FormsContract {
         if (!this.sInfo.equals("")) {
             json.put(FormsTable.COLUMN_SINFO, this.sInfo.equals("") ? JSONObject.NULL : new JSONObject(this.sInfo));
         }
-        if (!this.sA1.equals("")) {
-            json.put(FormsTable.COLUMN_SA1, this.sA1.equals("") ? JSONObject.NULL : new JSONObject(this.sA1));
+        if (!this.sA.equals("")) {
+            json.put(FormsTable.COLUMN_sA, this.sA.equals("") ? JSONObject.NULL : new JSONObject(this.sA));
         }
         if (!this.sC.equals("")) {
             json.put(FormsTable.COLUMN_SD, this.sC.equals("") ? JSONObject.NULL : new JSONObject(this.sC));
@@ -227,6 +224,22 @@ public class FormsContract {
         this.endingdatetime = endingdatetime;
     }
 
+    public String getInterviewer01() {
+        return interviewer01;
+    }
+
+    public void setInterviewer01(String interviewer01) {
+        this.interviewer01 = interviewer01;
+    }
+
+    public String getInterviewer02() {
+        return interviewer02;
+    }
+
+    public void setInterviewer02(String interviewer02) {
+        this.interviewer02 = interviewer02;
+    }
+
     public String getCount() {
         return count;
     }
@@ -267,14 +280,6 @@ public class FormsContract {
         this.formDate = formDate;
     }
 
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
-
     public String getIstatus() {
         return istatus;
     }
@@ -302,12 +307,12 @@ public class FormsContract {
     }
 
 
-    public String getsA1() {
-        return sA1;
+    public String getsA() {
+        return sA;
     }
 
-    public void setsA1(String sA1) {
-        this.sA1 = sA1;
+    public void setsA(String sA) {
+        this.sA = sA;
     }
 
     public String getsG() {
@@ -479,11 +484,12 @@ public class FormsContract {
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "_uid";
         public static final String COLUMN_FORMDATE = "formdate";
-        public static final String COLUMN_USER = "user";
+        public static final String COLUMN_INTERVIEWER01 = "interviewer01";
+        public static final String COLUMN_INTERVIEWER02 = "interviewer02";
         public static final String COLUMN_ISTATUS = "istatus";
         public static final String COLUMN_ISTATUS88X = "istatus88x";
         public static final String COLUMN_SINFO = "sinfo";
-        public static final String COLUMN_SA1 = "sa1";
+        public static final String COLUMN_sA = "sA";
         public static final String COLUMN_SC = "sc";
         public static final String COLUMN_SD = "sd";
         public static final String COLUMN_SE = "se";

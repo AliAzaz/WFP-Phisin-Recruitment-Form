@@ -249,12 +249,6 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton wri081801;
     @BindView(R.id.wri081802)
     RadioButton wri081802;
-    @BindView(R.id.wri0819)
-    RadioGroup wri0819;
-    @BindView(R.id.wri081901)
-    RadioButton wri081901;
-    @BindView(R.id.wri081902)
-    RadioButton wri081902;
     @BindView(R.id.wri09)
     RadioGroup wri09;
     @BindView(R.id.wri0901)
@@ -431,18 +425,6 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton wri16g01;
     @BindView(R.id.wri16g02)
     RadioButton wri16g02;
-    @BindView(R.id.wri16h)
-    RadioGroup wri16h;
-    @BindView(R.id.wri16h01)
-    RadioButton wri16h01;
-    @BindView(R.id.wri16h02)
-    RadioButton wri16h02;
-    @BindView(R.id.wri16i)
-    RadioGroup wri16i;
-    @BindView(R.id.wri16i01)
-    RadioButton wri16i01;
-    @BindView(R.id.wri16i02)
-    RadioButton wri16i02;
     @BindView(R.id.wri17)
     RadioGroup wri17;
     @BindView(R.id.wri1701)
@@ -838,7 +820,6 @@ public class SectionIActivity extends AppCompatActivity {
         si.put("wri0816", wri081601.isChecked() ? "1" : wri081602.isChecked() ? "2" : "0");
         si.put("wri0817", wri081701.isChecked() ? "1" : wri081702.isChecked() ? "2" : "0");
         si.put("wri0818", wri081801.isChecked() ? "1" : wri081802.isChecked() ? "2" : "0");
-        si.put("wri0819", wri081901.isChecked() ? "1" : wri081902.isChecked() ? "2" : "0");
         si.put("wri09", wri0901.isChecked() ? "1" : wri0902.isChecked() ? "2" : wri0903.isChecked() ? "3"
                 : wri0904.isChecked() ? "4" : wri0905.isChecked() ? "5" : wri0906.isChecked() ? "6"
                 : wri0907.isChecked() ? "7" : wri0908.isChecked() ? "8" : wri0909.isChecked() ? "9"
@@ -871,8 +852,6 @@ public class SectionIActivity extends AppCompatActivity {
         si.put("wri16e", wri16e01.isChecked() ? "1" : wri16e02.isChecked() ? "2" : "0");
         si.put("wri16f", wri16f01.isChecked() ? "1" : wri16f02.isChecked() ? "2" : "0");
         si.put("wri16g", wri16g01.isChecked() ? "1" : wri16g02.isChecked() ? "2" : "0");
-        si.put("wri16h", wri16h01.isChecked() ? "1" : wri16h02.isChecked() ? "2" : "0");
-        si.put("wri16i", wri16i01.isChecked() ? "1" : wri16i02.isChecked() ? "2" : "0");
         si.put("wri17", wri1701.isChecked() ? "1" : wri1702.isChecked() ? "2" : "0");
         si.put("wri1801", wri1801.getText().toString());
         si.put("wri1802", wri1802.getText().toString());
@@ -1214,15 +1193,7 @@ public class SectionIActivity extends AppCompatActivity {
             wri081802.setError(null);
         }
 
-        // =================== Q819 ====================
-        if (wri0819.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.wri0819), Toast.LENGTH_SHORT).show();
-            wri081902.setError("This Data is required");
-            Log.d(TAG, "wri0819 : This Data is required ");
-            return false;
-        } else {
-            wri081902.setError(null);
-        }
+
 
         // =================== Q9 ====================
         if (wri09.getCheckedRadioButtonId() == -1) {
@@ -1418,25 +1389,6 @@ public class SectionIActivity extends AppCompatActivity {
             return false;
         } else {
             wri16g02.setError(null);
-        }
-        // =================== Q16h ====================
-        if (wri16h.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.wri16h), Toast.LENGTH_SHORT).show();
-            wri16h02.setError("This Data is required");
-            Log.d(TAG, "wri16h : This Data is required");
-            return false;
-        } else {
-            wri16h02.setError(null);
-        }
-
-        // =================== Q16i ====================
-        if (wri16i.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.wri16i), Toast.LENGTH_SHORT).show();
-            wri16i02.setError("This Data is required");
-            Log.d(TAG, "wri16i : This Data is required");
-            return false;
-        } else {
-            wri16i02.setError(null);
         }
 
         // =================== Q17 ====================

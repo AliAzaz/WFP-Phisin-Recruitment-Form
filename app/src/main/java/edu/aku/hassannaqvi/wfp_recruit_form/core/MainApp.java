@@ -13,6 +13,8 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.text.format.DateFormat;
+import android.util.Log;
+import android.widget.Toast;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -66,9 +68,48 @@ public class MainApp extends Application {
     public static String userName = "0000";
     public static int versionCode;
     public static String versionName;
+    public static String[] loginMem;
+    public static String userName2 = "0000";
+    public static int ucCode = 0;
+    public static int tehsilCode = 0;
+    public static int villageCode = 0;
+    public static int lhwCode = 0;
+    public static String HHno;
 
     protected static LocationManager locationManager;
+    public static void setGPS(Activity activity) {
+        SharedPreferences GPSPref = activity.getSharedPreferences("GPSCoordinates", Context.MODE_PRIVATE);
 
+//        String date = DateFormat.format("dd-MM-yyyy HH:mm", Long.parseLong(GPSPref.getString("Time", "0"))).toString();
+
+        try {
+            String lat = GPSPref.getString("Latitude", "0");
+            String lang = GPSPref.getString("Longitude", "0");
+            String acc = GPSPref.getString("Accuracy", "0");
+            String dt = GPSPref.getString("Time", "0");
+
+            if (lat == "0" && lang == "0") {
+                Toast.makeText(activity, "Could not obtained GPS points", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(activity, "GPS set", Toast.LENGTH_SHORT).show();
+            }
+
+            String date = DateFormat.format("dd-MM-yyyy HH:mm", Long.parseLong(GPSPref.getString("Time", "0"))).toString();
+
+            MainApp.fc.setGpsLat(GPSPref.getString("Latitude", "0"));
+            MainApp.fc.setGpsLng(GPSPref.getString("Longitude", "0"));
+            MainApp.fc.setGpsAcc(GPSPref.getString("Accuracy", "0"));
+//            AppMain.fc.setGpsTime(GPSPref.getString(date, "0")); // Timestamp is converted to date above
+            MainApp.fc.setGpsDT(date); // Timestamp is converted to date above
+
+            Toast.makeText(activity, "GPS set", Toast.LENGTH_SHORT).show();
+
+        } catch (Exception e) {
+            Log.e("GPS", "setGPS: " + e.getMessage());
+        }
+
+
+    }
     public static Calendar getCalendarDate(String value) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         Calendar calendar = Calendar.getInstance();
@@ -103,6 +144,7 @@ public class MainApp extends Application {
 
         );
     }
+
 
     protected void showCurrentLocation() {
 

@@ -130,6 +130,14 @@
                         android:visibility='@{wrf0288.checked ? View.VISIBLE : View.GONE}' />
 
                     <!--3-->
+                    <TextView
+                        android:layout_marginTop="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:text="@string/wrf03"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -141,7 +149,7 @@
                             android:id="@+id/wrf03"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/wrf03"
+                            android:hint="@string/wrf03a"
                             android:inputType="number"
                             android:maxLength="3"
                             android:textColor="@android:color/black" />
@@ -149,6 +157,14 @@
                     </android.support.design.widget.TextInputLayout>
 
                     <!--4-->
+                    <TextView
+                        android:layout_marginTop="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:text="@string/wrf04"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -160,7 +176,7 @@
                             android:id="@+id/wrf04"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/wrf04"
+                            android:hint="@string/sachet"
                             android:inputType="number"
                             android:maxLength="1"
                             android:textColor="@android:color/black" />
@@ -439,7 +455,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="1dp"
-                                android:text="@string/yes" />
+                                android:text="@string/wrf0901a" />
 
                             <CheckBox
                                 android:id="@+id/wrf0901b"
@@ -447,7 +463,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="1dp"
                                 android:layout_weight="1"
-                                android:text="@string/no" />
+                                android:text="@string/wrf0901b" />
 
                             <CheckBox
                                 android:id="@+id/wrf0901c"
@@ -455,7 +471,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="1dp"
                                 android:layout_weight="1"
-                                android:text="@string/no" />
+                                android:text="@string/wrf0901c" />
 
                             <CheckBox
                                 android:id="@+id/wrf090188"
@@ -479,6 +495,14 @@
                             android:visibility='@{wrf090188.checked ? View.VISIBLE : View.GONE}' />
 
                         <!--9.2-->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:background="@color/pink_100"
+                            android:text="@string/wrf0902"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/colorPrimaryDark" />
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -490,7 +514,7 @@
                                 android:id="@+id/wrf0902"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/wrf0902"
+                                android:hint="@string/sachet"
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:textColor="@android:color/black" />
@@ -518,7 +542,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="1dp"
-                                android:text="@string/yes" />
+                                android:text="@string/wrf0903a" />
 
                             <CheckBox
                                 android:id="@+id/wrf0903b"
@@ -526,7 +550,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="1dp"
                                 android:layout_weight="1"
-                                android:text="@string/no" />
+                                android:text="@string/wrf0903b" />
 
                             <CheckBox
                                 android:id="@+id/wrf0903c"
@@ -534,7 +558,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="1dp"
                                 android:layout_weight="1"
-                                android:text="@string/no" />
+                                android:text="@string/wrf0903c" />
 
                             <CheckBox
                                 android:id="@+id/wrf090399"
