@@ -79,6 +79,8 @@ public class MainActivity extends Activity {
     private Boolean exit = false;
     private String rSumText = "";
 
+    public static String[] usersArray;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -246,6 +248,10 @@ public class MainActivity extends Activity {
         } else {
             mainBinding.testing.setVisibility(View.VISIBLE);
         }
+
+//        Logins manage
+        usersArray = new String[]{"....",MainApp.userName, MainApp.userName2};
+
     }
 
     public void openForm() {
@@ -440,26 +446,31 @@ public class MainActivity extends Activity {
         startActivity1(SectionAActivity.class);
 
     }
+
     public void openB(View v) {
 
         startActivity1(SectionBActivity.class);
 
     }
+
     public void openC(View v) {
 
         startActivity1(SectionCActivity.class);
 
     }
+
     public void openD(View v) {
 
         startActivity1(SectionDActivity.class);
 
     }
+
     public void openE(View v) {
 
         startActivity1(SectionEActivity.class);
 
     }
+
     public void openF(View v) {
 
         startActivity1(SectionFActivity.class);

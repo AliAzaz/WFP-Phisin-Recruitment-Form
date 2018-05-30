@@ -36,7 +36,7 @@ public class SectionCActivity extends AppCompatActivity {
 //        setContentView(R.layout.activity_section_c);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_c);
 
-        this.setTitle("Section C");
+
 
         bi.setCallback(this);
         setDateManager();

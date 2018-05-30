@@ -64,7 +64,6 @@
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="12sp" />
 
-
             <EditText
                 android:id="@+id/wrk01a"
                 android:layout_width="match_parent"

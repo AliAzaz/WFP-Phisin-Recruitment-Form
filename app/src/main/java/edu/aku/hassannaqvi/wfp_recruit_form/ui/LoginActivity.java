@@ -63,7 +63,6 @@ import edu.aku.hassannaqvi.wfp_recruit_form.R;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
 import edu.aku.hassannaqvi.wfp_recruit_form.get.GetAllData;
-import edu.aku.hassannaqvi.wfp_recruit_form.ui.MainActivity;
 
 
 /**
@@ -561,13 +560,13 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                         (mEmail.equals("test1234") && mPassword.equals("test1234"))
                         || (mEmail.equals("test12345") && mPassword.equals("test12345"))) {
                     MainApp.userName = mEmail;
-                    MainApp.admin = mEmail.contains("@");
 
                     if ((mEmail2.equals("dmu@aku") && mPassword2.equals("aku?dmu")) || db.Login(mEmail2, mPassword2) ||
                             (mEmail2.equals("test1234") && mPassword2.equals("test1234")) || (mEmail2.equals("test12345") && mPassword2.equals("test12345"))) {
                         if (!mEmail.equals(mEmail2)) {
 
                             MainApp.userName2 = mEmail2;
+                            MainApp.admin = mEmail2.contains("@");
 
                             finish();
 
