@@ -151,11 +151,7 @@ public class SectionBActivity extends AppCompatActivity {
             if (UpdateDb()) {
                 finish();
 
-                if (SectionAActivity.pwList.size() > 0) {
-                    startActivity(new Intent(this, SectionBActivity.class));
-                } else {
-                    startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
-                }
+                startActivity(new Intent(this, SectionBActivity.class));
 
             } else {
                 Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
@@ -172,7 +168,12 @@ public class SectionBActivity extends AppCompatActivity {
             }
             if (UpdateDb()) {
                 finish();
-                startActivity(new Intent(this, SectionCActivity.class));
+
+                if (SectionAActivity.pwList.size() > 0) {
+                    startActivity(new Intent(this, SectionCActivity.class));
+                } else {
+                    startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+                }
 
             } else {
                 Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
