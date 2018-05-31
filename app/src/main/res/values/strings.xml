@@ -206,11 +206,11 @@
     <string name="wrd17o"> کوئی پیچیدگی نہیں </string>
     <string name="wrd18"> کیا موجودہ حمل کے دوران،آپ نے ان پیچیدگیوں کے لئے علاج کر وایاتھا؟ </string>
     <string name="wrd19"> موجودہ حمل کے دوران ان پیچیدگیوں کے لئے علاج کس سےکروایاتھا؟ </string>
-    <string name="wrd19suba"> HEALTH PERSONNEL </string>
+    <string name="wrd19suba"> صحت کے ذمہ دار  </string>
     <string name="wrd19a"> ڈاکٹر </string>
     <string name="wrd19b"> نرس/مڈوائف/ایل ایچ وی </string>
     <string name="wrd19c"> کمیونٹی مڈوائف </string>
-    <string name="wrd19subb"> OTHER PERSON </string>
+    <string name="wrd19subb"> دیگر افراد</string>
     <string name="wrd19d"> دائی/ٹی بی اے </string>
     <string name="wrd19e"> لیڈی ہیلتھ ورکر </string>
     <string name="wrd19f"> ہومیوپیتھک </string>
