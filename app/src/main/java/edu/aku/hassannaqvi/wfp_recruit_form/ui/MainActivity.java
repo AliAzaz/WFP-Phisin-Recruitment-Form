@@ -63,6 +63,8 @@ public class MainActivity extends Activity {
     TextView lblheader;
     @BindView(R.id.recordSummary)
     TextView recordSummary;
+    @BindView(R.id.testing)
+    TextView testing;
 
     @BindView(R.id.syncDevice)
     Button syncDevice;
@@ -147,12 +149,12 @@ public class MainActivity extends Activity {
 //        Binding setting
         ActivityMainBinding mainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         mainBinding.setCallback(this);
-
         DatabaseHelper db = new DatabaseHelper(this);
 
 //        Admin checking
         if (MainApp.admin) {
             mainBinding.adminsec.setVisibility(View.VISIBLE);
+//            adminsec.setVisibility(View.VISIBLE);
 
             Collection<FormsContract> todaysForms = db.getTodayForms();
             Collection<FormsContract> unsyncedForms = db.getUnsyncedForms();
@@ -167,7 +169,7 @@ public class MainActivity extends Activity {
                 rSumText += "\tFORMS' LIST: \r\n";
                 String iStatus;
                 rSumText += "--------------------------------------------------\r\n";
-                rSumText += "[ DSS_ID ] \t[Form Status] \t[Sync Status]----------\r\n";
+                rSumText += "[ Form_ID ] \t[Form Status] \t[Sync Status]----------\r\n";
                 rSumText += "--------------------------------------------------\r\n";
 
                 for (FormsContract fc : todaysForms) {
@@ -192,7 +194,7 @@ public class MainActivity extends Activity {
                         iStatus = "\tN/A";
                     }
 
-                    //rSumText += fc.getDSSID();
+                    rSumText += fc.get_ID();
 
                     rSumText += " " + iStatus + " ";
 
@@ -216,6 +218,7 @@ public class MainActivity extends Activity {
 
         } else {
             mainBinding.adminsec.setVisibility(View.GONE);
+//            adminsec.setVisibility(View.GONE);
         }
 
 //        Fill spinner
@@ -247,8 +250,10 @@ public class MainActivity extends Activity {
 //        Testing visibility
         if (Integer.valueOf(MainApp.versionName.split("\\.")[0]) > 0) {
             mainBinding.testing.setVisibility(View.GONE);
+//            testing.setVisibility(View.GONE);
         } else {
             mainBinding.testing.setVisibility(View.VISIBLE);
+//            testing.setVisibility(View.VISIBLE);
         }
 
 //        Logins manage

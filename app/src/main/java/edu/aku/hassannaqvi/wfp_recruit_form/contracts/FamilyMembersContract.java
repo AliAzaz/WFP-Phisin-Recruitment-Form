@@ -230,6 +230,6 @@ public class FamilyMembersContract implements Serializable {
         public static final String COLUMN_SYNCED = "synced";
         public static final String COLUMN_SYNCED_DATE = "sync_date";
 
-        public static String _URL = "familymembers.php";
+        public static String _URL = "familymemberspw.php";
     }
 }
