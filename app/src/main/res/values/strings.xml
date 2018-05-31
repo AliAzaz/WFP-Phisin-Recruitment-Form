@@ -131,7 +131,7 @@
     <string name="wrb07i"> کاروبار </string>
     <string name="wrb07j"> شاگرد </string>
     <string name="wrb07k"> بیروز گار </string>
-    <string name="wrcheading"> C. Information of Pregnant Woman (PW) </string>
+    <string name="wrcheading"> حاملہ خواتین کی معلومات  </string>
     <string name="wrc01"> حاملہ عورت کا شناختی نمبر </string>
     <string name="wrc02"> حاملہ عورت کانام </string>
     <string name="wrc03"> حاملہ عورت کے شوہر کا نام </string>
@@ -143,7 +143,7 @@
     <string name="wrc06"> آپ کی آخری ماہواری کی تاریخ کیا تھی؟ </string>
     <string name="wrc07"> زچگی کی تاریخ (متوقع) </string>
     <string name="wrc08"> داخلہ کی تاریخ </string>
-    <string name="wrdheading"> D. Reproductive History and Antenatal Care of Pregnant Woman </string>
+    <string name="wrdheading"> تولیدی  عمر اور حمل کے دوران کئے گئے طبی معائنے کی معلومات </string>
     <string name="wrd01"> اب تک کل حمل کی تعداد (بشمول موجودہ حمل) </string>
     <string name="wrd01a"> تعداد </string>
     <string name="wrd02"> اب تک کل زندہ پیدائشوں کی تعداد ؟ </string>
@@ -220,7 +220,7 @@
     <string name="wre01"> قد </string>
     <string name="wre02"> وزن </string>
     <string name="wre03"> خون کی مقدار کا نتیجہ </string>
-    <string name="wrfheading"> F. Compliance Assessment of Specialized Nutritious Food (SNF) for Pregnant Woman – Maamta </string>
+    <string name="wrfheading"> حاملہ خاتون کے لئے مخصوص غذائی خوراک (SNF) کے تعمیل کا تعین  - ممتا</string>
     <string name="wrf01"> کیا آپ نے گزشتہ 3ماہ کے دوران ایس این ایف مامتا موصول کی تھی ۔ مامتا کے ساشے دکھائیں۔ </string>
     <string name="wrf02"> آپ کو کس نےمامتا دیئے تھے؟ </string>
     <string name="wrf02a"> لیڈی ہیلتھ ورکر </string>
@@ -252,7 +252,7 @@
     <string name="wrf0903a"> منع نہیں کر سکتے </string>
     <string name="wrf0903b"> ذائقہ اچھا تھا </string>
     <string name="wrf0903c"> مجھے یقین تھا یہ دوسرے بچوں/بڑوں کے لئے فائدہ مند ہے۔ </string>
-    <string name="wrgheading"> G. Minimum Dietary Diversity for Pregnant Woman </string>
+    <string name="wrgheading">حاملہ خاتون کے لئے کم سے کم غذائی تنوع </string>
     <string name="wrgsub"> براہ مہربانی کھانے کی اشیاہ(کھانے اور ہلکی غذائیں) جو کہ کل دن یا رات کے دوران گھر میں یا گھر سے باہر کھایا یا پیا وضاحت کریں ۔صبح سویرے جو پہلی غذا یا یا مشروب کھایا پیا اس سے شروع کریں ۔
 اوپر دیئے ہوئے کھانے یا پینے کے بارے میں لکھیں ۔اجزاہ کی فہرست میں سے پوچھیں جن میں کھانے اور پینے والی اجزا ہ کا ذکر نہیں ہے ان کے بارے میں مزید تحقیقات کریں </string>
     <string name="wrg01"> اناج </string>
@@ -379,7 +379,7 @@
     <string name="wrh17h"> سیاہ پتیوں کی سبزیاں </string>
     <string name="wrh18"> آئرن کی کمی کی ممکنہ اثرات کیا ہیں؟ </string>
     <string name="wrh18a"> خون کی کمی </string>
-    <string name="wrh18b"> Delay normal infant motor function </string>
+    <string name="wrh18b"> نارمل بچے کی موٹر فنشن میں تاخیر</string>
     <string name="wrh18c"> یاداشت یا ذہنی کمزوریا بچوں کی ذہنی نشرنما میں دیری </string>
     <string name="wrh18d"> تھکاوٹ </string>
     <string name="wrh18e"> قبل از وقت پیدائش </string>
@@ -582,7 +582,7 @@
     <string name="wri2114"> بینظیر انکم سپورٹ پروگرام کی طرف سے پیسے </string>
     <string name="wri22"> کیا آپ کے گھر کا کوئی فرد آپ کے ضلعے سے باہر کام کرتا ہے؟ </string>
     <string name="wri2201"> اگرہاں تو کہاں کام کرتے ہیں؟ </string>
-    <string name="wrjheading"> J. Hand Washing </string>
+    <string name="wrjheading">ہاتھ دہونے کی معلومات</string>
     <string name="wrj01"> براہ مہربانی وہ جگہ دیکھا ئیں جہاں آپ اور آپ کے گھروالے اکثر ہاتھ دھوتے ہیں؟ </string>
     <string name="wrj0101"> مشاہدہ کیا </string>
     <!--<string name="wrj0102"> مشاہدہ نہیں کیا </string>-->
@@ -616,7 +616,7 @@
     <string name="wrj0608"> بچوں کی پاخانہ کی صفا ئی کے بعد </string>
     <string name="wrj0609"> لیٹرین استعمال کرنے کے بعد </string>
 
-    <string name="wrkheading">K. Household Food Consumption and Diet Diversity  </string>
+    <string name="wrkheading">گھریلو خوراک کی کھپت اور خوراک کی تنوع </string>
     <string name="wrksub">آپ کے گھر والوں نے گزشتہ کتنے دن نیچے دی گئی اشیاء گھر پر یا گھر سے باہر کھائی تھی اور اس کا ذریعہ یا وسیلہ کیا تھا ؟ </string>
     <string name="hint">missing string </string>
     <string name="wrk01a"> پہچلے 7دنوں میں کھانے کا ریکادڑ </string>
@@ -664,7 +664,7 @@
     <string name="wrl03"> کھانے کے وقت کم مقدار میں کھانا </string>
     <string name="wrl04"> بچوں کا کھانا پورا کرنے کے لئے بڑوں کو کھانے سے روکنا </string>
     <string name="wrl05"> پورے دن میں کھانوں کی تعداد کم کرنا </string>
-    <string name="wrmheading"> M. Hunger Scale - 4 weeks (30 days) Recall </string>
+    <string name="wrmheading"> گزشتہ ایک ماہ  میں بھوک کا پیمانہ / شدت   </string>
     <string name="wrm01"> گزشتہ 4 ہفتوں میں(30دن)، کبھی ایسا وقت آیا کہ آپ کے گھر میں زرائع کی کمی کی وجہ سے کھانا نہیں تھا؟ </string>
     <string name="wrma"> کبھی نہیں </string>
     <string name="wrmb"> بہت مشکل سے ایک مرتبہ(1 سے 2 مرتبہ) </string>
@@ -680,7 +680,8 @@
     <string name="wrm03b"> بہت مشکل سے ایک مرتبہ(1 سے 2 مرتبہ) </string>
     <string name="wrm03c"> کبھی کبھی (3 سے 10 مرتبہ) </string>
     <string name="wrm03d"> اکثر اوقات (10 مرتبہ سے زیادہ) </string>
-    <string name="wroheading"> O. Assistance/Exposure to Interventions </string>
+    <string name="wroheading">کھانے کے لئے کوئی مدد </string>
+    <string name="wroheadingsub"> انٹرویو کے دوران انٹرویو کرنے والا خوراک کی مصنوعات دکھائے گا </string>
     <string name="wrosub"> کیا پچھلے 3 مہینے میں آپ کے گھر سے کسی نے درج ذیل میں سے کوئی امدد حاصل کی تھی؟ </string>
     <string name="wro01"> بچے کے لیئے آر وا وا میم </string>
     <string name="wro02"> بچوں کے لیے وٹا مکسی </string>
