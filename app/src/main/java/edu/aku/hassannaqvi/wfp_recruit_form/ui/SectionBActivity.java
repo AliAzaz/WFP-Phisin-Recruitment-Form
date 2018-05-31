@@ -199,7 +199,7 @@ public class SectionBActivity extends AppCompatActivity {
         if (!validatorClass.EmptyTextBox(this, binding.wrb04, getString(R.string.wrb04))) {
             return false;
         }
-        if (!validatorClass.RangeTextBox(this, binding.wrb04, 5, 99, getString(R.string.wrb04), " AGE")) {
+        if (!validatorClass.RangeTextBox(this, binding.wrb04, 0, 99, getString(R.string.wrb04), " AGE")) {
             return false;
         }
 //        03
@@ -209,8 +209,10 @@ public class SectionBActivity extends AppCompatActivity {
             }
         }
 //        05
-        if (!validatorClass.EmptyRadioButton(this, binding.wrb05, binding.wrb06e, getString(R.string.wrb05))) {
-            return false;
+        if (Integer.valueOf(binding.wrb04.getText().toString()) > 10) {
+            if (!validatorClass.EmptyRadioButton(this, binding.wrb05, binding.wrb06e, getString(R.string.wrb05))) {
+                return false;
+            }
         }
 //        06
         if (!validatorClass.EmptyRadioButton(this, binding.wrb06, binding.wrb06h, getString(R.string.wrb06))) {
