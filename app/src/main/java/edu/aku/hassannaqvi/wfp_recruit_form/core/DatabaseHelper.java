@@ -633,6 +633,74 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs);
     }
 
+    public void updateSyncedFamilyMembers(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(familyMembers.COLUMN_SYNCED, true);
+        values.put(familyMembers.COLUMN_SYNCED_DATE, new Date().toString());
+
+// Which row to update, based on the title
+        String where = familyMembers.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+
+        int count = db.update(
+                familyMembers.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    public Collection<FamilyMembersContract> getUnsyncedFamilyMembers() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                familyMembers.COLUMN_ID,
+                familyMembers.COLUMN_UID,
+                familyMembers.COLUMN_UUID,
+                familyMembers.COLUMN_FORMDATE,
+                familyMembers.COLUMN_INTERVIEWER1,
+                familyMembers.COLUMN_INTERVIEWER2,
+                familyMembers.COLUMN_SB,
+                familyMembers.COLUMN_DEVICETAGID,
+                familyMembers.COLUMN_DEVICEID,
+                familyMembers.COLUMN_APP_VERSION,
+        };
+        String whereClause = familyMembers.COLUMN_SYNCED + " is null OR " + familyMembers.COLUMN_SYNCED + " = '' ";
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                familyMembers.COLUMN_ID + " ASC";
+
+        Collection<FamilyMembersContract> allFC = new ArrayList<FamilyMembersContract>();
+        try {
+            c = db.query(
+                    familyMembers.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                FamilyMembersContract fc = new FamilyMembersContract();
+                allFC.add(fc.Hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allFC;
+    }
+
 
     public int updateFormID() {
         SQLiteDatabase db = this.getReadableDatabase();

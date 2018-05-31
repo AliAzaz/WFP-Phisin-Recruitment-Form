@@ -43,11 +43,13 @@ import java.util.Map;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import edu.aku.hassannaqvi.wfp_recruit_form.R;
+import edu.aku.hassannaqvi.wfp_recruit_form.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.wfp_recruit_form.contracts.FormsContract;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
 import edu.aku.hassannaqvi.wfp_recruit_form.databinding.ActivityMainBinding;
+import edu.aku.hassannaqvi.wfp_recruit_form.sync.SyncAllData;
 import edu.aku.hassannaqvi.wfp_recruit_form.sync.SyncForms;
 
 public class MainActivity extends Activity {
@@ -381,8 +383,29 @@ public class MainActivity extends Activity {
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
 
+            DatabaseHelper db = new DatabaseHelper(this);
+
             Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
             new SyncForms(this, true).execute();
+
+            new SyncAllData(
+                    this,
+                    "Forms",
+                    "updateSyncedForms",
+                    FormsContract.class,
+                    MainApp._HOST_URL + FormsContract.FormsTable._URL,
+                    db.getUnsyncedForms()
+            ).execute();
+
+            Toast.makeText(getApplicationContext(), "Syncing Family Members", Toast.LENGTH_SHORT).show();
+            new SyncAllData(
+                    this,
+                    "Family Members",
+                    "updateSyncedFamilyMembers",
+                    FamilyMembersContract.class,
+                    MainApp._HOST_URL + FamilyMembersContract.familyMembers._URL,
+                    db.getUnsyncedFamilyMembers()
+            ).execute();
 
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
