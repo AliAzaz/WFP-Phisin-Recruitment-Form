@@ -386,7 +386,7 @@ public class MainActivity extends Activity {
             DatabaseHelper db = new DatabaseHelper(this);
 
             Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
-            new SyncForms(this, true).execute();
+
 
             new SyncAllData(
                     this,
