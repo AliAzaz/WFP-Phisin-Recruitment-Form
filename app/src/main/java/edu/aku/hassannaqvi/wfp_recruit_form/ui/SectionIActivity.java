@@ -145,6 +145,8 @@ public class SectionIActivity extends AppCompatActivity {
     TextView textView2;
     @BindView(R.id.wri07)
     EditText wri07;
+    @BindView(R.id.wri0799)
+    CheckBox wri0799;
     @BindView(R.id.wri0801)
     RadioGroup wri0801;
     @BindView(R.id.wri080101)
@@ -489,6 +491,7 @@ public class SectionIActivity extends AppCompatActivity {
                     fldGrpwri08.setVisibility(View.GONE);
                     wri06.clearCheck();
                     wri07.setText(null);
+                    wri0799.setChecked(false);
                 } else {
                     fldGrpwri08.setVisibility(View.VISIBLE);
                 }
@@ -712,7 +715,19 @@ public class SectionIActivity extends AppCompatActivity {
                 } else {
                     fldGrpwri07.setVisibility(View.GONE);
                     wri07.setText(null);
+                    wri0799.setChecked(false);
                 }
+            }
+        });
+        wri0799.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    wri07.setVisibility(View.GONE);
+                    wri07.setText(null);
+                } else{
+                    wri07.setVisibility(View.VISIBLE);
+            }
             }
         });
 
@@ -805,7 +820,7 @@ public class SectionIActivity extends AppCompatActivity {
                 : wri0596.isChecked() ? "96" : "0");
         si.put("wri0596x", wri0596x.getText().toString());
         si.put("wri06", wri0601.isChecked() ? "1" : wri0602.isChecked() ? "2" : "0");
-        si.put("wri07", wri07.getText().toString());
+        si.put("wri07", wri0799.isChecked() ? "99" :wri07.getText().toString());
         si.put("wri0801", wri080101.isChecked() ? "1" : wri080102.isChecked() ? "2" : "0");
         si.put("wri0802", wri080201.isChecked() ? "1" : wri080202.isChecked() ? "2" : "0");
         si.put("wri0803", wri080301.isChecked() ? "1" : wri080302.isChecked() ? "2" : "0");
@@ -989,7 +1004,7 @@ public class SectionIActivity extends AppCompatActivity {
 
             if (wri0601.isChecked()) {
                 // =================== Q7 ====================
-                if (wri07.getText().toString().isEmpty()) {
+                if (wri07.getText().toString().isEmpty() && !wri0799.isChecked()) {
                     Toast.makeText(this, "ERROR(Empty)" + getString(R.string.wri07), Toast.LENGTH_SHORT).show();
                     wri07.setError("This data is required");
                     Log.d(TAG, "wri07  : This Data is required ");
@@ -997,7 +1012,7 @@ public class SectionIActivity extends AppCompatActivity {
                 } else {
                     wri07.setError(null);
                 }
-
+                if (!wri0799.isChecked()){
                 if ((Integer.parseInt(wri07.getText().toString()) == 0)) {
                     Toast.makeText(this, "ERROR: " + getString(R.string.wri07), Toast.LENGTH_LONG).show();
                     wri07.setError("No. of HH cannot be zero");
@@ -1005,6 +1020,7 @@ public class SectionIActivity extends AppCompatActivity {
                     return false;
                 } else {
                     wri07.setError(null);
+                }
                 }
             }
         }

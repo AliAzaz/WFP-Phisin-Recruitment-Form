@@ -45,5 +45,11 @@ public class DateUtils {
         cal.add(Calendar.MONTH, months);
         return new SimpleDateFormat(format).format(cal.getTime()).toString(); //"dd-MM-yyyy HH:mm"
     }
+    public static String getYearsBack(String format, int year){
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(cal.getTime());
+        cal.add(Calendar.YEAR, year);
+        return new SimpleDateFormat(format).format(cal.getTime()).toString(); //"dd-MM-yyyy HH:mm"
+    }
 
 }

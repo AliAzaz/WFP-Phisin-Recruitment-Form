@@ -9,6 +9,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -22,6 +23,7 @@ import edu.aku.hassannaqvi.wfp_recruit_form.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
 import edu.aku.hassannaqvi.wfp_recruit_form.databinding.ActivitySectionBBinding;
+import edu.aku.hassannaqvi.wfp_recruit_form.other.DateUtils;
 import edu.aku.hassannaqvi.wfp_recruit_form.validation.validatorClass;
 
 public class SectionBActivity extends AppCompatActivity {
@@ -75,6 +77,20 @@ public class SectionBActivity extends AppCompatActivity {
                 } else {
                     if (Integer.valueOf(binding.wrb04.getText().toString()) < 5) {
                         binding.wrb03.setEnabled(true);
+                        switch (Integer.valueOf(binding.wrb04.getText().toString())) {
+                            case 1:
+                                binding.wrb03.setMinDate(DateUtils.getYearsBack("dd/MM/yyyy", -1));
+                                break;
+                            case 2:
+                                binding.wrb03.setMinDate(DateUtils.getYearsBack("dd/MM/yyyy", -2));
+                                break;
+                            case 3:
+                                binding.wrb03.setMinDate(DateUtils.getYearsBack("dd/MM/yyyy", -3));
+                                break;
+                            case 4:
+                                binding.wrb03.setMinDate(DateUtils.getYearsBack("dd/MM/yyyy", -4));
+                                break;
+                        }
 
                         binding.fldGrpwrb01.setVisibility(View.GONE);
                         binding.wrb05.clearCheck();
@@ -138,7 +154,6 @@ public class SectionBActivity extends AppCompatActivity {
     public void setupViews() {
         binding.wrb03.setManager(getSupportFragmentManager());
         binding.wrb03.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis()));
-        binding.wrb03.setMinDate(new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() + ((MainApp.MILLISECONDS_IN_5Years))));
     }
 
     public void BtnAddMember() {

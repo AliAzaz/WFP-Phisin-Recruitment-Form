@@ -518,9 +518,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
-                        android:hint="@string/wri07"
+                        android:hint = "@string/wri0701"
                         android:inputType="number"
                         android:maxLength="2" />
+                    <CheckBox
+                        android:id="@+id/wri0799"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:text="@string/dkn" />
 
                 </LinearLayout>
 
