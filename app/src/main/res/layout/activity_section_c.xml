@@ -65,16 +65,39 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:theme="@style/TextLabel"
-                    app:hintTextAppearance="@style/TextLabel2">
+                    app:hintTextAppearance="@style/TextLabel2"
+                    android:visibility="gone">
 
                     <android.support.design.widget.TextInputEditText
                         android:id="@+id/wrc02"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                        android:digits="1234567890"
                         android:enabled="false"
+                        android:hint="@string/wrc00"
+                        android:inputType="number"
+                        android:visibility="gone"
+                        android:maxLength="4"
+                        android:textColor="@android:color/black" />
+
+                </android.support.design.widget.TextInputLayout>
+                <!--wrcstudyid-->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:theme="@style/TextLabel"
+                    app:hintTextAppearance="@style/TextLabel2">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/wrcstudyid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="1234567890"
+                        android:enabled="true"
                         android:hint="@string/wrc01"
-                        android:inputType="textCapWords"
+                        android:inputType="number"
+                        android:maxLength="4"
                         android:textColor="@android:color/black" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -187,7 +210,7 @@
                         android:focusable="true"
                         android:hint="@string/wrc06"
                         android:textColor="@android:color/black"
-                        app:dateFormat="dd/MM/yyyy" />
+                        app:dateFormat="dd-MM-yyyy" />
 
                 </android.support.design.widget.TextInputLayout>
 

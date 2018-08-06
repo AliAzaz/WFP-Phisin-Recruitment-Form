@@ -29,6 +29,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.xml.validation.Validator;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -41,6 +43,7 @@ import edu.aku.hassannaqvi.wfp_recruit_form.contracts.UCsContract;
 import edu.aku.hassannaqvi.wfp_recruit_form.contracts.VillagesContract;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
+import edu.aku.hassannaqvi.wfp_recruit_form.validation.validatorClass;
 
 public class SectionAActivity extends Activity {
 
@@ -62,6 +65,12 @@ public class SectionAActivity extends Activity {
     RadioButton spbla08a;
     @BindView(R.id.spbla08b)
     RadioButton spbla08b;
+    @BindView(R.id.spblacluster)
+    RadioGroup spblacluster;
+    @BindView(R.id.spblaclustera)
+    RadioButton spblaclustera;
+    @BindView(R.id.spblaclusterb)
+    RadioButton spblaclusterb;
     /*@BindView(R.id.spbla08c)
     RadioButton spbla08c;
 */
@@ -303,11 +312,12 @@ public class SectionAActivity extends Activity {
         sInfo.put("village_code", String.valueOf(MainApp.villageCode));
         sInfo.put("lhw_code", String.valueOf(MainApp.lhwCode));
 
-        //sInfo.put("spbla04", spbla04.getText().toString());
-       // MainApp.HHno = spbla04.getText().toString();
+        sInfo.put("spbla04", spbla04.getText().toString());
+        MainApp.HHno = spbla04.getText().toString();
 
 
         sInfo.put("spbla08", spbla08a.isChecked() ? "1" : spbla08b.isChecked() ? "2" : "0");
+        sInfo.put("spblacluster", spblaclustera.isChecked() ? "1" : spblaclusterb.isChecked() ? "2" : "0");
 
         MainApp.fc.setsA(String.valueOf(sInfo));
 
@@ -401,7 +411,9 @@ public class SectionAActivity extends Activity {
         } else {
             spbla04.setError(null);
         }*/
-//
+        if (!validatorClass.EmptyRadioButton(this,spblacluster,spblaclustera,getString(R.string.spblacluster))){
+            return false;
+        }
         if (spbla08.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbla08), Toast.LENGTH_SHORT).show();
             spbla08a.setError("This data is Required!");

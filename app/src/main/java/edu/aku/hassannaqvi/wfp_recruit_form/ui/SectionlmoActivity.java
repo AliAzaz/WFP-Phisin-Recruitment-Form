@@ -22,7 +22,6 @@ public class SectionlmoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // setContentView(R.layout.activity_sectionlmo);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_sectionlmo);
         bi.setCallback(this);
     }

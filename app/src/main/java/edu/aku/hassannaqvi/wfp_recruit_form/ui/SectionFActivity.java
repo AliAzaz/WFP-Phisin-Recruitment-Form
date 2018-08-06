@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -58,6 +59,7 @@ public class SectionFActivity extends AppCompatActivity {
                     bi.wrf08a.setChecked(false);
                     bi.wrf08b.setChecked(false);
                     bi.wrf08c.setChecked(false);
+                    bi.wrf08d.setChecked(false);
                     bi.wrf08a.setChecked(false);
                     bi.wrf0888.setChecked(false);
                     bi.wrf0888x.setText(null);
@@ -87,6 +89,7 @@ public class SectionFActivity extends AppCompatActivity {
                     bi.wrf08a.setChecked(false);
                     bi.wrf08b.setChecked(false);
                     bi.wrf08c.setChecked(false);
+                    bi.wrf08d.setChecked(false);
                     bi.wrf08a.setChecked(false);
                     bi.wrf0888.setChecked(false);
                     bi.wrf0888x.setText(null);
@@ -117,6 +120,26 @@ public class SectionFActivity extends AppCompatActivity {
                 }
             }
         });
+        bi.wrf090399.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    bi.wrf0903a.setChecked(false);
+                    bi.wrf0903b.setChecked(false);
+                    bi.wrf0903c.setChecked(false);
+                    bi.wrf090388.setChecked(false);
+                    bi.wrf0903a.setEnabled(false);
+                    bi.wrf0903b.setEnabled(false);
+                    bi.wrf0903c.setEnabled(false);
+                    bi.wrf090388.setEnabled(false);
+                }else{
+                    bi.wrf0903a.setEnabled(true);
+                    bi.wrf0903b.setEnabled(true);
+                    bi.wrf0903c.setEnabled(true);
+                    bi.wrf090388.setEnabled(true);
+                }
+            }
+        });
     }
 
     private boolean formValidation() {
@@ -129,7 +152,6 @@ public class SectionFActivity extends AppCompatActivity {
             if (!validatorClass.EmptyRadioButton(this, bi.wrf02, bi.wrf0288, bi.wrf0288x, getString(R.string.wrf02))) {
                 return false;
             }
-
 
             if (!validatorClass.EmptyTextBox(this, bi.wrf03, getString(R.string.wrf03))) {
                 return false;

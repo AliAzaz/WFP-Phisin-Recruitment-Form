@@ -131,10 +131,42 @@
             android:hint="@string/spbla04"
             android:inputType="number"
             android:maxLength="3" />
+        <!-- cluster -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/spblacluster"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white" />
 
+        <RadioGroup
+            android:id="@+id/spblacluster"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/spblaclustera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                android:text="@string/spblaclustera"/>
+
+            <RadioButton
+                android:id="@+id/spblaclusterb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                android:text="@string/spblaclusterb"/>
+
+        </RadioGroup>
         <!--08-->
         <TextView
-            android:visibility="gone"
+            android:visibility="visible"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -144,7 +176,7 @@
             android:textColor="@android:color/white" />
 
         <RadioGroup
-            android:visibility="gone"
+            android:visibility="visible"
             android:id="@+id/spbla08"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -79,7 +79,7 @@ public class SectionEActivity extends AppCompatActivity {
         } else {
             binding.wre0101.setError(null);
         }
-        if (!validatorClass.RangeTextBox(this, binding.wre0101, 0.0, 999.0, getString(R.string.wre01), "")) {
+        if (!validatorClass.RangeTextBox(this, binding.wre0101, 100.0, 180.0, getString(R.string.wre01), "height")) {
             return false;
         }
 
@@ -97,7 +97,7 @@ public class SectionEActivity extends AppCompatActivity {
         } else {
             binding.wre0102.setError(null);
         }
-        if (!validatorClass.RangeTextBox(this, binding.wre0102, 0.0, 999.0, getString(R.string.wre01), "")) {
+        if (!validatorClass.RangeTextBox(this, binding.wre0102, 100.0, 180.0, getString(R.string.wre01), "height")) {
             return false;
         }
 
@@ -124,7 +124,7 @@ public class SectionEActivity extends AppCompatActivity {
         } else {
             binding.wre0201.setError(null);
         }
-        if (!validatorClass.RangeTextBox(this, binding.wre0201, 0.0, 999.0, getString(R.string.wre02), "")) {
+        if (!validatorClass.RangeTextBox(this, binding.wre0201, 25.0, 110.0, getString(R.string.wre02), "weight")) {
             return false;
         }
 
@@ -141,7 +141,7 @@ public class SectionEActivity extends AppCompatActivity {
         } else {
             binding.wre0202.setError(null);
         }
-        if (!validatorClass.RangeTextBox(this, binding.wre0202, 0.0, 999.0, getString(R.string.wre02), "")) {
+        if (!validatorClass.RangeTextBox(this, binding.wre0202, 25.0, 110.0, getString(R.string.wre02), "weight")) {
             return false;
         }
 
@@ -166,7 +166,7 @@ public class SectionEActivity extends AppCompatActivity {
         } else {
             binding.wre03.setError(null);
         }
-        if (!validatorClass.RangeTextBox(this, binding.wre03, 0.0, 999.0, getString(R.string.wre03), "")) {
+        if (!validatorClass.RangeTextBox(this, binding.wre03, 4.0, 18.0, getString(R.string.wre03), "hb")) {
             return false;
         }
 
