@@ -303,8 +303,8 @@ public class SectionAActivity extends Activity {
         sInfo.put("village_code", String.valueOf(MainApp.villageCode));
         sInfo.put("lhw_code", String.valueOf(MainApp.lhwCode));
 
-        sInfo.put("spbla04", spbla04.getText().toString());
-        MainApp.HHno = spbla04.getText().toString();
+        //sInfo.put("spbla04", spbla04.getText().toString());
+       // MainApp.HHno = spbla04.getText().toString();
 
 
         sInfo.put("spbla08", spbla08a.isChecked() ? "1" : spbla08b.isChecked() ? "2" : "0");
@@ -401,7 +401,7 @@ public class SectionAActivity extends Activity {
         } else {
             spbla04.setError(null);
         }*/
-
+//
         if (spbla08.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbla08), Toast.LENGTH_SHORT).show();
             spbla08a.setError("This data is Required!");

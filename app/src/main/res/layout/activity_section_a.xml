@@ -112,6 +112,7 @@
 
         <!--04-->
         <TextView
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -121,6 +122,7 @@
             android:textColor="@android:color/white" />
 
         <EditText
+            android:visibility="gone"
             android:id="@+id/spbla04"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -132,6 +134,7 @@
 
         <!--08-->
         <TextView
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -141,6 +144,7 @@
             android:textColor="@android:color/white" />
 
         <RadioGroup
+            android:visibility="gone"
             android:id="@+id/spbla08"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

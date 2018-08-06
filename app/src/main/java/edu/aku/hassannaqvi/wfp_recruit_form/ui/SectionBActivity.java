@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.wfp_recruit_form.ui;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
@@ -30,6 +32,7 @@ public class SectionBActivity extends AppCompatActivity {
 
     ActivitySectionBBinding binding;
     static int serial_no = 0;
+    String age;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +80,7 @@ public class SectionBActivity extends AppCompatActivity {
                 } else {
                     if (Integer.valueOf(binding.wrb04.getText().toString()) < 5) {
                         binding.wrb03.setEnabled(true);
+                        binding.wrb033.setEnabled(true);
                         switch (Integer.valueOf(binding.wrb04.getText().toString())) {
                             case 1:
                                 binding.wrb03.setMinDate(DateUtils.getYearsBack("dd/MM/yyyy", -1));
@@ -113,6 +117,8 @@ public class SectionBActivity extends AppCompatActivity {
                     } else {
                         binding.wrb03.setEnabled(false);
                         binding.wrb03.setText(null);
+                        binding.wrb033.setEnabled(false);
+                        binding.wrb033.setText(null);
 
                         binding.wrb06.clearCheck();
                         View v = binding.fldGrpwrb02.getChildAt(0);
@@ -149,6 +155,87 @@ public class SectionBActivity extends AppCompatActivity {
             }
         });
 
+        binding.wrb06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+
+                if (i == R.id.wrb06c) {
+                    if (binding.wrb02a.isChecked() && binding.wrb04.getText().toString().equalsIgnoreCase("32")) {
+
+                        for (int j = 0; j < binding.wrb07.getChildCount(); j++) {
+
+                            binding.wrb07.getChildAt(j).setEnabled(false);
+
+                        }
+
+                    } else {
+
+                        for (int j = 0; j < binding.wrb07.getChildCount(); j++) {
+
+                            binding.wrb07.getChildAt(j).setEnabled(true);
+
+                        }
+
+                    }
+
+
+                }
+
+                if (i == R.id.wrb06b) {
+                    if (binding.wrb02b.isChecked() && binding.wrb04.getText().toString().equalsIgnoreCase("28")) {
+
+                        binding.wrb07b.setEnabled(false);
+
+                    } else {
+
+                        binding.wrb07b.setEnabled(true);
+                    }
+                }
+            }
+        });
+
+        binding.wrb02.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+
+                if (i == R.id.wrb02a) {
+                    binding.wrb07b.setEnabled(false);
+                } else {
+                    binding.wrb07b.setEnabled(true);
+                }
+            }
+        });
+
+
+//        binding.wrb04.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//                if () {
+//
+//                    if ( && ) {
+//
+//
+//                    }
+//
+//                }
+//
+//            }
+//
+//
+//            @Override
+//            public void afterTextChanged(Editable editable) {
+//
+//            }
+//        });
+
+
     }
 
     public void setupViews() {
@@ -182,13 +269,31 @@ public class SectionBActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             if (UpdateDb()) {
-                finish();
 
-                if (SectionAActivity.pwList.size() > 0) {
-                    startActivity(new Intent(this, SectionCActivity.class));
-                } else {
-                    startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
-                }
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+                alertDialogBuilder
+                        .setMessage("Are you sure to continue for next section?")
+                        .setCancelable(false)
+                        .setPositiveButton("Ok",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+
+                                        if (SectionAActivity.pwList.size() > 0) {
+                                            startActivity(new Intent(SectionBActivity.this, SectionCActivity.class));
+                                        } else {
+                                            startActivity(new Intent(SectionBActivity.this, EndingActivity.class).putExtra("complete", true));
+                                        }
+                                        finish();
+                                    }
+                                });
+                alertDialogBuilder.setNegativeButton("Cancel",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alert = alertDialogBuilder.create();
+                alert.show();
 
             } else {
                 Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
@@ -222,13 +327,18 @@ public class SectionBActivity extends AppCompatActivity {
             if (!validatorClass.EmptyTextBox(this, binding.wrb03, getString(R.string.wrb03))) {
                 return false;
             }
-        }
-//        05
-        if (Integer.valueOf(binding.wrb04.getText().toString()) > 10) {
-            if (!validatorClass.EmptyRadioButton(this, binding.wrb05, binding.wrb06e, getString(R.string.wrb05))) {
+
+            if (!validatorClass.EmptyTextBox(this, binding.wrb033, getString(R.string.wrb03))) {
+
                 return false;
             }
         }
+//        05
+//        if (Integer.valueOf(binding.wrb04.getText().toString()) > 10) {
+//            if (!validatorClass.EmptyRadioButton(this, binding.wrb05, binding.wrb06e, getString(R.string.wrb05))) {
+//                return false;
+//            }
+//        }
 //        06
         if (!validatorClass.EmptyRadioButton(this, binding.wrb06, binding.wrb06h, getString(R.string.wrb06))) {
             return false;
@@ -263,9 +373,10 @@ public class SectionBActivity extends AppCompatActivity {
         sB.put("serial_no", String.valueOf(serial_no));
         sB.put("wrb02", binding.wrb02a.isChecked() ? "1" : binding.wrb02b.isChecked() ? "2" : "0");
         sB.put("wrb03", binding.wrb03.getText().toString());
+        sB.put("wrb03", binding.wrb033.getText().toString());
         sB.put("wrb04", binding.wrb04.getText().toString());
-        sB.put("wrb05", binding.wrb05a.isChecked() ? "1" : binding.wrb05b.isChecked() ? "2" : binding.wrb05c.isChecked() ? "3" : binding.wrb05d.isChecked() ? "4"
-                : binding.wrb05e.isChecked() ? "5" : "0");
+        // sB.put("wrb05", binding.wrb05a.isChecked() ? "1" : binding.wrb05b.isChecked() ? "2" : binding.wrb05c.isChecked() ? "3" : binding.wrb05d.isChecked() ? "4"
+        //: binding.wrb05e.isChecked() ? "5" : "0");
         sB.put("wrb06", binding.wrb06a.isChecked() ? "1" : binding.wrb06b.isChecked() ? "2" : binding.wrb06c.isChecked() ? "3" : binding.wrb06d.isChecked() ? "4"
                 : binding.wrb06e.isChecked() ? "5" : binding.wrb06f.isChecked() ? "6" : binding.wrb06g.isChecked() ? "7" : binding.wrb06h.isChecked() ? "8"
                 : "0");

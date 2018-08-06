@@ -14,7 +14,7 @@
   </string>
 
     <string name="end_interview"> اختتام </string>
-    <string name="start_interview"> انٹروہو شروع کریں </string>
+    <string name="start_interview"> انٹرویو شروع کریں </string>
     <string name="nextSection"> اگلا سیکشن </string>
     <string name="addMember"> افراد کا اندراج </string>
     <string name="istatus">انٹروہو کا نتیجہ</string>
@@ -50,6 +50,7 @@
     <string name="cm"> cm </string>
     <string name="grams"> گرام </string>
     <string name="years"> سال </string>
+    <string name="age">اندراج کے وقت عمر(سال) </string>
     <string name="yearsago"> کتنے برس پھلے </string>
     <string name="months">مہینے  </string>
     <string name="times"> تعداد </string>
@@ -100,6 +101,8 @@
     <string name="wrb02f"> عورت </string>
     <string name="wrb03"> پیدائش کی تاریخ
 (پانچ سال سے کم عمر کے بچوں کیلئے) </string>
+
+    <string name="wrb033">مہینہ</string>
     <string name="wrb04"> عمر
 پانچ سال سے بڑے (مکمل سالوں میں) </string>
     <string name="wrb05"> ازواجی حیثیت </string>

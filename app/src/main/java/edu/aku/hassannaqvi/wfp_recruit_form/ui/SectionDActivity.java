@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -16,6 +18,7 @@ import edu.aku.hassannaqvi.wfp_recruit_form.R;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
 import edu.aku.hassannaqvi.wfp_recruit_form.databinding.ActivitySectionDBinding;
+import edu.aku.hassannaqvi.wfp_recruit_form.validation.ClearClass;
 import edu.aku.hassannaqvi.wfp_recruit_form.validation.validatorClass;
 
 import static android.view.View.GONE;
@@ -25,6 +28,8 @@ public class SectionDActivity extends AppCompatActivity {
 
     ActivitySectionDBinding bi;
     DatabaseHelper db;
+    int pragCount;
+    int liveBirth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,13 +78,15 @@ public class SectionDActivity extends AppCompatActivity {
                     bi.wrd08e.setChecked(false);
                     bi.wrd0888.setChecked(false);
                     bi.wrd0888x.setText(null);
-                    bi.wrd09.clearCheck();
-                    bi.wrd10.setText(null);
-                    bi.wrd1099.setChecked(false);
+//                    bi.wrd09.clearCheck();
+//                    bi.wrd10.setText(null);
+//                    bi.wrd1099.setChecked(false);
 
                 } else {
                     bi.fldGrpwrd03.setVisibility(VISIBLE);
                 }
+//
+//
             }
         });
         bi.wrd09.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -90,7 +97,7 @@ public class SectionDActivity extends AppCompatActivity {
                     bi.wrd10.setText(null);
                     bi.wrd1099.setChecked(false);
                 } else {
-                    bi.fldGrpwrd09.setVisibility(VISIBLE);
+                    ;
 
                 }
             }
@@ -119,6 +126,34 @@ public class SectionDActivity extends AppCompatActivity {
                 } else {
                     bi.fldGrpwrd14.setVisibility(VISIBLE);
                 }
+            }
+        });
+
+        bi.wrd15998.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean checked) {
+
+                if(bi.wrd15998.isChecked()){
+                    if(bi.wrd15997.isChecked()){
+                        bi.wrd15997.setChecked(false);
+                    }
+                }
+
+
+            }
+        });
+
+        bi.wrd15997.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean checked) {
+
+                if(bi.wrd15997.isChecked()){
+                    if(bi.wrd15998.isChecked()){
+                        bi.wrd15998.setChecked(false);
+
+                    }
+                }
+
             }
         });
         bi.wrd1777.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -172,20 +207,20 @@ public class SectionDActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
-                    if (checkedId != -1) {
-                        bi.wrd1777.setChecked(false);
+                if (checkedId != -1) {
+                    bi.wrd1777.setChecked(false);
 
-                        bi.fldGrpwrd17.setVisibility(VISIBLE);
-                    }
+                    bi.fldGrpwrd17.setVisibility(VISIBLE);
+                }
             }
         });
         bi.wrd17c.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                    if (checkedId != -1) {
-                        bi.wrd1777.setChecked(false);
-                        bi.fldGrpwrd17.setVisibility(VISIBLE);
-                    }
+                if (checkedId != -1) {
+                    bi.wrd1777.setChecked(false);
+                    bi.fldGrpwrd17.setVisibility(VISIBLE);
+                }
             }
         });
         bi.wrd17d.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -200,10 +235,10 @@ public class SectionDActivity extends AppCompatActivity {
         bi.wrd17e.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                    if (checkedId != -1) {
-                        bi.wrd1777.setChecked(false);
-                        bi.fldGrpwrd17.setVisibility(VISIBLE);
-                    }
+                if (checkedId != -1) {
+                    bi.wrd1777.setChecked(false);
+                    bi.fldGrpwrd17.setVisibility(VISIBLE);
+                }
             }
         });
         bi.wrd17f.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -218,10 +253,10 @@ public class SectionDActivity extends AppCompatActivity {
         bi.wrd17g.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                    if (checkedId != -1) {
-                        bi.wrd1777.setChecked(false);
-                        bi.fldGrpwrd17.setVisibility(VISIBLE);
-                    }
+                if (checkedId != -1) {
+                    bi.wrd1777.setChecked(false);
+                    bi.fldGrpwrd17.setVisibility(VISIBLE);
+                }
             }
         });
         bi.wrd17h.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -236,10 +271,10 @@ public class SectionDActivity extends AppCompatActivity {
         bi.wrd17i.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                    if (checkedId != -1) {
-                        bi.wrd1777.setChecked(false);
-                        bi.fldGrpwrd17.setVisibility(VISIBLE);
-                    }
+                if (checkedId != -1) {
+                    bi.wrd1777.setChecked(false);
+                    bi.fldGrpwrd17.setVisibility(VISIBLE);
+                }
             }
         });
         bi.wrd17j.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -254,10 +289,10 @@ public class SectionDActivity extends AppCompatActivity {
         bi.wrd17k.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                    if (checkedId != -1) {
-                        bi.wrd1777.setChecked(false);
-                        bi.fldGrpwrd17.setVisibility(VISIBLE);
-                    }
+                if (checkedId != -1) {
+                    bi.wrd1777.setChecked(false);
+                    bi.fldGrpwrd17.setVisibility(VISIBLE);
+                }
             }
         });
         bi.wrd17l.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -272,10 +307,10 @@ public class SectionDActivity extends AppCompatActivity {
         bi.wrd17m.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                    if (checkedId != -1) {
-                        bi.wrd1777.setChecked(false);
-                        bi.fldGrpwrd17.setVisibility(VISIBLE);
-                    }
+                if (checkedId != -1) {
+                    bi.wrd1777.setChecked(false);
+                    bi.fldGrpwrd17.setVisibility(VISIBLE);
+                }
             }
         });
         bi.wrd17n.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -288,7 +323,7 @@ public class SectionDActivity extends AppCompatActivity {
             }
         });
 
-    bi.wrd17o.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        bi.wrd17o.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (checkedId != -1) {
@@ -319,6 +354,65 @@ public class SectionDActivity extends AppCompatActivity {
                 }
             }
         });
+
+        bi.wrd01.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                if (charSequence.toString().equalsIgnoreCase("")) {
+                    pragCount = 0;
+                } else {
+                    pragCount = Integer.parseInt(charSequence.toString());
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+        bi.wrd02.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                if (charSequence.toString().equalsIgnoreCase("")) {
+
+                    liveBirth = 0;
+                } else {
+
+                    liveBirth = Integer.parseInt(charSequence.toString());
+                }
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+                if (liveBirth > pragCount) {
+
+                    bi.wrd02.setError("Could not be greater than " + pragCount);
+                } else {
+                    bi.wrd02.setError(null);
+                }
+
+
+            }
+        });
     }
 
     private boolean formValidation() {
@@ -337,8 +431,18 @@ public class SectionDActivity extends AppCompatActivity {
             return false;
         }
 
+        if (liveBirth > pragCount) {
+            Toast.makeText(this, getString(R.string.wrd02) + " " + "Could not be greater than " + pragCount, Toast.LENGTH_SHORT).show();
+            bi.wrd02.setError("Could not be greater than " + pragCount);
+            bi.wrd02.requestFocus();
+            return false;
+        } else {
+            bi.wrd02.setError(null);
+            bi.wrd02.clearFocus();
+        }
 
-        if (!validatorClass.RangeTextBox(this, bi.wrd02, 1, 15, getString(R.string.wrd02), "Number")) {
+
+        if (!validatorClass.RangeTextBox(this, bi.wrd02, 0, 15, getString(R.string.wrd02), "Number")) {
             return false;
         }
 
@@ -353,11 +457,11 @@ public class SectionDActivity extends AppCompatActivity {
             if (!validatorClass.EmptyCheckBox(this, bi.wrd04, bi.wrd04a, getString(R.string.wrd04a))) {
                 return false;
             }
-           if (bi.wrd0488.isChecked()) {
+            if (bi.wrd0488.isChecked()) {
 
-                    if (!validatorClass.EmptyTextBox(this, bi.wrd0488x, getString(R.string.other))) {
-                return false;
-            }
+                if (!validatorClass.EmptyTextBox(this, bi.wrd0488x, getString(R.string.other))) {
+                    return false;
+                }
             }
 
 
@@ -376,7 +480,7 @@ public class SectionDActivity extends AppCompatActivity {
                 if (!validatorClass.EmptyTextBox(this, bi.wrd06, getString(R.string.wrd06))) {
                     return false;
                 }
-                if (!validatorClass.RangeTextBox(this, bi.wrd06,1,3, getString(R.string.wrd06)," Months")) {
+                if (!validatorClass.RangeTextBox(this, bi.wrd06, 1, 3, getString(R.string.wrd06), " Months")) {
                     return false;
                 }
 
@@ -385,6 +489,10 @@ public class SectionDActivity extends AppCompatActivity {
 
             if (!bi.wrd0799.isChecked()) {
                 if (!validatorClass.EmptyTextBox(this, bi.wrd07, getString(R.string.wrd07))) {
+                    return false;
+                }
+
+                if (!validatorClass.RangeTextBox(this, bi.wrd07, 1, 99, getString(R.string.wrd07), "Number")) {
                     return false;
                 }
             }
@@ -399,17 +507,18 @@ public class SectionDActivity extends AppCompatActivity {
                 }
             }
 
+        }
 
-            if (!validatorClass.EmptyRadioButton(this, bi.wrd09, bi.wrd09a, getString(R.string.wrd09))) {
-                return false;
-            }
-            if (bi.wrd09a.isChecked()) {
-                if (!bi.wrd1099.isChecked()) {
-                    if (!validatorClass.EmptyTextBox(this, bi.wrd10, getString(R.string.wrd10))) {
-                        return false;
-                    }  if (!validatorClass.RangeTextBox(this, bi.wrd10,1,3, getString(R.string.wrd10)," times")) {
-                        return false;
-                    }
+        if (!validatorClass.EmptyRadioButton(this, bi.wrd09, bi.wrd09a, getString(R.string.wrd09))) {
+            return false;
+        }
+        if (bi.wrd09a.isChecked()) {
+            if (!bi.wrd1099.isChecked()) {
+                if (!validatorClass.EmptyTextBox(this, bi.wrd10, getString(R.string.wrd10))) {
+                    return false;
+                }
+                if (!validatorClass.RangeTextBox(this, bi.wrd10, 1, 3, getString(R.string.wrd10), " times")) {
+                    return false;
                 }
             }
         }
@@ -423,13 +532,17 @@ public class SectionDActivity extends AppCompatActivity {
                 if (!validatorClass.EmptyTextBox(this, bi.wrd12, getString(R.string.wrd12))) {
                     return false;
                 }
+
+                if(!validatorClass.RangeTextBox(this,bi.wrd12,1,99,getString(R.string.wrd12),"Number")){
+                    return false;
+                }
             }
 
 
             if (!validatorClass.EmptyTextBox(this, bi.wrd13, getString(R.string.wrd13))) {
                 return false;
             }
-            if (!validatorClass.RangeTextBox(this, bi.wrd13,1,35, getString(R.string.wrd13)," years")) {
+            if (!validatorClass.RangeTextBox(this, bi.wrd13, 1, 35, getString(R.string.wrd13), " years")) {
                 return false;
             }
         }
@@ -441,11 +554,11 @@ public class SectionDActivity extends AppCompatActivity {
         if (bi.wrd14a.isChecked()) {
 
 
-            if (!bi.wrd15997.isChecked()&& !bi.wrd15998.isChecked()) {
+            if (!bi.wrd15997.isChecked() && !bi.wrd15998.isChecked()) {
                 if (!validatorClass.EmptyTextBox(this, bi.wrd15, getString(R.string.wrd15))) {
                     return false;
                 }
-                if (!validatorClass.RangeTextBox(this, bi.wrd15,1,90, getString(R.string.wrd15)," Days")) {
+                if (!validatorClass.RangeTextBox(this, bi.wrd15, 1, 90, getString(R.string.wrd15), " Days")) {
                     return false;
                 }
             }
@@ -457,84 +570,84 @@ public class SectionDActivity extends AppCompatActivity {
         }
 
         if (!bi.wrd1777.isChecked()) {
-        if (!validatorClass.EmptyRadioButton(this, bi.wrd17a, bi.wrd17a1, getString(R.string.wrd17a))) {
-            return false;
-        }
-
-
-        if (!validatorClass.EmptyRadioButton(this, bi.wrd17b, bi.wrd17b1, getString(R.string.wrd17b))) {
-            return false;
-        }
-
-
-        if (!validatorClass.EmptyRadioButton(this, bi.wrd17c, bi.wrd17c1, getString(R.string.wrd17c))) {
-            return false;
-        }
-
-
-        if (!validatorClass.EmptyRadioButton(this, bi.wrd17d, bi.wrd17d1, getString(R.string.wrd17d))) {
-            return false;
-        }
-
-
-        if (!validatorClass.EmptyRadioButton(this, bi.wrd17e, bi.wrd17e1, getString(R.string.wrd17e))) {
-            return false;
-        }
-
-
-        if (!validatorClass.EmptyRadioButton(this, bi.wrd17f, bi.wrd17f1, getString(R.string.wrd17f))) {
-            return false;
-        }
-
-
-        if (!validatorClass.EmptyRadioButton(this, bi.wrd17g, bi.wrd17g1, getString(R.string.wrd17g))) {
-            return false;
-        }
-
-
-        if (!validatorClass.EmptyRadioButton(this, bi.wrd17h, bi.wrd17h1, getString(R.string.wrd17h))) {
-            return false;
-        }
-
-
-        if (!validatorClass.EmptyRadioButton(this, bi.wrd17i, bi.wrd17i1, getString(R.string.wrd17i))) {
-            return false;
-        }
-
-
-        if (!validatorClass.EmptyRadioButton(this, bi.wrd17j, bi.wrd17j1, getString(R.string.wrd17j))) {
-            return false;
-        }
-
-
-        if (!validatorClass.EmptyRadioButton(this, bi.wrd17k, bi.wrd17k1, getString(R.string.wrd17k))) {
-            return false;
-        }
-
-
-        if (!validatorClass.EmptyRadioButton(this, bi.wrd17l, bi.wrd17l1, getString(R.string.wrd17l))) {
-            return false;
-        }
-
-
-        if (!validatorClass.EmptyRadioButton(this, bi.wrd17m, bi.wrd17m1, getString(R.string.wrd17m))) {
-            return false;
-        }
-
-
-        if (!validatorClass.EmptyRadioButton(this, bi.wrd17n, bi.wrd17n1, getString(R.string.wrd17n))) {
-            return false;
-        }
-
-
-        if (!validatorClass.EmptyRadioButton(this, bi.wrd17o, bi.wrd17o1, getString(R.string.wrd17o))) {
-            return false;
-        }
-        if (bi.wrd17o1.isChecked()) {
-            if (!validatorClass.EmptyTextBox(this, bi.wrd1788x, getString(R.string.wrd17o)+" - "+getString(R.string.other))) {
+            if (!validatorClass.EmptyRadioButton(this, bi.wrd17a, bi.wrd17a1, getString(R.string.wrd17a))) {
                 return false;
             }
-        }
+
+
+            if (!validatorClass.EmptyRadioButton(this, bi.wrd17b, bi.wrd17b1, getString(R.string.wrd17b))) {
+                return false;
+            }
+
+
+            if (!validatorClass.EmptyRadioButton(this, bi.wrd17c, bi.wrd17c1, getString(R.string.wrd17c))) {
+                return false;
+            }
+
+
+            if (!validatorClass.EmptyRadioButton(this, bi.wrd17d, bi.wrd17d1, getString(R.string.wrd17d))) {
+                return false;
+            }
+
+
+            if (!validatorClass.EmptyRadioButton(this, bi.wrd17e, bi.wrd17e1, getString(R.string.wrd17e))) {
+                return false;
+            }
+
+
+            if (!validatorClass.EmptyRadioButton(this, bi.wrd17f, bi.wrd17f1, getString(R.string.wrd17f))) {
+                return false;
+            }
+
+
+            if (!validatorClass.EmptyRadioButton(this, bi.wrd17g, bi.wrd17g1, getString(R.string.wrd17g))) {
+                return false;
+            }
+
+
+            if (!validatorClass.EmptyRadioButton(this, bi.wrd17h, bi.wrd17h1, getString(R.string.wrd17h))) {
+                return false;
+            }
+
+
+            if (!validatorClass.EmptyRadioButton(this, bi.wrd17i, bi.wrd17i1, getString(R.string.wrd17i))) {
+                return false;
+            }
+
+
+            if (!validatorClass.EmptyRadioButton(this, bi.wrd17j, bi.wrd17j1, getString(R.string.wrd17j))) {
+                return false;
+            }
+
+
+            if (!validatorClass.EmptyRadioButton(this, bi.wrd17k, bi.wrd17k1, getString(R.string.wrd17k))) {
+                return false;
+            }
+
+
+            if (!validatorClass.EmptyRadioButton(this, bi.wrd17l, bi.wrd17l1, getString(R.string.wrd17l))) {
+                return false;
+            }
+
+
+            if (!validatorClass.EmptyRadioButton(this, bi.wrd17m, bi.wrd17m1, getString(R.string.wrd17m))) {
+                return false;
+            }
+
+
+            if (!validatorClass.EmptyRadioButton(this, bi.wrd17n, bi.wrd17n1, getString(R.string.wrd17n))) {
+                return false;
+            }
+
+
+            if (!validatorClass.EmptyRadioButton(this, bi.wrd17o, bi.wrd17o1, getString(R.string.wrd17o))) {
+                return false;
+            }
+            if (bi.wrd17o1.isChecked()) {
+                if (!validatorClass.EmptyTextBox(this, bi.wrd1788x, getString(R.string.wrd17o) + " - " + getString(R.string.other))) {
+                    return false;
+                }
+            }
             if (!validatorClass.EmptyRadioButton(this, bi.wrd18, bi.wrd18a, getString(R.string.wrd18))) {
                 return false;
             }

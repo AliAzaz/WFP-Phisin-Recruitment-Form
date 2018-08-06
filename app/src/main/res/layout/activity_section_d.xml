@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.SectionDActivity">
 
     <data>
@@ -50,6 +50,7 @@
                     android:text="@string/wrd01"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/white" />
+
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -77,6 +78,7 @@
                     android:text="@string/wrd02"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/white" />
+
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -96,6 +98,8 @@
                 </android.support.design.widget.TextInputLayout>
 
                 <!--wrd003-->
+
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -110,6 +114,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
 
                     <RadioButton
                         android:id="@+id/wrd03a"
@@ -144,28 +149,30 @@
                     android:orientation="vertical">
 
                     <!--wrd004-->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:background="@color/colorPrimary"
-                        android:text="@string/wrd04"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@android:color/white" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:background="@color/pink_100"
-                        android:text="@string/healthperson"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:textColor="@color/colorPrimaryDark" />
                     <LinearLayout
                         android:id="@+id/wrd04"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:background="@color/colorPrimary"
+                            android:text="@string/wrd04"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="@android:color/white" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:background="@color/pink_100"
+                            android:text="@string/healthperson"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/colorPrimaryDark" />
 
                         <CheckBox
                             android:id="@+id/wrd04a"
@@ -187,6 +194,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="1dp"
                             android:text="@string/wrd04c" />
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -195,6 +203,7 @@
                             android:text="@string/otherperson"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:textColor="@color/colorPrimaryDark" />
+
                         <CheckBox
                             android:id="@+id/wrd04d"
                             android:layout_width="match_parent"
@@ -252,20 +261,20 @@
 
 
                     <!--wrd005-->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:background="@color/colorPrimary"
-                        android:text="@string/wrd05"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@android:color/white" />
-
                     <LinearLayout
                         android:id="@+id/wrd05"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:background="@color/colorPrimary"
+                            android:text="@string/wrd05"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="@android:color/white" />
 
                         <CheckBox
                             android:id="@+id/wrd05a"
@@ -317,92 +326,102 @@
 
 
                     <!--wrd006-->
-                    <TextView
+                    <LinearLayout
+                        android:id="@+id/fldGrpwrd06"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:background="@color/colorPrimary"
-                        android:text="@string/wrd06"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@android:color/white" />
-                    <android.support.design.widget.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:theme="@style/TextLabel"
-                        android:visibility='@{wrd0699.checked ? View.GONE : View.VISIBLE}'
-                        app:hintTextAppearance="@style/TextLabel2">
+                        android:orientation="vertical">
 
-                        <android.support.design.widget.TextInputEditText
-                            android:id="@+id/wrd06"
+                        <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/months"
-                            android:inputType="number"
-                            android:maxLength="1"
-                            android:text='@{wrd0699.checked ? wrd06.getText.toString : ""}'
-                            android:textColor="@android:color/black" />
-                    </android.support.design.widget.TextInputLayout>
+                            android:layout_marginTop="16dp"
+                            android:background="@color/colorPrimary"
+                            android:text="@string/wrd06"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="@android:color/white" />
 
-
-                    <CheckBox
-                        android:id="@+id/wrd0699"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/dkn" />
-
-
-                    <!--wrd007-->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:background="@color/colorPrimary"
-                        android:text="@string/wrd07"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@android:color/white" />
-                    <android.support.design.widget.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:theme="@style/TextLabel"
-                        android:visibility='@{wrd0799.checked ? View.GONE : View.VISIBLE}'
-                        app:hintTextAppearance="@style/TextLabel2">
-
-                        <android.support.design.widget.TextInputEditText
-                            android:id="@+id/wrd07"
+                        <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/nooftimes"
-                            android:inputType="number"
-                            android:maxLength="1"
-                            android:text='@{wrd0799.checked ? wrd07.getText.toString : ""}'
-                            android:textColor="@android:color/black" />
-                    </android.support.design.widget.TextInputLayout>
+                            android:layout_marginTop="20dp"
+                            android:theme="@style/TextLabel"
+                            android:visibility='@{wrd0699.checked ? View.GONE : View.VISIBLE}'
+                            app:hintTextAppearance="@style/TextLabel2">
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/wrd06"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/months"
+                                android:inputType="number"
+                                android:maxLength="1"
+                                android:text='@{wrd0699.checked ? wrd06.getText.toString : ""}'
+                                android:textColor="@android:color/black" />
+                        </android.support.design.widget.TextInputLayout>
 
 
-                    <CheckBox
-                        android:id="@+id/wrd0799"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/dkn" />
+                        <CheckBox
+                            android:id="@+id/wrd0699"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dkn" />
+
+
+                        <!--wrd007-->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:background="@color/colorPrimary"
+                            android:text="@string/wrd07"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="@android:color/white" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:theme="@style/TextLabel"
+                            android:visibility='@{wrd0799.checked ? View.GONE : View.VISIBLE}'
+                            app:hintTextAppearance="@style/TextLabel2">
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/wrd07"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/nooftimes"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text='@{wrd0799.checked ? wrd07.getText.toString : ""}'
+                                android:textColor="@android:color/black" />
+                        </android.support.design.widget.TextInputLayout>
+
+
+                        <CheckBox
+                            android:id="@+id/wrd0799"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dkn" />
+
+                    </LinearLayout>
 
 
                     <!--wrd008-->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:background="@color/colorPrimary"
-                        android:text="@string/wrd08"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@android:color/white" />
-
                     <LinearLayout
                         android:id="@+id/wrd08"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:background="@color/colorPrimary"
+                            android:text="@string/wrd08"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="@android:color/white" />
 
                         <CheckBox
                             android:id="@+id/wrd08a"
@@ -467,6 +486,15 @@
 
 
                     <!--wrd009-->
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/wrd009"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -508,48 +536,48 @@
 
                     </RadioGroup>
 
+                </LinearLayout>
 
-                    <LinearLayout
-                        android:id="@+id/fldGrpwrd09"
+                <LinearLayout
+                    android:id="@+id/fldGrpwrd09"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--wrd010-->
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimary"
+                        android:text="@string/wrd10"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:theme="@style/TextLabel"
+                        android:visibility='@{wrd1099.checked ? View.GONE : View.VISIBLE}'
+                        app:hintTextAppearance="@style/TextLabel2">
 
-                        <!--wrd010-->
-                        <TextView
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/wrd10"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:background="@color/colorPrimary"
-                            android:text="@string/wrd10"
-                            android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:textColor="@android:color/white" />
-                        <android.support.design.widget.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:theme="@style/TextLabel"
-                            android:visibility='@{wrd1099.checked ? View.GONE : View.VISIBLE}'
-                            app:hintTextAppearance="@style/TextLabel2">
+                            android:hint="@string/nooftimes"
+                            android:inputType="number"
+                            android:maxLength="1"
+                            android:text='@{wrd1099.checked ? wrd10.getText.toString : ""}'
+                            android:textColor="@android:color/black" />
+                    </android.support.design.widget.TextInputLayout>
 
-                            <android.support.design.widget.TextInputEditText
-                                android:id="@+id/wrd10"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/nooftimes"
-                                android:inputType="number"
-                                android:maxLength="1"
-                                android:text='@{wrd1099.checked ? wrd10.getText.toString : ""}'
-                                android:textColor="@android:color/black" />
-                        </android.support.design.widget.TextInputLayout>
+                    <CheckBox
+                        android:id="@+id/wrd1099"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dkn" />
 
-                        <CheckBox
-                            android:id="@+id/wrd1099"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/dkn" />
-
-                    </LinearLayout>
                 </LinearLayout>
 
                 <!--wrd011-->
@@ -609,6 +637,7 @@
                         android:text="@string/wrd12"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:textColor="@android:color/white" />
+
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -623,7 +652,7 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/nooftimes"
                             android:inputType="number"
-                            android:maxLength="1"
+                            android:maxLength="2"
                             android:text='@{wrd1299.checked ? wrd12.getText.toString : ""}'
                             android:textColor="@android:color/black" />
                     </android.support.design.widget.TextInputLayout>
@@ -645,6 +674,7 @@
                         android:text="@string/wrd13"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:textColor="@android:color/white" />
+
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -721,6 +751,7 @@
                         android:text="@string/wrd15"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:textColor="@android:color/white" />
+
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -881,7 +912,7 @@
                     android:background="@color/pink_100"
                     android:text="@string/wrd17c"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorPrimaryDark"/>
+                    android:textColor="@color/colorPrimaryDark" />
 
                 <RadioGroup
                     android:id="@+id/wrd17c"
@@ -915,7 +946,7 @@
                     android:background="@color/pink_100"
                     android:text="@string/wrd17d"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorPrimaryDark"/>
+                    android:textColor="@color/colorPrimaryDark" />
 
                 <RadioGroup
                     android:id="@+id/wrd17d"
@@ -950,7 +981,7 @@
                     android:background="@color/pink_100"
                     android:text="@string/wrd17e"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorPrimaryDark"/>
+                    android:textColor="@color/colorPrimaryDark" />
 
                 <RadioGroup
                     android:id="@+id/wrd17e"
@@ -985,7 +1016,7 @@
                     android:background="@color/pink_100"
                     android:text="@string/wrd17f"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorPrimaryDark"/>
+                    android:textColor="@color/colorPrimaryDark" />
 
                 <RadioGroup
                     android:id="@+id/wrd17f"
@@ -1020,7 +1051,7 @@
                     android:background="@color/pink_100"
                     android:text="@string/wrd17g"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorPrimaryDark"/>
+                    android:textColor="@color/colorPrimaryDark" />
 
                 <RadioGroup
                     android:id="@+id/wrd17g"
@@ -1055,7 +1086,7 @@
                     android:background="@color/pink_100"
                     android:text="@string/wrd17h"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorPrimaryDark"/>
+                    android:textColor="@color/colorPrimaryDark" />
 
                 <RadioGroup
                     android:id="@+id/wrd17h"
@@ -1090,7 +1121,7 @@
                     android:background="@color/pink_100"
                     android:text="@string/wrd17i"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorPrimaryDark"/>
+                    android:textColor="@color/colorPrimaryDark" />
 
                 <RadioGroup
                     android:id="@+id/wrd17i"
@@ -1125,7 +1156,7 @@
                     android:background="@color/pink_100"
                     android:text="@string/wrd17j"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorPrimaryDark"/>
+                    android:textColor="@color/colorPrimaryDark" />
 
                 <RadioGroup
                     android:id="@+id/wrd17j"
@@ -1160,7 +1191,7 @@
                     android:background="@color/pink_100"
                     android:text="@string/wrd17k"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorPrimaryDark"/>
+                    android:textColor="@color/colorPrimaryDark" />
 
                 <RadioGroup
                     android:id="@+id/wrd17k"
@@ -1230,7 +1261,7 @@
                     android:background="@color/pink_100"
                     android:text="@string/wrd17m"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorPrimaryDark"/>
+                    android:textColor="@color/colorPrimaryDark" />
 
                 <RadioGroup
                     android:id="@+id/wrd17m"
@@ -1265,7 +1296,7 @@
                     android:background="@color/pink_100"
                     android:text="@string/wrd17n"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorPrimaryDark"/>
+                    android:textColor="@color/colorPrimaryDark" />
 
                 <RadioGroup
                     android:id="@+id/wrd17n"
@@ -1300,7 +1331,7 @@
                     android:background="@color/pink_100"
                     android:text="@string/other"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorPrimaryDark"/>
+                    android:textColor="@color/colorPrimaryDark" />
 
                 <RadioGroup
                     android:id="@+id/wrd17o"
@@ -1325,6 +1356,7 @@
                         android:text="@string/no" />
 
                 </RadioGroup>
+
                 <EditText
                     android:id="@+id/wrd1788x"
                     android:layout_width="match_parent"
@@ -1379,6 +1411,7 @@
                             android:layout_marginBottom="1dp"
                             android:layout_weight="1"
                             android:text="@string/no" />
+
                         <RadioButton
                             android:id="@+id/wrd1899"
                             android:layout_width="0dp"
@@ -1405,6 +1438,7 @@
                             android:text="@string/wrd19"
                             android:textAppearance="?android:attr/textAppearanceLarge"
                             android:textColor="@android:color/white" />
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -1413,6 +1447,7 @@
                             android:text="@string/healthperson"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:textColor="@color/colorPrimaryDark" />
+
                         <LinearLayout
                             android:id="@+id/wrd19"
                             android:layout_width="match_parent"
@@ -1439,6 +1474,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="1dp"
                                 android:text="@string/wrd19c" />
+
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -1447,6 +1483,7 @@
                                 android:text="@string/otherperson"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:textColor="@color/colorPrimaryDark" />
+
                             <CheckBox
                                 android:id="@+id/wrd19d"
                                 android:layout_width="match_parent"
