@@ -59,12 +59,12 @@ public class SectionAActivity extends Activity {
     @BindView(R.id.spbla04)
     EditText spbla04;
 
-    @BindView(R.id.spbla08)
-    RadioGroup spbla08;
-    @BindView(R.id.spbla08a)
-    RadioButton spbla08a;
-    @BindView(R.id.spbla08b)
-    RadioButton spbla08b;
+//    @BindView(R.id.spbla08)
+//    RadioGroup spbla08;
+//    @BindView(R.id.spbla08a)
+//    RadioButton spbla08a;
+//    @BindView(R.id.spbla08b)
+//    RadioButton spbla08b;
     @BindView(R.id.spblacluster)
     RadioGroup spblacluster;
     @BindView(R.id.spblaclustera)
@@ -114,7 +114,7 @@ public class SectionAActivity extends Activity {
         populateSpinner(this);
 
 //        Skip
-        spbla08.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+       /* spbla08.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (checkedId == R.id.spbla08a) {
@@ -125,7 +125,7 @@ public class SectionAActivity extends Activity {
                     btn_End.setVisibility(View.VISIBLE);
                 }
             }
-        });
+        });*/
 
 //        Initialize PW spinner
         pwList = new ArrayList<>();
