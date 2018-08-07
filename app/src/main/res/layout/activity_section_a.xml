@@ -164,7 +164,8 @@
                 android:text="@string/spblaclusterb"/>
 
         </RadioGroup>
-        <!--08-->
+<!--
+        &lt;!&ndash;08&ndash;&gt;
         <TextView
             android:visibility="visible"
             android:layout_width="match_parent"
@@ -199,6 +200,7 @@
                 android:text="@string/no"/>
 
         </RadioGroup>
+-->
 
 
 

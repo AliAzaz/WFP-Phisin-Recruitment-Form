@@ -316,7 +316,7 @@ public class SectionAActivity extends Activity {
         MainApp.HHno = spbla04.getText().toString();
 
 
-        sInfo.put("spbla08", spbla08a.isChecked() ? "1" : spbla08b.isChecked() ? "2" : "0");
+//        sInfo.put("spbla08", spbla08a.isChecked() ? "1" : spbla08b.isChecked() ? "2" : "0");
         sInfo.put("spblacluster", spblaclustera.isChecked() ? "1" : spblaclusterb.isChecked() ? "2" : "0");
 
         MainApp.fc.setsA(String.valueOf(sInfo));
@@ -411,7 +411,7 @@ public class SectionAActivity extends Activity {
         } else {
             spbla04.setError(null);
         }*/
-        if (!validatorClass.EmptyRadioButton(this,spblacluster,spblaclustera,getString(R.string.spblacluster))){
+       /* if (!validatorClass.EmptyRadioButton(this,spblacluster,spblaclustera,getString(R.string.spblacluster))){
             return false;
         }
         if (spbla08.getCheckedRadioButtonId() == -1) {
@@ -424,7 +424,7 @@ public class SectionAActivity extends Activity {
             return false;
         } else {
             spbla08a.setError(null);
-        }
+        }*/
 
         return true;
     }
