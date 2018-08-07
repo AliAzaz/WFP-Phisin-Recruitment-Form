@@ -18,7 +18,6 @@ import edu.aku.hassannaqvi.wfp_recruit_form.R;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
 import edu.aku.hassannaqvi.wfp_recruit_form.databinding.ActivitySectionDBinding;
-import edu.aku.hassannaqvi.wfp_recruit_form.validation.ClearClass;
 import edu.aku.hassannaqvi.wfp_recruit_form.validation.validatorClass;
 
 import static android.view.View.GONE;
@@ -36,8 +35,6 @@ public class SectionDActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_section_d);
-
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_d);
 
         this.setTitle("Section D");
