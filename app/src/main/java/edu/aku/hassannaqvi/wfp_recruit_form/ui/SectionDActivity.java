@@ -18,7 +18,7 @@ import edu.aku.hassannaqvi.wfp_recruit_form.R;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
 import edu.aku.hassannaqvi.wfp_recruit_form.databinding.ActivitySectionDBinding;
-import edu.aku.hassannaqvi.wfp_recruit_form.validation.clearClass;
+import edu.aku.hassannaqvi.wfp_recruit_form.validation.ClearClass;
 import edu.aku.hassannaqvi.wfp_recruit_form.validation.validatorClass;
 
 import static android.view.View.GONE;
@@ -30,6 +30,8 @@ public class SectionDActivity extends AppCompatActivity {
     DatabaseHelper db;
     int pragCount;
     int liveBirth;
+    boolean onChecked;
+    int womanAge,injectionCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,8 @@ public class SectionDActivity extends AppCompatActivity {
         db = new DatabaseHelper(this);
         bi.setCallback(this);
         setUpForm();
+
+        womanAge = Integer.parseInt(getIntent().getStringExtra("womanAge"));
     }
 
     private void setUpForm() {
@@ -97,7 +101,7 @@ public class SectionDActivity extends AppCompatActivity {
                     bi.wrd10.setText(null);
                     bi.wrd1099.setChecked(false);
                 } else {
-                    ;
+
 
                 }
             }
@@ -113,6 +117,36 @@ public class SectionDActivity extends AppCompatActivity {
                 } else {
                     bi.fldGrpwrd11.setVisibility(VISIBLE);
                 }
+            }
+        });
+
+        bi.wrd13.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                if(charSequence.toString().equalsIgnoreCase("")){
+                    injectionCount = 0;
+                }else {
+                    injectionCount = Integer.parseInt(charSequence.toString());
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+                if(injectionCount > womanAge){
+                    bi.wrd13.setError("could not greater than Woman age which is " + womanAge);
+                }else {
+                    bi.wrd13.setError(null);
+                }
+
             }
         });
         bi.wrd14.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -131,35 +165,42 @@ public class SectionDActivity extends AppCompatActivity {
 
         bi.wrd15998.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean checked) {
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
 
-                if(bi.wrd15998.isChecked()){
-                    if(bi.wrd15997.isChecked()){
-                        bi.wrd15997.setChecked(false);
-                    }
+                if (bi.wrd15998.isChecked()) {
+                    bi.wrd15997.setChecked(false);
+                    bi.viewWrd15.setVisibility(GONE);
+                } else {
+                    bi.viewWrd15.setVisibility(VISIBLE);
                 }
-
 
             }
         });
+
 
         bi.wrd15997.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean checked) {
 
-                if(bi.wrd15997.isChecked()){
-                    if(bi.wrd15998.isChecked()){
-                        bi.wrd15998.setChecked(false);
 
-                    }
+                if (bi.wrd15997.isChecked()) {
+                    bi.wrd15998.setChecked(false);
+                    bi.viewWrd15.setVisibility(GONE);
+                } else {
+                    bi.viewWrd15.setVisibility(VISIBLE);
+
                 }
+
 
             }
         });
+
+
         bi.wrd1777.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
+                    bi.fldGrpwrd17.setVisibility(GONE);
                     bi.wrd17a.clearCheck();
                     bi.wrd17b.clearCheck();
                     bi.wrd17c.clearCheck();
@@ -175,7 +216,6 @@ public class SectionDActivity extends AppCompatActivity {
                     bi.wrd17m.clearCheck();
                     bi.wrd17n.clearCheck();
                     bi.wrd17o.clearCheck();
-                    bi.fldGrpwrd17.setVisibility(GONE);
                     bi.wrd18.clearCheck();
                     bi.wrd19a.setChecked(false);
                     bi.wrd19b.setChecked(false);
@@ -190,6 +230,7 @@ public class SectionDActivity extends AppCompatActivity {
                 } else {
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
 
+
                 }
             }
         });
@@ -200,6 +241,9 @@ public class SectionDActivity extends AppCompatActivity {
                 if (checkedId != -1) {
                     bi.wrd1777.setChecked(false);
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
+                }else {
+                    bi.wrd1777.setChecked(true);
+                    bi.fldGrpwrd17.setVisibility(GONE);
                 }
             }
         });
@@ -209,8 +253,10 @@ public class SectionDActivity extends AppCompatActivity {
 
                 if (checkedId != -1) {
                     bi.wrd1777.setChecked(false);
-
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
+                }else {
+                    bi.wrd1777.setChecked(true);
+                    bi.fldGrpwrd17.setVisibility(GONE);
                 }
             }
         });
@@ -220,6 +266,9 @@ public class SectionDActivity extends AppCompatActivity {
                 if (checkedId != -1) {
                     bi.wrd1777.setChecked(false);
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
+                }else {
+                    bi.wrd1777.setChecked(true);
+                    bi.fldGrpwrd17.setVisibility(GONE);
                 }
             }
         });
@@ -229,6 +278,9 @@ public class SectionDActivity extends AppCompatActivity {
                 if (checkedId != -1) {
                     bi.wrd1777.setChecked(false);
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
+                }else {
+                    bi.wrd1777.setChecked(true);
+                    bi.fldGrpwrd17.setVisibility(GONE);
                 }
             }
         });
@@ -238,6 +290,9 @@ public class SectionDActivity extends AppCompatActivity {
                 if (checkedId != -1) {
                     bi.wrd1777.setChecked(false);
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
+                }else {
+                    bi.wrd1777.setChecked(true);
+                    bi.fldGrpwrd17.setVisibility(GONE);
                 }
             }
         });
@@ -247,6 +302,9 @@ public class SectionDActivity extends AppCompatActivity {
                 if (checkedId != -1) {
                     bi.wrd1777.setChecked(false);
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
+                }else {
+                    bi.wrd1777.setChecked(true);
+                    bi.fldGrpwrd17.setVisibility(GONE);
                 }
             }
         });
@@ -256,6 +314,9 @@ public class SectionDActivity extends AppCompatActivity {
                 if (checkedId != -1) {
                     bi.wrd1777.setChecked(false);
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
+                }else {
+                    bi.wrd1777.setChecked(true);
+                    bi.fldGrpwrd17.setVisibility(GONE);
                 }
             }
         });
@@ -265,6 +326,9 @@ public class SectionDActivity extends AppCompatActivity {
                 if (checkedId != -1) {
                     bi.wrd1777.setChecked(false);
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
+                }else {
+                    bi.wrd1777.setChecked(true);
+                    bi.fldGrpwrd17.setVisibility(GONE);
                 }
             }
         });
@@ -274,6 +338,9 @@ public class SectionDActivity extends AppCompatActivity {
                 if (checkedId != -1) {
                     bi.wrd1777.setChecked(false);
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
+                }else {
+                    bi.wrd1777.setChecked(true);
+                    bi.fldGrpwrd17.setVisibility(GONE);
                 }
             }
         });
@@ -283,6 +350,9 @@ public class SectionDActivity extends AppCompatActivity {
                 if (checkedId != -1) {
                     bi.wrd1777.setChecked(false);
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
+                }else {
+                    bi.wrd1777.setChecked(true);
+                    bi.fldGrpwrd17.setVisibility(GONE);
                 }
             }
         });
@@ -292,6 +362,9 @@ public class SectionDActivity extends AppCompatActivity {
                 if (checkedId != -1) {
                     bi.wrd1777.setChecked(false);
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
+                }else {
+                    bi.wrd1777.setChecked(true);
+                    bi.fldGrpwrd17.setVisibility(GONE);
                 }
             }
         });
@@ -301,6 +374,9 @@ public class SectionDActivity extends AppCompatActivity {
                 if (checkedId != -1) {
                     bi.wrd1777.setChecked(false);
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
+                }else {
+                    bi.wrd1777.setChecked(true);
+                    bi.fldGrpwrd17.setVisibility(GONE);
                 }
             }
         });
@@ -310,6 +386,9 @@ public class SectionDActivity extends AppCompatActivity {
                 if (checkedId != -1) {
                     bi.wrd1777.setChecked(false);
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
+                }else {
+                    bi.wrd1777.setChecked(true);
+                    bi.fldGrpwrd17.setVisibility(GONE);
                 }
             }
         });
@@ -319,6 +398,9 @@ public class SectionDActivity extends AppCompatActivity {
                 if (checkedId != -1) {
                     bi.wrd1777.setChecked(false);
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
+                }else {
+                    bi.wrd1777.setChecked(true);
+                    bi.fldGrpwrd17.setVisibility(GONE);
                 }
             }
         });
@@ -329,6 +411,9 @@ public class SectionDActivity extends AppCompatActivity {
                 if (checkedId != -1) {
                     bi.wrd1777.setChecked(false);
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
+                }else {
+                    bi.wrd1777.setChecked(true);
+                    bi.fldGrpwrd17.setVisibility(GONE);
                 }
             }
         });
@@ -533,7 +618,7 @@ public class SectionDActivity extends AppCompatActivity {
                     return false;
                 }
 
-                if(!validatorClass.RangeTextBox(this,bi.wrd12,1,99,getString(R.string.wrd12),"Number")){
+                if (!validatorClass.RangeTextBox(this, bi.wrd12, 1, 99, getString(R.string.wrd12), "Number")) {
                     return false;
                 }
             }
@@ -545,6 +630,15 @@ public class SectionDActivity extends AppCompatActivity {
             if (!validatorClass.RangeTextBox(this, bi.wrd13, 1, 35, getString(R.string.wrd13), " years")) {
                 return false;
             }
+
+            if(injectionCount > womanAge){
+                bi.wrd13.setError("could not greater than woman age which is " + womanAge);
+                bi.wrd13.requestFocus();
+                return false;
+            }else {
+                bi.wrd13.setError(null);
+                bi.wrd13.clearFocus();
+            }
         }
 
 
@@ -552,8 +646,6 @@ public class SectionDActivity extends AppCompatActivity {
             return false;
         }
         if (bi.wrd14a.isChecked()) {
-
-
             if (!bi.wrd15997.isChecked() && !bi.wrd15998.isChecked()) {
                 if (!validatorClass.EmptyTextBox(this, bi.wrd15, getString(R.string.wrd15))) {
                     return false;
@@ -660,9 +752,7 @@ public class SectionDActivity extends AppCompatActivity {
 
 
                 if (bi.wrd1988.isChecked()) {
-                    if (!validatorClass.EmptyTextBox(this, bi.wrd1988x, getString(R.string.other))) {
-                        return false;
-                    }
+                    return validatorClass.EmptyTextBox(this, bi.wrd1988x, getString(R.string.other));
                 }
             }
         }

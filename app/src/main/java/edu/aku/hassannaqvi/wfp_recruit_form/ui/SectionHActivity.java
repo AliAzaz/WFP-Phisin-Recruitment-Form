@@ -15,7 +15,7 @@ import org.json.JSONObject;
 import edu.aku.hassannaqvi.wfp_recruit_form.R;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
-import edu.aku.hassannaqvi.wfp_recruit_form.validation.clearClass;
+import edu.aku.hassannaqvi.wfp_recruit_form.validation.ClearClass;
 import edu.aku.hassannaqvi.wfp_recruit_form.validation.validatorClass;
 import edu.aku.hassannaqvi.wfp_recruit_form.databinding.ActivitySectionHBinding;
 
@@ -44,16 +44,16 @@ public class SectionHActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != R.id.wrh01a) {
                     bi.fldGrpwrh01.setVisibility(View.GONE);
-                    clearClass.ClearAllFields(bi.wrh02,false);
-                    clearClass.ClearAllFields(bi.wrh03,false);
+                    ClearClass.ClearAllFields(bi.wrh02,false);
+                    ClearClass.ClearAllFields(bi.wrh03,false);
 
 //                    bi.wrh02.clearCheck();
                     bi.wrh0288x.setText(null);
                     bi.wrh0388x.setText(null);
                 } else {
                     bi.fldGrpwrh01.setVisibility(View.VISIBLE);
-                    clearClass.ClearAllFields(bi.wrh02,true);
-                    clearClass.ClearAllFields(bi.wrh03,true);
+                    ClearClass.ClearAllFields(bi.wrh02,true);
+                    ClearClass.ClearAllFields(bi.wrh03,true);
 
                 }
             }
@@ -113,15 +113,15 @@ public class SectionHActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != R.id.wrh04a) {
                     bi.fldGrpwrh04.setVisibility(View.GONE);
-                    clearClass.ClearAllFields(bi.wrh05,false);
-                    clearClass.ClearAllFields(bi.wrh06,false);
+                    ClearClass.ClearAllFields(bi.wrh05,false);
+                    ClearClass.ClearAllFields(bi.wrh06,false);
 //                    bi.wrh05.clearCheck();
                     bi.wrh0588x.setText(null);
                     bi.wrh0688x.setText(null);
                 } else {
                     bi.fldGrpwrh04.setVisibility(View.VISIBLE);
-                    clearClass.ClearAllFields(bi.wrh05,true);
-                    clearClass.ClearAllFields(bi.wrh06,true);
+                    ClearClass.ClearAllFields(bi.wrh05,true);
+                    ClearClass.ClearAllFields(bi.wrh06,true);
                 }
             }
         });
@@ -200,15 +200,15 @@ public class SectionHActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != R.id.wrh07a) {
                     bi.fldGrpwrh07.setVisibility(View.GONE);
-                    clearClass.ClearAllFields(bi.wrh08,false);
-                    clearClass.ClearAllFields(bi.wrh09,false);
+                    ClearClass.ClearAllFields(bi.wrh08,false);
+                    ClearClass.ClearAllFields(bi.wrh09,false);
 //                    bi.wrh08.clearCheck();
                     bi.wrh0888x.setText(null);
                     bi.wrh0988x.setText(null);
                 } else {
                     bi.fldGrpwrh07.setVisibility(View.VISIBLE);
-                    clearClass.ClearAllFields(bi.wrh08,true);
-                    clearClass.ClearAllFields(bi.wrh09,true);
+                    ClearClass.ClearAllFields(bi.wrh08,true);
+                    ClearClass.ClearAllFields(bi.wrh09,true);
                 }
             }
         });
@@ -266,15 +266,15 @@ public class SectionHActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != R.id.wrh10a) {
                     bi.fldGrpwrh10.setVisibility(View.GONE);
-                    clearClass.ClearAllFields(bi.wrh11,false);
-                    clearClass.ClearAllFields(bi.wrh12,false);
+                    ClearClass.ClearAllFields(bi.wrh11,false);
+                    ClearClass.ClearAllFields(bi.wrh12,false);
 //                    bi.wrh11.clearCheck();
                     bi.wrh1188x.setText(null);
                     bi.wrh1288x.setText(null);
                 } else {
                     bi.fldGrpwrh10.setVisibility(View.VISIBLE);
-                    clearClass.ClearAllFields(bi.wrh11,true);
-                    clearClass.ClearAllFields(bi.wrh12,true);
+                    ClearClass.ClearAllFields(bi.wrh11,true);
+                    ClearClass.ClearAllFields(bi.wrh12,true);
                 }
             }
         });
@@ -332,15 +332,15 @@ public class SectionHActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != R.id.wrh13a) {
                     bi.fldGrpwrh13.setVisibility(View.GONE);
-                    clearClass.ClearAllFields(bi.wrh14,false);
-                    clearClass.ClearAllFields(bi.wrh15,false);
+                    ClearClass.ClearAllFields(bi.wrh14,false);
+                    ClearClass.ClearAllFields(bi.wrh15,false);
 //                    bi.wrh14.clearCheck();
                     bi.wrh1488x.setText(null);
                     bi.wrh1588x.setText(null);
                 } else {
                     bi.fldGrpwrh13.setVisibility(View.VISIBLE);
-                    clearClass.ClearAllFields(bi.wrh14,true);
-                    clearClass.ClearAllFields(bi.wrh15,true);
+                    ClearClass.ClearAllFields(bi.wrh14,true);
+                    ClearClass.ClearAllFields(bi.wrh15,true);
                 }
             }
         });
@@ -411,15 +411,15 @@ public class SectionHActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != R.id.wrh16a) {
                     bi.fldGrpwrh16.setVisibility(View.GONE);
-                    clearClass.ClearAllFields(bi.wrh17,false);
-                    clearClass.ClearAllFields(bi.wrh18,false);
+                    ClearClass.ClearAllFields(bi.wrh17,false);
+                    ClearClass.ClearAllFields(bi.wrh18,false);
 //                    bi.wrh17.clearCheck();
                     bi.wrh1788x.setText(null);
                     bi.wrh1888x.setText(null);
                 } else {
                     bi.fldGrpwrh16.setVisibility(View.VISIBLE);
-                    clearClass.ClearAllFields(bi.wrh17,true);
-                    clearClass.ClearAllFields(bi.wrh18,true);
+                    ClearClass.ClearAllFields(bi.wrh17,true);
+                    ClearClass.ClearAllFields(bi.wrh18,true);
                 }
             }
         });
@@ -489,15 +489,15 @@ public class SectionHActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != R.id.wrh19a) {
                     bi.fldGrpwrh19.setVisibility(View.GONE);
-                    clearClass.ClearAllFields(bi.wrh20,false);
-                    clearClass.ClearAllFields(bi.wrh21,false);
+                    ClearClass.ClearAllFields(bi.wrh20,false);
+                    ClearClass.ClearAllFields(bi.wrh21,false);
 //                    bi.wrh20.clearCheck();
                     bi.wrh2088x.setText(null);
                     bi.wrh2188x.setText(null);
                 } else {
                     bi.fldGrpwrh19.setVisibility(View.VISIBLE);
-                    clearClass.ClearAllFields(bi.wrh20,true);
-                    clearClass.ClearAllFields(bi.wrh21,true);
+                    ClearClass.ClearAllFields(bi.wrh20,true);
+                    ClearClass.ClearAllFields(bi.wrh21,true);
                 }
             }
         });
@@ -557,11 +557,11 @@ public class SectionHActivity extends AppCompatActivity {
                     bi.fldGrpwrh22.setVisibility(View.GONE);
                     bi.wrh23.clearCheck();
 //                    bi.wrh24.clearCheck();
-                    clearClass.ClearAllFields(bi.wrh24,false);
+                    ClearClass.ClearAllFields(bi.wrh24,false);
                     bi.wrh2488x.setText(null);
                 } else {
                     bi.fldGrpwrh22.setVisibility(View.VISIBLE);
-                    clearClass.ClearAllFields(bi.wrh24,true);
+                    ClearClass.ClearAllFields(bi.wrh24,true);
                 }
             }
         });
@@ -570,12 +570,12 @@ public class SectionHActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (checkedId != R.id.wrh23b) {
                     bi.fldGrpwrh23.setVisibility(View.GONE);
-                    clearClass.ClearAllFields(bi.wrh24,false);
+                    ClearClass.ClearAllFields(bi.wrh24,false);
 //                    bi.wrh24.clearCheck();
                     bi.wrh2488x.setText(null);
                 } else {
                     bi.fldGrpwrh23.setVisibility(View.VISIBLE);
-                    clearClass.ClearAllFields(bi.wrh24,true);
+                    ClearClass.ClearAllFields(bi.wrh24,true);
 
                 }
             }
@@ -845,9 +845,7 @@ public class SectionHActivity extends AppCompatActivity {
 
 
                 if (bi.wrh2488.isChecked()) {
-                    if (!validatorClass.EmptyTextBox(this, bi.wrh2488x, getString(R.string.other))) {
-                        return false;
-                    }
+                    return validatorClass.EmptyTextBox(this, bi.wrh2488x, getString(R.string.other));
                 }
             }
 

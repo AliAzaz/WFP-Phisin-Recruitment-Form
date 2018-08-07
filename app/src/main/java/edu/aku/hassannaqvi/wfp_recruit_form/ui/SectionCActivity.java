@@ -176,10 +176,7 @@ public class SectionCActivity extends AppCompatActivity {
         if (!validatorClass.EmptyTextBox(this, bi.wrc06, getString(R.string.wrc06))) {
             return false;
         }
-        if (!validatorClass.EmptyTextBox(this, bi.wrc07, getString(R.string.wrc07))) {
-            return false;
-        }
-        return true;
+        return validatorClass.EmptyTextBox(this, bi.wrc07, getString(R.string.wrc07));
     }
 
     public void BtnEnd() {
@@ -195,7 +192,7 @@ public class SectionCActivity extends AppCompatActivity {
             }
             if (UpdateDb()) {
                 finish();
-                startActivity(new Intent(this, SectionDActivity.class));
+                startActivity(new Intent(this, SectionDActivity.class).putExtra("womanAge",bi.wrc04.getText().toString()));
 
             } else {
                 Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();

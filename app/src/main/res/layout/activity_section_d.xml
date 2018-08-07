@@ -491,9 +491,9 @@
 
                 <LinearLayout
                     android:id="@+id/wrd009"
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -553,6 +553,7 @@
                         android:text="@string/wrd10"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:textColor="@android:color/white" />
+
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -753,11 +754,12 @@
                         android:textColor="@android:color/white" />
 
                     <android.support.design.widget.TextInputLayout
+                        android:id="@+id/viewWrd15"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:theme="@style/TextLabel"
-                        android:visibility='@{wrd15997.checked||wrd15998.checked ? View.GONE : View.VISIBLE}'
+                        android:visibility="gone"
                         app:hintTextAppearance="@style/TextLabel2">
 
                         <android.support.design.widget.TextInputEditText
