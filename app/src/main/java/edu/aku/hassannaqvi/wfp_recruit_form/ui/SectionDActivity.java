@@ -167,6 +167,7 @@ public class SectionDActivity extends AppCompatActivity {
                 if (bi.wrd15998.isChecked()) {
                     bi.wrd15997.setChecked(false);
                     bi.viewWrd15.setVisibility(GONE);
+                    bi.wrd15.setText(null);
                 } else {
                     bi.viewWrd15.setVisibility(VISIBLE);
                 }
@@ -183,6 +184,7 @@ public class SectionDActivity extends AppCompatActivity {
                 if (bi.wrd15997.isChecked()) {
                     bi.wrd15998.setChecked(false);
                     bi.viewWrd15.setVisibility(GONE);
+                    bi.wrd15.setText(null);
                 } else {
                     bi.viewWrd15.setVisibility(VISIBLE);
 

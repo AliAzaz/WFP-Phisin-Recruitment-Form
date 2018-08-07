@@ -167,7 +167,7 @@ public class SectionBActivity extends AppCompatActivity {
                             ((RadioGroup) v).getChildAt(j).setEnabled(true);
                         }
 
-                        if(binding.wrb02a.isChecked()){
+                        if (binding.wrb02a.isChecked()) {
                             binding.wrb07b.setEnabled(false);
                         }
 
@@ -198,9 +198,9 @@ public class SectionBActivity extends AppCompatActivity {
                             ((RadioGroup) v).getChildAt(j).setEnabled(true);
                         }
 
-                        if(binding.wrb02a.isChecked()){
+                        if (binding.wrb02a.isChecked()) {
                             binding.wrb07b.setEnabled(false);
-                        }else{
+                        } else {
                             binding.wrb07b.setEnabled(true);
                         }
                     } else if (Integer.valueOf(binding.wrb04.getText().toString()) < 18) {
@@ -230,9 +230,9 @@ public class SectionBActivity extends AppCompatActivity {
                             ((RadioGroup) v).getChildAt(j).setEnabled(true);
                         }
 
-                        if(binding.wrb02a.isChecked()){
+                        if (binding.wrb02a.isChecked()) {
                             binding.wrb07b.setEnabled(false);
-                        }else{
+                        } else {
                             binding.wrb07b.setEnabled(true);
                         }
                     } else if (Integer.valueOf(binding.wrb04.getText().toString()) < 20) {
@@ -263,9 +263,9 @@ public class SectionBActivity extends AppCompatActivity {
                             ((RadioGroup) v).getChildAt(j).setEnabled(true);
                         }
 
-                        if(binding.wrb02a.isChecked()){
+                        if (binding.wrb02a.isChecked()) {
                             binding.wrb07b.setEnabled(false);
-                        }else{
+                        } else {
                             binding.wrb07b.setEnabled(true);
                         }
                     } else {
@@ -297,13 +297,12 @@ public class SectionBActivity extends AppCompatActivity {
                             ((RadioGroup) v).getChildAt(j).setEnabled(true);
                         }
 
-                        if(binding.wrb02a.isChecked()){
+                        if (binding.wrb02a.isChecked()) {
                             binding.wrb07b.setEnabled(false);
-                        }else{
+                        } else {
                             binding.wrb07b.setEnabled(true);
                         }
                     }
-
 
                 }
             }
@@ -317,7 +316,6 @@ public class SectionBActivity extends AppCompatActivity {
         binding.wrb06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-
                 if (i == R.id.wrb06c) {
                     if (binding.wrb02a.isChecked()) {
 
