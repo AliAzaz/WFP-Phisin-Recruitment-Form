@@ -114,6 +114,8 @@ public class SectionBActivity extends AppCompatActivity {
 
                     } else if (Integer.valueOf(binding.wrb04.getText().toString()) < 11) {
 
+                        binding.wrb03.setEnabled(false);
+                        binding.wrb033.setEnabled(false);
                         binding.fldGrpwrb01.setVisibility(View.GONE);
                         binding.wrb05.clearCheck();
                         binding.wrb05e.setChecked(true);
@@ -135,6 +137,8 @@ public class SectionBActivity extends AppCompatActivity {
 //                        binding.wrb07a.setChecked(true);
                     } else if (Integer.valueOf(binding.wrb04.getText().toString()) < 14) {
 
+                        binding.wrb03.setEnabled(false);
+                        binding.wrb033.setEnabled(false);
                         binding.fldGrpwrb01.setVisibility(View.GONE);
                         binding.wrb05.clearCheck();
                         binding.wrb05e.setChecked(true);
@@ -155,8 +159,14 @@ public class SectionBActivity extends AppCompatActivity {
                             ((RadioGroup) v).getChildAt(j).setEnabled(true);
                         }
 
+                        if(binding.wrb02a.isChecked()){
+                            binding.wrb07b.setEnabled(false);
+                        }
+
                     } else if (Integer.valueOf(binding.wrb04.getText().toString()) < 16) {
 
+                        binding.wrb03.setEnabled(false);
+                        binding.wrb033.setEnabled(false);
                         binding.fldGrpwrb01.setVisibility(View.GONE);
                         binding.wrb05.clearCheck();
                         binding.wrb05e.setChecked(true);
@@ -177,7 +187,15 @@ public class SectionBActivity extends AppCompatActivity {
                         for (int j = 0; j < ((RadioGroup) v).getChildCount(); j++) {
                             ((RadioGroup) v).getChildAt(j).setEnabled(true);
                         }
+
+                        if(binding.wrb02a.isChecked()){
+                            binding.wrb07b.setEnabled(false);
+                        }else{
+                            binding.wrb07b.setEnabled(true);
+                        }
                     } else if (Integer.valueOf(binding.wrb04.getText().toString()) < 18) {
+                        binding.wrb03.setEnabled(false);
+                        binding.wrb033.setEnabled(false);
                         binding.fldGrpwrb01.setVisibility(View.GONE);
                         binding.wrb05.clearCheck();
                         binding.wrb05e.setChecked(true);
@@ -199,7 +217,15 @@ public class SectionBActivity extends AppCompatActivity {
                         for (int j = 0; j < ((RadioGroup) v).getChildCount(); j++) {
                             ((RadioGroup) v).getChildAt(j).setEnabled(true);
                         }
+
+                        if(binding.wrb02a.isChecked()){
+                            binding.wrb07b.setEnabled(false);
+                        }else{
+                            binding.wrb07b.setEnabled(true);
+                        }
                     } else if (Integer.valueOf(binding.wrb04.getText().toString()) < 20) {
+                        binding.wrb03.setEnabled(false);
+                        binding.wrb033.setEnabled(false);
                         binding.fldGrpwrb01.setVisibility(View.GONE);
                         binding.wrb05.clearCheck();
                         binding.wrb05e.setChecked(true);
@@ -222,8 +248,15 @@ public class SectionBActivity extends AppCompatActivity {
                         for (int j = 0; j < ((RadioGroup) v).getChildCount(); j++) {
                             ((RadioGroup) v).getChildAt(j).setEnabled(true);
                         }
-                    } else {
 
+                        if(binding.wrb02a.isChecked()){
+                            binding.wrb07b.setEnabled(false);
+                        }else{
+                            binding.wrb07b.setEnabled(true);
+                        }
+                    } else {
+                        binding.wrb03.setEnabled(false);
+                        binding.wrb033.setEnabled(false);
                         binding.fldGrpwrb01.setVisibility(View.GONE);
                         binding.wrb05.clearCheck();
                         binding.wrb05e.setChecked(true);
@@ -246,6 +279,12 @@ public class SectionBActivity extends AppCompatActivity {
                         v = binding.fldGrpwrb03.getChildAt(0);
                         for (int j = 0; j < ((RadioGroup) v).getChildCount(); j++) {
                             ((RadioGroup) v).getChildAt(j).setEnabled(true);
+                        }
+
+                        if(binding.wrb02a.isChecked()){
+                            binding.wrb07b.setEnabled(false);
+                        }else{
+                            binding.wrb07b.setEnabled(true);
                         }
                     }
 
