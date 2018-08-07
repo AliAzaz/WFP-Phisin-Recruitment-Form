@@ -97,7 +97,6 @@ public class SectionBActivity extends AppCompatActivity {
 
                         binding.fldGrpwrb01.setVisibility(View.GONE);
                         binding.wrb05.clearCheck();
-
                         binding.wrb06.clearCheck();
                         View v = binding.fldGrpwrb02.getChildAt(0);
                         for (int j = 0; j < ((RadioGroup) v).getChildCount(); j++) {
@@ -265,7 +264,7 @@ public class SectionBActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
 
                 if (i == R.id.wrb06c) {
-                    if (binding.wrb02a.isChecked() && binding.wrb04.getText().toString().equalsIgnoreCase("32")) {
+                    if (binding.wrb02a.isChecked()) {
 
                         for (int j = 0; j < binding.wrb07.getChildCount(); j++) {
 
@@ -286,16 +285,7 @@ public class SectionBActivity extends AppCompatActivity {
 
                 }
 
-                if (i == R.id.wrb06b) {
-                    if (binding.wrb02b.isChecked() && binding.wrb04.getText().toString().equalsIgnoreCase("28")) {
 
-                        binding.wrb07b.setEnabled(false);
-
-                    } else {
-
-                        binding.wrb07b.setEnabled(true);
-                    }
-                }
             }
         });
 
