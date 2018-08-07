@@ -58,6 +58,8 @@ public class SectionBActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (binding.wrb04.getText().toString().isEmpty()) {
                     binding.wrb03.setEnabled(false);
+                    binding.wrb033.setEnabled(false);
+                    binding.wrb033.setText(null);
                     binding.wrb03.setText(null);
 
                     // binding.wrb06.clearCheck();
@@ -79,7 +81,9 @@ public class SectionBActivity extends AppCompatActivity {
                 } else {
                     if (Integer.valueOf(binding.wrb04.getText().toString()) < 5) {
                         binding.wrb03.setEnabled(true);
+                        binding.wrb03.setText(null);
                         binding.wrb033.setEnabled(true);
+                        binding.wrb033.setText(null);
                         switch (Integer.valueOf(binding.wrb04.getText().toString())) {
                             case 1:
                                 binding.wrb03.setMinDate(DateUtils.getYearsBack("dd/MM/yyyy", -1));
@@ -116,6 +120,8 @@ public class SectionBActivity extends AppCompatActivity {
 
                         binding.wrb03.setEnabled(false);
                         binding.wrb033.setEnabled(false);
+                        binding.wrb03.setText(null);
+                        binding.wrb033.setText(null);
                         binding.fldGrpwrb01.setVisibility(View.GONE);
                         binding.wrb05.clearCheck();
                         binding.wrb05e.setChecked(true);
@@ -139,6 +145,8 @@ public class SectionBActivity extends AppCompatActivity {
 
                         binding.wrb03.setEnabled(false);
                         binding.wrb033.setEnabled(false);
+                        binding.wrb03.setText(null);
+                        binding.wrb033.setText(null);
                         binding.fldGrpwrb01.setVisibility(View.GONE);
                         binding.wrb05.clearCheck();
                         binding.wrb05e.setChecked(true);
@@ -167,6 +175,8 @@ public class SectionBActivity extends AppCompatActivity {
 
                         binding.wrb03.setEnabled(false);
                         binding.wrb033.setEnabled(false);
+                        binding.wrb03.setText(null);
+                        binding.wrb033.setText(null);
                         binding.fldGrpwrb01.setVisibility(View.GONE);
                         binding.wrb05.clearCheck();
                         binding.wrb05e.setChecked(true);
@@ -196,6 +206,8 @@ public class SectionBActivity extends AppCompatActivity {
                     } else if (Integer.valueOf(binding.wrb04.getText().toString()) < 18) {
                         binding.wrb03.setEnabled(false);
                         binding.wrb033.setEnabled(false);
+                        binding.wrb03.setText(null);
+                        binding.wrb033.setText(null);
                         binding.fldGrpwrb01.setVisibility(View.GONE);
                         binding.wrb05.clearCheck();
                         binding.wrb05e.setChecked(true);
@@ -226,6 +238,8 @@ public class SectionBActivity extends AppCompatActivity {
                     } else if (Integer.valueOf(binding.wrb04.getText().toString()) < 20) {
                         binding.wrb03.setEnabled(false);
                         binding.wrb033.setEnabled(false);
+                        binding.wrb03.setText(null);
+                        binding.wrb033.setText(null);
                         binding.fldGrpwrb01.setVisibility(View.GONE);
                         binding.wrb05.clearCheck();
                         binding.wrb05e.setChecked(true);
@@ -257,6 +271,8 @@ public class SectionBActivity extends AppCompatActivity {
                     } else {
                         binding.wrb03.setEnabled(false);
                         binding.wrb033.setEnabled(false);
+                        binding.wrb03.setText(null);
+                        binding.wrb033.setText(null);
                         binding.fldGrpwrb01.setVisibility(View.GONE);
                         binding.wrb05.clearCheck();
                         binding.wrb05e.setChecked(true);
