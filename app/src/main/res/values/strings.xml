@@ -545,6 +545,9 @@
     <string name="wri1414"> سیمنٹ سے بنی ہوئی بلاکس</string>
     <string name="wri1415"> کچی اینٹوں سے بنی </string>
     <string name="wri1416">  لکڑی کے تختے </string>
+    <string name="wri14sub1"> قدرتی دیواریں  </string>
+    <string name="wri14sub2">بنیادی سادہ دیواریں </string>
+    <string name="wri14sub3"> تیاردیواریں</string>
     <string name="wri15"> اس گھر میں سونے کے لئے کتنے کمرے استعمال ہوتے ہیں؟ </string>
     <string name="wri1501"> کمروں کی تعداد </string>
     <string name="wri16"> کیا اس گھر میں کسی کے پاس یہ چیزیں ہیں ؟ </string>
@@ -561,7 +564,7 @@
     <string name="wri1802"> کنال </string>
     <string name="wri1803"> مرلہ </string>
     <string name="wri19"> کیا آپ کے اپنے مال مویشی یا مرغیاں ہیں؟ </string>
-    <string name="wri20"> اگر ہاں تو کتنے مال مویشی اور مر غیاں ہیں؟ </string>
+    <string name="wri20"> اگر ہاں تو کتنے مال مویشی اور مر غیاں ہیں؟ ہر درج کردہ جانوروں کے لئے پوچھیں اور 00 ڈالیں اگر کوئی نہیں</string>
     <string name="wri2001"> گائے ،بیل </string>
     <string name="wri2002"> گدھے ، گھوڑے، خچر  </string>
     <string name="wri2003"> بکریاں </string>

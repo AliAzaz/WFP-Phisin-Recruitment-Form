@@ -130,40 +130,41 @@
                     android:layout_marginTop="16dp"
                     android:text="@string/wrj03" />
 
-                <RadioGroup
+                <LinearLayout
                     android:id="@+id/wrj03"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/wrj0301"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/wrj0301" />
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/wrj0302"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/wrj0302" />
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/wrj0303"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/wrj0303" />
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/wrj0304"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/wrj0304" />
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/wrj0305"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -171,7 +172,7 @@
                         android:text="@string/none" />
 
 
-                </RadioGroup>
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -217,47 +218,48 @@
                     android:layout_marginTop="16dp"
                     android:text="@string/wrj05" />
 
-                <RadioGroup
+                <LinearLayout
                     android:id="@+id/wrj05"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/wrj0501"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/wrj0501" />
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/wrj0502"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/wrj0502" />
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/wrj0503"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/wrj0503" />
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/wrj0504"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/wrj0504" />
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/wrj0505"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/none" />
 
-                </RadioGroup>
+                </LinearLayout>
 
             </LinearLayout>
 

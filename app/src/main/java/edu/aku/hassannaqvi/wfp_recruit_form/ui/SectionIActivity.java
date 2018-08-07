@@ -277,6 +277,8 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton wri0909;
     @BindView(R.id.wri0910)
     RadioButton wri0910;
+    @BindView(R.id.wri0911)
+    RadioButton wri0911;
     @BindView(R.id.wri0996)
     RadioButton wri0996;
     @BindView(R.id.wri0996x)
@@ -842,7 +844,7 @@ public class SectionIActivity extends AppCompatActivity {
         si.put("wri09", wri0901.isChecked() ? "1" : wri0902.isChecked() ? "2" : wri0903.isChecked() ? "3"
                 : wri0904.isChecked() ? "4" : wri0905.isChecked() ? "5" : wri0906.isChecked() ? "6"
                 : wri0907.isChecked() ? "7" : wri0908.isChecked() ? "8" : wri0909.isChecked() ? "9"
-                : wri0910.isChecked() ? "10" : wri0996.isChecked() ? "96" : "0");
+                : wri0910.isChecked() ? "10": wri0911.isChecked() ? "11" : wri0996.isChecked() ? "96" : "0");
         si.put("wri0996x", wri0996x.getText().toString());
         si.put("wri10", wri1001.isChecked() ? "1" : wri1002.isChecked() ? "2" : wri1003.isChecked() ? "3" : "0");
         si.put("wri1096x", wri1096x.getText().toString());
@@ -1013,14 +1015,10 @@ public class SectionIActivity extends AppCompatActivity {
                     wri07.setError(null);
                 }
                 if (!wri0799.isChecked()){
-                if ((Integer.parseInt(wri07.getText().toString()) == 0)) {
-                    Toast.makeText(this, "ERROR: " + getString(R.string.wri07), Toast.LENGTH_LONG).show();
-                    wri07.setError("No. of HH cannot be zero");
-                    Log.i(TAG, "wri07: No. of HH cannot  not be zero");
-                    return false;
-                } else {
-                    wri07.setError(null);
-                }
+                    if (!validatorClass.RangeTextBox(this,wri07,1,10,getString(R.string.wri07)," number")) {
+                        return false;
+                    }
+
                 }
             }
         }
