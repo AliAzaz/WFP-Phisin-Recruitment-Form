@@ -317,7 +317,7 @@ public class SectionAActivity extends Activity {
 
 
 //        sInfo.put("spbla08", spbla08a.isChecked() ? "1" : spbla08b.isChecked() ? "2" : "0");
-        sInfo.put("spblacluster", spblaclustera.isChecked() ? "1" : spblaclusterb.isChecked() ? "2" : "0");
+        sInfo.put(" ", spblaclustera.isChecked() ? "1" : spblaclusterb.isChecked() ? "2" : "0");
 
         MainApp.fc.setsA(String.valueOf(sInfo));
 

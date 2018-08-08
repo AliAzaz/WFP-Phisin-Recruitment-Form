@@ -210,7 +210,7 @@
                         android:focusable="true"
                         android:hint="@string/wrc06"
                         android:textColor="@android:color/black"
-                        app:dateFormat="dd-MM-yyyy" />
+                        app:dateFormat="dd/MM/yyyy" />
 
                 </android.support.design.widget.TextInputLayout>
 
