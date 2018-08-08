@@ -89,7 +89,7 @@ public class SectionCActivity extends AppCompatActivity {
         bi.wrc06.setMinDate(DateUtils.getMonthsBack("dd/MM/yyyy", -4));
         if (!TextUtils.isEmpty(bi.wrc06.getText().toString())) {
             bi.wrc07.setEnabled(true);
-            String exactDate = DateUtils.addDays("dd/MM/yyyy", bi.wrc06.getText().toString(), 280);
+            String exactDate = DateUtils.addDays("dd-MM-yyyy", bi.wrc06.getText().toString(), 280);
             bi.wrc07.setMinDate(DateUtils.addSubtractMonths("dd/MM/yyyy", exactDate, -1));
             bi.wrc07.setMaxDate(DateUtils.addSubtractMonths("dd/MM/yyyy", exactDate, 1));
 
@@ -117,9 +117,9 @@ public class SectionCActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
                 if (!TextUtils.isEmpty(bi.wrc06.getText().toString())) {
                     bi.wrc07.setEnabled(true);
-                    String exactDate = DateUtils.addDays("dd/MM/yyyy", bi.wrc06.getText().toString(), 280);
+                    String exactDate = DateUtils.addDays("dd-MM-yyyy", bi.wrc06.getText().toString(), 280);
                     bi.wrc07.setMinDate(DateUtils.addSubtractMonths("dd/MM/yyyy", exactDate, -1));
-                    String exactDate1 = DateUtils.addDays("dd/MM/yyyy", bi.wrc06.getText().toString(), 280);
+                    String exactDate1 = DateUtils.addDays("dd-MM-yyyy", bi.wrc06.getText().toString(), 280);
                     bi.wrc07.setMaxDate(DateUtils.addSubtractMonths("dd/MM/yyyy", exactDate1, 1));
 
                 } else {
