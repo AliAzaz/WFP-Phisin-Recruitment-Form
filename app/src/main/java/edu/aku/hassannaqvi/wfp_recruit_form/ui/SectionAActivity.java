@@ -411,9 +411,10 @@ public class SectionAActivity extends Activity {
         } else {
             spbla04.setError(null);
         }*/
-       /* if (!validatorClass.EmptyRadioButton(this,spblacluster,spblaclustera,getString(R.string.spblacluster))){
+       if (!validatorClass.EmptyRadioButton(this,spblacluster,spblaclustera,getString(R.string.spblacluster))){
             return false;
         }
+         /*
         if (spbla08.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbla08), Toast.LENGTH_SHORT).show();
             spbla08a.setError("This data is Required!");

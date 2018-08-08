@@ -532,7 +532,7 @@ public class SectionBActivity extends AppCompatActivity {
 
 
 //        Functionality
-        if (binding.wrb02b.isChecked() && binding.wrb05a.isChecked()) {
+        if (binding.wrb02b.isChecked()) {
             SectionAActivity.pwList.add(MainApp.fmc);
         }
 
