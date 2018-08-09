@@ -79,7 +79,8 @@ public class SectionBActivity extends AppCompatActivity {
                     }
 
                 } else {
-                    if (Integer.valueOf(binding.wrb04.getText().toString()) < 5) {
+                    if(Integer.valueOf(binding.wrb04.getText().toString()) < 3){
+
                         binding.wrb03.setEnabled(true);
                         binding.wrb03.setText(null);
                         binding.wrb033.setEnabled(true);
@@ -107,7 +108,44 @@ public class SectionBActivity extends AppCompatActivity {
                         for (int j = 0; j < ((RadioGroup) v).getChildCount(); j++) {
                             ((RadioGroup) v).getChildAt(j).setEnabled(false);
                         }
+                        binding.wrb06a.setEnabled(true);
+                        //binding.wrb06b.setEnabled(true);
+                        binding.wrb07.clearCheck();
+                        v = binding.fldGrpwrb03.getChildAt(0);
+                        for (int j = 0; j < ((RadioGroup) v).getChildCount(); j++) {
+                            ((RadioGroup) v).getChildAt(j).setEnabled(false);
+                        }
+                        binding.wrb07a.setChecked(true);
 
+
+                    } else if (Integer.valueOf(binding.wrb04.getText().toString()) < 5) {
+                        binding.wrb03.setEnabled(true);
+                        binding.wrb03.setText(null);
+                        binding.wrb033.setEnabled(true);
+                        // binding.wrb033.setText(null);
+                        switch (Integer.valueOf(binding.wrb04.getText().toString())) {
+                            case 1:
+                                binding.wrb03.setMinDate(DateUtils.getYearsBack("dd/MM/yyyy", -1));
+                                break;
+                            case 2:
+                                binding.wrb03.setMinDate(DateUtils.getYearsBack("dd/MM/yyyy", -2));
+                                break;
+                            case 3:
+                                binding.wrb03.setMinDate(DateUtils.getYearsBack("dd/MM/yyyy", -3));
+                                break;
+                            case 4:
+                                binding.wrb03.setMinDate(DateUtils.getYearsBack("dd/MM/yyyy", -4));
+                                break;
+                        }
+
+
+                        binding.fldGrpwrb01.setVisibility(View.GONE);
+                        binding.wrb05.clearCheck();
+                        binding.wrb06.clearCheck();
+                        View v = binding.fldGrpwrb02.getChildAt(0);
+                        for (int j = 0; j < ((RadioGroup) v).getChildCount(); j++) {
+                            ((RadioGroup) v).getChildAt(j).setEnabled(false);
+                        }
                         binding.wrb06a.setEnabled(true);
                         binding.wrb06b.setEnabled(true);
                         binding.wrb07.clearCheck();
@@ -136,7 +174,7 @@ public class SectionBActivity extends AppCompatActivity {
                         binding.wrb06b.setEnabled(true);
                         binding.wrb06c.setEnabled(true);
                         binding.wrb07.clearCheck();
-                        binding.wrb07a.setChecked(true);
+                        //binding.wrb07a.setChecked(true);
                         v = binding.fldGrpwrb03.getChildAt(0);
                         for (int j = 0; j < ((RadioGroup) v).getChildCount(); j++) {
                             ((RadioGroup) v).getChildAt(j).setEnabled(false);
@@ -162,7 +200,6 @@ public class SectionBActivity extends AppCompatActivity {
                         binding.wrb06c.setEnabled(true);
                         binding.wrb06d.setEnabled(true);
                         binding.wrb07.clearCheck();
-
                         v = binding.fldGrpwrb03.getChildAt(0);
                         for (int j = 0; j < ((RadioGroup) v).getChildCount(); j++) {
                             ((RadioGroup) v).getChildAt(j).setEnabled(true);
@@ -170,6 +207,8 @@ public class SectionBActivity extends AppCompatActivity {
 
                         if (binding.wrb02a.isChecked()) {
                             binding.wrb07b.setEnabled(false);
+                        } else if (binding.wrb02b.isChecked()) {
+                            binding.wrb07b.setEnabled(true);
                         }
 
                     } else if (Integer.valueOf(binding.wrb04.getText().toString()) < 16) {
@@ -201,7 +240,7 @@ public class SectionBActivity extends AppCompatActivity {
 
                         if (binding.wrb02a.isChecked()) {
                             binding.wrb07b.setEnabled(false);
-                        } else {
+                        } else if (binding.wrb02b.isChecked()) {
                             binding.wrb07b.setEnabled(true);
                         }
                     } else if (Integer.valueOf(binding.wrb04.getText().toString()) < 18) {
@@ -214,10 +253,9 @@ public class SectionBActivity extends AppCompatActivity {
                         binding.wrb05e.setChecked(true);
 
                         binding.wrb06.clearCheck();
-                        View v = binding.fldGrpwrb02.getChildAt(0);
-                        for (int j = 0; j < ((RadioGroup) v).getChildCount(); j++) {
-                            ((RadioGroup) v).getChildAt(j).setEnabled(false);
-                        }
+//                        for (int j = 0; j < ((RadioGroup) v).getChildCount(); j++) {
+//                            ((RadioGroup) v).getChildAt(j).setEnabled(false);
+//                        }
                         binding.wrb06a.setEnabled(true);
                         binding.wrb06b.setEnabled(true);
                         binding.wrb06c.setEnabled(true);
@@ -226,6 +264,7 @@ public class SectionBActivity extends AppCompatActivity {
                         binding.wrb06f.setEnabled(true);
                         binding.wrb07.clearCheck();
 
+                        View v = binding.fldGrpwrb02.getChildAt(0);
                         v = binding.fldGrpwrb03.getChildAt(0);
                         for (int j = 0; j < ((RadioGroup) v).getChildCount(); j++) {
                             ((RadioGroup) v).getChildAt(j).setEnabled(true);
@@ -233,7 +272,7 @@ public class SectionBActivity extends AppCompatActivity {
 
                         if (binding.wrb02a.isChecked()) {
                             binding.wrb07b.setEnabled(false);
-                        } else {
+                        } else if (binding.wrb02b.isChecked()) {
                             binding.wrb07b.setEnabled(true);
                         }
                     } else if (Integer.valueOf(binding.wrb04.getText().toString()) < 20) {
@@ -266,7 +305,7 @@ public class SectionBActivity extends AppCompatActivity {
 
                         if (binding.wrb02a.isChecked()) {
                             binding.wrb07b.setEnabled(false);
-                        } else {
+                        } else if (binding.wrb02b.isChecked()) {
                             binding.wrb07b.setEnabled(true);
                         }
                     } else {
@@ -300,7 +339,7 @@ public class SectionBActivity extends AppCompatActivity {
 
                         if (binding.wrb02a.isChecked()) {
                             binding.wrb07b.setEnabled(false);
-                        } else {
+                        } else if (binding.wrb02b.isChecked()) {
                             binding.wrb07b.setEnabled(true);
                         }
                     }
@@ -324,178 +363,178 @@ public class SectionBActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
                 if (!binding.wrb033.getText().toString().equalsIgnoreCase("")) {
-                    if(Integer.valueOf(binding.wrb04.getText().toString()) == 1){
+                    if (Integer.valueOf(binding.wrb04.getText().toString()) == 1) {
                         switch (Integer.valueOf(binding.wrb033.getText().toString())) {
                             case 0:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -12,0));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -12, 0));
                                 break;
                             case 1:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -13,0));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -13, 0));
                                 break;
                             case 2:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -14,0));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -14, 0));
                                 break;
                             case 3:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -15,0));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -15, 0));
                                 break;
                             case 4:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -16,0));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -16, 0));
                                 break;
                             case 5:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -17,0));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -17, 0));
                                 break;
                             case 6:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -18,0));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -18, 0));
                                 break;
                             case 7:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -19,0));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -19, 0));
                                 break;
                             case 8:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -20,0));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -20, 0));
                                 break;
                             case 9:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -21,0));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -21, 0));
                                 break;
                             case 10:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -22,0));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -22, 0));
                                 break;
                             case 11:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -23,0));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -23, 0));
                                 break;
                             case 12:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -24,0));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -24, 0));
                                 break;
 
                         }
 
-                    }else if(Integer.valueOf(binding.wrb04.getText().toString()) == 2){
+                    } else if (Integer.valueOf(binding.wrb04.getText().toString()) == 2) {
                         switch (Integer.valueOf(binding.wrb033.getText().toString())) {
                             case 0:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -12,0));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -12, 0));
                                 break;
                             case 1:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -13,-1));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -13, -1));
                                 break;
                             case 2:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -14,-1));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -14, -1));
                                 break;
                             case 3:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -15,-1));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -15, -1));
                                 break;
                             case 4:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -16,-1));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -16, -1));
                                 break;
                             case 5:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -17,-1));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -17, -1));
                                 break;
                             case 6:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -18,-1));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -18, -1));
                                 break;
                             case 7:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -19,-1));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -19, -1));
                                 break;
                             case 8:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -20,-1));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -20, -1));
                                 break;
                             case 9:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -21,-1));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -21, -1));
                                 break;
                             case 10:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -22,-1));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -22, -1));
                                 break;
                             case 11:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -23,-1));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -23, -1));
                                 break;
                             case 12:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -24,-1));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -24, -1));
                                 break;
 
                         }
 
-                    }else if(Integer.valueOf(binding.wrb04.getText().toString()) == 3){
+                    } else if (Integer.valueOf(binding.wrb04.getText().toString()) == 3) {
                         switch (Integer.valueOf(binding.wrb033.getText().toString())) {
                             case 0:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -12,0));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -12, 0));
                                 break;
                             case 1:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -13,-3));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -13, -3));
                                 break;
                             case 2:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -14,-2));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -14, -2));
                                 break;
                             case 3:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -15,-2));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -15, -2));
                                 break;
                             case 4:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -16,-2));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -16, -2));
                                 break;
                             case 5:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -17,-2));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -17, -2));
                                 break;
                             case 6:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -18,-2));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -18, -2));
                                 break;
                             case 7:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -19,-2));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -19, -2));
                                 break;
                             case 8:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -20,-2));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -20, -2));
                                 break;
                             case 9:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -21,-2));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -21, -2));
                                 break;
                             case 10:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -22,-2));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -22, -2));
                                 break;
                             case 11:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -23,-2));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -23, -2));
                                 break;
                             case 12:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -24,-2));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -24, -2));
                                 break;
 
                         }
 
-                    }else if(Integer.valueOf(binding.wrb04.getText().toString()) == 4){
+                    } else if (Integer.valueOf(binding.wrb04.getText().toString()) == 4) {
                         switch (Integer.valueOf(binding.wrb033.getText().toString())) {
                             case 0:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -12,0));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -12, 0));
                                 break;
                             case 1:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -13,-3));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -13, -3));
                                 break;
                             case 2:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -14,-3));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -14, -3));
                                 break;
                             case 3:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -15,-3));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -15, -3));
                                 break;
                             case 4:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -16,-3));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -16, -3));
                                 break;
                             case 5:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -17,-3));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -17, -3));
                                 break;
                             case 6:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -18,-3));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -18, -3));
                                 break;
                             case 7:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -19,-3));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -19, -3));
                                 break;
                             case 8:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -20,-3));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -20, -3));
                                 break;
                             case 9:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -21,-3));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -21, -3));
                                 break;
                             case 10:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -22,-3));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -22, -3));
                                 break;
                             case 11:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -23,-3));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -23, -3));
                                 break;
                             case 12:
-                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -24,-3));
+                                binding.wrb03.setMinDate(DateUtils.getYearsAndMonthsBack("dd/MM/yyyy", -24, -3));
                                 break;
 
                         }
@@ -510,6 +549,7 @@ public class SectionBActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
+
 
             }
         });
@@ -548,23 +588,37 @@ public class SectionBActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
 
                 if (i == R.id.wrb02a) {
-                    if(binding.wrb04.getText().toString().equalsIgnoreCase("") || Integer.valueOf(binding.wrb04.getText().toString()) > 11){
+                    if (binding.wrb04.getText().toString().equalsIgnoreCase("") || Integer.valueOf(binding.wrb04.getText().toString()) >= 11) {
                         View v = binding.fldGrpwrb03.getChildAt(0);
                         for (int j = 0; j < ((RadioGroup) v).getChildCount(); j++) {
                             ((RadioGroup) v).getChildAt(j).setEnabled(true);
                         }
+                        binding.wrb07b.setEnabled(false);
+                        binding.wrb07.clearCheck();
+
+                    } else {
+                        View v = binding.fldGrpwrb03.getChildAt(0);
+                        for (int j = 0; j < ((RadioGroup) v).getChildCount(); j++) {
+                            ((RadioGroup) v).getChildAt(j).setEnabled(false);
+                        }
+                        binding.wrb07a.setChecked(true);
                     }
-//                    View v = binding.fldGrpwrb03.getChildAt(0);
-//                    for (int j = 0; j < ((RadioGroup) v).getChildCount(); j++) {
-//                        ((RadioGroup) v).getChildAt(j).setEnabled(true);
-//                    }
-                    binding.wrb07b.setEnabled(false);
-                }else  if (i == R.id.wrb02b) {
-                    if(binding.wrb04.getText().toString().equalsIgnoreCase("") || Integer.valueOf(binding.wrb04.getText().toString()) > 11){
+//
+
+                } else if (i == R.id.wrb02b) {
+                    if (binding.wrb04.getText().toString().equalsIgnoreCase("") || Integer.valueOf(binding.wrb04.getText().toString()) >= 11) {
                         View v = binding.fldGrpwrb03.getChildAt(0);
                         for (int j = 0; j < ((RadioGroup) v).getChildCount(); j++) {
                             ((RadioGroup) v).getChildAt(j).setEnabled(true);
                         }
+                        binding.wrb07b.setEnabled(true);
+                        binding.wrb07.clearCheck();
+                    } else {
+                        View v = binding.fldGrpwrb03.getChildAt(0);
+                        for (int j = 0; j < ((RadioGroup) v).getChildCount(); j++) {
+                            ((RadioGroup) v).getChildAt(j).setEnabled(false);
+                        }
+                        binding.wrb07a.setChecked(true);
                     }
 
 
