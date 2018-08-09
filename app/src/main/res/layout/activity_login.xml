@@ -262,6 +262,7 @@
                     android:orientation="vertical">
 
                     <EditText
+                        android:text="dmu@aku"
                         android:id="@+id/email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -296,6 +297,7 @@
                         android:padding="3dp" />
 
                     <EditText
+                        android:text="aku?dmu"
                         android:id="@+id/password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -315,6 +317,7 @@
                         android:textSize="18sp" />
 
                     <EditText
+                        android:text="test1234"
                         android:id="@+id/email2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -347,6 +350,7 @@
                         android:padding="3dp" />
 
                     <EditText
+                        android:text="test1234"
                         android:id="@+id/password2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

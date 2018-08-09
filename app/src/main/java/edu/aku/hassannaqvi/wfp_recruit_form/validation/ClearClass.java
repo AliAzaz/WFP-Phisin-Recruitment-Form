@@ -11,7 +11,7 @@ import android.widget.RadioGroup;
  * Created by ali.azaz on 03/19/18.
  */
 
-public class clearClass {
+public class ClearClass {
 
     public static void ClearRadioButton(LinearLayout container, RadioGroup rdGrp) {
         if (rdGrp.getCheckedRadioButtonId() == -1) {
