@@ -89,9 +89,11 @@ public class SectionCActivity extends AppCompatActivity {
         bi.wrc06.setMinDate(DateUtils.getMonthsBack("dd/MM/yyyy", -4));
         if (!TextUtils.isEmpty(bi.wrc06.getText().toString())) {
             bi.wrc07.setEnabled(true);
-            String exactDate = DateUtils.addDays("dd-MM-yyyy", bi.wrc06.getText().toString(), 280);
+            String exactDate = DateUtils.addDays("dd/MM/yyyy", bi.wrc06.getText().toString(), 280);
             bi.wrc07.setMinDate(DateUtils.addSubtractMonths("dd/MM/yyyy", exactDate, -1));
+//            bi.wrc07.setMinDate(DateUtils.addDays("dd/MM/yyyy", exactDate, -30));
             bi.wrc07.setMaxDate(DateUtils.addSubtractMonths("dd/MM/yyyy", exactDate, 1));
+//            bi.wrc07.setMaxDate(DateUtils.addDays("dd/MM/yyyy", exactDate, 30));
 
         } else {
             bi.wrc07.setEnabled(false);
@@ -117,10 +119,12 @@ public class SectionCActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
                 if (!TextUtils.isEmpty(bi.wrc06.getText().toString())) {
                     bi.wrc07.setEnabled(true);
-                    String exactDate = DateUtils.addDays("dd-MM-yyyy", bi.wrc06.getText().toString(), 280);
+                    String exactDate = DateUtils.addDays("dd/MM/yyyy", bi.wrc06.getText().toString(), 280);
                     bi.wrc07.setMinDate(DateUtils.addSubtractMonths("dd/MM/yyyy", exactDate, -1));
-                    String exactDate1 = DateUtils.addDays("dd-MM-yyyy", bi.wrc06.getText().toString(), 280);
+//                    bi.wrc07.setMinDate(DateUtils.addDays("dd/MM/yyyy", exactDate, -30));
+                    String exactDate1 = DateUtils.addDays("dd/MM/yyyy", bi.wrc06.getText().toString(), 280);
                     bi.wrc07.setMaxDate(DateUtils.addSubtractMonths("dd/MM/yyyy", exactDate1, 1));
+//                    bi.wrc07.setMaxDate(DateUtils.addDays("dd/MM/yyyy", exactDate1, 30));
 
                 } else {
                     bi.wrc07.setEnabled(false);
@@ -138,6 +142,10 @@ public class SectionCActivity extends AppCompatActivity {
         if (!validatorClass.EmptyTextBox(this, bi.wrcstudyid, getString(R.string.wrc01))) {
             return false;
         }
+        if (!validatorClass.RangeTextBox(this, bi.wrcstudyid, 1, 4000, getString(R.string.wrc01), " ID's")) {
+            return false;
+        }
+
         if (!validatorClass.EmptyTextBox(this, bi.wrc03, getString(R.string.wrc03))) {
             return false;
         }
