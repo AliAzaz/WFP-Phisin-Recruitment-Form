@@ -36,6 +36,10 @@ public class SectionEActivity extends AppCompatActivity {
         binding.wre0102a.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(MainActivity.usersArray)));
         binding.wre0201a.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(MainActivity.usersArray)));
         binding.wre0202a.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(MainActivity.usersArray)));
+        binding.wre1101a.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(MainActivity.usersArray)));
+        binding.wre1102a.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(MainActivity.usersArray)));
+        binding.wre1201a.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(MainActivity.usersArray)));
+        binding.wre1202a.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(MainActivity.usersArray)));
 
     }
 
@@ -50,7 +54,8 @@ public class SectionEActivity extends AppCompatActivity {
                 Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
                 finish();
-                Intent secH = new Intent(this, SectionFActivity.class);
+                Intent secH = new Intent(this, EndingActivity.class);
+                secH.putExtra("complete", true);
                 startActivity(secH);
 
             } else {
@@ -170,7 +175,109 @@ public class SectionEActivity extends AppCompatActivity {
             return false;
         }
 
-        return true;
+        //---------------------------------Husband------------------------------------
+
+        if (!validatorClass.EmptySpinner(this, binding.wre1101a, getString(R.string.wre01))) {
+            return false;
+        }
+        if (!validatorClass.EmptyTextBox(this, binding.wre1101, getString(R.string.wre01))) {
+            return false;
+        }
+
+        if (!binding.wre1101.getText().toString().matches("^(\\d{1,3}\\.\\d{1,1})$")) {
+            binding.wre1101.setError("Wrong presentation");
+            return false;
+        } else {
+            binding.wre1101.setError(null);
+        }
+        if (!validatorClass.RangeTextBox(this, binding.wre1101, 100.0, 180.0, getString(R.string.wre01), "height")) {
+            return false;
+        }
+
+        if (!validatorClass.EmptySpinner(this, binding.wre1102a, getString(R.string.wre01))) {
+            return false;
+        }
+        if (!validatorClass.EmptyTextBox(this, binding.wre1102, getString(R.string.wre01))) {
+            return false;
+        }
+
+
+        if (!binding.wre1102.getText().toString().matches("^(\\d{1,3}\\.\\d{1,1})$")) {
+            binding.wre1102.setError("Wrong presentation");
+            return false;
+        } else {
+            binding.wre1102.setError(null);
+        }
+        if (!validatorClass.RangeTextBox(this, binding.wre1102, 100.0, 180.0, getString(R.string.wre01), "height")) {
+            return false;
+        }
+
+        if (binding.wre1101a.getSelectedItem().equals(binding.wre1102a.getSelectedItem().toString())) {
+            Toast.makeText(this, "ERROR: Same Users", Toast.LENGTH_SHORT).show();
+            ((TextView) binding.wre1102a.getSelectedView()).setText("This Data is Required");
+            ((TextView) binding.wre1102a.getSelectedView()).setTextColor(Color.RED);
+            return false;
+        } else {
+            ((TextView) binding.wre1102a.getSelectedView()).setError(null);
+        }
+
+//        02
+        if (!validatorClass.EmptySpinner(this, binding.wre1201a, getString(R.string.wre02))) {
+            return false;
+        }
+        if (!validatorClass.EmptyTextBox(this, binding.wre1201, getString(R.string.wre02))) {
+            return false;
+        }
+
+        if (!binding.wre1201.getText().toString().matches("^(\\d{1,2}\\.\\d{1,2})$")) {
+            binding.wre1201.setError("Wrong presentation");
+            return false;
+        } else {
+            binding.wre1201.setError(null);
+        }
+        if (!validatorClass.RangeTextBox(this, binding.wre1201, 25.0, 110.0, getString(R.string.wre02), "weight")) {
+            return false;
+        }
+
+        if (!validatorClass.EmptySpinner(this, binding.wre1202a, getString(R.string.wre02))) {
+            return false;
+        }
+        if (!validatorClass.EmptyTextBox(this, binding.wre1202, getString(R.string.wre02))) {
+            return false;
+        }
+
+        if (!binding.wre1202.getText().toString().matches("^(\\d{1,2}\\.\\d{1,2})$")) {
+            binding.wre1202.setError("Wrong presentation");
+            return false;
+        } else {
+            binding.wre0202.setError(null);
+        }
+        if (!validatorClass.RangeTextBox(this, binding.wre1202, 25.0, 110.0, getString(R.string.wre02), "weight")) {
+            return false;
+        }
+
+        if (binding.wre1201a.getSelectedItem().equals(binding.wre1202a.getSelectedItem().toString())) {
+            Toast.makeText(this, "ERROR: Same Users", Toast.LENGTH_SHORT).show();
+            ((TextView) binding.wre1202a.getSelectedView()).setText("This Data is Required");
+            ((TextView) binding.wre1202a.getSelectedView()).setTextColor(Color.RED);
+            return false;
+        } else {
+            ((TextView) binding.wre1202a.getSelectedView()).setError(null);
+        }
+
+//        03
+        if (!validatorClass.EmptyTextBox(this, binding.wre03, getString(R.string.wre03))) {
+            return false;
+        }
+
+
+        if (!binding.wre04.getText().toString().matches("^(\\d{1,2}\\.\\d{1,1})$")) {
+            binding.wre04.setError("Wrong presentation");
+            return false;
+        } else {
+            binding.wre04.setError(null);
+        }
+        return validatorClass.RangeTextBox(this, binding.wre04, 4.0, 18.0, getString(R.string.wre03), "hb");
     }
 
     private void SaveDrafts() throws JSONException {
@@ -186,6 +293,16 @@ public class SectionEActivity extends AppCompatActivity {
         sE.put("wre0202a", binding.wre0202a.getSelectedItem().toString());
         sE.put("wre0202", binding.wre0202.getText().toString());
         sE.put("wre03", binding.wre03.getText().toString());
+
+        sE.put("wre1101a", binding.wre1101a.getSelectedItem().toString());
+        sE.put("wre1101", binding.wre1101.getText().toString());
+        sE.put("wre1102a", binding.wre1102a.getSelectedItem().toString());
+        sE.put("wre1102", binding.wre1102.getText().toString());
+        sE.put("wre1201a", binding.wre1201a.getSelectedItem().toString());
+        sE.put("wre1201", binding.wre1201.getText().toString());
+        sE.put("wre1202a", binding.wre1202a.getSelectedItem().toString());
+        sE.put("wre1202", binding.wre1202.getText().toString());
+        sE.put("wre04", binding.wre04.getText().toString());
 
         MainApp.fc.setsE(String.valueOf(sE));
     }

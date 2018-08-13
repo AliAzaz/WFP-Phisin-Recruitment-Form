@@ -164,8 +164,6 @@
                 android:text="@string/spblaclusterb"/>
 
         </RadioGroup>
-<!--
-        &lt;!&ndash;08&ndash;&gt;
         <TextView
             android:visibility="visible"
             android:layout_width="match_parent"
@@ -200,7 +198,15 @@
                 android:text="@string/no"/>
 
         </RadioGroup>
--->
+
+        <EditText
+            android:hint="وضاحت کریں"
+            android:visibility="gone"
+            android:id="@+id/spbla08bx"
+            android:inputType="textMultiLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
 
 
 

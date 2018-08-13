@@ -151,9 +151,15 @@ public class SectionBActivity extends AppCompatActivity {
                         binding.wrb07.clearCheck();
                         v = binding.fldGrpwrb03.getChildAt(0);
                         for (int j = 0; j < ((RadioGroup) v).getChildCount(); j++) {
-                            ((RadioGroup) v).getChildAt(j).setEnabled(false);
+                            ((RadioGroup) v).getChildAt(j).setEnabled(true);
                         }
-                        binding.wrb07a.setChecked(true);
+
+                        if (binding.wrb02a.isChecked()) {
+                            binding.wrb07b.setEnabled(false);
+                        } else if (binding.wrb02b.isChecked()) {
+                            binding.wrb07b.setEnabled(true);
+                        }
+
 
                     } else if (Integer.valueOf(binding.wrb04.getText().toString()) < 11) {
 
@@ -177,9 +183,15 @@ public class SectionBActivity extends AppCompatActivity {
                         //binding.wrb07a.setChecked(true);
                         v = binding.fldGrpwrb03.getChildAt(0);
                         for (int j = 0; j < ((RadioGroup) v).getChildCount(); j++) {
-                            ((RadioGroup) v).getChildAt(j).setEnabled(false);
+                            ((RadioGroup) v).getChildAt(j).setEnabled(true);
                         }
-                        binding.wrb07a.setChecked(true);
+
+                        if (binding.wrb02a.isChecked()) {
+                            binding.wrb07b.setEnabled(false);
+                        } else if (binding.wrb02b.isChecked()) {
+                            binding.wrb07b.setEnabled(true);
+                        }
+
                     } else if (Integer.valueOf(binding.wrb04.getText().toString()) < 14) {
 
                         binding.wrb03.setEnabled(false);
@@ -588,7 +600,7 @@ public class SectionBActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
 
                 if (i == R.id.wrb02a) {
-                    if (binding.wrb04.getText().toString().equalsIgnoreCase("") || Integer.valueOf(binding.wrb04.getText().toString()) >= 11) {
+                    if (binding.wrb04.getText().toString().equalsIgnoreCase("") || Integer.valueOf(binding.wrb04.getText().toString()) >= 3) {
                         View v = binding.fldGrpwrb03.getChildAt(0);
                         for (int j = 0; j < ((RadioGroup) v).getChildCount(); j++) {
                             ((RadioGroup) v).getChildAt(j).setEnabled(true);
@@ -606,7 +618,7 @@ public class SectionBActivity extends AppCompatActivity {
 //
 
                 } else if (i == R.id.wrb02b) {
-                    if (binding.wrb04.getText().toString().equalsIgnoreCase("") || Integer.valueOf(binding.wrb04.getText().toString()) >= 11) {
+                    if (binding.wrb04.getText().toString().equalsIgnoreCase("") || Integer.valueOf(binding.wrb04.getText().toString()) >= 3) {
                         View v = binding.fldGrpwrb03.getChildAt(0);
                         for (int j = 0; j < ((RadioGroup) v).getChildCount(); j++) {
                             ((RadioGroup) v).getChildAt(j).setEnabled(true);
@@ -811,7 +823,7 @@ public class SectionBActivity extends AppCompatActivity {
 
 
 //        Functionality
-        if (binding.wrb02b.isChecked()) {
+        if (binding.wrb02b.isChecked() && Integer.valueOf(binding.wrb04.getText().toString()) >= 14 && Integer.valueOf(binding.wrb04.getText().toString()) < 50 ) {
             SectionAActivity.pwList.add(MainApp.fmc);
         }
 

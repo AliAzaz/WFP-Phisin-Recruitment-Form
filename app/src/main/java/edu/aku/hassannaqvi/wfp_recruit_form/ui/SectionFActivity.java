@@ -162,7 +162,7 @@ public class SectionFActivity extends AppCompatActivity {
             if (!validatorClass.EmptyTextBox(this, bi.wrf04, getString(R.string.wrf04))) {
                 return false;
             }
-            if (!validatorClass.RangeTextBox(this, bi.wrf04, 1, 3, getString(R.string.wrf04), " sachets")) {
+            if (!validatorClass.RangeTextBox(this, bi.wrf04, 1, 99, getString(R.string.wrf04), " sachets")) {
                 return false;
             }
             if (!validatorClass.EmptyTextBox(this, bi.wrf05d, getString(R.string.wrf05) + "-" + getString(R.string.days))) {
@@ -213,9 +213,7 @@ public class SectionFActivity extends AppCompatActivity {
                 if (!validatorClass.RangeTextBox(this, bi.wrf0902, 1, 90, getString(R.string.wrf0902), " sachets")) {
                     return false;
                 }
-                if (!validatorClass.EmptyCheckBox(this, bi.wrf0903, bi.wrf090388, bi.wrf090388x, getString(R.string.wrf0903))) {
-                    return false;
-                }
+                return validatorClass.EmptyCheckBox(this, bi.wrf0903, bi.wrf090388, bi.wrf090388x, getString(R.string.wrf0903));
             }//end of question 9 skip
 
         }//end of question1 skip

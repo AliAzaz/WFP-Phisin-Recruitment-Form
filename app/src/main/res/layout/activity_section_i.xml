@@ -1644,6 +1644,38 @@
                     android:text="@string/wri1411" />
 
                 <RadioButton
+                    android:id="@+id/wri1412"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/wri1412" />
+                <RadioButton
+                    android:id="@+id/wri1413"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/wri1413" />
+                <RadioButton
+                    android:id="@+id/wri1414"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/wri1414" />
+                <RadioButton
+                    android:id="@+id/wri1415"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/wri1415" />
+
+                <RadioButton
+                    android:id="@+id/wri1416"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/wri1416" />
+
+                <RadioButton
                     android:id="@+id/wri1496"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

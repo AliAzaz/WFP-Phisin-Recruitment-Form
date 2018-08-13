@@ -219,9 +219,7 @@ public class SectionlmoActivity extends AppCompatActivity {
             if (!validatorClass.RangeTextBox(this, bi.wro12num, 1, 10, getString(R.string.other), " number")) {
                 return false;
             }
-            if (!validatorClass.EmptyTextBox(this, bi.wro12s, getString(R.string.other))) {
-                return false;
-            }
+            return validatorClass.EmptyTextBox(this, bi.wro12s, getString(R.string.other));
         }
         return true;
     }
@@ -403,7 +401,7 @@ public class SectionlmoActivity extends AppCompatActivity {
             }
             if (UpdateDB()) {
                 finish();
-                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+                startActivity(new Intent(this, SectionEActivity.class));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();

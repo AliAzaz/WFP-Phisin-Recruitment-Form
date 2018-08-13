@@ -59,12 +59,12 @@ public class SectionAActivity extends Activity {
     @BindView(R.id.spbla04)
     EditText spbla04;
 
-//    @BindView(R.id.spbla08)
-//    RadioGroup spbla08;
-//    @BindView(R.id.spbla08a)
-//    RadioButton spbla08a;
-//    @BindView(R.id.spbla08b)
-//    RadioButton spbla08b;
+    @BindView(R.id.spbla08)
+    RadioGroup spbla08;
+    @BindView(R.id.spbla08a)
+    RadioButton spbla08a;
+    @BindView(R.id.spbla08b)
+    RadioButton spbla08b;
     @BindView(R.id.spblacluster)
     RadioGroup spblacluster;
     @BindView(R.id.spblaclustera)
@@ -73,7 +73,10 @@ public class SectionAActivity extends Activity {
     RadioButton spblaclusterb;
     /*@BindView(R.id.spbla08c)
     RadioButton spbla08c;
+
 */
+    @BindView(R.id.spbla08bx)
+    EditText spbla08bx;
 
 
     /*@BindViews({R.id.spbla06a, R.id.spbla06b})
@@ -114,18 +117,21 @@ public class SectionAActivity extends Activity {
         populateSpinner(this);
 
 //        Skip
-       /* spbla08.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+       spbla08.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (checkedId == R.id.spbla08a) {
                     btn_Continue.setVisibility(View.VISIBLE);
+                    spbla08bx.setVisibility(View.GONE);
+                    spbla08bx.setText(null);
                     btn_End.setVisibility(View.GONE);
                 } else {
                     btn_Continue.setVisibility(View.GONE);
+                    spbla08bx.setVisibility(View.VISIBLE);
                     btn_End.setVisibility(View.VISIBLE);
                 }
             }
-        });*/
+        });
 
 //        Initialize PW spinner
         pwList = new ArrayList<>();
@@ -316,7 +322,8 @@ public class SectionAActivity extends Activity {
         MainApp.HHno = spbla04.getText().toString();
 
 
-//        sInfo.put("spbla08", spbla08a.isChecked() ? "1" : spbla08b.isChecked() ? "2" : "0");
+        sInfo.put("spbla08", spbla08a.isChecked() ? "1" : spbla08b.isChecked() ? "2" : "0");
+        sInfo.put("spbla08bx", spbla08bx.getText().toString());
         sInfo.put(" ", spblaclustera.isChecked() ? "1" : spblaclusterb.isChecked() ? "2" : "0");
 
         MainApp.fc.setsA(String.valueOf(sInfo));
@@ -414,7 +421,7 @@ public class SectionAActivity extends Activity {
        if (!validatorClass.EmptyRadioButton(this,spblacluster,spblaclustera,getString(R.string.spblacluster))){
             return false;
         }
-         /*
+
         if (spbla08.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbla08), Toast.LENGTH_SHORT).show();
             spbla08a.setError("This data is Required!");
@@ -425,7 +432,19 @@ public class SectionAActivity extends Activity {
             return false;
         } else {
             spbla08a.setError(null);
-        }*/
+        }
+
+        if(spbla08b.isChecked()){
+           if(spbla08bx.getText().toString().isEmpty()){
+               Toast.makeText(this, "ERROR(empty): " + "وضاحت کریں", Toast.LENGTH_SHORT).show();
+               spbla08bx.setError("This data is required");
+               spbla08bx.requestFocus();
+
+           }
+        }else {
+            spbla08bx.setError(null);
+            spbla08bx.clearFocus();
+        }
 
         return true;
     }

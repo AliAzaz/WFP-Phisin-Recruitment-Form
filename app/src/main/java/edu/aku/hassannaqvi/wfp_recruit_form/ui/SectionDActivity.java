@@ -79,9 +79,9 @@ public class SectionDActivity extends AppCompatActivity {
                     bi.wrd08e.setChecked(false);
                     bi.wrd0888.setChecked(false);
                     bi.wrd0888x.setText(null);
-//                    bi.wrd09.clearCheck();
-//                    bi.wrd10.setText(null);
-//                    bi.wrd1099.setChecked(false);
+                    bi.wrd09.clearCheck();
+                    bi.wrd10.setText(null);
+                    bi.wrd1099.setChecked(false);
 
                 } else {
                     bi.fldGrpwrd03.setVisibility(VISIBLE);
@@ -98,8 +98,7 @@ public class SectionDActivity extends AppCompatActivity {
                     bi.wrd10.setText(null);
                     bi.wrd1099.setChecked(false);
                 } else {
-
-
+                    bi.fldGrpwrd09.setVisibility(VISIBLE);
                 }
             }
         });
@@ -537,7 +536,6 @@ public class SectionDActivity extends AppCompatActivity {
 
         if (bi.wrd03a.isChecked()) {
 
-
             if (!validatorClass.EmptyCheckBox(this, bi.wrd04, bi.wrd04a, getString(R.string.wrd04a))) {
                 return false;
             }
@@ -576,7 +574,7 @@ public class SectionDActivity extends AppCompatActivity {
                     return false;
                 }
 
-                if (!validatorClass.RangeTextBox(this, bi.wrd07, 1, 99, getString(R.string.wrd07), "Number")) {
+                if (!validatorClass.RangeTextBox(this, bi.wrd07, 1, 9, getString(R.string.wrd07), "Number")) {
                     return false;
                 }
             }
@@ -591,21 +589,27 @@ public class SectionDActivity extends AppCompatActivity {
                 }
             }
 
-        }
+            if(!validatorClass.EmptyRadioButton(this,bi.wrd09,bi.wrd09a,getString(R.string.wrd09))){
+                return false;
+            }
+            if (!validatorClass.EmptyTextBox(this, bi.wrd10, getString(R.string.wrd09))) {
+                return false;
+            }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.wrd09, bi.wrd09a, getString(R.string.wrd09))) {
-            return false;
-        }
-        if (bi.wrd09a.isChecked()) {
-            if (!bi.wrd1099.isChecked()) {
-                if (!validatorClass.EmptyTextBox(this, bi.wrd10, getString(R.string.wrd10))) {
-                    return false;
-                }
-                if (!validatorClass.RangeTextBox(this, bi.wrd10, 1, 3, getString(R.string.wrd10), " times")) {
-                    return false;
+            if (bi.wrd09a.isChecked()) {
+                if (!bi.wrd1099.isChecked()) {
+                    if (!validatorClass.EmptyTextBox(this, bi.wrd10, getString(R.string.wrd10))) {
+                        return false;
+                    }
+                    if (!validatorClass.RangeTextBox(this, bi.wrd10, 1, 3, getString(R.string.wrd10), " times")) {
+                        return false;
+                    }
                 }
             }
+
         }
+
+
         if (!validatorClass.EmptyRadioButton(this, bi.wrd11, bi.wrd11a, getString(R.string.wrd11))) {
             return false;
         }
@@ -617,7 +621,7 @@ public class SectionDActivity extends AppCompatActivity {
                     return false;
                 }
 
-                if (!validatorClass.RangeTextBox(this, bi.wrd12, 1, 99, getString(R.string.wrd12), "Number")) {
+                if (!validatorClass.RangeTextBox(this, bi.wrd12, 1, 10, getString(R.string.wrd12), "Number")) {
                     return false;
                 }
             }
@@ -962,7 +966,7 @@ public class SectionDActivity extends AppCompatActivity {
 
                 finish();
 
-                startActivity(new Intent(this, SectionEActivity.class));
+                startActivity(new Intent(this, SectionFActivity.class));
                 //startActivity(new Intent(this, MainActivity.class));
 
             } else {
