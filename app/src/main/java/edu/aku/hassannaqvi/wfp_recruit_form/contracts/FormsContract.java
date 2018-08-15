@@ -158,7 +158,7 @@ public class FormsContract {
         json.put(FormsTable.COLUMN_INTERVIEWER02, this.interviewer02 == null ? JSONObject.NULL : this.interviewer02);
         json.put(FormsTable.COLUMN_ISTATUS, this.istatus == null ? JSONObject.NULL : this.istatus);
         json.put(FormsTable.COLUMN_ISTATUS88X, this.istatus88x == null ? JSONObject.NULL : this.istatus88x);
-        json.put(FormsTable.COLUMN_COUNT, this.count == null ? JSONObject.NULL : this.count);
+//        json.put(FormsTable.COLUMN_COUNT, this.count == null ? JSONObject.NULL : this.count);
         json.put(FormsTable.COLUMN_ENDINGDATETIME, this.endingdatetime == null ? JSONObject.NULL : this.endingdatetime);
 
         if (!this.sInfo.equals("")) {
@@ -171,7 +171,7 @@ public class FormsContract {
             json.put(FormsTable.COLUMN_SD, this.sC.equals("") ? JSONObject.NULL : new JSONObject(this.sC));
         }
         if (!this.sD.equals("")) {
-            json.put(FormsTable.COLUMN_SG, this.sD.equals("") ? JSONObject.NULL : new JSONObject(this.sD));
+            json.put(FormsTable.COLUMN_SD, this.sD.equals("") ? JSONObject.NULL : new JSONObject(this.sD));
         }
         if (!this.sE.equals("")) {
             json.put(FormsTable.COLUMN_SE, this.sE.equals("") ? JSONObject.NULL : new JSONObject(this.sE));
@@ -179,12 +179,14 @@ public class FormsContract {
         if (!this.sF.equals("")) {
             json.put(FormsTable.COLUMN_SF, this.sF.equals("") ? JSONObject.NULL : new JSONObject(this.sF));
         }
+
         if (!this.sG.equals("")) {
             json.put(FormsTable.COLUMN_SG, this.sG.equals("") ? JSONObject.NULL : new JSONObject(this.sG));
         }
         if (!this.sH.equals("")) {
             json.put(FormsTable.COLUMN_SH, this.sH.equals("") ? JSONObject.NULL : new JSONObject(this.sH));
         }
+
         if (!this.sI.equals("")) {
             json.put(FormsTable.COLUMN_SI, this.sI.equals("") ? JSONObject.NULL : new JSONObject(this.sI));
         }
@@ -197,10 +199,9 @@ public class FormsContract {
         if (!this.sLMO.equals("")) {
             json.put(FormsTable.COLUMN_SLMO, this.sLMO == null ? JSONObject.NULL : new JSONObject(this.sLMO));
         }
-        if (!this.count.equals("")) {
-
+       /* if (!this.count.equals("")) {
             json.put(FormsTable.COLUMN_COUNT, this.count.equals("") ? JSONObject.NULL : new JSONObject(this.count));
-        }
+        }*/
 
         json.put(FormsTable.COLUMN_GPSLAT, this.gpsLat == null ? JSONObject.NULL : this.gpsLat);
         json.put(FormsTable.COLUMN_GPSLNG, this.gpsLng == null ? JSONObject.NULL : this.gpsLng);
