@@ -332,13 +332,13 @@ public class SectionAActivity extends Activity {
         sInfo.put("village_code", String.valueOf(MainApp.villageCode));
         sInfo.put("lhw_code", String.valueOf(MainApp.lhwCode));
 
-        sInfo.put("spbla04", spbla04.getText().toString());
-        MainApp.HHno = spbla04.getText().toString();
+       // sInfo.put("spbla04", spbla04.getText().toString());
+       // MainApp.HHno = spbla04.getText().toString();
 
 
         sInfo.put("spbla08", spbla08a.isChecked() ? "1" : spbla08b.isChecked() ? "2" : "0");
         sInfo.put("spbla08bx", spbla08bx.getText().toString());
-        sInfo.put(" ", spblaclustera.isChecked() ? "1" : spblaclusterb.isChecked() ? "2" : "0");
+        sInfo.put("spblacluster", spblaclustera.isChecked() ? "1" : spblaclusterb.isChecked() ? "2" : "0");
 
         MainApp.fc.setsA(String.valueOf(sInfo));
 

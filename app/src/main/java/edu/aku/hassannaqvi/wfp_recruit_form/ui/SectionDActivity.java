@@ -30,7 +30,7 @@ public class SectionDActivity extends AppCompatActivity {
     int pragCount;
     int liveBirth;
     boolean onChecked;
-    int womanAge,injectionCount;
+    int womanAge, injectionCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,9 +126,9 @@ public class SectionDActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-                if(charSequence.toString().equalsIgnoreCase("")){
+                if (charSequence.toString().equalsIgnoreCase("")) {
                     injectionCount = 0;
-                }else {
+                } else {
                     injectionCount = Integer.parseInt(charSequence.toString());
                 }
 
@@ -137,9 +137,9 @@ public class SectionDActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable editable) {
 
-                if(injectionCount > womanAge){
+                if (injectionCount > womanAge) {
                     bi.wrd13.setError("could not greater than Woman age which is " + womanAge);
-                }else {
+                } else {
                     bi.wrd13.setError(null);
                 }
 
@@ -239,7 +239,7 @@ public class SectionDActivity extends AppCompatActivity {
                 if (checkedId != -1) {
                     bi.wrd1777.setChecked(false);
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
-                }else {
+                } else {
                     bi.wrd1777.setChecked(true);
                     bi.fldGrpwrd17.setVisibility(GONE);
                 }
@@ -252,7 +252,7 @@ public class SectionDActivity extends AppCompatActivity {
                 if (checkedId != -1) {
                     bi.wrd1777.setChecked(false);
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
-                }else {
+                } else {
                     bi.wrd1777.setChecked(true);
                     bi.fldGrpwrd17.setVisibility(GONE);
                 }
@@ -264,7 +264,7 @@ public class SectionDActivity extends AppCompatActivity {
                 if (checkedId != -1) {
                     bi.wrd1777.setChecked(false);
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
-                }else {
+                } else {
                     bi.wrd1777.setChecked(true);
                     bi.fldGrpwrd17.setVisibility(GONE);
                 }
@@ -276,7 +276,7 @@ public class SectionDActivity extends AppCompatActivity {
                 if (checkedId != -1) {
                     bi.wrd1777.setChecked(false);
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
-                }else {
+                } else {
                     bi.wrd1777.setChecked(true);
                     bi.fldGrpwrd17.setVisibility(GONE);
                 }
@@ -288,7 +288,7 @@ public class SectionDActivity extends AppCompatActivity {
                 if (checkedId != -1) {
                     bi.wrd1777.setChecked(false);
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
-                }else {
+                } else {
                     bi.wrd1777.setChecked(true);
                     bi.fldGrpwrd17.setVisibility(GONE);
                 }
@@ -300,7 +300,7 @@ public class SectionDActivity extends AppCompatActivity {
                 if (checkedId != -1) {
                     bi.wrd1777.setChecked(false);
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
-                }else {
+                } else {
                     bi.wrd1777.setChecked(true);
                     bi.fldGrpwrd17.setVisibility(GONE);
                 }
@@ -312,7 +312,7 @@ public class SectionDActivity extends AppCompatActivity {
                 if (checkedId != -1) {
                     bi.wrd1777.setChecked(false);
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
-                }else {
+                } else {
                     bi.wrd1777.setChecked(true);
                     bi.fldGrpwrd17.setVisibility(GONE);
                 }
@@ -324,7 +324,7 @@ public class SectionDActivity extends AppCompatActivity {
                 if (checkedId != -1) {
                     bi.wrd1777.setChecked(false);
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
-                }else {
+                } else {
                     bi.wrd1777.setChecked(true);
                     bi.fldGrpwrd17.setVisibility(GONE);
                 }
@@ -336,7 +336,7 @@ public class SectionDActivity extends AppCompatActivity {
                 if (checkedId != -1) {
                     bi.wrd1777.setChecked(false);
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
-                }else {
+                } else {
                     bi.wrd1777.setChecked(true);
                     bi.fldGrpwrd17.setVisibility(GONE);
                 }
@@ -348,7 +348,7 @@ public class SectionDActivity extends AppCompatActivity {
                 if (checkedId != -1) {
                     bi.wrd1777.setChecked(false);
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
-                }else {
+                } else {
                     bi.wrd1777.setChecked(true);
                     bi.fldGrpwrd17.setVisibility(GONE);
                 }
@@ -360,7 +360,7 @@ public class SectionDActivity extends AppCompatActivity {
                 if (checkedId != -1) {
                     bi.wrd1777.setChecked(false);
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
-                }else {
+                } else {
                     bi.wrd1777.setChecked(true);
                     bi.fldGrpwrd17.setVisibility(GONE);
                 }
@@ -372,7 +372,7 @@ public class SectionDActivity extends AppCompatActivity {
                 if (checkedId != -1) {
                     bi.wrd1777.setChecked(false);
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
-                }else {
+                } else {
                     bi.wrd1777.setChecked(true);
                     bi.fldGrpwrd17.setVisibility(GONE);
                 }
@@ -384,7 +384,7 @@ public class SectionDActivity extends AppCompatActivity {
                 if (checkedId != -1) {
                     bi.wrd1777.setChecked(false);
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
-                }else {
+                } else {
                     bi.wrd1777.setChecked(true);
                     bi.fldGrpwrd17.setVisibility(GONE);
                 }
@@ -396,7 +396,7 @@ public class SectionDActivity extends AppCompatActivity {
                 if (checkedId != -1) {
                     bi.wrd1777.setChecked(false);
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
-                }else {
+                } else {
                     bi.wrd1777.setChecked(true);
                     bi.fldGrpwrd17.setVisibility(GONE);
                 }
@@ -409,7 +409,7 @@ public class SectionDActivity extends AppCompatActivity {
                 if (checkedId != -1) {
                     bi.wrd1777.setChecked(false);
                     bi.fldGrpwrd17.setVisibility(VISIBLE);
-                }else {
+                } else {
                     bi.wrd1777.setChecked(true);
                     bi.fldGrpwrd17.setVisibility(GONE);
                 }
@@ -589,10 +589,7 @@ public class SectionDActivity extends AppCompatActivity {
                 }
             }
 
-            if(!validatorClass.EmptyRadioButton(this,bi.wrd09,bi.wrd09a,getString(R.string.wrd09))){
-                return false;
-            }
-            if (!validatorClass.EmptyTextBox(this, bi.wrd10, getString(R.string.wrd09))) {
+            if (!validatorClass.EmptyRadioButton(this, bi.wrd09, bi.wrd09a, getString(R.string.wrd09))) {
                 return false;
             }
 
@@ -634,11 +631,11 @@ public class SectionDActivity extends AppCompatActivity {
                 return false;
             }
 
-            if(injectionCount > womanAge){
+            if (injectionCount > womanAge) {
                 bi.wrd13.setError("could not greater than woman age which is " + womanAge);
                 bi.wrd13.requestFocus();
                 return false;
-            }else {
+            } else {
                 bi.wrd13.setError(null);
                 bi.wrd13.clearFocus();
             }
