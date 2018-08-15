@@ -5,7 +5,9 @@ import android.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +20,7 @@ import edu.aku.hassannaqvi.wfp_recruit_form.R;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
 import edu.aku.hassannaqvi.wfp_recruit_form.databinding.ActivitySectionEBinding;
+import edu.aku.hassannaqvi.wfp_recruit_form.validation.ClearClass;
 import edu.aku.hassannaqvi.wfp_recruit_form.validation.validatorClass;
 
 public class SectionEActivity extends AppCompatActivity {
@@ -40,6 +43,29 @@ public class SectionEActivity extends AppCompatActivity {
         binding.wre1102a.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(MainActivity.usersArray)));
         binding.wre1201a.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(MainActivity.usersArray)));
         binding.wre1202a.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(MainActivity.usersArray)));
+
+
+        binding.wre1101xx.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+                if(b){
+                    binding.fldgrpwre1101.setVisibility(View.GONE);
+                    binding.wre1101a.setSelection(0);
+                    binding.wre1101.setText(null);
+                    binding.wre1102a.setSelection(0);
+                    binding.wre1102.setText(null);
+                    binding.wre1201a.setSelection(0);
+                    binding.wre1201.setText(null);
+                    binding.wre1202a.setSelection(0);
+                    binding.wre1202.setText(null);
+
+                }else{
+                    binding.fldgrpwre1101.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
 
     }
 
@@ -176,108 +202,102 @@ public class SectionEActivity extends AppCompatActivity {
         }
 
         //---------------------------------Husband------------------------------------
+        if(!binding.wre1101xx.isChecked()){
 
-        if (!validatorClass.EmptySpinner(this, binding.wre1101a, getString(R.string.wre01))) {
-            return false;
-        }
-        if (!validatorClass.EmptyTextBox(this, binding.wre1101, getString(R.string.wre01))) {
-            return false;
-        }
+            if (!validatorClass.EmptySpinner(this, binding.wre1101a, getString(R.string.wre01))) {
+                return false;
+            }
+            if (!validatorClass.EmptyTextBox(this, binding.wre1101, getString(R.string.wre01))) {
+                return false;
+            }
 
-        if (!binding.wre1101.getText().toString().matches("^(\\d{1,3}\\.\\d{1,1})$")) {
-            binding.wre1101.setError("Wrong presentation");
-            return false;
-        } else {
-            binding.wre1101.setError(null);
-        }
-        if (!validatorClass.RangeTextBox(this, binding.wre1101, 100.0, 180.0, getString(R.string.wre01), "height")) {
-            return false;
-        }
+            if (!binding.wre1101.getText().toString().matches("^(\\d{1,3}\\.\\d{1,1})$")) {
+                binding.wre1101.setError("Wrong presentation");
+                return false;
+            } else {
+                binding.wre1101.setError(null);
+            }
+            if (!validatorClass.RangeTextBox(this, binding.wre1101, 100.0, 180.0, getString(R.string.wre01), "height")) {
+                return false;
+            }
 
-        if (!validatorClass.EmptySpinner(this, binding.wre1102a, getString(R.string.wre01))) {
-            return false;
-        }
-        if (!validatorClass.EmptyTextBox(this, binding.wre1102, getString(R.string.wre01))) {
-            return false;
-        }
+            if (!validatorClass.EmptySpinner(this, binding.wre1102a, getString(R.string.wre01))) {
+                return false;
+            }
+            if (!validatorClass.EmptyTextBox(this, binding.wre1102, getString(R.string.wre01))) {
+                return false;
+            }
 
 
-        if (!binding.wre1102.getText().toString().matches("^(\\d{1,3}\\.\\d{1,1})$")) {
-            binding.wre1102.setError("Wrong presentation");
-            return false;
-        } else {
-            binding.wre1102.setError(null);
-        }
-        if (!validatorClass.RangeTextBox(this, binding.wre1102, 100.0, 180.0, getString(R.string.wre01), "height")) {
-            return false;
-        }
+            if (!binding.wre1102.getText().toString().matches("^(\\d{1,3}\\.\\d{1,1})$")) {
+                binding.wre1102.setError("Wrong presentation");
+                return false;
+            } else {
+                binding.wre1102.setError(null);
+            }
+            if (!validatorClass.RangeTextBox(this, binding.wre1102, 100.0, 180.0, getString(R.string.wre01), "height")) {
+                return false;
+            }
 
-        if (binding.wre1101a.getSelectedItem().equals(binding.wre1102a.getSelectedItem().toString())) {
-            Toast.makeText(this, "ERROR: Same Users", Toast.LENGTH_SHORT).show();
-            ((TextView) binding.wre1102a.getSelectedView()).setText("This Data is Required");
-            ((TextView) binding.wre1102a.getSelectedView()).setTextColor(Color.RED);
-            return false;
-        } else {
-            ((TextView) binding.wre1102a.getSelectedView()).setError(null);
-        }
+            if (binding.wre1101a.getSelectedItem().equals(binding.wre1102a.getSelectedItem().toString())) {
+                Toast.makeText(this, "ERROR: Same Users", Toast.LENGTH_SHORT).show();
+                ((TextView) binding.wre1102a.getSelectedView()).setText("This Data is Required");
+                ((TextView) binding.wre1102a.getSelectedView()).setTextColor(Color.RED);
+                return false;
+            } else {
+                ((TextView) binding.wre1102a.getSelectedView()).setError(null);
+            }
 
 //        02
-        if (!validatorClass.EmptySpinner(this, binding.wre1201a, getString(R.string.wre02))) {
-            return false;
-        }
-        if (!validatorClass.EmptyTextBox(this, binding.wre1201, getString(R.string.wre02))) {
-            return false;
-        }
+            if (!validatorClass.EmptySpinner(this, binding.wre1201a, getString(R.string.wre02))) {
+                return false;
+            }
+            if (!validatorClass.EmptyTextBox(this, binding.wre1201, getString(R.string.wre02))) {
+                return false;
+            }
 
-        if (!binding.wre1201.getText().toString().matches("^(\\d{1,2}\\.\\d{1,2})$")) {
-            binding.wre1201.setError("Wrong presentation");
-            return false;
-        } else {
-            binding.wre1201.setError(null);
-        }
-        if (!validatorClass.RangeTextBox(this, binding.wre1201, 25.0, 110.0, getString(R.string.wre02), "weight")) {
-            return false;
-        }
+            if (!binding.wre1201.getText().toString().matches("^(\\d{1,2}\\.\\d{1,2})$")) {
+                binding.wre1201.setError("Wrong presentation");
+                return false;
+            } else {
+                binding.wre1201.setError(null);
+            }
+            if (!validatorClass.RangeTextBox(this, binding.wre1201, 25.0, 110.0, getString(R.string.wre02), "weight")) {
+                return false;
+            }
 
-        if (!validatorClass.EmptySpinner(this, binding.wre1202a, getString(R.string.wre02))) {
-            return false;
-        }
-        if (!validatorClass.EmptyTextBox(this, binding.wre1202, getString(R.string.wre02))) {
-            return false;
-        }
+            if (!validatorClass.EmptySpinner(this, binding.wre1202a, getString(R.string.wre02))) {
+                return false;
+            }
+            if (!validatorClass.EmptyTextBox(this, binding.wre1202, getString(R.string.wre02))) {
+                return false;
+            }
 
-        if (!binding.wre1202.getText().toString().matches("^(\\d{1,2}\\.\\d{1,2})$")) {
-            binding.wre1202.setError("Wrong presentation");
-            return false;
-        } else {
-            binding.wre0202.setError(null);
-        }
-        if (!validatorClass.RangeTextBox(this, binding.wre1202, 25.0, 110.0, getString(R.string.wre02), "weight")) {
-            return false;
-        }
+            if (!binding.wre1202.getText().toString().matches("^(\\d{1,2}\\.\\d{1,2})$")) {
+                binding.wre1202.setError("Wrong presentation");
+                return false;
+            } else {
+                binding.wre0202.setError(null);
+            }
+            if (!validatorClass.RangeTextBox(this, binding.wre1202, 25.0, 110.0, getString(R.string.wre02), "weight")) {
+                return false;
+            }
 
-        if (binding.wre1201a.getSelectedItem().equals(binding.wre1202a.getSelectedItem().toString())) {
-            Toast.makeText(this, "ERROR: Same Users", Toast.LENGTH_SHORT).show();
-            ((TextView) binding.wre1202a.getSelectedView()).setText("This Data is Required");
-            ((TextView) binding.wre1202a.getSelectedView()).setTextColor(Color.RED);
-            return false;
-        } else {
-            ((TextView) binding.wre1202a.getSelectedView()).setError(null);
-        }
+            if (binding.wre1201a.getSelectedItem().equals(binding.wre1202a.getSelectedItem().toString())) {
+                Toast.makeText(this, "ERROR: Same Users", Toast.LENGTH_SHORT).show();
+                ((TextView) binding.wre1202a.getSelectedView()).setText("This Data is Required");
+                ((TextView) binding.wre1202a.getSelectedView()).setTextColor(Color.RED);
+                return false;
+            } else {
+                ((TextView) binding.wre1202a.getSelectedView()).setError(null);
+            }
 
-//        03
-        if (!validatorClass.EmptyTextBox(this, binding.wre03, getString(R.string.wre03))) {
-            return false;
         }
 
 
-        if (!binding.wre04.getText().toString().matches("^(\\d{1,2}\\.\\d{1,1})$")) {
-            binding.wre04.setError("Wrong presentation");
-            return false;
-        } else {
-            binding.wre04.setError(null);
-        }
-        return validatorClass.RangeTextBox(this, binding.wre04, 4.0, 18.0, getString(R.string.wre03), "hb");
+
+
+        return true;
     }
 
     private void SaveDrafts() throws JSONException {
@@ -294,6 +314,7 @@ public class SectionEActivity extends AppCompatActivity {
         sE.put("wre0202", binding.wre0202.getText().toString());
         sE.put("wre03", binding.wre03.getText().toString());
 
+        sE.put("wre1101xx",binding.wre1101xx.isChecked()? "1" : "0");
         sE.put("wre1101a", binding.wre1101a.getSelectedItem().toString());
         sE.put("wre1101", binding.wre1101.getText().toString());
         sE.put("wre1102a", binding.wre1102a.getSelectedItem().toString());
@@ -302,7 +323,7 @@ public class SectionEActivity extends AppCompatActivity {
         sE.put("wre1201", binding.wre1201.getText().toString());
         sE.put("wre1202a", binding.wre1202a.getSelectedItem().toString());
         sE.put("wre1202", binding.wre1202.getText().toString());
-        sE.put("wre04", binding.wre04.getText().toString());
+
 
         MainApp.fc.setsE(String.valueOf(sE));
     }

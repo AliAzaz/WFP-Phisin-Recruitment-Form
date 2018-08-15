@@ -272,7 +272,21 @@ public class SectionAActivity extends Activity {
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
 
-        MainApp.endActivity(this, this);
+        if (formValidation()) {
+            try {
+                SaveDraft();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            if (UpdateDB()) {
+
+                MainApp.endActivity(this, this);
+
+            }
+        }
+
+
 
     }
 
@@ -396,28 +410,6 @@ public class SectionAActivity extends Activity {
         } else {
             ((TextView) spbla03b.getSelectedView()).setError(null);
         }
-
-        /*if (spbla04.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbla04), Toast.LENGTH_SHORT).show();
-            spbla04.setError("This data is Required!");
-            Log.i(TAG, "spbla04: This data is Required!");
-
-            spbla04.requestFocus();
-            return false;
-        } else {
-            spbla04.setError(null);
-        }
-
-        if (Integer.valueOf(spbla04.getText().toString()) < 1 || Integer.valueOf(spbla04.getText().toString()) > 300) {
-            Toast.makeText(this, "ERROR(invalid): Range 1 - 300", Toast.LENGTH_SHORT).show();
-            spbla04.setError("This data req Range 1 - 300!");
-            Log.i(TAG, "spbla04: This data req Range 1 - 300!");
-
-            spbla04.requestFocus();
-            return false;
-        } else {
-            spbla04.setError(null);
-        }*/
        if (!validatorClass.EmptyRadioButton(this,spblacluster,spblaclustera,getString(R.string.spblacluster))){
             return false;
         }
@@ -439,11 +431,12 @@ public class SectionAActivity extends Activity {
                Toast.makeText(this, "ERROR(empty): " + "وضاحت کریں", Toast.LENGTH_SHORT).show();
                spbla08bx.setError("This data is required");
                spbla08bx.requestFocus();
+               return false;
 
+           }else {
+               spbla08bx.setError(null);
+               spbla08bx.clearFocus();
            }
-        }else {
-            spbla08bx.setError(null);
-            spbla08bx.clearFocus();
         }
 
         return true;
