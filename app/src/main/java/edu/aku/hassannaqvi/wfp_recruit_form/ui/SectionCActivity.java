@@ -91,9 +91,7 @@ public class SectionCActivity extends AppCompatActivity {
             bi.wrc07.setEnabled(true);
             String exactDate = DateUtils.addDays("dd/MM/yyyy", bi.wrc06.getText().toString(), 280);
             bi.wrc07.setMinDate(DateUtils.addSubtractMonths("dd/MM/yyyy", exactDate, -1));
-//            bi.wrc07.setMinDate(DateUtils.addDays("dd/MM/yyyy", exactDate, -30));
             bi.wrc07.setMaxDate(DateUtils.addSubtractMonths("dd/MM/yyyy", exactDate, 1));
-//            bi.wrc07.setMaxDate(DateUtils.addDays("dd/MM/yyyy", exactDate, 30));
 
         } else {
             bi.wrc07.setEnabled(false);

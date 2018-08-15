@@ -200,7 +200,7 @@
         </RadioGroup>
 
         <EditText
-            android:digits=" abcdefghijklmnopqrstuvwxyz"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
             android:hint="وضاحت کریں"
             android:visibility="gone"
             android:id="@+id/spbla08bx"
