@@ -897,7 +897,7 @@ public class SectionHActivity extends AppCompatActivity {
         sH.put("wrh05c", bi.wrh05c.isChecked() ? "3" : "0");
         sH.put("wrh05d", bi.wrh05d.isChecked() ? "4" : "0");
         sH.put("wrh05e", bi.wrh05e.isChecked() ? "5" : "0");
-        sH.put("wrh05d", bi.wrh05f.isChecked() ? "6" : "0");
+        sH.put("wrh05f", bi.wrh05f.isChecked() ? "6" : "0");
         sH.put("wrh05g", bi.wrh05g.isChecked() ? "7" : "0");
         sH.put("wrh05h", bi.wrh05h.isChecked() ? "8" : "0");
         sH.put("wrh0588", bi.wrh0588.isChecked() ? "88" : "0");
