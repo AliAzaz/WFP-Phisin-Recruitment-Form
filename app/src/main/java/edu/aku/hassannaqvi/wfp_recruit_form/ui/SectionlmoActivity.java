@@ -347,7 +347,7 @@ public class SectionlmoActivity extends AppCompatActivity {
                 : bi.wro08b.isChecked() ? "2"
                 : "0");
 
-        wrlmo.put("wro08num", bi.wro09num.getText().toString());
+        wrlmo.put("wro08num", bi.wro08num.getText().toString());
         wrlmo.put("wro08s", bi.wro08s.getText().toString());
 
 //        9
