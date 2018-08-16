@@ -783,7 +783,7 @@ public class SectionDActivity extends AppCompatActivity {
         sD.put("wrd04f", bi.wrd04f.isChecked() ? "6" : "0");
         sD.put("wrd04g", bi.wrd04g.isChecked() ? "7" : "0");
         sD.put("wrd04h", bi.wrd04h.isChecked() ? "8" : "0");
-        sD.put("wrd04g", bi.wrd0488.isChecked() ? "88" : "0");
+        sD.put("wrd0488", bi.wrd0488.isChecked() ? "88" : "0");
 
         sD.put("wrd0488x", bi.wrd0488x.getText().toString());
 
@@ -919,6 +919,8 @@ public class SectionDActivity extends AppCompatActivity {
         sD.put("wrd17o", bi.wrd17o1.isChecked() ? "1"
                 : bi.wrd17o2.isChecked() ? "2"
                 : "0");
+
+        sD.put("wrd1788x",bi.wrd1788x.getText().toString());
 
         sD.put("wrd1777", bi.wrd1777.isChecked() ? "77" : "0");
 

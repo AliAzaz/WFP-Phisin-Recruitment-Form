@@ -265,16 +265,15 @@ public class SectionJActivity extends AppCompatActivity {
         sj.put("wrj05d", wrj0504.isChecked() ? "4" : "0");
         sj.put("wrj05e", wrj0505.isChecked() ? "5" : "0");
         sj.put("wrj0601", wrj0601.isChecked() ? "1" : "0");
-        sj.put("wrj0602", wrj0602.isChecked() ? "1" : "0");
-        sj.put("wrj0603", wrj0603.isChecked() ? "1" : "0");
-        sj.put("wrj0604", wrj0604.isChecked() ? "1" : "0");
-        sj.put("wrj0605", wrj0605.isChecked() ? "1" : "0");
-        sj.put("wrj0606", wrj0606.isChecked() ? "1" : "0");
-        sj.put("wrj0607", wrj0607.isChecked() ? "1" : "0");
-        sj.put("wrj0607", wrj0607.isChecked() ? "1" : "0");
-        sj.put("wrj0608", wrj0608.isChecked() ? "1" : "0");
-        sj.put("wrj0609", wrj0609.isChecked() ? "1" : "0");
-        sj.put("wrj0696", wrj0696.isChecked() ? "1" : "0");
+        sj.put("wrj0602", wrj0602.isChecked() ? "2" : "0");
+        sj.put("wrj0603", wrj0603.isChecked() ? "3" : "0");
+        sj.put("wrj0604", wrj0604.isChecked() ? "4" : "0");
+        sj.put("wrj0605", wrj0605.isChecked() ? "5" : "0");
+        sj.put("wrj0606", wrj0606.isChecked() ? "6" : "0");
+        sj.put("wrj0607", wrj0607.isChecked() ? "7" : "0");
+        sj.put("wrj0608", wrj0608.isChecked() ? "8" : "0");
+        sj.put("wrj0609", wrj0609.isChecked() ? "9" : "0");
+        sj.put("wrj0696", wrj0696.isChecked() ? "96" : "0");
         sj.put("wrj0696x", wrj0696x.getText().toString());
 
         MainApp.fc.setsJ(String.valueOf(sj));
@@ -336,7 +335,7 @@ public class SectionJActivity extends AppCompatActivity {
 
         if (wrj0401.isChecked()) {
             //====================== Q5 ================
-            if (!validatorClass.EmptyCheckBox(this,wrj05,wrj0501,getString(R.string.wrj05))) {
+            if (!validatorClass.EmptyCheckBox(this, wrj05, wrj0501, getString(R.string.wrj05))) {
                 return false;
             }
         }

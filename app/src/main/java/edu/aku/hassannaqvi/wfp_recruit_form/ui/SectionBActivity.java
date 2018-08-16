@@ -808,7 +808,7 @@ public class SectionBActivity extends AppCompatActivity {
         sB.put("serial_no", String.valueOf(serial_no));
         sB.put("wrb02", binding.wrb02a.isChecked() ? "1" : binding.wrb02b.isChecked() ? "2" : "0");
         sB.put("wrb03", binding.wrb03.getText().toString());
-        sB.put("wrb03", binding.wrb033.getText().toString());
+        sB.put("wrb033", binding.wrb033.getText().toString());
         sB.put("wrb04", binding.wrb04.getText().toString());
         // sB.put("wrb05", binding.wrb05a.isChecked() ? "1" : binding.wrb05b.isChecked() ? "2" : binding.wrb05c.isChecked() ? "3" : binding.wrb05d.isChecked() ? "4"
         //: binding.wrb05e.isChecked() ? "5" : "0");

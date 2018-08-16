@@ -813,7 +813,7 @@ public class SectionIActivity extends AppCompatActivity {
         si.put("wri01", wri0101.isChecked() ? "1" : wri0102.isChecked() ? "2" : wri0103.isChecked() ? "3"
                 : wri0104.isChecked() ? "4" : wri0105.isChecked() ? "5" : wri0106.isChecked() ? "6"
                 : wri0196.isChecked() ? "96" : "0");
-        si.put("wri96x", wri0196x.getText().toString());
+        si.put("wri0196x", wri0196x.getText().toString());
         si.put("wri02", wri0201.isChecked() ? "1" : wri0202.isChecked() ? "2" : wri0203.isChecked() ? "3"
                 : wri0204.isChecked() ? "4" : wri0205.isChecked() ? "5" : wri0206.isChecked() ? "6"
                 : wri0207.isChecked() ? "7" : wri0208.isChecked() ? "8" : wri0209.isChecked() ? "9"
@@ -856,7 +856,7 @@ public class SectionIActivity extends AppCompatActivity {
                 : wri0907.isChecked() ? "7" : wri0908.isChecked() ? "8" : wri0909.isChecked() ? "9"
                 : wri0910.isChecked() ? "10" : wri0911.isChecked() ? "11" : wri0996.isChecked() ? "96" : "0");
         si.put("wri0996x", wri0996x.getText().toString());
-        si.put("wri10", wri1001.isChecked() ? "1" : wri1002.isChecked() ? "2" : wri1003.isChecked() ? "3" : "0");
+        si.put("wri10", wri1001.isChecked() ? "1" : wri1002.isChecked() ? "2" : wri1003.isChecked() ? "3" : wri1096.isChecked()? "96" : "0");
         si.put("wri1096x", wri1096x.getText().toString());
         si.put("wri11", wri1101.isChecked() ? "1" : wri1102.isChecked() ? "2" : "0");
         si.put("wri12", wri1201.isChecked() ? "1" : wri1202.isChecked() ? "2" : wri1203.isChecked() ? "3"

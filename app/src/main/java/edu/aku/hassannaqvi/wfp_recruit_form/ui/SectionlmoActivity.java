@@ -347,7 +347,7 @@ public class SectionlmoActivity extends AppCompatActivity {
                 : bi.wro08b.isChecked() ? "2"
                 : "0");
 
-        wrlmo.put("wro08num", bi.wro08num.getText().toString());
+        wrlmo.put("wro08num", bi.wro09num.getText().toString());
         wrlmo.put("wro08s", bi.wro08s.getText().toString());
 
 //        9
@@ -355,7 +355,7 @@ public class SectionlmoActivity extends AppCompatActivity {
                 : bi.wro09b.isChecked() ? "2"
                 : "0");
 
-        wrlmo.put("wro01num", bi.wro09num.getText().toString());
+        wrlmo.put("wro09num", bi.wro09num.getText().toString());
         wrlmo.put("wro09s", bi.wro09s.getText().toString());
 
 //        10
@@ -363,7 +363,7 @@ public class SectionlmoActivity extends AppCompatActivity {
                 : bi.wro10b.isChecked() ? "2"
                 : "0");
 
-        wrlmo.put("wro01num", bi.wro10num.getText().toString());
+        wrlmo.put("wro10num", bi.wro10num.getText().toString());
         wrlmo.put("wro10s", bi.wro10s.getText().toString());
 
 //        11

@@ -236,6 +236,8 @@ public class SectionFActivity extends AppCompatActivity {
                 : bi.wrf0288.isChecked() ? "88"
                 : "0");
 
+        sF.put("wrf0288x",bi.wrf0288x.getText().toString());
+
         sF.put("wrf03", bi.wrf03.getText().toString());
         sF.put("wrf04", bi.wrf04.getText().toString());
         sF.put("wrf05d", bi.wrf05d.getText().toString());
@@ -275,6 +277,7 @@ public class SectionFActivity extends AppCompatActivity {
         sF.put("wrf0903c", bi.wrf0903c.isChecked() ? "3" : "0");
         sF.put("wrf090399", bi.wrf090399.isChecked() ? "99" : "0");
         sF.put("wrf090388", bi.wrf090388.isChecked() ? "88" : "0");
+        sF.put("wrf090388x", bi.wrf090388x.getText().toString());
 
 
         MainApp.fc.setsF(String.valueOf(sF));
