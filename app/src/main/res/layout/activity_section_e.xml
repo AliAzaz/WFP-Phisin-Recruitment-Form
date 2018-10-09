@@ -75,7 +75,7 @@
                             android:id="@+id/wre0101"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="XXX.X"
+                            android:hint="XXX.X cm"
                             android:inputType="numberDecimal"
                             android:maxLength="5"
                             android:textColor="@android:color/black" />
@@ -109,7 +109,7 @@
                             android:id="@+id/wre0102"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="XXX.X"
+                            android:hint="XXX.X cm"
                             android:inputType="numberDecimal"
                             android:maxLength="5"
                             android:textColor="@android:color/black" />
@@ -153,7 +153,7 @@
                             android:id="@+id/wre0201"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="XX.XX"
+                            android:hint="XX.XX kg"
                             android:inputType="numberDecimal"
                             android:maxLength="5"
                             android:textColor="@android:color/black" />
@@ -187,7 +187,7 @@
                             android:id="@+id/wre0202"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="XX.XX"
+                            android:hint="XX.XX kg"
                             android:inputType="numberDecimal"
                             android:maxLength="5"
                             android:textColor="@android:color/black" />
@@ -223,6 +223,189 @@
                         android:textColor="@android:color/black" />
 
                 </android.support.design.widget.TextInputLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/colorPrimaryDark"
+                    android:gravity="center"
+                    android:text="@string/wreheading1"
+                    android:textColor="@color/colorHeading"
+                    android:textSize="35sp" />
+
+
+                <CheckBox
+                    android:hint="@string/wre1101xx"
+                    android:id="@+id/wre1101xx"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:id="@+id/fldgrpwre1101"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimary"
+                        android:text="@string/wre01"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/wre1101a"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_weight="40" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_weight="40"
+                            android:theme="@style/TextLabel"
+                            app:hintTextAppearance="@style/TextLabel2">
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/wre1101"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="XXX.X cm"
+                                android:inputType="numberDecimal"
+                                android:maxLength="5"
+                                android:textColor="@android:color/black" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/wre1102a"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_weight="40" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_weight="40"
+                            android:theme="@style/TextLabel"
+                            app:hintTextAppearance="@style/TextLabel2">
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/wre1102"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="XXX.X cm"
+                                android:inputType="numberDecimal"
+                                android:maxLength="5"
+                                android:textColor="@android:color/black" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <!--02-->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimary"
+                        android:text="@string/wre02"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/wre1201a"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_weight="40" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_weight="40"
+                            android:theme="@style/TextLabel"
+                            app:hintTextAppearance="@style/TextLabel2">
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/wre1201"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="XX.XX kg"
+                                android:inputType="numberDecimal"
+                                android:maxLength="5"
+                                android:textColor="@android:color/black" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/wre1202a"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_weight="40" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_weight="40"
+                            android:theme="@style/TextLabel"
+                            app:hintTextAppearance="@style/TextLabel2">
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/wre1202"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="XX.XX kg"
+                                android:inputType="numberDecimal"
+                                android:maxLength="5"
+                                android:textColor="@android:color/black" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
 
 
                 <!--  = = = = =  END OF FORM FIELDS  = = = = = -->

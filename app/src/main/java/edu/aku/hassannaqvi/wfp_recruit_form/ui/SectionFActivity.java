@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -58,6 +59,7 @@ public class SectionFActivity extends AppCompatActivity {
                     bi.wrf08a.setChecked(false);
                     bi.wrf08b.setChecked(false);
                     bi.wrf08c.setChecked(false);
+                    bi.wrf08d.setChecked(false);
                     bi.wrf08a.setChecked(false);
                     bi.wrf0888.setChecked(false);
                     bi.wrf0888x.setText(null);
@@ -87,6 +89,7 @@ public class SectionFActivity extends AppCompatActivity {
                     bi.wrf08a.setChecked(false);
                     bi.wrf08b.setChecked(false);
                     bi.wrf08c.setChecked(false);
+                    bi.wrf08d.setChecked(false);
                     bi.wrf08a.setChecked(false);
                     bi.wrf0888.setChecked(false);
                     bi.wrf0888x.setText(null);
@@ -117,6 +120,26 @@ public class SectionFActivity extends AppCompatActivity {
                 }
             }
         });
+        bi.wrf090399.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    bi.wrf0903a.setChecked(false);
+                    bi.wrf0903b.setChecked(false);
+                    bi.wrf0903c.setChecked(false);
+                    bi.wrf090388.setChecked(false);
+                    bi.wrf0903a.setEnabled(false);
+                    bi.wrf0903b.setEnabled(false);
+                    bi.wrf0903c.setEnabled(false);
+                    bi.wrf090388.setEnabled(false);
+                }else{
+                    bi.wrf0903a.setEnabled(true);
+                    bi.wrf0903b.setEnabled(true);
+                    bi.wrf0903c.setEnabled(true);
+                    bi.wrf090388.setEnabled(true);
+                }
+            }
+        });
     }
 
     private boolean formValidation() {
@@ -130,7 +153,6 @@ public class SectionFActivity extends AppCompatActivity {
                 return false;
             }
 
-
             if (!validatorClass.EmptyTextBox(this, bi.wrf03, getString(R.string.wrf03))) {
                 return false;
             }
@@ -140,7 +162,7 @@ public class SectionFActivity extends AppCompatActivity {
             if (!validatorClass.EmptyTextBox(this, bi.wrf04, getString(R.string.wrf04))) {
                 return false;
             }
-            if (!validatorClass.RangeTextBox(this, bi.wrf04, 1, 3, getString(R.string.wrf04), " sachets")) {
+            if (!validatorClass.RangeTextBox(this, bi.wrf04, 1, 99, getString(R.string.wrf04), " sachets")) {
                 return false;
             }
             if (!validatorClass.EmptyTextBox(this, bi.wrf05d, getString(R.string.wrf05) + "-" + getString(R.string.days))) {
@@ -191,9 +213,7 @@ public class SectionFActivity extends AppCompatActivity {
                 if (!validatorClass.RangeTextBox(this, bi.wrf0902, 1, 90, getString(R.string.wrf0902), " sachets")) {
                     return false;
                 }
-                if (!validatorClass.EmptyCheckBox(this, bi.wrf0903, bi.wrf090388, bi.wrf090388x, getString(R.string.wrf0903))) {
-                    return false;
-                }
+                return validatorClass.EmptyCheckBox(this, bi.wrf0903, bi.wrf090388, bi.wrf090388x, getString(R.string.wrf0903));
             }//end of question 9 skip
 
         }//end of question1 skip
@@ -215,6 +235,8 @@ public class SectionFActivity extends AppCompatActivity {
                 : bi.wrf0299.isChecked() ? "99"
                 : bi.wrf0288.isChecked() ? "88"
                 : "0");
+
+        sF.put("wrf0288x",bi.wrf0288x.getText().toString());
 
         sF.put("wrf03", bi.wrf03.getText().toString());
         sF.put("wrf04", bi.wrf04.getText().toString());
@@ -255,6 +277,7 @@ public class SectionFActivity extends AppCompatActivity {
         sF.put("wrf0903c", bi.wrf0903c.isChecked() ? "3" : "0");
         sF.put("wrf090399", bi.wrf090399.isChecked() ? "99" : "0");
         sF.put("wrf090388", bi.wrf090388.isChecked() ? "88" : "0");
+        sF.put("wrf090388x", bi.wrf090388x.getText().toString());
 
 
         MainApp.fc.setsF(String.valueOf(sF));

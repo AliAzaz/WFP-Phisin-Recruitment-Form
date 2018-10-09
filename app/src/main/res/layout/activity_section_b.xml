@@ -123,6 +123,25 @@
                     app:hintTextAppearance="@style/TextLabel2">
 
 
+                    <android.support.design.widget.TextInputEditText
+                        android:inputType="number"
+                        android:id="@+id/wrb033"
+                        android:enabled="false"
+                        android:maxLength="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/wrb033"
+                        android:textColor="@android:color/black"
+                        />
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:theme="@style/TextLabel"
+                    app:hintTextAppearance="@style/TextLabel2">
+
+
                     <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                         android:id="@+id/wrb03"
                         android:enabled="false"
@@ -135,8 +154,11 @@
 
                 </android.support.design.widget.TextInputLayout>
 
+
+
                 <!--05-->
                 <LinearLayout
+                    android:visibility="gone"
                     android:id="@+id/fldGrpwrb01"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

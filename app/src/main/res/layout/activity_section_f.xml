@@ -178,7 +178,7 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/sachet"
                             android:inputType="number"
-                            android:maxLength="1"
+                            android:maxLength="2"
                             android:textColor="@android:color/black" />
 
                     </android.support.design.widget.TextInputLayout>

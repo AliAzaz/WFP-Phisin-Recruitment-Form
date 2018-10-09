@@ -49,6 +49,7 @@ public class SectionCActivity extends AppCompatActivity {
 
         currentDate = new SimpleDateFormat("dd/MM/yyyy").format(new Date().getTime());
 
+
 //        Filling Spinner
         pwList = new ArrayList<>();
         pwList.add("....");
@@ -84,8 +85,8 @@ public class SectionCActivity extends AppCompatActivity {
     private void setDateManager() {
         bi.wrc06.setManager(getSupportFragmentManager());
         bi.wrc07.setManager(getSupportFragmentManager());
+        bi.wrc06.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(new Date().getTime()));
         bi.wrc06.setMinDate(DateUtils.getMonthsBack("dd/MM/yyyy", -4));
-        bi.wrc06.setMaxDate(currentDate);
         if (!TextUtils.isEmpty(bi.wrc06.getText().toString())) {
             bi.wrc07.setEnabled(true);
             String exactDate = DateUtils.addDays("dd/MM/yyyy", bi.wrc06.getText().toString(), 280);
@@ -118,8 +119,10 @@ public class SectionCActivity extends AppCompatActivity {
                     bi.wrc07.setEnabled(true);
                     String exactDate = DateUtils.addDays("dd/MM/yyyy", bi.wrc06.getText().toString(), 280);
                     bi.wrc07.setMinDate(DateUtils.addSubtractMonths("dd/MM/yyyy", exactDate, -1));
+//                    bi.wrc07.setMinDate(DateUtils.addDays("dd/MM/yyyy", exactDate, -30));
                     String exactDate1 = DateUtils.addDays("dd/MM/yyyy", bi.wrc06.getText().toString(), 280);
                     bi.wrc07.setMaxDate(DateUtils.addSubtractMonths("dd/MM/yyyy", exactDate1, 1));
+//                    bi.wrc07.setMaxDate(DateUtils.addDays("dd/MM/yyyy", exactDate1, 30));
 
                 } else {
                     bi.wrc07.setEnabled(false);
@@ -127,7 +130,6 @@ public class SectionCActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 
     private boolean ValidateForm() {
@@ -135,9 +137,13 @@ public class SectionCActivity extends AppCompatActivity {
         if (!validatorClass.EmptySpinner(this, bi.wrc01, getString(R.string.wrc01))) {
             return false;
         }
-        if (!validatorClass.EmptyTextBox(this, bi.wrc02, getString(R.string.wrc02))) {
+        if (!validatorClass.EmptyTextBox(this, bi.wrcstudyid, getString(R.string.wrc01))) {
             return false;
         }
+        if (!validatorClass.RangeTextBox(this, bi.wrcstudyid, 1, 4000, getString(R.string.wrc01), " ID's")) {
+            return false;
+        }
+
         if (!validatorClass.EmptyTextBox(this, bi.wrc03, getString(R.string.wrc03))) {
             return false;
         }
@@ -176,10 +182,7 @@ public class SectionCActivity extends AppCompatActivity {
         if (!validatorClass.EmptyTextBox(this, bi.wrc06, getString(R.string.wrc06))) {
             return false;
         }
-        if (!validatorClass.EmptyTextBox(this, bi.wrc07, getString(R.string.wrc07))) {
-            return false;
-        }
-        return true;
+        return validatorClass.EmptyTextBox(this, bi.wrc07, getString(R.string.wrc07));
     }
 
     public void BtnEnd() {
@@ -195,7 +198,7 @@ public class SectionCActivity extends AppCompatActivity {
             }
             if (UpdateDb()) {
                 finish();
-                startActivity(new Intent(this, SectionDActivity.class));
+                startActivity(new Intent(this, SectionDActivity.class).putExtra("womanAge",bi.wrc04.getText().toString()));
 
             } else {
                 Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
@@ -208,8 +211,9 @@ public class SectionCActivity extends AppCompatActivity {
         JSONObject sC = new JSONObject();
         sC.put("wrc01", bi.wrc01.getSelectedItem().toString().toUpperCase());
         sC.put("wrc02", bi.wrc02.getText().toString());
-        sC.put("wrc03", bi.wrc02.getText().toString());
-        sC.put("wrc04", bi.wrc02.getText().toString());
+        sC.put("wrcstudyid", bi.wrcstudyid.getText().toString());
+        sC.put("wrc03", bi.wrc03.getText().toString());
+        sC.put("wrc04", bi.wrc04.getText().toString());
         sC.put("wrc05m", bi.wrc05m.getText().toString());
         sC.put("wrc05d", bi.wrc05d.getText().toString());
         sC.put("wrc06", bi.wrc06.getText().toString());

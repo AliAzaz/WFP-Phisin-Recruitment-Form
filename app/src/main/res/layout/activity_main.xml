@@ -118,6 +118,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:onClick="openA"
+                android:visibility="gone"
                 android:text="OPEN A" />
             <Button
                 android:id="@+id/openB"
@@ -126,6 +127,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:onClick="openB"
+                android:visibility="gone"
                 android:text="OPEN B" />
 
             <Button
@@ -135,6 +137,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:onClick="openC"
+                android:visibility="gone"
                 android:text="OPEN C" />
 
             <Button
@@ -144,6 +147,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:onClick="openD"
+                android:visibility="gone"
                 android:text="OPEN D" />
 
             <Button
@@ -153,6 +157,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:onClick="openE"
+                android:visibility="gone"
                 android:text="OPEN E" />
 
             <Button
@@ -162,6 +167,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:onClick="openF"
+                android:visibility="gone"
                 android:text="OPEN F" />
 
             <Button
@@ -171,6 +177,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:onClick="openG"
+                android:visibility="gone"
                 android:text="OPEN G" />
 
             <Button
@@ -180,6 +187,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:onClick="openH"
+                android:visibility="gone"
                 android:text="OPEN H" />
 
             <Button
@@ -189,6 +197,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:onClick="openI"
+                android:visibility="gone"
                 android:text="OPEN I" />
 
             <Button
@@ -198,6 +207,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:onClick="openJ"
+                android:visibility="gone"
                 android:text="OPEN J" />
 
             <Button
@@ -207,6 +217,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:onClick="openK"
+                android:visibility="gone"
                 android:text="OPEN K" />
 
             <Button
@@ -216,6 +227,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:onClick="openLMO"
+                android:visibility="gone"
                 android:text="OPEN LMO" />
 
 

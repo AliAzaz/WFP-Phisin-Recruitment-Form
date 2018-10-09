@@ -22,7 +22,6 @@ public class SectionlmoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // setContentView(R.layout.activity_sectionlmo);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_sectionlmo);
         bi.setCallback(this);
     }
@@ -220,9 +219,7 @@ public class SectionlmoActivity extends AppCompatActivity {
             if (!validatorClass.RangeTextBox(this, bi.wro12num, 1, 10, getString(R.string.other), " number")) {
                 return false;
             }
-            if (!validatorClass.EmptyTextBox(this, bi.wro12s, getString(R.string.other))) {
-                return false;
-            }
+            return validatorClass.EmptyTextBox(this, bi.wro12s, getString(R.string.other));
         }
         return true;
     }
@@ -358,7 +355,7 @@ public class SectionlmoActivity extends AppCompatActivity {
                 : bi.wro09b.isChecked() ? "2"
                 : "0");
 
-        wrlmo.put("wro01num", bi.wro09num.getText().toString());
+        wrlmo.put("wro09num", bi.wro09num.getText().toString());
         wrlmo.put("wro09s", bi.wro09s.getText().toString());
 
 //        10
@@ -366,7 +363,7 @@ public class SectionlmoActivity extends AppCompatActivity {
                 : bi.wro10b.isChecked() ? "2"
                 : "0");
 
-        wrlmo.put("wro01num", bi.wro10num.getText().toString());
+        wrlmo.put("wro10num", bi.wro10num.getText().toString());
         wrlmo.put("wro10s", bi.wro10s.getText().toString());
 
 //        11
@@ -404,7 +401,7 @@ public class SectionlmoActivity extends AppCompatActivity {
             }
             if (UpdateDB()) {
                 finish();
-                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+                startActivity(new Intent(this, SectionEActivity.class));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();

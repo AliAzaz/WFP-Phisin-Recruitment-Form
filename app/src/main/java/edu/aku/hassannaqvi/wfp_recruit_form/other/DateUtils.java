@@ -14,7 +14,7 @@ public class DateUtils {
         return new SimpleDateFormat(format).format(cal.getTime()).toString(); //"dd-MM-yyyy HH:mm"
     }
     public static String addDays(String format,String date, int days){
-        DateFormat dateformat = new SimpleDateFormat(format);
+      /*  DateFormat dateformat = new SimpleDateFormat(format);
         Date resultDate = new Date();
         try {
            resultDate = dateformat.parse(date);
@@ -25,17 +25,36 @@ public class DateUtils {
         cal.setTime(resultDate);
         cal.add(Calendar.DATE, days);
         return new SimpleDateFormat(format).format(cal.getTime()).toString(); //"dd-MM-yyyy HH:mm"
+        */
+        SimpleDateFormat sdf = new SimpleDateFormat(format);
+        Date dt = new Date();
+        try {
+            dt = sdf.parse(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(dt);
+        cal.add(Calendar.DATE, days);
+        return new SimpleDateFormat(format).format(cal.getTime()).toString(); //"dd-MM-yyyy HH:mm"
     }
     public static String addSubtractMonths(String format,String date, int months){
-        DateFormat dateformat = new SimpleDateFormat(format);
+        SimpleDateFormat sdf = new SimpleDateFormat(format);
+        Date dt = new Date();
+        try {
+            dt = sdf.parse(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+       /* DateFormat dateformat = new SimpleDateFormat(format);
         Date resultDate = new Date();
         try {
            resultDate = dateformat.parse(date);
         } catch (ParseException e) {
             e.printStackTrace();
-        }
+        }*/
         Calendar cal = Calendar.getInstance();
-        cal.setTime(resultDate);
+        cal.setTime(dt);
         cal.add(Calendar.MONTH, months);
         return new SimpleDateFormat(format).format(cal.getTime()).toString(); //"dd-MM-yyyy HH:mm"
     }
@@ -51,5 +70,14 @@ public class DateUtils {
         cal.add(Calendar.YEAR, year);
         return new SimpleDateFormat(format).format(cal.getTime()).toString(); //"dd-MM-yyyy HH:mm"
     }
+
+    public static String getYearsAndMonthsBack(String format, int month, int year) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(cal.getTime());
+        cal.add(Calendar.YEAR, year);
+        cal.add(Calendar.MONTH, month);
+        return new SimpleDateFormat(format).format(cal.getTime()).toString(); //"dd-MM-yyyy HH:mm"
+    }
+
 
 }

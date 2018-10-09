@@ -29,6 +29,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.xml.validation.Validator;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -41,6 +43,7 @@ import edu.aku.hassannaqvi.wfp_recruit_form.contracts.UCsContract;
 import edu.aku.hassannaqvi.wfp_recruit_form.contracts.VillagesContract;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
+import edu.aku.hassannaqvi.wfp_recruit_form.validation.validatorClass;
 
 public class SectionAActivity extends Activity {
 
@@ -62,9 +65,18 @@ public class SectionAActivity extends Activity {
     RadioButton spbla08a;
     @BindView(R.id.spbla08b)
     RadioButton spbla08b;
+    @BindView(R.id.spblacluster)
+    RadioGroup spblacluster;
+    @BindView(R.id.spblaclustera)
+    RadioButton spblaclustera;
+    @BindView(R.id.spblaclusterb)
+    RadioButton spblaclusterb;
     /*@BindView(R.id.spbla08c)
     RadioButton spbla08c;
+
 */
+    @BindView(R.id.spbla08bx)
+    EditText spbla08bx;
 
 
     /*@BindViews({R.id.spbla06a, R.id.spbla06b})
@@ -105,14 +117,17 @@ public class SectionAActivity extends Activity {
         populateSpinner(this);
 
 //        Skip
-        spbla08.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+       spbla08.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (checkedId == R.id.spbla08a) {
                     btn_Continue.setVisibility(View.VISIBLE);
+                    spbla08bx.setVisibility(View.GONE);
+                    spbla08bx.setText(null);
                     btn_End.setVisibility(View.GONE);
                 } else {
                     btn_Continue.setVisibility(View.GONE);
+                    spbla08bx.setVisibility(View.VISIBLE);
                     btn_End.setVisibility(View.VISIBLE);
                 }
             }
@@ -257,7 +272,21 @@ public class SectionAActivity extends Activity {
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
 
-        MainApp.endActivity(this, this);
+        if (formValidation()) {
+            try {
+                SaveDraft();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            if (UpdateDB()) {
+
+                MainApp.endActivity(this, this);
+
+            }
+        }
+
+
 
     }
 
@@ -303,11 +332,13 @@ public class SectionAActivity extends Activity {
         sInfo.put("village_code", String.valueOf(MainApp.villageCode));
         sInfo.put("lhw_code", String.valueOf(MainApp.lhwCode));
 
-        sInfo.put("spbla04", spbla04.getText().toString());
-        MainApp.HHno = spbla04.getText().toString();
+       // sInfo.put("spbla04", spbla04.getText().toString());
+       // MainApp.HHno = spbla04.getText().toString();
 
 
         sInfo.put("spbla08", spbla08a.isChecked() ? "1" : spbla08b.isChecked() ? "2" : "0");
+        sInfo.put("spbla08bx", spbla08bx.getText().toString());
+        sInfo.put("spblacluster", spblaclustera.isChecked() ? "1" : spblaclusterb.isChecked() ? "2" : "0");
 
         MainApp.fc.setsA(String.valueOf(sInfo));
 
@@ -379,28 +410,9 @@ public class SectionAActivity extends Activity {
         } else {
             ((TextView) spbla03b.getSelectedView()).setError(null);
         }
-
-        /*if (spbla04.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbla04), Toast.LENGTH_SHORT).show();
-            spbla04.setError("This data is Required!");
-            Log.i(TAG, "spbla04: This data is Required!");
-
-            spbla04.requestFocus();
+       if (!validatorClass.EmptyRadioButton(this,spblacluster,spblaclustera,getString(R.string.spblacluster))){
             return false;
-        } else {
-            spbla04.setError(null);
         }
-
-        if (Integer.valueOf(spbla04.getText().toString()) < 1 || Integer.valueOf(spbla04.getText().toString()) > 300) {
-            Toast.makeText(this, "ERROR(invalid): Range 1 - 300", Toast.LENGTH_SHORT).show();
-            spbla04.setError("This data req Range 1 - 300!");
-            Log.i(TAG, "spbla04: This data req Range 1 - 300!");
-
-            spbla04.requestFocus();
-            return false;
-        } else {
-            spbla04.setError(null);
-        }*/
 
         if (spbla08.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbla08), Toast.LENGTH_SHORT).show();
@@ -412,6 +424,19 @@ public class SectionAActivity extends Activity {
             return false;
         } else {
             spbla08a.setError(null);
+        }
+
+        if(spbla08b.isChecked()){
+           if(spbla08bx.getText().toString().isEmpty()){
+               Toast.makeText(this, "ERROR(empty): " + "وضاحت کریں", Toast.LENGTH_SHORT).show();
+               spbla08bx.setError("This data is required");
+               spbla08bx.requestFocus();
+               return false;
+
+           }else {
+               spbla08bx.setError(null);
+               spbla08bx.clearFocus();
+           }
         }
 
         return true;

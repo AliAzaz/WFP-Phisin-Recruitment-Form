@@ -277,6 +277,8 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton wri0909;
     @BindView(R.id.wri0910)
     RadioButton wri0910;
+    @BindView(R.id.wri0911)
+    RadioButton wri0911;
     @BindView(R.id.wri0996)
     RadioButton wri0996;
     @BindView(R.id.wri0996x)
@@ -383,6 +385,16 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton wri1410;
     @BindView(R.id.wri1411)
     RadioButton wri1411;
+    @BindView(R.id.wri1412)
+    RadioButton wri1412;
+    @BindView(R.id.wri1413)
+    RadioButton wri1413;
+    @BindView(R.id.wri1414)
+    RadioButton wri1414;
+    @BindView(R.id.wri1415)
+    RadioButton wri1415;
+    @BindView(R.id.wri1416)
+    RadioButton wri1416;
     @BindView(R.id.wri1496)
     RadioButton wri1496;
     @BindView(R.id.wri1496x)
@@ -725,9 +737,9 @@ public class SectionIActivity extends AppCompatActivity {
                 if (isChecked) {
                     wri07.setVisibility(View.GONE);
                     wri07.setText(null);
-                } else{
+                } else {
                     wri07.setVisibility(View.VISIBLE);
-            }
+                }
             }
         });
 
@@ -801,7 +813,7 @@ public class SectionIActivity extends AppCompatActivity {
         si.put("wri01", wri0101.isChecked() ? "1" : wri0102.isChecked() ? "2" : wri0103.isChecked() ? "3"
                 : wri0104.isChecked() ? "4" : wri0105.isChecked() ? "5" : wri0106.isChecked() ? "6"
                 : wri0196.isChecked() ? "96" : "0");
-        si.put("wri96x", wri0196x.getText().toString());
+        si.put("wri0196x", wri0196x.getText().toString());
         si.put("wri02", wri0201.isChecked() ? "1" : wri0202.isChecked() ? "2" : wri0203.isChecked() ? "3"
                 : wri0204.isChecked() ? "4" : wri0205.isChecked() ? "5" : wri0206.isChecked() ? "6"
                 : wri0207.isChecked() ? "7" : wri0208.isChecked() ? "8" : wri0209.isChecked() ? "9"
@@ -820,7 +832,7 @@ public class SectionIActivity extends AppCompatActivity {
                 : wri0596.isChecked() ? "96" : "0");
         si.put("wri0596x", wri0596x.getText().toString());
         si.put("wri06", wri0601.isChecked() ? "1" : wri0602.isChecked() ? "2" : "0");
-        si.put("wri07", wri0799.isChecked() ? "99" :wri07.getText().toString());
+        si.put("wri07", wri0799.isChecked() ? "99" : wri07.getText().toString());
         si.put("wri0801", wri080101.isChecked() ? "1" : wri080102.isChecked() ? "2" : "0");
         si.put("wri0802", wri080201.isChecked() ? "1" : wri080202.isChecked() ? "2" : "0");
         si.put("wri0803", wri080301.isChecked() ? "1" : wri080302.isChecked() ? "2" : "0");
@@ -842,9 +854,9 @@ public class SectionIActivity extends AppCompatActivity {
         si.put("wri09", wri0901.isChecked() ? "1" : wri0902.isChecked() ? "2" : wri0903.isChecked() ? "3"
                 : wri0904.isChecked() ? "4" : wri0905.isChecked() ? "5" : wri0906.isChecked() ? "6"
                 : wri0907.isChecked() ? "7" : wri0908.isChecked() ? "8" : wri0909.isChecked() ? "9"
-                : wri0910.isChecked() ? "10" : wri0996.isChecked() ? "96" : "0");
+                : wri0910.isChecked() ? "10" : wri0911.isChecked() ? "11" : wri0996.isChecked() ? "96" : "0");
         si.put("wri0996x", wri0996x.getText().toString());
-        si.put("wri10", wri1001.isChecked() ? "1" : wri1002.isChecked() ? "2" : wri1003.isChecked() ? "3" : "0");
+        si.put("wri10", wri1001.isChecked() ? "1" : wri1002.isChecked() ? "2" : wri1003.isChecked() ? "3" : wri1096.isChecked()? "96" : "0");
         si.put("wri1096x", wri1096x.getText().toString());
         si.put("wri11", wri1101.isChecked() ? "1" : wri1102.isChecked() ? "2" : "0");
         si.put("wri12", wri1201.isChecked() ? "1" : wri1202.isChecked() ? "2" : wri1203.isChecked() ? "3"
@@ -861,7 +873,9 @@ public class SectionIActivity extends AppCompatActivity {
         si.put("wri14", wri1401.isChecked() ? "1" : wri1402.isChecked() ? "2" : wri1403.isChecked() ? "3"
                 : wri1404.isChecked() ? "4" : wri1405.isChecked() ? "5" : wri1406.isChecked() ? "6"
                 : wri1407.isChecked() ? "7" : wri1408.isChecked() ? "8" : wri1409.isChecked() ? "9"
-                : wri1410.isChecked() ? "10" : wri1411.isChecked() ? "11" : wri1496.isChecked() ? "96" : "0");
+                : wri1410.isChecked() ? "10" : wri1411.isChecked() ? "11" : wri1412.isChecked() ? "12" :
+                wri1413.isChecked() ? "13" : wri1414.isChecked() ? "14" : wri1415.isChecked() ? "15" :
+                        wri1416.isChecked() ? "16" : wri1496.isChecked() ? "96" : "0");
         si.put("wri1496x", wri1496x.getText().toString());
         si.put("wri15", wri15.getText().toString());
         si.put("wri16a", wri16a01.isChecked() ? "1" : wri16a02.isChecked() ? "2" : "0");
@@ -1012,15 +1026,11 @@ public class SectionIActivity extends AppCompatActivity {
                 } else {
                     wri07.setError(null);
                 }
-                if (!wri0799.isChecked()){
-                if ((Integer.parseInt(wri07.getText().toString()) == 0)) {
-                    Toast.makeText(this, "ERROR: " + getString(R.string.wri07), Toast.LENGTH_LONG).show();
-                    wri07.setError("No. of HH cannot be zero");
-                    Log.i(TAG, "wri07: No. of HH cannot  not be zero");
-                    return false;
-                } else {
-                    wri07.setError(null);
-                }
+                if (!wri0799.isChecked()) {
+                    if (!validatorClass.RangeTextBox(this, wri07, 1, 10, getString(R.string.wri07), " number")) {
+                        return false;
+                    }
+
                 }
             }
         }
@@ -1214,7 +1224,6 @@ public class SectionIActivity extends AppCompatActivity {
         }
 
 
-
         // =================== Q9 ====================
         if (wri09.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.wri09), Toast.LENGTH_SHORT).show();
@@ -1340,7 +1349,7 @@ public class SectionIActivity extends AppCompatActivity {
         } else {
             wri15.setError(null);
         }
-        if(!validatorClass.RangeTextBox(this,wri15,1,15,getString(R.string.wri15) , " Rooms")){
+        if (!validatorClass.RangeTextBox(this, wri15, 1, 15, getString(R.string.wri15), " Rooms")) {
             return false;
         }
 

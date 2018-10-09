@@ -546,14 +546,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_FORMDATE, fc.getFormDate());
         values.put(FormsTable.COLUMN_INTERVIEWER01, fc.getInterviewer01());
         values.put(FormsTable.COLUMN_INTERVIEWER02, fc.getInterviewer02());
-
         values.put(FormsTable.COLUMN_ISTATUS, fc.getIstatus());
         values.put(FormsTable.COLUMN_ISTATUS88X, fc.getIstatus88x());
         values.put(FormsTable.COLUMN_SINFO, fc.getsInfo());
         values.put(FormsTable.COLUMN_sA, fc.getsA());
-        values.put(FormsTable.COLUMN_SC, fc.getsG());
-        values.put(FormsTable.COLUMN_SD, fc.getsC());
-        values.put(FormsTable.COLUMN_SG, fc.getsD());
+        values.put(FormsTable.COLUMN_SC, fc.getsC());
+        values.put(FormsTable.COLUMN_SD, fc.getsD());
+        values.put(FormsTable.COLUMN_SG, fc.getsG());
         values.put(FormsTable.COLUMN_SH, fc.getsH());
         values.put(FormsTable.COLUMN_SI, fc.getsI());
         values.put(FormsTable.COLUMN_SJ, fc.getsJ());

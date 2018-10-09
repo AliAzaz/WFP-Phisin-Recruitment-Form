@@ -13,17 +13,21 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
 import edu.aku.hassannaqvi.wfp_recruit_form.R;
 
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import javax.xml.validation.Validator;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfp_recruit_form.core.MainApp;
+import edu.aku.hassannaqvi.wfp_recruit_form.validation.validatorClass;
 
 public class SectionJActivity extends AppCompatActivity {
 
@@ -50,17 +54,17 @@ public class SectionJActivity extends AppCompatActivity {
     @BindView(R.id.wrj0202)
     RadioButton wrj0202;
     @BindView(R.id.wrj03)
-    RadioGroup wrj03;
+    LinearLayout wrj03;
     @BindView(R.id.wrj0301)
-    RadioButton wrj0301;
+    CheckBox wrj0301;
     @BindView(R.id.wrj0302)
-    RadioButton wrj0302;
+    CheckBox wrj0302;
     @BindView(R.id.wrj0303)
-    RadioButton wrj0303;
+    CheckBox wrj0303;
     @BindView(R.id.wrj0304)
-    RadioButton wrj0304;
+    CheckBox wrj0304;
     @BindView(R.id.wrj0305)
-    RadioButton wrj0305;
+    CheckBox wrj0305;
     @BindView(R.id.wrj04)
     RadioGroup wrj04;
     @BindView(R.id.wrj0401)
@@ -70,17 +74,17 @@ public class SectionJActivity extends AppCompatActivity {
     @BindView(R.id.fldGrpwrj05)
     LinearLayout fldGrpwrj05;
     @BindView(R.id.wrj05)
-    RadioGroup wrj05;
+    LinearLayout wrj05;
     @BindView(R.id.wrj0501)
-    RadioButton wrj0501;
+    CheckBox wrj0501;
     @BindView(R.id.wrj0502)
-    RadioButton wrj0502;
+    CheckBox wrj0502;
     @BindView(R.id.wrj0503)
-    RadioButton wrj0503;
+    CheckBox wrj0503;
     @BindView(R.id.wrj0504)
-    RadioButton wrj0504;
+    CheckBox wrj0504;
     @BindView(R.id.wrj0505)
-    RadioButton wrj0505;
+    CheckBox wrj0505;
     @BindView(R.id.wrj0601)
     CheckBox wrj0601;
     @BindView(R.id.wrj0602)
@@ -122,7 +126,11 @@ public class SectionJActivity extends AppCompatActivity {
                 } else {
                     fldGrpwrj02.setVisibility(View.GONE);
                     wrj02.clearCheck();
-                    wrj03.clearCheck();
+                    wrj0301.setChecked(false);
+                    wrj0302.setChecked(false);
+                    wrj0303.setChecked(false);
+                    wrj0304.setChecked(false);
+                    wrj0305.setChecked(false);
                 }
             }
         });
@@ -139,7 +147,26 @@ public class SectionJActivity extends AppCompatActivity {
                 }
             }
         });
-
+        wrj0305.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    wrj0301.setChecked(false);
+                    wrj0302.setChecked(false);
+                    wrj0303.setChecked(false);
+                    wrj0304.setChecked(false);
+                    wrj0301.setEnabled(false);
+                    wrj0302.setEnabled(false);
+                    wrj0303.setEnabled(false);
+                    wrj0304.setEnabled(false);
+                } else {
+                    wrj0301.setEnabled(true);
+                    wrj0302.setEnabled(true);
+                    wrj0303.setEnabled(true);
+                    wrj0304.setEnabled(true);
+                }
+            }
+        });
         wrj04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
@@ -147,7 +174,31 @@ public class SectionJActivity extends AppCompatActivity {
                     fldGrpwrj05.setVisibility(View.VISIBLE);
                 } else {
                     fldGrpwrj05.setVisibility(View.GONE);
-                    wrj05.clearCheck();
+                    wrj0501.setChecked(false);
+                    wrj0502.setChecked(false);
+                    wrj0503.setChecked(false);
+                    wrj0504.setChecked(false);
+                    wrj0505.setChecked(false);
+                }
+            }
+        });
+        wrj0505.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    wrj0501.setChecked(false);
+                    wrj0502.setChecked(false);
+                    wrj0503.setChecked(false);
+                    wrj0504.setChecked(false);
+                    wrj0501.setEnabled(false);
+                    wrj0502.setEnabled(false);
+                    wrj0503.setEnabled(false);
+                    wrj0504.setEnabled(false);
+                } else {
+                    wrj0501.setEnabled(true);
+                    wrj0502.setEnabled(true);
+                    wrj0503.setEnabled(true);
+                    wrj0504.setEnabled(true);
                 }
             }
         });
@@ -202,22 +253,27 @@ public class SectionJActivity extends AppCompatActivity {
                 : wrj0196.isChecked() ? "96" : "0");
         sj.put("wrj0196x", wrj0196x.getText().toString());
         sj.put("wrj02", wrj0201.isChecked() ? "1" : wrj0202.isChecked() ? "2" : "0");
-        sj.put("wrj03", wrj0301.isChecked() ? "1" : wrj0302.isChecked() ? "2" : wrj0303.isChecked() ? "3"
-                : wrj0304.isChecked() ? "4" : wrj0305.isChecked() ? "5" : "0");
+        sj.put("wrj03a", wrj0301.isChecked() ? "1" : "0");
+        sj.put("wrj03b", wrj0302.isChecked() ? "2" : "0");
+        sj.put("wrj03c", wrj0303.isChecked() ? "3" : "0");
+        sj.put("wrj03d", wrj0304.isChecked() ? "4" : "0");
+        sj.put("wrj03e", wrj0305.isChecked() ? "5" : "0");
         sj.put("wrj04", wrj0401.isChecked() ? "1" : wrj0402.isChecked() ? "2" : "0");
-        sj.put("wrj05", wrj0501.isChecked() ? "1" : wrj0502.isChecked() ? "2" : wrj0503.isChecked() ? "3"
-                : wrj0504.isChecked() ? "4" : wrj0505.isChecked() ? "5" : "0");
+        sj.put("wrj05a", wrj0501.isChecked() ? "1" : "0");
+        sj.put("wrj05b", wrj0502.isChecked() ? "2" : "0");
+        sj.put("wrj05c", wrj0503.isChecked() ? "3" : "0");
+        sj.put("wrj05d", wrj0504.isChecked() ? "4" : "0");
+        sj.put("wrj05e", wrj0505.isChecked() ? "5" : "0");
         sj.put("wrj0601", wrj0601.isChecked() ? "1" : "0");
-        sj.put("wrj0602", wrj0602.isChecked() ? "1" : "0");
-        sj.put("wrj0603", wrj0603.isChecked() ? "1" : "0");
-        sj.put("wrj0604", wrj0604.isChecked() ? "1" : "0");
-        sj.put("wrj0605", wrj0605.isChecked() ? "1" : "0");
-        sj.put("wrj0606", wrj0606.isChecked() ? "1" : "0");
-        sj.put("wrj0607", wrj0607.isChecked() ? "1" : "0");
-        sj.put("wrj0607", wrj0607.isChecked() ? "1" : "0");
-        sj.put("wrj0608", wrj0608.isChecked() ? "1" : "0");
-        sj.put("wrj0609", wrj0609.isChecked() ? "1" : "0");
-        sj.put("wrj0696", wrj0696.isChecked() ? "1" : "0");
+        sj.put("wrj0602", wrj0602.isChecked() ? "2" : "0");
+        sj.put("wrj0603", wrj0603.isChecked() ? "3" : "0");
+        sj.put("wrj0604", wrj0604.isChecked() ? "4" : "0");
+        sj.put("wrj0605", wrj0605.isChecked() ? "5" : "0");
+        sj.put("wrj0606", wrj0606.isChecked() ? "6" : "0");
+        sj.put("wrj0607", wrj0607.isChecked() ? "7" : "0");
+        sj.put("wrj0608", wrj0608.isChecked() ? "8" : "0");
+        sj.put("wrj0609", wrj0609.isChecked() ? "9" : "0");
+        sj.put("wrj0696", wrj0696.isChecked() ? "96" : "0");
         sj.put("wrj0696x", wrj0696x.getText().toString());
 
         MainApp.fc.setsJ(String.valueOf(sj));
@@ -262,15 +318,9 @@ public class SectionJActivity extends AppCompatActivity {
             }
 
             //====================== Q3 ================
-            if (wrj03.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.wrj03), Toast.LENGTH_SHORT).show();
-                wrj0305.setError("This data is Required!");
-                Log.i(TAG, "wrj03: This data is Required!");
+            if (!validatorClass.EmptyCheckBox(this, wrj03, wrj0301, getString(R.string.wrj03))) {
                 return false;
-            } else {
-                wrj0305.setError(null);
             }
-
         }
 
         //====================== Q4 ================
@@ -285,13 +335,8 @@ public class SectionJActivity extends AppCompatActivity {
 
         if (wrj0401.isChecked()) {
             //====================== Q5 ================
-            if (wrj05.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.wrj05), Toast.LENGTH_SHORT).show();
-                wrj0505.setError("This data is Required!");
-                Log.i(TAG, "wrj05: This data is Required!");
+            if (!validatorClass.EmptyCheckBox(this, wrj05, wrj0501, getString(R.string.wrj05))) {
                 return false;
-            } else {
-                wrj0505.setError(null);
             }
         }
 
